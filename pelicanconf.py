@@ -30,10 +30,6 @@ TAG_FEED_ATOM = 'feeds/%s.atom.xml'
 TAG_FEED_RSS = 'feeds/%s.rss.xml'
 
 # Links
-# LINKS = (('Pelican', 'http://getpelican.com/'),
-#          ('Python.org', 'http://python.org/'),
-#          ('Jinja2', 'http://jinja.pocoo.org/'),
-#          ('You can modify those links in your config file', '#'),)
 SOCIAL = (('Github', 'https://github.com/lucidmachine'),
         ('Twitter', 'https://twitter.com/lucidmachinery'),)
 
