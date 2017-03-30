@@ -11,7 +11,7 @@ GITHUB_URL = 'https://github.com/lucidmachine'
 TWITTER_USERNAME = 'lucidmachinery'
 
 # URLs and Paths
-SITEURL = 'http://ericslenk.com'
+SITEURL = 'http://www.ericslenk.com'
 PATH = 'content'
 STATIC_PATHS = ['images']
 ARTICLE_PATHS = ['blog']
