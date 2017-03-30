@@ -2,6 +2,9 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
+# Dates
+DEFAULT_DATE_FORMAT = '%Y-%m-%d'
+
 # Feeds
 AUTHOR_FEED_ATOM = 'feeds/%s.atom.xml'
 AUTHOR_FEED_RSS = 'feeds/%s.rss.xml'
