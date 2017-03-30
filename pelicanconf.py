@@ -35,3 +35,6 @@ SOCIAL = (('Github', 'https://github.com/lucidmachine'),
 
 # Pagination
 DEFAULT_PAGINATION = 10
+
+# Plugins
+PLUGINS = ['sitemap', 'w3c_validate', 'yuicompressor']
