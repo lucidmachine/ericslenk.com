@@ -11,14 +11,14 @@ GITHUB_URL = 'https://github.com/lucidmachine'
 TWITTER_USERNAME = 'lucidmachinery'
 
 # URLs and Paths
-SITEURL = ''
+SITEURL = 'ericslenk.com'
 PATH = 'content'
 STATIC_PATHS = ['images']
 ARTICLE_PATHS = ['blog']
 #RELATIVE_URLS = True
 
 # Feeds
-FEED_DOMAIN = ''
+FEED_DOMAIN = SITEURL
 FEED_MAX_ITEMS = None
 FEED_ALL_ATOM = 'feeds/atom.xml'
 FEED_ALL_RSS = 'feeds/rss.xml'
