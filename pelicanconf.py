@@ -23,10 +23,13 @@ DEFAULT_PAGINATION = 10
 # Plugins
 PLUGINS = ['sitemap', 'w3c_validate', 'yuicompressor']
 
+# Theme
+THEME = 'themes/Flex'
+
 # URLs and Paths
 ARTICLE_PATHS = ['blog']
 PATH = 'content'
-#RELATIVE_URLS = True
+RELATIVE_URLS = True
 SITEURL = 'http://www.ericslenk.com'
 STATIC_PATHS = ['images']
 
