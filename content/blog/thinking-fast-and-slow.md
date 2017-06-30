@@ -3,13 +3,13 @@ Date: 2017-03-25
 Category: Book Reviews
 Tags: book, psychology
 Summary: A review of Thinking, Fast and slow by Daniel Kahneman
-Status: draft
+Status: published
 
 # Book Metadata
-ISBN-13: 978-0374533557
-Author(s): Daniel Kahneman
-Published: April 2, 2013
-Amazon: https://www.amazon.com/Thinking-Fast-Slow-Daniel-Kahneman/dp/0374533555
+* ISBN-13: 978-0374533557
+* Author(s): Daniel Kahneman
+* Published: April 2, 2013
+* Amazon: https://www.amazon.com/Thinking-Fast-Slow-Daniel-Kahneman/dp/0374533555
 
 # Notes
 * Two systems. Sys. 1 is automatic and intuitive. Sys. 2 is effortful, req. concentration.

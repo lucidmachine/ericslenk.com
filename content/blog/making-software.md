@@ -3,16 +3,16 @@ Date: 2017-03-25
 Category: Book Reviews
 Tags: book, programming, software engineering, science
 Summary: A review of Making Software: What Really Works, and Why We Believe It by Andy Oram and Greg Wilson
-Status: draft
+Status: published
 
 # Book Metadata
-ISBN-13: 978-0596808327
-Author(s): Andy Oram and Greg Wilson
-Published: October 30, 2010
-Amazon: https://www.amazon.com/Making-Software-Really-Works-Believe/dp/0596808321/ref=sr_1_1?s=books&ie=UTF8&qid=1490467041&sr=1-1&keywords=making+software+what+really+works+and+why+we+believe+it
+* ISBN-13: 978-0596808327
+* Author(s): Andy Oram and Greg Wilson
+* Published: October 30, 2010
+* Amazon: https://www.amazon.com/Making-Software-Really-Works-Believe/dp/0596808321/ref=sr_1_1?s=books&ie=UTF8&qid=1490467041&sr=1-1&keywords=making+software+what+really+works+and+why+we+believe+it
 
 # Notes
-* Too few good, generalizable studies in Software Engineering
+* There are too few good, generalizable studies in Software Engineering.
 * May need studies to provide "tiers" of observations:
     * Context/ audience-specific observations
     * General, regorous observations

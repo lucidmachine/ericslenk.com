@@ -3,13 +3,13 @@ Date: 2017-03-25
 Category: Book Reviews
 Tags: book, creativity, art, motivation, resistance, professional, work
 Summary: A review of The War of Art: Break Through the Blocks and Win Your Inner Creative Battles by Steven Pressfield
-Status: draft
+Status: published
 
 # Book Metadata
-ISBN-13: 978-1936891023
-Author(s): Steven Pressfield
-Published: October 30, 2010
-Amazon: https://www.amazon.com/War-Art-Through-Creative-Battles/dp/1936891026
+* ISBN-13: 978-1936891023
+* Author(s): Steven Pressfield
+* Published: October 30, 2010
+* Amazon: https://www.amazon.com/War-Art-Through-Creative-Battles/dp/1936891026
 
 # Notes
 * Part I: Resistance
