@@ -19,7 +19,8 @@ SOCIAL = (('Email', OBFUSCATED_EMAIL),
 AUTHOR = 'Eric Slenk'
 DEFAULT_LANG = 'en'
 GITHUB_URL = 'https://github.com/lucidmachine'
-SITENAME = 'Lucid Machinery'
+SITENAME = "Lucid Machinery"
+SITEDESCRIPTION = "Eric Slenk's Blog"
 TIMEZONE = 'America/Detroit'
 TWITTER_USERNAME = 'lucidmachinery'
 
