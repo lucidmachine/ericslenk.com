@@ -21,10 +21,11 @@ SOCIAL = (('envelope-open', OBFUSCATED_EMAIL),
 AUTHOR = 'Eric Slenk'
 DEFAULT_LANG = 'en'
 GITHUB_URL = 'https://github.com/lucidmachine'
-SITENAME = "Lucid Machinery"
-SITEDESCRIPTION = "A Blog by Eric Slenk"
 SITELOGO = "https://avatars1.githubusercontent.com/u/213561"
+SITETITLE = "Lucid Machinery"
 SITESUBTITLE = "A Blog by Eric Slenk"
+SITENAME = SITETITLE
+SITEDESCRIPTION = SITESUBTITLE
 TIMEZONE = 'America/Detroit'
 TWITTER_USERNAME = 'lucidmachinery'
 
