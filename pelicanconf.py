@@ -10,6 +10,10 @@ EMAIL = 'slenk.eric@gmail.com'
 EMAIL_LINK = ''.join(('mailto:', EMAIL))
 OBFUSCATED_EMAIL = ''.join(['&#{0:s};'.format(str(ord(char))) for char in EMAIL_LINK])
 
+# Google
+GOOGLE_ANALYTICS = "UA-101906012-1"
+GOOGLE_TAG_MANAGER = "GTM-NW29DZR"
+
 # Links
 SOCIAL = (('envelope-open', OBFUSCATED_EMAIL),
         ('twitter', 'https://twitter.com/lucidmachinery'),
