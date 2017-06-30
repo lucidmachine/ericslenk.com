@@ -37,7 +37,23 @@ TWITTER_USERNAME = 'lucidmachinery'
 DEFAULT_PAGINATION = 10
 
 # Plugins
-PLUGINS = ['sitemap', 'w3c_validate', 'yuicompressor']
+PLUGIN_PATHS = ['plugins']
+PLUGINS = ['sitemap', 'yuicompressor']#'w3c_validate', 'yuicompressor']
+
+# Sitemap
+SITEMAP = {
+    'format': 'xml',
+    'priorities': {
+        'articles': 0.5,
+        'indexes': 0.5,
+        'pages': 0.5
+    },
+    'changefreqs': {
+        'articles': 'monthly',
+        'indexes': 'daily',
+        'pages': 'monthly'
+    }
+}
 
 # Theme
 THEME = 'themes/Flex'
