@@ -11,16 +11,17 @@ EMAIL_LINK = ''.join(('mailto:', EMAIL))
 OBFUSCATED_EMAIL = ''.join(['&#{0:s};'.format(str(ord(char))) for char in EMAIL_LINK])
 
 # Links
-SOCIAL = (('Email', OBFUSCATED_EMAIL),
-        ('Github', 'https://github.com/lucidmachine'),
-        ('Twitter', 'https://twitter.com/lucidmachinery'),)
+SOCIAL = (('envelope-open', OBFUSCATED_EMAIL),
+        ('github', 'https://github.com/lucidmachine'),
+        ('twitter', 'https://twitter.com/lucidmachinery'),)
 
 # Metadata
 AUTHOR = 'Eric Slenk'
 DEFAULT_LANG = 'en'
 GITHUB_URL = 'https://github.com/lucidmachine'
 SITENAME = "Lucid Machinery"
-SITEDESCRIPTION = "Eric Slenk's Blog"
+SITEDESCRIPTION = "A Blog by Eric Slenk"
+SITESUBTITLE = "A Blog by Eric Slenk"
 TIMEZONE = 'America/Detroit'
 TWITTER_USERNAME = 'lucidmachinery'
 
