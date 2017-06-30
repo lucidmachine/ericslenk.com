@@ -23,6 +23,7 @@ DEFAULT_LANG = 'en'
 GITHUB_URL = 'https://github.com/lucidmachine'
 SITENAME = "Lucid Machinery"
 SITEDESCRIPTION = "A Blog by Eric Slenk"
+SITELOGO = "https://avatars1.githubusercontent.com/u/213561"
 SITESUBTITLE = "A Blog by Eric Slenk"
 TIMEZONE = 'America/Detroit'
 TWITTER_USERNAME = 'lucidmachinery'
