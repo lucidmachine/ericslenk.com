@@ -12,8 +12,10 @@ OBFUSCATED_EMAIL = ''.join(['&#{0:s};'.format(str(ord(char))) for char in EMAIL_
 
 # Links
 SOCIAL = (('envelope-open', OBFUSCATED_EMAIL),
+        ('twitter', 'https://twitter.com/lucidmachinery'),
         ('github', 'https://github.com/lucidmachine'),
-        ('twitter', 'https://twitter.com/lucidmachinery'),)
+        ('gitlab', 'https://gitlab.msu.edu/slenkeri'),)
+
 
 # Metadata
 AUTHOR = 'Eric Slenk'
