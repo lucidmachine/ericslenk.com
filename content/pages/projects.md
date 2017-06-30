@@ -1,5 +1,9 @@
 Title: Projects
 
+## [PhilosophyQuotes](https://github.com/lucidmachine/PhilosophyQuotes)
+
+PhilosophyQuotes is an Android application which uses Firebase to update and display a database of philosophy quotes in real time. I wrote this in order to teach myself Firebase and learn more about Android app and widget development.
+
 ## [puppet-dotcms](https://github.com/lucidmachine/puppet-dotcms)
 
 puppet-dotcms is a Puppet module which can be used to define and configure a dotCMS instance. I wrote this from scratch to define our developers' local dotCMS test instances.
