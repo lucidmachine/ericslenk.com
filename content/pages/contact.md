@@ -6,3 +6,4 @@ This is some contact info.
 * PGP Public Key
 * Twitter
 * Identi.ca
+* Phone: Please no :(
