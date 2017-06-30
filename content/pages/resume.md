@@ -1,9 +1,9 @@
 Title: Resume
 
-# Work Experience
+## Work Experience
 
-## Content Management Systems Programmer
-### MSU ANR Technology Services | East Lansing, MI | September 2014 - Present
+### Content Management Systems Programmer
+#### MSU ANR Technology Services | East Lansing, MI | September 2014 - Present
 
 * Planned and continue to facilitate migration of websites from legacy CMS to dotCMS.
 * Planned and executed successful migration of CMS from local instance to vendor-managed AWS cluster.
@@ -14,8 +14,8 @@ Title: Resume
 * Manage developer tools and infrastructure including Docker containers, Vagrant boxes, and VCS repositories.
 * Contribute to vendor’s open-source CMS, dotCMS.
 
-## Student Web Programmer
-### MSU ANR Technology Services | East Lansing, MI | September 2014 - Present
+### Student Web Programmer
+#### MSU ANR Technology Services | East Lansing, MI | September 2014 - Present
 
 * Developed and managed multiple websites in a MVC CMS, ExpressionEngine.
 * Developed and maintained CMS add-ons, libraries, and custom reports in PHP in order to improve CMS usability and functionality.
@@ -25,20 +25,20 @@ Title: Resume
 * Placed all existing software and websites in version control systems.
 * Standardized code style and template headers.
 
-## Information Systems Intern
-### General Mills, Inc. | Minneapolis, MN | May 2013 - August 2013
+### Information Systems Intern
+#### General Mills, Inc. | Minneapolis, MN | May 2013 - August 2013
 
 * Refactored existing backend libraries to interface with third party couponing services and aggregate data.
 * Overhauled frontend couponing application built in SiteCore.
 * Created JS and C# unit and integration test suites run on company CI infrastructure.
 * Collaborated with an interdepartmental scrum team.
 
-# Education
+## Education
 
-## Computer Science and Engineering B.S.
-### Michigan State University | East Lansing, MI | 2009 - 2017
+### Computer Science and Engineering B.S.
+#### Michigan State University | East Lansing, MI | 2009 - 2017
 
-# Familiar Technologies
+## Familiar Technologies
 <dl>
     <dt>Languages:</dt> <dd>Java, PHP, JavaScript, Python, Bash, Rust, HMTL 5, CSS 3, SASS, C/C++, Go, Ruby, C#, PowerShell</dd>
     <dt>Content Management Systems:</dt> <dd>dotCMS, ExpressionEngine, SiteCore</dd>
