@@ -26,3 +26,7 @@ make html
 ```
 
 # Publication
+In order to generate and rsync the site to your website run the following command.
+```
+make rsync_upload
+```
