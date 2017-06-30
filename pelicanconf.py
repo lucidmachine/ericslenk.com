@@ -5,8 +5,14 @@ from __future__ import unicode_literals
 # Dates
 DEFAULT_DATE_FORMAT = '%Y-%m-%d'
 
+# Email
+EMAIL = 'slenk.eric@gmail.com'
+EMAIL_LINK = ''.join(('mailto:', EMAIL))
+OBFUSCATED_EMAIL = ''.join(['&#{0:s};'.format(str(ord(char))) for char in EMAIL_LINK])
+
 # Links
-SOCIAL = (('Github', 'https://github.com/lucidmachine'),
+SOCIAL = (('Email', OBFUSCATED_EMAIL),
+        ('Github', 'https://github.com/lucidmachine'),
         ('Twitter', 'https://twitter.com/lucidmachinery'),)
 
 # Metadata
