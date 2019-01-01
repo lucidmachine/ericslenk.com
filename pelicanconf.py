@@ -18,7 +18,6 @@ GOOGLE_TAG_MANAGER = "GTM-NW29DZR"
 SOCIAL = (('envelope-open', OBFUSCATED_EMAIL),
         ('twitter', 'https://twitter.com/lucidmachinery'),
         ('github', 'https://github.com/lucidmachine'),
-        ('gitlab', 'https://gitlab.msu.edu/slenkeri'),
         ('linkedin', 'https://www.linkedin.com/in/eric-slenk-167aa67a/'),)
 
 
