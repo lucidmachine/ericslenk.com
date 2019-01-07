@@ -32,7 +32,7 @@ In order to empower myself to achieve my goals I will try to build these habits.
 ## Morning Routine
 * Trigger: Waking up
 * Actions: Brew some fresh coffee. Write my intentions for the day. Review my calendar and tasks. Begin working on personal projects.
-* Concerns: I haven't been waking up at a consistent time, and I haven't been waking up early enough to accomplish anything. I need to find some methods to consistently wake up at a given time and then slowly begin waking earlier. I've had success using an alarm app which required me to scan the barcode on my coffee to disable the alarm, and will try this strategy again.
+* Concerns: I haven't been waking up at a consistent time, and I haven't been waking up early enough to accomplish anything. I need to find some methods to consistently wake up at a given time and then slowly begin waking earlier. I've had success using an alarm app called [I Can't Wake Up! Alarm Clock](https://play.google.com/store/apps/details?id=com.kog.alarmclock) which required me to scan the barcode on my coffee to disable the alarm, and will try this strategy again.
 
 ## Bedtime Routine
 * Trigger: 9pm alarm
