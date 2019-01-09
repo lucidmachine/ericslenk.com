@@ -1,23 +1,17 @@
 Title: 2019 Goals
-Date: 2019-01-02
+Date: 2019-01-07
 Category: 
 Tags: 2019, planning, goals, habits, projects 
-Summary: After spending a week reflecting on 2018 I've identified four goals for 2019 and the habits I'll develop to achieve those goals.
-Status: draft
+Summary: After reflecting on 2018 I've identified four goals for 2019 and the habits I'll develop to achieve those goals.
+Status: published
 
 # Goals
 I have four ultimate goals for 2019.
 
-## Relationships
-I will strengthen my interpersonal relationships and meet more people in my local community.
-
-## Career
-I will hone my existing skills, learn new skills, and experiment with how best to provide value to those around me.
-
-## Health and Longevity
-I will live this precious life as well as I can for as long as I can.
-
-## Financial Independence
+* Relationships: I will strengthen my interpersonal relationships and meet more people in my local community.
+* Career: I will hone my existing skills, learn new skills, and experiment with how best to provide value to those around me.
+* Health and Longevity: I will live this precious life as well as I can for as long as I can.
+* Financial Independence:
 I will liberate myself from my debts.
 
 
