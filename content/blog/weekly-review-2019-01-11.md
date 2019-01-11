@@ -18,7 +18,7 @@ I haven't had much success with this habit yet. On day 1 I happily got out of be
 Modifications: Don't bother with productive work yet.
 
 ## Bedtime Routine
-I only managed to get to bed before 9pm on day 1. On day 2 I stayed up past midnight and regretted it immediately. Most other nights I got to sleep by 10pm. I need a better trigger here, but I'm not sure what. As for actions, I've rediscovered that drinking a glass of water helps me wake up feeling more alert and with a certain urge to get out of bed. I should drink a glass of water before bed each night.
+I only managed to get to bed before 9pm on day 1. On day 2 I stayed up past midnight and regretted it immediately. Most other nights I got to sleep by 10pm. I need a better trigger here, but I'm not sure what. Over the next fortnite I'll try to determine what prevents me from going to sleep when I hear that alarm. As for actions, I've rediscovered that drinking a glass of water helps me wake up feeling more alert and with a certain urge to get out of bed. I should drink a glass of water before bed each night.
 
 Modifications: Drink a glass of water.
 
