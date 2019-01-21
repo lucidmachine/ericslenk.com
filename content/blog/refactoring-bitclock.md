@@ -5,7 +5,7 @@ Tags: bitclock, refactoring, javascript, projects
 Summary: Half a decade ago I made a humble little widget named bitclock to practice reading binary. I've rearchitected bitclock to begin porting it to meatspace.
 Status: published
 
-<iframe src="https://lucidmachine.github.io/bitclock/" style="border: none; height: 180px;"></iframe>
+<iframe src="https://lucidmachine.github.io/bitclock/" style="border: none; height: 150px"></iframe>
 
 # What is Bitclock?
 Half a decade ago I made a humble little widget named [bitclock](https://lucidmachine.github.io/bitclock/) to practice reading binary integers (bits). It's embedded above for demonstration, or you can view it on [its Github Pages site](https://lucidmachine.github.io/bitclock/). You can check out its code at [the project's Github repository](https://github.com/lucidmachine/bitclock). Bitclock's original implementation was a 4x4 grid of bits in which each column represented a digit of the current time, and each row represented a place value in the digit. It renders on a webpage and dynamically updates that page's favicon.
