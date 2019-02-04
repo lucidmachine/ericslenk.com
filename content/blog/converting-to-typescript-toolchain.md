@@ -52,6 +52,7 @@ module.exports = {
             {
                 test: /\.ts$/,
                 use: 'ts-loader',
+                include: /src/,
                 exclude: /node_modules/
             }
         ]
@@ -66,7 +67,7 @@ module.exports = {
 };
 ```
 
-This tells Webpack to build your project starting with the entry point `src/index.ts` and output the result at `dist/main.js`. Any files with extensions '.ts' or '.js' will be picked up. That module rule tells Webpack that any file with a '.ts' extension should be built using ts-loader, which runs the TypeScript compiler against those files.
+This tells Webpack to build your project starting with the entry point `src/index.ts` and output the result at `dist/main.js`. Any files with extensions '.ts' or '.js' will be picked up. That module rule tells Webpack that any file in the `src/` directory with a '.ts' extension should be built using ts-loader, which runs the TypeScript compiler against those files.
 
 
 # index.ts
