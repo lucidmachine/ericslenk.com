@@ -27,5 +27,5 @@ Barring a few work emergencies I've continued to enjoy leaving work at reasonabl
 ## Bitclock
 <iframe src="https://lucidmachine.github.io/bitclock/" style="border: none; height: 150px"></iframe>
 
-I [modularized Bitclock using Webpack](/modularize-js-with-es6-and-webpack.html) and then [converted Bitclock from JavaScript to TypeScript](converting-to-typescript-toolchain.html) this fortnight. The exercise taught me plenty about modern frontend tooling and gave me a bit more experience in TypeScript! I'm pretty excited about TypeScript's type system - especially Interfaces and union types. And I even got to leverage a bit of this knowledge at work throughout the week.
+I [modularized Bitclock using Webpack]({filename}/blog/modularize-your-javascript-with-es6-modules-and-webpack.md) and then [converted Bitclock from JavaScript to TypeScript]({filename}/blog/converting-to-typescript-toolchain.md) this fortnight. The exercise taught me plenty about modern frontend tooling and gave me a bit more experience in TypeScript! I'm pretty excited about TypeScript's type system - especially Interfaces and union types. And I even got to leverage a bit of this knowledge at work throughout the week.
 
