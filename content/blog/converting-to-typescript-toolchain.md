@@ -5,7 +5,7 @@ Tags: typescript, ts, toolchain, webpack, javascript, js, bitclock
 Summary: Upgrade your project's toolchain to build TypeScript alongside JavaScript.
 Status: published
 
-This article assumes that your project is already built using Webpack and structured in a standard way. If your project doesn't use Webpack yet check out [Modularize Your JavaScript with ES6 and Webpack]({filename}/modularize-your-javascript-with-es6-modules-and-webpack.md).
+This article assumes that your project is already built using Webpack and structured in a standard way. If your project doesn't use Webpack yet check out [Modularize Your JavaScript with ES6 and Webpack]({filename}/modularize-your-javascript-with-es6-modules-and-webpack.html).
 
 # Install TypeScript Toolchain
 To get started get yourself the TypeScript compiler, the TypeScript loader for Webpack, and a TypeScript linter plugin for ESLint.
