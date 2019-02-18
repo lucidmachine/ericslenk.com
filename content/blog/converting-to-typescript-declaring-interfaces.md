@@ -5,7 +5,7 @@ Tags: typescript, ts, definitions, interfaces, types, javascript, js, bitclock
 Summary: Now that you're set up, start *using* TypeScript. With types and stuff!
 Status: published
 
-Hey nerds. Now that you've [modularized your project with ES6 and Webpack]({filename}/modularize-your-javascript-with-es6-and-webpack.md) and [set up a toolchain to transpile TypeScript to JavaScript]({filename}/converting-to-typescript-toolchain.md) you should start *using* TypeScript. With types and stuff!
+Hey nerds. Now that you've [modularized your project with ES6 and Webpack]({filename}/blog/modularize-your-javascript-with-es6-modules-and-webpack.md) and [set up a toolchain to transpile TypeScript to JavaScript]({filename}/blog/converting-to-typescript-toolchain.md) you should start *using* TypeScript. With types and stuff!
 
 # The Declaration File
 Your library's types should live in a declaration file, so let's make one and get cracking! Where do we put this thing? What do we call it? The [TypeScript docs on library structures](https://www.typescriptlang.org/docs/handbook/declaration-files/library-structures.html) have a lot of suggestions, but you'll probably be interested in one of three cases.
