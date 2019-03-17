@@ -10,7 +10,7 @@ Status: published
 * **Relationships:** I managed to spend more time with friends and family over the past few weeks than I have in a while, which has been nice. I travelled one weekend, hosted another, and squeezed some drinks in during some weeknights.
 * **Career:** Not a whole lot of wins here over the past few weeks. I missed a couple deadlines for personal projects and had to cancel this March's JVM User Group for lack of content, though. Feels bad, man.
 * **Health and Longevity:** I suspect that I might have injured my knee years ago, that it never healed properly, and that compensation for that injury may have screwed up my back. I should see a medical professional about this.
-* **Financial Independence:** 
+* **Financial Independence:** We have a better understanding of our finances now and are in decent shape. Spending's been reigned in a bit, and our debts are being paid down.
 
 # Habits
 ## Leave Work on Time
@@ -38,7 +38,7 @@ I've been writing a technical blog post on a weekly basis since the start of the
 I've been enjoying [a chamomile, vanilla, and honey tea](https://amzn.to/2TdQYyS) and slowly working through [Structure and Interpretation of Computer Programs](https://amzn.to/2FhixDJ). The wizard book isn't exactly light reading, but I find it fairly well written and very engaging. I'm especially intrigued because it is written around a Lisp dialect called [Scheme](http://www.scheme-reports.org/), and I am concurrently learning a Lisp dialect called [Clojure](https://clojure.org/) and it's pretty neat to see all the parallels and to work through the examples in Clojure.
 
 ## Financial Reviews
-This has gone fine so far. We've had a couple reviews now and I feel I have a better sense of our financial outlook.
+This has gone well so far. We've done a couple reviews now and I feel I have a better sense of our financial outlook. We've gotten our debt back under control and have started working on our spending habits again.
 
 
 # Projects
