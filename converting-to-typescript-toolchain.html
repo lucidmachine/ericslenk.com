@@ -1,0 +1,231 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="http://ericslenk.com/theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="http://ericslenk.com/theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="http://ericslenk.com/theme/font-awesome/css/font-awesome.min.css">
+
+
+    <link href="http://www.ericslenk.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Lucid Machinery Atom">
+
+    <link href="http://www.ericslenk.com/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Lucid Machinery RSS">
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+
+<meta name="author" content="Eric Slenk" />
+<meta name="description" content="Upgrade your project's toolchain to build TypeScript alongside JavaScript." />
+<meta name="keywords" content="typescript, ts, toolchain, webpack, javascript, js, bitclock">
+<meta property="og:site_name" content="Lucid Machinery"/>
+<meta property="og:title" content="Converting to TypeScript: Toolchain"/>
+<meta property="og:description" content="Upgrade your project's toolchain to build TypeScript alongside JavaScript."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="http://ericslenk.com/converting-to-typescript-toolchain.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2019-02-04 00:00:00-05:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="http://ericslenk.com/author/eric-slenk.html">
+<meta property="article:section" content="blog"/>
+<meta property="article:tag" content="typescript"/>
+<meta property="article:tag" content="ts"/>
+<meta property="article:tag" content="toolchain"/>
+<meta property="article:tag" content="webpack"/>
+<meta property="article:tag" content="javascript"/>
+<meta property="article:tag" content="js"/>
+<meta property="article:tag" content="bitclock"/>
+<meta property="og:image" content="https://avatars1.githubusercontent.com/u/213561">
+
+  <title>Lucid Machinery &ndash; Converting to TypeScript: Toolchain</title>
+
+</head>
+<body>
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NW29DZR"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NW29DZR');</script>
+<!-- End Google Tag Manager -->  <aside>
+    <div>
+      <a href="http://ericslenk.com">
+        <img src="https://avatars1.githubusercontent.com/u/213561" alt="Lucid Machinery Logo" title="Lucid Machinery">
+      </a>
+      <h1><a href="http://ericslenk.com">Lucid Machinery</a></h1>
+
+<p>A Blog by Eric Slenk</p>
+      <nav>
+        <ul class="list">
+          <li><a href="http://ericslenk.com/pages/projects.html#projects">Projects</a></li>
+          <li><a href="http://ericslenk.com/pages/resume.html#resume">Resume</a></li>
+
+        </ul>
+      </nav>
+
+      <ul class="social">
+        <li><a class="sc-envelope-open" href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#108;&#101;&#110;&#107;&#46;&#101;&#114;&#105;&#99;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;" target="_blank"><i class="fa fa-envelope-open"></i></a></li>
+        <li><a class="sc-twitter" href="https://twitter.com/lucidmachinery" target="_blank"><i class="fa fa-twitter"></i></a></li>
+        <li><a class="sc-github" href="https://github.com/lucidmachine" target="_blank"><i class="fa fa-github"></i></a></li>
+        <li><a class="sc-linkedin" href="https://www.linkedin.com/in/eric-slenk-167aa67a/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+
+<article class="single">
+  <header>
+    <h1 id="converting-to-typescript-toolchain">Converting to TypeScript: Toolchain</h1>
+    <p>
+          Posted on 2019-02-04 in <a href="http://ericslenk.com/category/blog.html">blog</a>
+
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>This article assumes that your project is already built using Webpack and structured in a standard way. If your project doesn't use Webpack yet check out <a href="http://ericslenk.com/modularize-your-javascript-with-es6-modules-and-webpack.html">Modularize Your JavaScript with ES6 and Webpack</a>.</p>
+<h1>Install TypeScript Toolchain</h1>
+<p>To get started get yourself the TypeScript compiler, the TypeScript loader for Webpack, and a TypeScript linter plugin for ESLint.</p>
+<div class="highlight"><pre><span></span>$ npm install --save-dev typescript ts-loader tslint @typescript-eslint/eslint-plugin-tslint
+</pre></div>
+
+
+<h1>Configure TypeScript Compiler</h1>
+<p>Next you need to tell the TypeScript compiler how to do its job. Computers sure are dumb. Create the file <code>tsconfig.json</code> in your project's top-level directory and add the following.</p>
+<div class="highlight"><pre><span></span><span class="c1">// tsconfig.json</span>
+
+<span class="p">{</span>
+  <span class="s2">&quot;compilerOptions&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;outDir&quot;</span><span class="o">:</span> <span class="s2">&quot;./dist/&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;sourceMap&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="s2">&quot;noImplicitAny&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="s2">&quot;module&quot;</span><span class="o">:</span> <span class="s2">&quot;es6&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;allowJs&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="s2">&quot;moduleResolution&quot;</span><span class="o">:</span> <span class="s2">&quot;node&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>This tells the TypeScript compiler take your TypeScript and JavaScript files as input and output ES5 JavaScript with <a href="https://developer.mozilla.org/en-US/docs/Tools/Debugger/How_to/Use_a_source_map">source maps</a> so that your browser will run the equivalent ES5 code but let you debug the corresponding TypeScript source.</p>
+<p>The last line tells the compiler to look for modules in the same way that Node.js does. This isn't strictly necessary, but some development tools which analyze your code and assume this resolution strategy might benefit here. See the <a href="https://www.typescriptlang.org/docs/handbook/module-resolution.html#classic">TypeScript documentation on module resolution strategies</a> for details.</p>
+<h1>Reconfigure Webpack</h1>
+<p>Now you need to configure Webpack to run the TypeScript compiler when building your project. If you don't already have a file <code>webpack.config.js</code> in your project's top-level directory, create it and add the following.</p>
+<div class="highlight"><pre><span></span><span class="c1">// webpack.config.js</span>
+
+<span class="kr">const</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;path&#39;</span><span class="p">);</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">entry</span><span class="o">:</span> <span class="s1">&#39;./src/index.ts&#39;</span><span class="p">,</span>
+    <span class="nx">devtool</span><span class="o">:</span> <span class="s1">&#39;inline-source-map&#39;</span><span class="p">,</span>
+    <span class="nx">module</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">rules</span><span class="o">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="nx">test</span><span class="o">:</span> <span class="sr">/\.ts$/</span><span class="p">,</span>
+                <span class="nx">use</span><span class="o">:</span> <span class="s1">&#39;ts-loader&#39;</span><span class="p">,</span>
+                <span class="nx">include</span><span class="o">:</span> <span class="sr">/src/</span><span class="p">,</span>
+                <span class="nx">exclude</span><span class="o">:</span> <span class="sr">/node_modules/</span>
+            <span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="nx">resolve</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">extensions</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;.ts&#39;</span><span class="p">,</span> <span class="s1">&#39;.js&#39;</span><span class="p">]</span>
+    <span class="p">},</span>
+    <span class="nx">output</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">filename</span><span class="o">:</span> <span class="s1">&#39;main.js&#39;</span><span class="p">,</span>
+        <span class="nx">path</span><span class="o">:</span> <span class="nx">path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="s1">&#39;dist&#39;</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+
+
+<p>This tells Webpack to build your project starting with the entry point <code>src/index.ts</code> and output the result at <code>dist/main.js</code>. Any files with extensions '.ts' or '.js' will be picked up. That module rule tells Webpack that any file in the <code>src/</code> directory with a '.ts' extension should be built using ts-loader, which runs the TypeScript compiler against those files.</p>
+<h1>index.ts</h1>
+<p>Now to convert your entry point, <code>index.js</code>, to TypeScript. This is the easy part. Rename the file to <code>index.ts</code>. That's it! Build your project and see for yourself!</p>
+<div class="highlight"><pre><span></span>$ npm run rebuild
+
+...
+
+Version: webpack 4.29.0
+Time: 1663ms
+Built at: 02/03/2019 1:16:46 PM
+  Asset      Size  Chunks             Chunk Names
+main.js  15.8 KiB       0  [emitted]  main
+Entrypoint main = main.js
+[0] ./src/index.ts + 4 modules 3.42 KiB {0} [built]
+    | ./src/index.ts 452 bytes [built]
+    | ./src/js/bitclock-backend.js 797 bytes [built]
+    | ./src/js/bitclock-frontend-dom.js 572 bytes [built]
+    | ./src/js/bitclock-frontend-canvas.js 1.34 KiB [built]
+    | ./src/js/bitclock-frontend-favicon.js 302 bytes [built]
+</pre></div>
+
+
+<p><strong>DONE.</strong></p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="http://ericslenk.com/tag/typescript.html">typescript</a>
+      <a href="http://ericslenk.com/tag/ts.html">ts</a>
+      <a href="http://ericslenk.com/tag/toolchain.html">toolchain</a>
+      <a href="http://ericslenk.com/tag/webpack.html">webpack</a>
+      <a href="http://ericslenk.com/tag/javascript.html">javascript</a>
+      <a href="http://ericslenk.com/tag/js.html">js</a>
+      <a href="http://ericslenk.com/tag/bitclock.html">bitclock</a>
+    </p>
+  </div>
+
+
+    <div class="addthis_relatedposts_inline">
+
+
+</article>
+
+    <footer>
+<p>&copy; Eric Slenk </p>
+<p class="disclaimer">As an Amazon Associate I earn from qualifying purchases.</p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101906012-1', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Lucid Machinery ",
+  "url" : "http://ericslenk.com",
+  "image": "https://avatars1.githubusercontent.com/u/213561",
+  "description": "A Blog by Eric Slenk"
+}
+</script>
+
+</body>
+</html>

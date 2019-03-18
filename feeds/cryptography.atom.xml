@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Lucid Machinery - cryptography</title><link href="http://ericslenk.com/" rel="alternate"></link><link href="http://www.ericslenk.com/feeds/cryptography.atom.xml" rel="self"></link><id>http://ericslenk.com/</id><updated>2019-02-25T00:00:00-05:00</updated><entry><title>Setting Up SSH Public Key Authentication</title><link href="http://ericslenk.com/setting-up-ssh-public-key-authentication.html" rel="alternate"></link><published>2019-02-25T00:00:00-05:00</published><updated>2019-02-25T00:00:00-05:00</updated><author><name>Eric Slenk</name></author><id>tag:ericslenk.com,2019-02-25:/setting-up-ssh-public-key-authentication.html</id><summary type="html">&lt;p&gt;Do you have a computer to compute on, but it's all the way over there? Use SSH, stupid! With keys!&lt;/p&gt;</summary><content type="html">&lt;p&gt;Do you have a computer to compute on, but it's &lt;em&gt;all&lt;/em&gt; the way over &lt;em&gt;there&lt;/em&gt;? Use SSH, stupid! With keys!&lt;/p&gt;
+&lt;h1&gt;0. Have Access to a Remote Computer with an SSH Server&lt;/h1&gt;
+&lt;p&gt;Before you can set up key-based authentication you should have:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A remote computer.&lt;/li&gt;
+&lt;li&gt;A user account with a password on that remote computer.&lt;/li&gt;
+&lt;li&gt;A SSH server installed on that remote computer which is:&lt;ul&gt;
+&lt;li&gt;Configured to allow your remote user account to log in and&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Running&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;These all sound obvious, but I almost never have all 5 at once, so there you go.&lt;/p&gt;
+&lt;p&gt;For our examples we'll assume that your local user is &lt;code&gt;groundcontrol&lt;/code&gt; on the local host named &lt;code&gt;earth&lt;/code&gt;, trying to log in as the remote user &lt;code&gt;majortom&lt;/code&gt; to the remote host &lt;code&gt;tincan&lt;/code&gt;.&lt;/p&gt;
+&lt;h1&gt;1. Generate Your Key Pair&lt;/h1&gt;
+&lt;p&gt;First you need to make a key pair. Run &lt;code&gt;ssh-keygen&lt;/code&gt; to create a public and private key.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;groundcontrol@earth:~$ ssh-keygen
+
+Enter file in which to save the key (/home/groundcontrol/.ssh/id_rsa): /home/groundcontrol/.ssh/tincan
+Enter passphrase (empty for no passphrase): [redacted]
+Enter same passphrase again: [redacted]
+Your identification has been saved in /home/groundcontrol/.ssh/tincan.
+Your public key has been saved in /home/groundcontrol/.ssh/tincan.pub.
+The key fingerprint is:
+SHA256:6qhMpF/b62Zt63i/SVH6fZqqzB7uQc2kyryIwvR+FsQ groundcontrol@earth
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Here we've elected to make a key pair with the name of our remote machine, &lt;code&gt;tincan&lt;/code&gt;. It lives in the &lt;code&gt;.ssh&lt;/code&gt; subdirectory of the user &lt;code&gt;groundcontrol&lt;/code&gt;'s home directory. The private key stays on your local machine, and the public key gets sent to your remote machine.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ssh-keygen&lt;/code&gt; will request an optional passphrase, which it will use to encrypt your private key when it's not being used. Use one.&lt;/p&gt;
+&lt;h1&gt;2. Upload the Public Key to your Remote Machine&lt;/h1&gt;
+&lt;p&gt;Now you must tell your remote SSH server that &lt;code&gt;majortom&lt;/code&gt; can be authenticated using your private key, &lt;code&gt;/home/groundcontrol/.ssh/tincan&lt;/code&gt;. To do so, you must append the contents of your public key, &lt;code&gt;/home/groundcontrol/.ssh/tincan.pub&lt;/code&gt;, to the &lt;code&gt;authorized_keys&lt;/code&gt; file for your remote user, &lt;code&gt;/home/majortom/.ssh/authorized_keys&lt;/code&gt;. We'll do this using &lt;code&gt;ssh-copy-id&lt;/code&gt;, but you can accomplish the same task with &lt;code&gt;scp&lt;/code&gt; or some other file transfer utility if it's not available.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;groundcontrol@earth:~$ ssh-copy-id -i ~/.ssh/tincan.pub majortom@192.168.1.2
+
+/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: &amp;quot;/home/groundcontrol/.ssh/tincan.pub&amp;quot;
+/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+/usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
+majortom@192.168.1.2&amp;#39;s password: 
+
+Number of key(s) added: 1
+
+Now try logging into the machine, with:   &amp;quot;ssh &amp;#39;majortom@129.168.1.2&amp;#39;&amp;quot;
+and check to make sure that only the key(s) you wanted were added.
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;3. Configure an SSH Host&lt;/h1&gt;
+&lt;p&gt;Would you rather type &lt;code&gt;ssh tincan&lt;/code&gt; or &lt;code&gt;ssh majortom@192.168.1.2&lt;/code&gt; to log in to your remote machine? To accomplish the former, append the following to the file &lt;code&gt;/home/groundcontrol/.ssh/config&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Host tincan
+    user majortom
+    HostName 192.168.1.2
+    IdentityFile /home/groundcontrol/.ssh/tincan
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The Host value, &lt;code&gt;tincan&lt;/code&gt;, is the alias for your remote machine. The user value is the name of the user on the remote machine you'll log in as, &lt;code&gt;majortom&lt;/code&gt;. The HostName can be either a DNS name or an IP address for the remote machine. Here it's a local IP, &lt;code&gt;192.168.1.2&lt;/code&gt;. The IdentityFile is the path to the private key you'll use to authenticate to the server, &lt;code&gt;/home/groundcontrol/.ssh/tincan&lt;/code&gt;.&lt;/p&gt;
+&lt;h1&gt;4. Verify&lt;/h1&gt;
+&lt;p&gt;Now go log in to your remote box.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;groundcontrol@earth:~$ ssh tincan
+
+Enter passphrase for key &amp;#39;/home/groundcontrol/.ssh/tincan&amp;#39;: [redacted]
+
+majortom@tincan:~$ cat ~/.ssh/authorized_keys
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;strong&gt; DONE. &lt;/strong&gt;&lt;/p&gt;</content><category term="ssh"></category><category term="cryptography"></category><category term="keys"></category><category term="linux"></category></entry></feed>

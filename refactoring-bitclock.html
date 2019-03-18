@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="http://ericslenk.com/theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="http://ericslenk.com/theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="http://ericslenk.com/theme/font-awesome/css/font-awesome.min.css">
+
+
+    <link href="http://www.ericslenk.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Lucid Machinery Atom">
+
+    <link href="http://www.ericslenk.com/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Lucid Machinery RSS">
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+
+<meta name="author" content="Eric Slenk" />
+<meta name="description" content="Half a decade ago I made a humble little widget named bitclock to practice reading binary. I've rearchitected bitclock to begin porting it to meatspace." />
+<meta name="keywords" content="bitclock, refactoring, javascript, projects">
+<meta property="og:site_name" content="Lucid Machinery"/>
+<meta property="og:title" content="Refactoring Bitclock"/>
+<meta property="og:description" content="Half a decade ago I made a humble little widget named bitclock to practice reading binary. I've rearchitected bitclock to begin porting it to meatspace."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="http://ericslenk.com/refactoring-bitclock.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2019-01-21 00:00:00-05:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="http://ericslenk.com/author/eric-slenk.html">
+<meta property="article:section" content="blog"/>
+<meta property="article:tag" content="bitclock"/>
+<meta property="article:tag" content="refactoring"/>
+<meta property="article:tag" content="javascript"/>
+<meta property="article:tag" content="projects"/>
+<meta property="og:image" content="https://avatars1.githubusercontent.com/u/213561">
+
+  <title>Lucid Machinery &ndash; Refactoring Bitclock</title>
+
+</head>
+<body>
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NW29DZR"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NW29DZR');</script>
+<!-- End Google Tag Manager -->  <aside>
+    <div>
+      <a href="http://ericslenk.com">
+        <img src="https://avatars1.githubusercontent.com/u/213561" alt="Lucid Machinery Logo" title="Lucid Machinery">
+      </a>
+      <h1><a href="http://ericslenk.com">Lucid Machinery</a></h1>
+
+<p>A Blog by Eric Slenk</p>
+      <nav>
+        <ul class="list">
+          <li><a href="http://ericslenk.com/pages/projects.html#projects">Projects</a></li>
+          <li><a href="http://ericslenk.com/pages/resume.html#resume">Resume</a></li>
+
+        </ul>
+      </nav>
+
+      <ul class="social">
+        <li><a class="sc-envelope-open" href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#108;&#101;&#110;&#107;&#46;&#101;&#114;&#105;&#99;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;" target="_blank"><i class="fa fa-envelope-open"></i></a></li>
+        <li><a class="sc-twitter" href="https://twitter.com/lucidmachinery" target="_blank"><i class="fa fa-twitter"></i></a></li>
+        <li><a class="sc-github" href="https://github.com/lucidmachine" target="_blank"><i class="fa fa-github"></i></a></li>
+        <li><a class="sc-linkedin" href="https://www.linkedin.com/in/eric-slenk-167aa67a/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+
+<article class="single">
+  <header>
+    <h1 id="refactoring-bitclock">Refactoring Bitclock</h1>
+    <p>
+          Posted on 2019-01-21 in <a href="http://ericslenk.com/category/blog.html">blog</a>
+
+
+    </p>
+  </header>
+
+
+  <div>
+    <iframe src="https://lucidmachine.github.io/bitclock/" style="border: none; height: 150px"></iframe>
+
+<h1>What is Bitclock?</h1>
+<p>Half a decade ago I made a humble little widget named <a href="https://lucidmachine.github.io/bitclock/">bitclock</a> to practice reading binary integers (bits). It's embedded above for demonstration, or you can view it on <a href="https://lucidmachine.github.io/bitclock/">its Github Pages site</a>. You can check out its code at <a href="https://github.com/lucidmachine/bitclock">the project's Github repository</a>. Bitclock's original implementation was a 4x4 grid of bits in which each column represented a digit of the current time, and each row represented a place value in the digit. It renders on a webpage and dynamically updates that page's favicon.</p>
+<p><img alt="Interpretation of Bitclock" src="https://lucidmachine.github.io/bitclock/img/interpretation.png"></p>
+<h1>Why refactor Bitclock?</h1>
+<p>While I still enjoy it an awful lot I've begun to wish it existed in more places. I'd love to build a hardware version, and might like to port it to mobile platforms, a command-line interface, etc. Plus, I've always wanted to add more display features e.g. configurable colors and sizes, optional second or microsecond precision, timezones, multiple clocks on a page, etc. It should also be useful as a reference problem to compare technology stacks. One could make an implementation in AngularJS and an implementation in Angular 7 to compare and contrast functionality between the two stacks.</p>
+<h1>How has it been refactored?</h1>
+<p>Today I finally wrote a proper README for bitclock which formalizes its data structures. I've also defined a frontend/backend architecture for it. Loosely, a backend is anything which spits out a BitTime, and a frontend is anything that can turn a BitTime into user-interpretable output. The reference code itself has been rewritten to those specifications and split up by transformation stage. </p>
+<h1>What's next?</h1>
+<p>The very next step is refactoring to use more modern JS conventions such as modularization and maybe some build tools. Once the application is properly modularized it will be ported to the Raspberry Pi Zero with GPIO using Node.js and to an Angular 7 based webapp.</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="http://ericslenk.com/tag/bitclock.html">bitclock</a>
+      <a href="http://ericslenk.com/tag/refactoring.html">refactoring</a>
+      <a href="http://ericslenk.com/tag/javascript.html">javascript</a>
+      <a href="http://ericslenk.com/tag/projects.html">projects</a>
+    </p>
+  </div>
+
+
+    <div class="addthis_relatedposts_inline">
+
+
+</article>
+
+    <footer>
+<p>&copy; Eric Slenk </p>
+<p class="disclaimer">As an Amazon Associate I earn from qualifying purchases.</p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101906012-1', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Lucid Machinery ",
+  "url" : "http://ericslenk.com",
+  "image": "https://avatars1.githubusercontent.com/u/213561",
+  "description": "A Blog by Eric Slenk"
+}
+</script>
+
+</body>
+</html>

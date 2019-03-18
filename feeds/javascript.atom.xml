@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Lucid Machinery - javascript</title><link href="http://ericslenk.com/" rel="alternate"></link><link href="http://www.ericslenk.com/feeds/javascript.atom.xml" rel="self"></link><id>http://ericslenk.com/</id><updated>2019-02-18T00:00:00-05:00</updated><entry><title>Converting to TypeScript: Declaring Interfaces</title><link href="http://ericslenk.com/converting-to-typescript-declaring-interfaces.html" rel="alternate"></link><published>2019-02-18T00:00:00-05:00</published><updated>2019-02-18T00:00:00-05:00</updated><author><name>Eric Slenk</name></author><id>tag:ericslenk.com,2019-02-18:/converting-to-typescript-declaring-interfaces.html</id><summary type="html">&lt;p&gt;Now that you're set up, start &lt;em&gt;using&lt;/em&gt; TypeScript. With types and stuff!&lt;/p&gt;</summary><content type="html">&lt;p&gt;Hey nerds. Now that you've &lt;a href="http://ericslenk.com/modularize-your-javascript-with-es6-modules-and-webpack.html"&gt;modularized your project with ES6 and Webpack&lt;/a&gt; and &lt;a href="http://ericslenk.com/converting-to-typescript-toolchain.html"&gt;set up a toolchain to transpile TypeScript to JavaScript&lt;/a&gt; you should start &lt;em&gt;using&lt;/em&gt; TypeScript. With types and stuff!&lt;/p&gt;
+&lt;h1&gt;The Declaration File&lt;/h1&gt;
+&lt;p&gt;Your library's types should live in a declaration file, so let's make one and get cracking! Where do we put this thing? What do we call it? The &lt;a href="https://www.typescriptlang.org/docs/handbook/declaration-files/library-structures.html"&gt;TypeScript docs on library structures&lt;/a&gt; have a lot of suggestions, but you'll probably be interested in one of three cases.&lt;/p&gt;
+&lt;p&gt;Suppose you're writing a really awesome module named "rad", and you import it like &lt;code&gt;const rad = require('rad');&lt;/code&gt;.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;If your module will be called as a function like &lt;code&gt;rad('yeah');&lt;/code&gt;, name it &lt;code&gt;rad/module-function.d.ts&lt;/code&gt; and use &lt;a href="https://www.typescriptlang.org/docs/handbook/declaration-files/templates/module-function-d-ts.html"&gt;the module-function.d.ts template&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;If your module will be constructed as a class using &lt;code&gt;new&lt;/code&gt; like &lt;code&gt;let woo = new rad('yeah');&lt;/code&gt;, name it &lt;code&gt;rad/module-class.d.ts&lt;/code&gt; and use &lt;a href="https://www.typescriptlang.org/docs/handbook/declaration-files/templates/module-function-d-ts.html"&gt;the module-function.d.ts template&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;If neither of the above apply, name it &lt;code&gt;rad/module.d.ts&lt;/code&gt; and use &lt;a href="https://www.typescriptlang.org/docs/handbook/declaration-files/templates/module-d-ts.html"&gt;the module.d.ts template&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Interfaces&lt;/h1&gt;
+&lt;p&gt;What exactly goes in that declaration file? Interfaces! So. Many. Interfaces. From the docs:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;One of TypeScript’s core principles is that type-checking focuses on the shape that values have. ... In TypeScript, interfaces fill the role of naming these types, and are a powerful way of defining contracts within your code as well as contracts with code outside of your project.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;TypeScript has a lot of kinds of interfaces and plenty of ways to define those interfaces, but to start we'll focus on two extremely versatile kinds of interfaces that get stuff done.&lt;/p&gt;
+&lt;h2&gt;Object Interfaces&lt;/h2&gt;
+&lt;p&gt;An object interface is a description of the shape of an object. You can describe which properties should exist on an object which conforms to the interface, what the types of those properties are, and which of those properties are required or optional. For example, let's say we want to greet some chump. Among other things, chumps have names - usually a couple, sometimes more. We might start with a function that looks a bit like this.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;// index.ts&lt;/span&gt;
+&lt;span class="kr"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;rudeGreeting&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;victim&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt;
+    &lt;span class="sb"&gt;`Get lost, &lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nx"&gt;victim&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;name&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="sb"&gt;!`&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;rudeGreeting&lt;/span&gt;&lt;span class="p"&gt;({&lt;/span&gt;&lt;span class="nx"&gt;name&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Steve&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;}));&lt;/span&gt;
+&lt;span class="c1"&gt;// &amp;gt; &amp;quot;Get lost, Steve!&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;That seems fine at first blush. The trouble is, we're assuming that &lt;code&gt;victim&lt;/code&gt; &lt;em&gt;has&lt;/em&gt; a &lt;code&gt;name&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;// index.ts&lt;/span&gt;
+&lt;span class="kr"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;rudeGreeting&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;victim&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt;
+    &lt;span class="sb"&gt;`Get lost, &lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nx"&gt;victim&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;name&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="sb"&gt;!`&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;rudeGreeting&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kc"&gt;false&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;
+&lt;span class="c1"&gt;// &amp;gt; &amp;quot;Get lost, undefined!&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;That's a bug. We could write some more code to check whether our &lt;code&gt;victim&lt;/code&gt;'s got a &lt;code&gt;name&lt;/code&gt;, and to specify how the function should behave if our &lt;code&gt;victim&lt;/code&gt; &lt;em&gt;doesn't&lt;/em&gt; have a &lt;code&gt;name&lt;/code&gt;. Or we can lean on TypeScript's compiler to ensure that whatever makes it into our function definitely has a &lt;code&gt;name&lt;/code&gt;. We'll define an interface for chumps and require that anything passed into our greeting function is an object which conforms to that chump interface.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;// module.d.ts&lt;/span&gt;
+&lt;span class="kr"&gt;interface&lt;/span&gt; &lt;span class="nx"&gt;Chump&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nx"&gt;givenName&lt;/span&gt;: &lt;span class="kt"&gt;string&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="nx"&gt;middleNames&lt;/span&gt;: &lt;span class="kt"&gt;string&lt;/span&gt;&lt;span class="p"&gt;[];&lt;/span&gt;
+    &lt;span class="nx"&gt;familyName&lt;/span&gt;: &lt;span class="kt"&gt;string&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="nx"&gt;nickName?&lt;/span&gt;: &lt;span class="kt"&gt;string&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="c1"&gt;// index.ts&lt;/span&gt;
+&lt;span class="kr"&gt;import&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="nx"&gt;Chump&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="nx"&gt;from&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;rad&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="kr"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;rudeGreeting&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;victim&lt;/span&gt;: &lt;span class="kt"&gt;Chump&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt;
+    &lt;span class="sb"&gt;`Get lost, &lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nx"&gt;victim&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;nickName&lt;/span&gt; &lt;span class="o"&gt;||&lt;/span&gt; &lt;span class="nx"&gt;victim&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;givenName&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="sb"&gt;!`&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="kr"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;steve&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nx"&gt;givenName&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Steven&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="nx"&gt;middleNames&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[],&lt;/span&gt;
+    &lt;span class="nx"&gt;familyName&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Chumpsworth&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="nx"&gt;nickName&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Steve&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="nx"&gt;isAwful&lt;/span&gt;: &lt;span class="kt"&gt;true&lt;/span&gt;
+
+&lt;span class="p"&gt;};&lt;/span&gt;
+
+&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;rudeGreeting&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;steve&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;
+&lt;span class="c1"&gt;// &amp;gt; &amp;quot;Get lost, Steve!&amp;quot;&lt;/span&gt;
+
+&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;rudeGreeting&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kc"&gt;false&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;
+&lt;span class="c1"&gt;// &amp;gt; Argument type boolean is not assignable to parameter type Chump&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Heck yeah! When we gave it a properly formed victim everything worked out fine. And when we gave it some invalid crap, the compiler yelled at us! Much better!&lt;/p&gt;
+&lt;h2&gt;Function Interfaces&lt;/h2&gt;
+&lt;p&gt;A function interface is a description of the shape of a function. You can describe what parameters a function should take and what type of data it should return by using a function interface. For example, let's write a second chump greeting function.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;// module.d.ts&lt;/span&gt;
+&lt;span class="kr"&gt;interface&lt;/span&gt; &lt;span class="nx"&gt;Chump&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nx"&gt;givenName&lt;/span&gt;: &lt;span class="kt"&gt;string&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="nx"&gt;middleNames&lt;/span&gt;: &lt;span class="kt"&gt;string&lt;/span&gt;&lt;span class="p"&gt;[];&lt;/span&gt;
+    &lt;span class="nx"&gt;familyName&lt;/span&gt;: &lt;span class="kt"&gt;string&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="nx"&gt;nickName?&lt;/span&gt;: &lt;span class="kt"&gt;string&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="kr"&gt;interface&lt;/span&gt; &lt;span class="nx"&gt;GreetingFunc&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;victim&lt;/span&gt;: &lt;span class="kt"&gt;Chump&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;string&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+
+&lt;span class="c1"&gt;// index.ts&lt;/span&gt;
+&lt;span class="kr"&gt;import&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="nx"&gt;Chump&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;GreetingFunc&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="nx"&gt;from&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;rad&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+
+&lt;span class="kr"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;rudeGreeting&lt;/span&gt;: &lt;span class="kt"&gt;GreetingFunc&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;victim&lt;/span&gt;: &lt;span class="kt"&gt;Chump&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt;
+    &lt;span class="sb"&gt;`Get lost, &lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nx"&gt;victim&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;nickName&lt;/span&gt; &lt;span class="o"&gt;||&lt;/span&gt; &lt;span class="nx"&gt;victim&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;givenName&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="sb"&gt;!`&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="kr"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;politeGreeting&lt;/span&gt;: &lt;span class="kt"&gt;GreetingFunc&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;victim&lt;/span&gt;: &lt;span class="kt"&gt;Chump&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="kr"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;fullName&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;
+        &lt;span class="nx"&gt;victim&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;givenName&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; 
+        &lt;span class="p"&gt;...&lt;/span&gt;&lt;span class="nx"&gt;victim&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;middleNames&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; 
+        &lt;span class="nx"&gt;victim&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;familyName&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+        &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;join&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39; &amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="sb"&gt;`Salutations, &lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nx"&gt;fullName&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="sb"&gt;!`&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;};&lt;/span&gt;
+
+&lt;span class="kr"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;metaGreeting&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;victim&lt;/span&gt;: &lt;span class="kt"&gt;Chump&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="nx"&gt;isAwful&lt;/span&gt;: &lt;span class="kt"&gt;boolean&lt;/span&gt;&lt;span class="p"&gt;})&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt;
+    &lt;span class="nx"&gt;victim&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;isAwful&lt;/span&gt; &lt;span class="o"&gt;?&lt;/span&gt;
+        &lt;span class="nx"&gt;rudeGreeting&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;victim&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt;
+        &lt;span class="nx"&gt;politeGreeting&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;victim&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+
+
+&lt;span class="kr"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;steve&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nx"&gt;givenName&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Steven&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="nx"&gt;middleNames&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[],&lt;/span&gt;
+    &lt;span class="nx"&gt;familyName&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Chumpsworth&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="nx"&gt;nickName&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Steve&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="nx"&gt;isAwful&lt;/span&gt;: &lt;span class="kt"&gt;true&lt;/span&gt;
+&lt;span class="p"&gt;};&lt;/span&gt;
+
+&lt;span class="kr"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;phyllis&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nx"&gt;givenName&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Phyllis&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="nx"&gt;middleNames&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Rose&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Dandellion&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+    &lt;span class="nx"&gt;familyName&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Herpingderp&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="nx"&gt;isAwful&lt;/span&gt;: &lt;span class="kt"&gt;false&lt;/span&gt;
+&lt;span class="p"&gt;};&lt;/span&gt;
+
+&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;metaGreeting&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;steve&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;
+&lt;span class="c1"&gt;// &amp;gt; &amp;quot;Get lost, Steve!&amp;quot;&lt;/span&gt;
+
+&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;metaGreeting&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;phyllis&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;
+&lt;span class="c1"&gt;// &amp;gt; &amp;quot;Salutations, Phyllis Rose Dandellion Herpingderp!&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;You can see that both &lt;code&gt;rudeGreeting()&lt;/code&gt; and &lt;code&gt;politeGreeting()&lt;/code&gt; were defined as implementing our function interface, &lt;code&gt;GreetingFunc&lt;/code&gt;. For a bit of bonus fun, we've defined a third function, &lt;code&gt;metaGreeting()&lt;/code&gt;, which takes a objects which conform to the Chump interface &lt;em&gt;and also&lt;/em&gt; have a boolean property named &lt;code&gt;isAwful&lt;/code&gt; by using &lt;a href="https://www.typescriptlang.org/docs/handbook/advanced-types.html#intersection-types"&gt;Intersection Types&lt;/a&gt;. Read up on it, that's cool as heck.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;DONE.&lt;/strong&gt;&lt;/p&gt;</content><category term="typescript"></category><category term="ts"></category><category term="definitions"></category><category term="interfaces"></category><category term="types"></category><category term="javascript"></category><category term="js"></category><category term="bitclock"></category></entry><entry><title>Converting to TypeScript: Toolchain</title><link href="http://ericslenk.com/converting-to-typescript-toolchain.html" rel="alternate"></link><published>2019-02-04T00:00:00-05:00</published><updated>2019-02-04T00:00:00-05:00</updated><author><name>Eric Slenk</name></author><id>tag:ericslenk.com,2019-02-04:/converting-to-typescript-toolchain.html</id><summary type="html">&lt;p&gt;Upgrade your project's toolchain to build TypeScript alongside JavaScript.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This article assumes that your project is already built using Webpack and structured in a standard way. If your project doesn't use Webpack yet check out &lt;a href="http://ericslenk.com/modularize-your-javascript-with-es6-modules-and-webpack.html"&gt;Modularize Your JavaScript with ES6 and Webpack&lt;/a&gt;.&lt;/p&gt;
+&lt;h1&gt;Install TypeScript Toolchain&lt;/h1&gt;
+&lt;p&gt;To get started get yourself the TypeScript compiler, the TypeScript loader for Webpack, and a TypeScript linter plugin for ESLint.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ npm install --save-dev typescript ts-loader tslint @typescript-eslint/eslint-plugin-tslint
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;Configure TypeScript Compiler&lt;/h1&gt;
+&lt;p&gt;Next you need to tell the TypeScript compiler how to do its job. Computers sure are dumb. Create the file &lt;code&gt;tsconfig.json&lt;/code&gt; in your project's top-level directory and add the following.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;// tsconfig.json&lt;/span&gt;
+
+&lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="s2"&gt;&amp;quot;compilerOptions&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="s2"&gt;&amp;quot;outDir&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;./dist/&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;&amp;quot;sourceMap&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;&amp;quot;noImplicitAny&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;&amp;quot;module&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;es6&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;&amp;quot;allowJs&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;&amp;quot;moduleResolution&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;node&amp;quot;&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This tells the TypeScript compiler take your TypeScript and JavaScript files as input and output ES5 JavaScript with &lt;a href="https://developer.mozilla.org/en-US/docs/Tools/Debugger/How_to/Use_a_source_map"&gt;source maps&lt;/a&gt; so that your browser will run the equivalent ES5 code but let you debug the corresponding TypeScript source.&lt;/p&gt;
+&lt;p&gt;The last line tells the compiler to look for modules in the same way that Node.js does. This isn't strictly necessary, but some development tools which analyze your code and assume this resolution strategy might benefit here. See the &lt;a href="https://www.typescriptlang.org/docs/handbook/module-resolution.html#classic"&gt;TypeScript documentation on module resolution strategies&lt;/a&gt; for details.&lt;/p&gt;
+&lt;h1&gt;Reconfigure Webpack&lt;/h1&gt;
+&lt;p&gt;Now you need to configure Webpack to run the TypeScript compiler when building your project. If you don't already have a file &lt;code&gt;webpack.config.js&lt;/code&gt; in your project's top-level directory, create it and add the following.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;// webpack.config.js&lt;/span&gt;
+
+&lt;span class="kr"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;path&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;require&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;path&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+
+&lt;span class="nx"&gt;module&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;exports&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nx"&gt;entry&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;./src/index.ts&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="nx"&gt;devtool&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;inline-source-map&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="nx"&gt;module&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="nx"&gt;rules&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;
+            &lt;span class="p"&gt;{&lt;/span&gt;
+                &lt;span class="nx"&gt;test&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="sr"&gt;/\.ts$/&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                &lt;span class="nx"&gt;use&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;ts-loader&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                &lt;span class="nx"&gt;include&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="sr"&gt;/src/&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                &lt;span class="nx"&gt;exclude&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="sr"&gt;/node_modules/&lt;/span&gt;
+            &lt;span class="p"&gt;}&lt;/span&gt;
+        &lt;span class="p"&gt;]&lt;/span&gt;
+    &lt;span class="p"&gt;},&lt;/span&gt;
+    &lt;span class="nx"&gt;resolve&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="nx"&gt;extensions&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;.ts&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;.js&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+    &lt;span class="p"&gt;},&lt;/span&gt;
+    &lt;span class="nx"&gt;output&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="nx"&gt;filename&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;main.js&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="nx"&gt;path&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nx"&gt;path&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;resolve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;__dirname&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;dist&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;};&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This tells Webpack to build your project starting with the entry point &lt;code&gt;src/index.ts&lt;/code&gt; and output the result at &lt;code&gt;dist/main.js&lt;/code&gt;. Any files with extensions '.ts' or '.js' will be picked up. That module rule tells Webpack that any file in the &lt;code&gt;src/&lt;/code&gt; directory with a '.ts' extension should be built using ts-loader, which runs the TypeScript compiler against those files.&lt;/p&gt;
+&lt;h1&gt;index.ts&lt;/h1&gt;
+&lt;p&gt;Now to convert your entry point, &lt;code&gt;index.js&lt;/code&gt;, to TypeScript. This is the easy part. Rename the file to &lt;code&gt;index.ts&lt;/code&gt;. That's it! Build your project and see for yourself!&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ npm run rebuild
+
+...
+
+Version: webpack 4.29.0
+Time: 1663ms
+Built at: 02/03/2019 1:16:46 PM
+  Asset      Size  Chunks             Chunk Names
+main.js  15.8 KiB       0  [emitted]  main
+Entrypoint main = main.js
+[0] ./src/index.ts + 4 modules 3.42 KiB {0} [built]
+    | ./src/index.ts 452 bytes [built]
+    | ./src/js/bitclock-backend.js 797 bytes [built]
+    | ./src/js/bitclock-frontend-dom.js 572 bytes [built]
+    | ./src/js/bitclock-frontend-canvas.js 1.34 KiB [built]
+    | ./src/js/bitclock-frontend-favicon.js 302 bytes [built]
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;strong&gt;DONE.&lt;/strong&gt;&lt;/p&gt;</content><category term="typescript"></category><category term="ts"></category><category term="toolchain"></category><category term="webpack"></category><category term="javascript"></category><category term="js"></category><category term="bitclock"></category></entry><entry><title>Modularize Your JavaScript with ES6 Modules and Webpack</title><link href="http://ericslenk.com/modularize-your-javascript-with-es6-modules-and-webpack.html" rel="alternate"></link><published>2019-01-28T00:00:00-05:00</published><updated>2019-01-28T00:00:00-05:00</updated><author><name>Eric Slenk</name></author><id>tag:ericslenk.com,2019-01-28:/modularize-your-javascript-with-es6-modules-and-webpack.html</id><summary type="html">&lt;p&gt;Do you have a bunch of old JavaScript code that's harder to look at than Ted Cruz's face? Try ES6 Modules today!&lt;/p&gt;</summary><content type="html">&lt;p&gt;Do you have a bunch of old JavaScript code that's &lt;a href="https://www.psychologytoday.com/us/blog/the-fallible-mind/201601/why-ted-cruz-s-facial-expression-makes-me-uneasy"&gt;harder to look at than Ted Cruz's face&lt;/a&gt;? Or maybe you're looking for some way to keep your shiny new project from devolving into the utter chaos to which your last project succumbed? Friend, have I got a miracle cure for you! Try ES6 Modules today! &lt;/p&gt;
+&lt;h1&gt;Why Modules?&lt;/h1&gt;
+&lt;p&gt;Modules are just little self-contained chunks of your program. Small, self-contained code is easier to reason about and simpler to maintain, debug, and write. You can read a single module much more quickly than an entire code base, and if its boundaries have been set in juuuust the right places you might not have to read anything from outside of that module in order to understand what it's doing. Self-contained modules also lend themselves to reuse and composition into higher-level applications.&lt;/p&gt;
+&lt;h1&gt;Determining Module Boundaries&lt;/h1&gt;
+&lt;p&gt;Now that you're convinced that modules will solve all of your problems forever you may wonder, "just how &lt;em&gt;do&lt;/em&gt; I modularize my code?" Excellent question. Nobody knows! But these guidelines might help:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Do as &lt;strong&gt;few things&lt;/strong&gt; as possible. If you can get the number down to 1 you're doing really well, and if you get the number down to 0 you can just delete the module and you win at Programming.&lt;/li&gt;
+&lt;li&gt;Talk with as &lt;strong&gt;few other modules&lt;/strong&gt; as possible. Modules are hermits.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Combine&lt;/strong&gt; modules which &lt;strong&gt;always talk to each other&lt;/strong&gt; to get anything done. That'll shut 'em up.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Do not look inside&lt;/strong&gt; of another module. That's just rude.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Writing ES6 Modules&lt;/h1&gt;
+&lt;p&gt;These days modules are a standard part of vanilla JavaScript. You can go read the &lt;a href="https://www.ecma-international.org/ecma-262/6.0/#sec-modules"&gt;ES6 specification for modules&lt;/a&gt; if you're curious, but don't. To get started you just need to learn to use a couple of statements in your JS files.&lt;/p&gt;
+&lt;h2&gt;export&lt;/h2&gt;
+&lt;p&gt;Use the &lt;code&gt;export&lt;/code&gt; statement at the end of a module file to say which parts of your code the rest of the world may use. There are an awful lot of ways you can write this (see the &lt;a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export#Syntax"&gt;the MDN article on export&lt;/a&gt; for details), but &lt;code&gt;export { name1, name2, …, nameN };&lt;/code&gt; will usually suffice. In Bitclock the backend module looks like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;// bitclock-backend.js&lt;/span&gt;
+
+&lt;span class="c1"&gt;// ...&lt;/span&gt;
+&lt;span class="kr"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;placeValues&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
+
+&lt;span class="kr"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;isBitActive&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;placeValue&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;digit&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;=&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;placeValue&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="nx"&gt;digit&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="kr"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;bitDigit&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;digit&lt;/span&gt; &lt;span class="p"&gt;=&amp;gt;&lt;/span&gt;
+    &lt;span class="nx"&gt;placeValues&lt;/span&gt;
+        &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;map&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;placeValue&lt;/span&gt; &lt;span class="p"&gt;=&amp;gt;&lt;/span&gt;
+            &lt;span class="nx"&gt;isBitActive&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;placeValue&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;digit&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;?&lt;/span&gt;
+                &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt;
+                &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+
+&lt;span class="kr"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;bitTime&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;date&lt;/span&gt; &lt;span class="p"&gt;=&amp;gt;&lt;/span&gt;
+    &lt;span class="nx"&gt;timeAsDigits&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;date&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;map&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;digit&lt;/span&gt; &lt;span class="p"&gt;=&amp;gt;&lt;/span&gt;
+            &lt;span class="nx"&gt;bitDigit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;digit&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;
+
+&lt;span class="kr"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;getCurrentBitTime&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;=&amp;gt;&lt;/span&gt;
+    &lt;span class="nx"&gt;bitTime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="nb"&gt;Date&lt;/span&gt;&lt;span class="p"&gt;());&lt;/span&gt;
+
+&lt;span class="kr"&gt;export&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="nx"&gt;bitDigit&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;bitTime&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;getCurrentBitTime&lt;/span&gt; &lt;span class="p"&gt;};&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The rest of the world is allowed to use just 3 of the many functions defined in our backend module. Any code which imports this can create a BitDigit from a given digit, create a BitTime from a given time, or get a BitTime for the current time.&lt;/p&gt;
+&lt;h2&gt;import&lt;/h2&gt;
+&lt;p&gt;Use the &lt;code&gt;import&lt;/code&gt; statement at the beginning of a module file to say which parts of which other modules your module may use. Import statements will often look like &lt;code&gt;import { export1 , export2 } from "module-name";&lt;/code&gt;. Like the export statement, there are also a boatlod of ways to write an import statement outlined in the &lt;a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import"&gt;MDN article on import&lt;/a&gt;. In Bitclock our top-level module looks like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;// index.js&lt;/span&gt;
+
+&lt;span class="kr"&gt;import&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="nx"&gt;getCurrentBitTime&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="nx"&gt;from&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;./js/bitclock-backend&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="kr"&gt;import&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="nx"&gt;updateClockDivs&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="nx"&gt;from&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;./js/bitclock-frontend-dom&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="c1"&gt;// ...&lt;/span&gt;
+
+&lt;span class="kr"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;update&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="kr"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;currentBitTime&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;getCurrentBitTime&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+
+    &lt;span class="nx"&gt;updateClockDivs&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;currentBitTime&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="c1"&gt;// ...&lt;/span&gt;
+&lt;span class="p"&gt;};&lt;/span&gt;
+&lt;span class="c1"&gt;// ...&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Here the top-level code has imported just 1 of the 3 functions exported from the backend module and a function from the DOM rendering frontend module and combined those functions into a function which updates the DOM rendering frontend with the current BitTime retrieved from the backend.&lt;/p&gt;
+&lt;h1&gt;Using your Modules with Webpack&lt;/h1&gt;
+&lt;p&gt;Splitting your code up into a bunch of little JS files which import each other is only, like, half the battle, and the other half isn't "knowing." You must now &lt;strong&gt;somehow&lt;/strong&gt; get all of those modules into an appication to &lt;strong&gt;do&lt;/strong&gt; something. At the time of writing &lt;a href="https://caniuse.com/#feat=es6-module"&gt;less than 80% of browsers support loading JS modules via the script tag&lt;/a&gt;, so I'd avoid doing so for now. Plus, you'll have to contend with &lt;a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/Errors/CORSRequestNotHttp?utm_source=devtools&amp;amp;utm_medium=firefox-cors-errors&amp;amp;utm_campaign=default"&gt;CORS policies regarding local files&lt;/a&gt; if you do, and that's a bummer. Instead, let's install an assload of tools and restructure our project! We're going to use &lt;a href="https://webpack.js.org/"&gt;Webpack&lt;/a&gt; to bundle our modularized application. Webpack neatly circumvents those problems and &lt;a href="https://webpack.js.org/guides/tree-shaking/"&gt;gets rid of unnecessary code&lt;/a&gt; to boot. Much better!&lt;/p&gt;
+&lt;h2&gt;Installing NPM via NVM&lt;/h2&gt;
+&lt;p&gt;In order to use Webpack we're going to need NPM. If you have a current version of NPM, move on. Otherwise, install Node Version Manager (NVM) and then use it to install the latest stable version of Node.js and NPM.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh &lt;span class="p"&gt;|&lt;/span&gt; bash
+$ nvm install node
+$ nvm use node
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Restructuring Your Project&lt;/h2&gt;
+&lt;p&gt;From here on out we'll be building our application distribution from source using Webpack, so we should structure our project's directories and files to reflect that and to minimize the amount of Webpack configuration we'll have to do later.&lt;/p&gt;
+&lt;h3&gt;src/ and dist/&lt;/h3&gt;
+&lt;p&gt;If your source files weren't in their own directory before, make it so. Create the directory &lt;code&gt;src/&lt;/code&gt; and move your JS and anything else that will need to be built by Webpack in here. The JS file which will serve as your entry point should be moved in here as well. Webpack expects &lt;code&gt;src/index.js&lt;/code&gt; by default, so let's use that.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;src/
+├── index.js
+└── js
+    ├── bitclock-backend.js
+    ├── bitclock-frontend-canvas.js
+    ├── bitclock-frontend-dom.js
+    └── bitclock-frontend-favicon.js
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now let's make our distribution directory, &lt;code&gt;dist/&lt;/code&gt;, and place in it anything that will be distributed to end users without being built first. Things like CSS stylesheets or static image assets belong in here. This should also contain your HTML entry point. We'll place it at &lt;code&gt;dist/index.html&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;dist/
+├── css
+│   └── clock.css
+└── index.html
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;package.json&lt;/h3&gt;
+&lt;p&gt;Now we'll need to create or update your project's package specification. Use NPM's init wizard in your project's top-level directory to bootstrap your &lt;code&gt;package.json&lt;/code&gt; file if you don't already have one.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ npm init
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;New open up &lt;code&gt;package.json&lt;/code&gt; and add a few utility scripts for later.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;  &lt;span class="s2"&gt;&amp;quot;scripts&amp;quot;&lt;/span&gt;&lt;span class="err"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;quot;build&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;webpack&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;quot;clean&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;rm -rf node_modules &amp;amp;&amp;amp; rm dist/main.js&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;quot;reinstall&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;npm run clean &amp;amp;&amp;amp; npm install&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;quot;rebuild&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;npm run clean &amp;amp;&amp;amp; npm install &amp;amp;&amp;amp; npm run build&amp;quot;&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="err"&gt;,&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;index.html&lt;/h3&gt;
+&lt;p&gt;Finally, you'll need to modify your HTML entry point to pull in the bundle which Webpack will build.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;&amp;lt;!-- index.html --&amp;gt;&lt;/span&gt;
+
+&lt;span class="c"&gt;&amp;lt;!-- ... --&amp;gt;&lt;/span&gt;
+  &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt; &lt;span class="na"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;main.js&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;body&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="c"&gt;&amp;lt;!-- ... --&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Webpack&lt;/h2&gt;
+&lt;p&gt;Now that you've prepared your project for Webpack it's time to get installing! So exciting! Run the following to add Webpack and its CLI as development dependencies to your project.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ npm install --save-dev webpack webpack-cli
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Hot damn that's a lot of Webpack! Now let's finally &lt;em&gt;do&lt;/em&gt; something with it. The build script that we added to our &lt;code&gt;package.json&lt;/code&gt; file will use Webpack's CLI to run Webpack against our &lt;code&gt;src/&lt;/code&gt; directory and compile our modularized JavaScript into the big old JS file, &lt;code&gt;dist/main.js&lt;/code&gt;, which &lt;code&gt;dist/index.html&lt;/code&gt; is expecting.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;npm&lt;/span&gt; &lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;script&lt;/span&gt; &lt;span class="n"&gt;build&lt;/span&gt;
+
+&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;bitclock&lt;/span&gt;&lt;span class="mf"&gt;@1.0.0&lt;/span&gt; &lt;span class="n"&gt;build&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;home&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;lucidmachine&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bitclock&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;webpack&lt;/span&gt;
+
+&lt;span class="nl"&gt;Hash&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;b1f1afb47ea5ff1a1965&lt;/span&gt;
+&lt;span class="nl"&gt;Version&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;webpack&lt;/span&gt; &lt;span class="mf"&gt;4.29.0&lt;/span&gt;
+&lt;span class="nl"&gt;Time&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;173&lt;/span&gt;&lt;span class="n"&gt;ms&lt;/span&gt;
+&lt;span class="n"&gt;Built&lt;/span&gt; &lt;span class="nl"&gt;at&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mo"&gt;01&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;28&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;2019&lt;/span&gt; &lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;46&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;58&lt;/span&gt; &lt;span class="n"&gt;PM&lt;/span&gt;
+  &lt;span class="n"&gt;Asset&lt;/span&gt;      &lt;span class="n"&gt;Size&lt;/span&gt;  &lt;span class="n"&gt;Chunks&lt;/span&gt;             &lt;span class="n"&gt;Chunk&lt;/span&gt; &lt;span class="n"&gt;Names&lt;/span&gt;
+&lt;span class="n"&gt;main&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;js&lt;/span&gt;  &lt;span class="mf"&gt;1.96&lt;/span&gt; &lt;span class="n"&gt;KiB&lt;/span&gt;       &lt;span class="mi"&gt;0&lt;/span&gt;  &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;emitted&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;  &lt;span class="n"&gt;main&lt;/span&gt;
+&lt;span class="n"&gt;Entrypoint&lt;/span&gt; &lt;span class="n"&gt;main&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;main&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;js&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;index&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;js&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt; &lt;span class="n"&gt;modules&lt;/span&gt; &lt;span class="mf"&gt;3.42&lt;/span&gt; &lt;span class="n"&gt;KiB&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;built&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+    &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;index&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;js&lt;/span&gt; &lt;span class="mi"&gt;453&lt;/span&gt; &lt;span class="n"&gt;bytes&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;built&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+    &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;js&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bitclock&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;backend&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;js&lt;/span&gt; &lt;span class="mi"&gt;797&lt;/span&gt; &lt;span class="n"&gt;bytes&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;built&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+    &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;js&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bitclock&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;frontend&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;dom&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;js&lt;/span&gt; &lt;span class="mi"&gt;572&lt;/span&gt; &lt;span class="n"&gt;bytes&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;built&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+    &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;js&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bitclock&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;frontend&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;canvas&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;js&lt;/span&gt; &lt;span class="mf"&gt;1.34&lt;/span&gt; &lt;span class="n"&gt;KiB&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;built&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+    &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;js&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bitclock&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;frontend&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;favicon&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;js&lt;/span&gt; &lt;span class="mi"&gt;302&lt;/span&gt; &lt;span class="n"&gt;bytes&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;built&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Ooooooo something happened!&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;.
+├── dist
+│   ├── css
+│   │   └── clock.css
+│   ├── index.html
+│   └── main.js
+├── package.json
+├── package-lock.json
+└── src
+    ├── index.js
+    └── js
+        ├── bitclock-backend.js
+        ├── bitclock-frontend-canvas.js
+        ├── bitclock-frontend-dom.js
+        └── bitclock-frontend-favicon.js
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;img alt="OH YEAH!!!" src="https://media.giphy.com/media/VRa3YCyi3JSWk/giphy.gif"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;DONE.&lt;/strong&gt;&lt;/p&gt;</content><category term="es6"></category><category term="modules"></category><category term="webpack"></category><category term="bitclock"></category><category term="javascript"></category><category term="js"></category></entry><entry><title>Refactoring Bitclock</title><link href="http://ericslenk.com/refactoring-bitclock.html" rel="alternate"></link><published>2019-01-21T00:00:00-05:00</published><updated>2019-01-21T00:00:00-05:00</updated><author><name>Eric Slenk</name></author><id>tag:ericslenk.com,2019-01-21:/refactoring-bitclock.html</id><summary type="html">&lt;p&gt;Half a decade ago I made a humble little widget named bitclock to practice reading binary. I've rearchitected bitclock to begin porting it to meatspace.&lt;/p&gt;</summary><content type="html">&lt;iframe src="https://lucidmachine.github.io/bitclock/" style="border: none; height: 150px"&gt;&lt;/iframe&gt;
+
+&lt;h1&gt;What is Bitclock?&lt;/h1&gt;
+&lt;p&gt;Half a decade ago I made a humble little widget named &lt;a href="https://lucidmachine.github.io/bitclock/"&gt;bitclock&lt;/a&gt; to practice reading binary integers (bits). It's embedded above for demonstration, or you can view it on &lt;a href="https://lucidmachine.github.io/bitclock/"&gt;its Github Pages site&lt;/a&gt;. You can check out its code at &lt;a href="https://github.com/lucidmachine/bitclock"&gt;the project's Github repository&lt;/a&gt;. Bitclock's original implementation was a 4x4 grid of bits in which each column represented a digit of the current time, and each row represented a place value in the digit. It renders on a webpage and dynamically updates that page's favicon.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Interpretation of Bitclock" src="https://lucidmachine.github.io/bitclock/img/interpretation.png"&gt;&lt;/p&gt;
+&lt;h1&gt;Why refactor Bitclock?&lt;/h1&gt;
+&lt;p&gt;While I still enjoy it an awful lot I've begun to wish it existed in more places. I'd love to build a hardware version, and might like to port it to mobile platforms, a command-line interface, etc. Plus, I've always wanted to add more display features e.g. configurable colors and sizes, optional second or microsecond precision, timezones, multiple clocks on a page, etc. It should also be useful as a reference problem to compare technology stacks. One could make an implementation in AngularJS and an implementation in Angular 7 to compare and contrast functionality between the two stacks.&lt;/p&gt;
+&lt;h1&gt;How has it been refactored?&lt;/h1&gt;
+&lt;p&gt;Today I finally wrote a proper README for bitclock which formalizes its data structures. I've also defined a frontend/backend architecture for it. Loosely, a backend is anything which spits out a BitTime, and a frontend is anything that can turn a BitTime into user-interpretable output. The reference code itself has been rewritten to those specifications and split up by transformation stage. &lt;/p&gt;
+&lt;h1&gt;What's next?&lt;/h1&gt;
+&lt;p&gt;The very next step is refactoring to use more modern JS conventions such as modularization and maybe some build tools. Once the application is properly modularized it will be ported to the Raspberry Pi Zero with GPIO using Node.js and to an Angular 7 based webapp.&lt;/p&gt;</content><category term="bitclock"></category><category term="refactoring"></category><category term="javascript"></category><category term="projects"></category></entry></feed>

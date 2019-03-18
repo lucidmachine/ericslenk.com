@@ -1,0 +1,320 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="http://ericslenk.com/theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="http://ericslenk.com/theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="http://ericslenk.com/theme/font-awesome/css/font-awesome.min.css">
+
+
+    <link href="http://www.ericslenk.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Lucid Machinery Atom">
+
+    <link href="http://www.ericslenk.com/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Lucid Machinery RSS">
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+
+<meta name="author" content="Eric Slenk" />
+<meta name="description" content="Do you have a bunch of old JavaScript code that's harder to look at than Ted Cruz's face? Try ES6 Modules today!" />
+<meta name="keywords" content="es6, modules, webpack, bitclock, javascript, js">
+<meta property="og:site_name" content="Lucid Machinery"/>
+<meta property="og:title" content="Modularize Your JavaScript with ES6 Modules and Webpack"/>
+<meta property="og:description" content="Do you have a bunch of old JavaScript code that's harder to look at than Ted Cruz's face? Try ES6 Modules today!"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="http://ericslenk.com/modularize-your-javascript-with-es6-modules-and-webpack.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2019-01-28 00:00:00-05:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="http://ericslenk.com/author/eric-slenk.html">
+<meta property="article:section" content="blog"/>
+<meta property="article:tag" content="es6"/>
+<meta property="article:tag" content="modules"/>
+<meta property="article:tag" content="webpack"/>
+<meta property="article:tag" content="bitclock"/>
+<meta property="article:tag" content="javascript"/>
+<meta property="article:tag" content="js"/>
+<meta property="og:image" content="https://avatars1.githubusercontent.com/u/213561">
+
+  <title>Lucid Machinery &ndash; Modularize Your JavaScript with ES6 Modules and Webpack</title>
+
+</head>
+<body>
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NW29DZR"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NW29DZR');</script>
+<!-- End Google Tag Manager -->  <aside>
+    <div>
+      <a href="http://ericslenk.com">
+        <img src="https://avatars1.githubusercontent.com/u/213561" alt="Lucid Machinery Logo" title="Lucid Machinery">
+      </a>
+      <h1><a href="http://ericslenk.com">Lucid Machinery</a></h1>
+
+<p>A Blog by Eric Slenk</p>
+      <nav>
+        <ul class="list">
+          <li><a href="http://ericslenk.com/pages/projects.html#projects">Projects</a></li>
+          <li><a href="http://ericslenk.com/pages/resume.html#resume">Resume</a></li>
+
+        </ul>
+      </nav>
+
+      <ul class="social">
+        <li><a class="sc-envelope-open" href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#108;&#101;&#110;&#107;&#46;&#101;&#114;&#105;&#99;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;" target="_blank"><i class="fa fa-envelope-open"></i></a></li>
+        <li><a class="sc-twitter" href="https://twitter.com/lucidmachinery" target="_blank"><i class="fa fa-twitter"></i></a></li>
+        <li><a class="sc-github" href="https://github.com/lucidmachine" target="_blank"><i class="fa fa-github"></i></a></li>
+        <li><a class="sc-linkedin" href="https://www.linkedin.com/in/eric-slenk-167aa67a/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+
+<article class="single">
+  <header>
+    <h1 id="modularize-your-javascript-with-es6-modules-and-webpack">Modularize Your JavaScript with ES6 Modules and Webpack</h1>
+    <p>
+          Posted on 2019-01-28 in <a href="http://ericslenk.com/category/blog.html">blog</a>
+
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>Do you have a bunch of old JavaScript code that's <a href="https://www.psychologytoday.com/us/blog/the-fallible-mind/201601/why-ted-cruz-s-facial-expression-makes-me-uneasy">harder to look at than Ted Cruz's face</a>? Or maybe you're looking for some way to keep your shiny new project from devolving into the utter chaos to which your last project succumbed? Friend, have I got a miracle cure for you! Try ES6 Modules today! </p>
+<h1>Why Modules?</h1>
+<p>Modules are just little self-contained chunks of your program. Small, self-contained code is easier to reason about and simpler to maintain, debug, and write. You can read a single module much more quickly than an entire code base, and if its boundaries have been set in juuuust the right places you might not have to read anything from outside of that module in order to understand what it's doing. Self-contained modules also lend themselves to reuse and composition into higher-level applications.</p>
+<h1>Determining Module Boundaries</h1>
+<p>Now that you're convinced that modules will solve all of your problems forever you may wonder, "just how <em>do</em> I modularize my code?" Excellent question. Nobody knows! But these guidelines might help:</p>
+<ul>
+<li>Do as <strong>few things</strong> as possible. If you can get the number down to 1 you're doing really well, and if you get the number down to 0 you can just delete the module and you win at Programming.</li>
+<li>Talk with as <strong>few other modules</strong> as possible. Modules are hermits.</li>
+<li><strong>Combine</strong> modules which <strong>always talk to each other</strong> to get anything done. That'll shut 'em up.</li>
+<li><strong>Do not look inside</strong> of another module. That's just rude.</li>
+</ul>
+<h1>Writing ES6 Modules</h1>
+<p>These days modules are a standard part of vanilla JavaScript. You can go read the <a href="https://www.ecma-international.org/ecma-262/6.0/#sec-modules">ES6 specification for modules</a> if you're curious, but don't. To get started you just need to learn to use a couple of statements in your JS files.</p>
+<h2>export</h2>
+<p>Use the <code>export</code> statement at the end of a module file to say which parts of your code the rest of the world may use. There are an awful lot of ways you can write this (see the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export#Syntax">the MDN article on export</a> for details), but <code>export { name1, name2, …, nameN };</code> will usually suffice. In Bitclock the backend module looks like this:</p>
+<div class="highlight"><pre><span></span><span class="c1">// bitclock-backend.js</span>
+
+<span class="c1">// ...</span>
+<span class="kr">const</span> <span class="nx">placeValues</span> <span class="o">=</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">];</span>
+
+<span class="kr">const</span> <span class="nx">isBitActive</span> <span class="o">=</span> <span class="p">(</span><span class="nx">placeValue</span><span class="p">,</span> <span class="nx">digit</span><span class="p">)</span> <span class="p">=&gt;</span>
+    <span class="p">(</span><span class="nx">placeValue</span> <span class="o">&amp;</span> <span class="nx">digit</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">bitDigit</span> <span class="o">=</span> <span class="nx">digit</span> <span class="p">=&gt;</span>
+    <span class="nx">placeValues</span>
+        <span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">placeValue</span> <span class="p">=&gt;</span>
+            <span class="nx">isBitActive</span><span class="p">(</span><span class="nx">placeValue</span><span class="p">,</span> <span class="nx">digit</span><span class="p">)</span> <span class="o">?</span>
+                <span class="mi">1</span> <span class="o">:</span>
+                <span class="mi">0</span><span class="p">);</span>
+
+<span class="kr">const</span> <span class="nx">bitTime</span> <span class="o">=</span> <span class="nx">date</span> <span class="p">=&gt;</span>
+    <span class="nx">timeAsDigits</span><span class="p">(</span><span class="nx">date</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">digit</span> <span class="p">=&gt;</span>
+            <span class="nx">bitDigit</span><span class="p">(</span><span class="nx">digit</span><span class="p">));</span>
+
+<span class="kr">const</span> <span class="nx">getCurrentBitTime</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span>
+    <span class="nx">bitTime</span><span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">());</span>
+
+<span class="kr">export</span> <span class="p">{</span> <span class="nx">bitDigit</span><span class="p">,</span> <span class="nx">bitTime</span><span class="p">,</span> <span class="nx">getCurrentBitTime</span> <span class="p">};</span>
+</pre></div>
+
+
+<p>The rest of the world is allowed to use just 3 of the many functions defined in our backend module. Any code which imports this can create a BitDigit from a given digit, create a BitTime from a given time, or get a BitTime for the current time.</p>
+<h2>import</h2>
+<p>Use the <code>import</code> statement at the beginning of a module file to say which parts of which other modules your module may use. Import statements will often look like <code>import { export1 , export2 } from "module-name";</code>. Like the export statement, there are also a boatlod of ways to write an import statement outlined in the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import">MDN article on import</a>. In Bitclock our top-level module looks like this:</p>
+<div class="highlight"><pre><span></span><span class="c1">// index.js</span>
+
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">getCurrentBitTime</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;./js/bitclock-backend&quot;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">updateClockDivs</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;./js/bitclock-frontend-dom&quot;</span><span class="p">;</span>
+<span class="c1">// ...</span>
+
+<span class="kr">const</span> <span class="nx">update</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">currentBitTime</span> <span class="o">=</span> <span class="nx">getCurrentBitTime</span><span class="p">();</span>
+
+    <span class="nx">updateClockDivs</span><span class="p">(</span><span class="nx">currentBitTime</span><span class="p">);</span>
+    <span class="c1">// ...</span>
+<span class="p">};</span>
+<span class="c1">// ...</span>
+</pre></div>
+
+
+<p>Here the top-level code has imported just 1 of the 3 functions exported from the backend module and a function from the DOM rendering frontend module and combined those functions into a function which updates the DOM rendering frontend with the current BitTime retrieved from the backend.</p>
+<h1>Using your Modules with Webpack</h1>
+<p>Splitting your code up into a bunch of little JS files which import each other is only, like, half the battle, and the other half isn't "knowing." You must now <strong>somehow</strong> get all of those modules into an appication to <strong>do</strong> something. At the time of writing <a href="https://caniuse.com/#feat=es6-module">less than 80% of browsers support loading JS modules via the script tag</a>, so I'd avoid doing so for now. Plus, you'll have to contend with <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/Errors/CORSRequestNotHttp?utm_source=devtools&amp;utm_medium=firefox-cors-errors&amp;utm_campaign=default">CORS policies regarding local files</a> if you do, and that's a bummer. Instead, let's install an assload of tools and restructure our project! We're going to use <a href="https://webpack.js.org/">Webpack</a> to bundle our modularized application. Webpack neatly circumvents those problems and <a href="https://webpack.js.org/guides/tree-shaking/">gets rid of unnecessary code</a> to boot. Much better!</p>
+<h2>Installing NPM via NVM</h2>
+<p>In order to use Webpack we're going to need NPM. If you have a current version of NPM, move on. Otherwise, install Node Version Manager (NVM) and then use it to install the latest stable version of Node.js and NPM.</p>
+<div class="highlight"><pre><span></span>$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh <span class="p">|</span> bash
+$ nvm install node
+$ nvm use node
+</pre></div>
+
+
+<h2>Restructuring Your Project</h2>
+<p>From here on out we'll be building our application distribution from source using Webpack, so we should structure our project's directories and files to reflect that and to minimize the amount of Webpack configuration we'll have to do later.</p>
+<h3>src/ and dist/</h3>
+<p>If your source files weren't in their own directory before, make it so. Create the directory <code>src/</code> and move your JS and anything else that will need to be built by Webpack in here. The JS file which will serve as your entry point should be moved in here as well. Webpack expects <code>src/index.js</code> by default, so let's use that.</p>
+<div class="highlight"><pre><span></span>src/
+├── index.js
+└── js
+    ├── bitclock-backend.js
+    ├── bitclock-frontend-canvas.js
+    ├── bitclock-frontend-dom.js
+    └── bitclock-frontend-favicon.js
+</pre></div>
+
+
+<p>Now let's make our distribution directory, <code>dist/</code>, and place in it anything that will be distributed to end users without being built first. Things like CSS stylesheets or static image assets belong in here. This should also contain your HTML entry point. We'll place it at <code>dist/index.html</code>.</p>
+<div class="highlight"><pre><span></span>dist/
+├── css
+│   └── clock.css
+└── index.html
+</pre></div>
+
+
+<h3>package.json</h3>
+<p>Now we'll need to create or update your project's package specification. Use NPM's init wizard in your project's top-level directory to bootstrap your <code>package.json</code> file if you don't already have one.</p>
+<div class="highlight"><pre><span></span>$ npm init
+</pre></div>
+
+
+<p>New open up <code>package.json</code> and add a few utility scripts for later.</p>
+<div class="highlight"><pre><span></span>  <span class="s2">&quot;scripts&quot;</span><span class="err">:</span> <span class="p">{</span>
+    <span class="nt">&quot;build&quot;</span><span class="p">:</span> <span class="s2">&quot;webpack&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;clean&quot;</span><span class="p">:</span> <span class="s2">&quot;rm -rf node_modules &amp;&amp; rm dist/main.js&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;reinstall&quot;</span><span class="p">:</span> <span class="s2">&quot;npm run clean &amp;&amp; npm install&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;rebuild&quot;</span><span class="p">:</span> <span class="s2">&quot;npm run clean &amp;&amp; npm install &amp;&amp; npm run build&quot;</span>
+  <span class="p">}</span><span class="err">,</span>
+</pre></div>
+
+
+<h3>index.html</h3>
+<p>Finally, you'll need to modify your HTML entry point to pull in the bundle which Webpack will build.</p>
+<div class="highlight"><pre><span></span><span class="c">&lt;!-- index.html --&gt;</span>
+
+<span class="c">&lt;!-- ... --&gt;</span>
+  <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;main.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="c">&lt;!-- ... --&gt;</span>
+</pre></div>
+
+
+<h2>Webpack</h2>
+<p>Now that you've prepared your project for Webpack it's time to get installing! So exciting! Run the following to add Webpack and its CLI as development dependencies to your project.</p>
+<div class="highlight"><pre><span></span>$ npm install --save-dev webpack webpack-cli
+</pre></div>
+
+
+<p>Hot damn that's a lot of Webpack! Now let's finally <em>do</em> something with it. The build script that we added to our <code>package.json</code> file will use Webpack's CLI to run Webpack against our <code>src/</code> directory and compile our modularized JavaScript into the big old JS file, <code>dist/main.js</code>, which <code>dist/index.html</code> is expecting.</p>
+<div class="highlight"><pre><span></span><span class="err">$</span> <span class="n">npm</span> <span class="n">run</span><span class="o">-</span><span class="n">script</span> <span class="n">build</span>
+
+<span class="o">&gt;</span> <span class="n">bitclock</span><span class="mf">@1.0.0</span> <span class="n">build</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">lucidmachine</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">bitclock</span>
+<span class="o">&gt;</span> <span class="n">webpack</span>
+
+<span class="nl">Hash</span><span class="p">:</span> <span class="n">b1f1afb47ea5ff1a1965</span>
+<span class="nl">Version</span><span class="p">:</span> <span class="n">webpack</span> <span class="mf">4.29.0</span>
+<span class="nl">Time</span><span class="p">:</span> <span class="mi">173</span><span class="n">ms</span>
+<span class="n">Built</span> <span class="nl">at</span><span class="p">:</span> <span class="mo">01</span><span class="o">/</span><span class="mi">28</span><span class="o">/</span><span class="mi">2019</span> <span class="mi">8</span><span class="o">:</span><span class="mi">46</span><span class="o">:</span><span class="mi">58</span> <span class="n">PM</span>
+  <span class="n">Asset</span>      <span class="n">Size</span>  <span class="n">Chunks</span>             <span class="n">Chunk</span> <span class="n">Names</span>
+<span class="n">main</span><span class="p">.</span><span class="n">js</span>  <span class="mf">1.96</span> <span class="n">KiB</span>       <span class="mi">0</span>  <span class="p">[</span><span class="n">emitted</span><span class="p">]</span>  <span class="n">main</span>
+<span class="n">Entrypoint</span> <span class="n">main</span> <span class="o">=</span> <span class="n">main</span><span class="p">.</span><span class="n">js</span>
+<span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">.</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">index</span><span class="p">.</span><span class="n">js</span> <span class="o">+</span> <span class="mi">4</span> <span class="n">modules</span> <span class="mf">3.42</span> <span class="n">KiB</span> <span class="p">{</span><span class="mi">0</span><span class="p">}</span> <span class="p">[</span><span class="n">built</span><span class="p">]</span>
+    <span class="o">|</span> <span class="p">.</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">index</span><span class="p">.</span><span class="n">js</span> <span class="mi">453</span> <span class="n">bytes</span> <span class="p">[</span><span class="n">built</span><span class="p">]</span>
+    <span class="o">|</span> <span class="p">.</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">js</span><span class="o">/</span><span class="n">bitclock</span><span class="o">-</span><span class="n">backend</span><span class="p">.</span><span class="n">js</span> <span class="mi">797</span> <span class="n">bytes</span> <span class="p">[</span><span class="n">built</span><span class="p">]</span>
+    <span class="o">|</span> <span class="p">.</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">js</span><span class="o">/</span><span class="n">bitclock</span><span class="o">-</span><span class="n">frontend</span><span class="o">-</span><span class="n">dom</span><span class="p">.</span><span class="n">js</span> <span class="mi">572</span> <span class="n">bytes</span> <span class="p">[</span><span class="n">built</span><span class="p">]</span>
+    <span class="o">|</span> <span class="p">.</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">js</span><span class="o">/</span><span class="n">bitclock</span><span class="o">-</span><span class="n">frontend</span><span class="o">-</span><span class="n">canvas</span><span class="p">.</span><span class="n">js</span> <span class="mf">1.34</span> <span class="n">KiB</span> <span class="p">[</span><span class="n">built</span><span class="p">]</span>
+    <span class="o">|</span> <span class="p">.</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">js</span><span class="o">/</span><span class="n">bitclock</span><span class="o">-</span><span class="n">frontend</span><span class="o">-</span><span class="n">favicon</span><span class="p">.</span><span class="n">js</span> <span class="mi">302</span> <span class="n">bytes</span> <span class="p">[</span><span class="n">built</span><span class="p">]</span>
+</pre></div>
+
+
+<p>Ooooooo something happened!</p>
+<div class="highlight"><pre><span></span>.
+├── dist
+│   ├── css
+│   │   └── clock.css
+│   ├── index.html
+│   └── main.js
+├── package.json
+├── package-lock.json
+└── src
+    ├── index.js
+    └── js
+        ├── bitclock-backend.js
+        ├── bitclock-frontend-canvas.js
+        ├── bitclock-frontend-dom.js
+        └── bitclock-frontend-favicon.js
+</pre></div>
+
+
+<p><img alt="OH YEAH!!!" src="https://media.giphy.com/media/VRa3YCyi3JSWk/giphy.gif"></p>
+<p><strong>DONE.</strong></p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="http://ericslenk.com/tag/es6.html">es6</a>
+      <a href="http://ericslenk.com/tag/modules.html">modules</a>
+      <a href="http://ericslenk.com/tag/webpack.html">webpack</a>
+      <a href="http://ericslenk.com/tag/bitclock.html">bitclock</a>
+      <a href="http://ericslenk.com/tag/javascript.html">javascript</a>
+      <a href="http://ericslenk.com/tag/js.html">js</a>
+    </p>
+  </div>
+
+
+    <div class="addthis_relatedposts_inline">
+
+
+</article>
+
+    <footer>
+<p>&copy; Eric Slenk </p>
+<p class="disclaimer">As an Amazon Associate I earn from qualifying purchases.</p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101906012-1', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Lucid Machinery ",
+  "url" : "http://ericslenk.com",
+  "image": "https://avatars1.githubusercontent.com/u/213561",
+  "description": "A Blog by Eric Slenk"
+}
+</script>
+
+</body>
+</html>

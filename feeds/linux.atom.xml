@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Lucid Machinery - linux</title><link href="http://ericslenk.com/" rel="alternate"></link><link href="http://www.ericslenk.com/feeds/linux.atom.xml" rel="self"></link><id>http://ericslenk.com/</id><updated>2019-03-04T00:00:00-05:00</updated><entry><title>Running Steam Games from EmulationStation</title><link href="http://ericslenk.com/running-steam-games-from-emulationstation.html" rel="alternate"></link><published>2019-03-04T00:00:00-05:00</published><updated>2019-03-04T00:00:00-05:00</updated><author><name>Eric Slenk</name></author><id>tag:ericslenk.com,2019-03-04:/running-steam-games-from-emulationstation.html</id><summary type="html">&lt;p&gt;Configure EmulationStation to browse your Steam collection alongside your very legally emulated console classics.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="https://emulationstation.org/"&gt;EmulationStation&lt;/a&gt; is a controller-friendly, graphical, themeable, flexible, open-source application for browsing and launching your games. If you want one unified place to look through your game library and figure out what the heck to play this evening, then this is your app! Its bread and butter is launching ROMs on emulators, but with a bit of configuration it will handle your Steam collection alongside your very legally emulated console classics. This walkthrough will get your Steam games into your EmulationStation collection. It's written to use Linux scripts and commands, but should translate to macOS or even Windows with a bit of careful thought.&lt;/p&gt;
+&lt;h1&gt;0. Get EmulationStation&lt;/h1&gt;
+&lt;p&gt;If you don't have EmulationStation yet I highly recommend using the &lt;a href="https://retropie.org.uk/"&gt;RetroPie&lt;/a&gt; fork of EmulationStation and the whole RetroPie ecosystem. It's a wonderful project. Get started with the &lt;a href="https://github.com/RetroPie/RetroPie-Setup"&gt;RetroPie setup tool&lt;/a&gt;.&lt;/p&gt;
+&lt;h1&gt;1. Install Steam Games&lt;/h1&gt;
+&lt;p&gt;Step number one is to grab some games to surface. Go &lt;a href="https://store.steampowered.com/about/"&gt;download the Steam client&lt;/a&gt; if you don't already have it. Then use Steam to install a game or two. Launch one of those games to make sure everything's working fine before you move on.&lt;/p&gt;
+&lt;h1&gt;2. Create Game Shortcuts&lt;/h1&gt;
+&lt;p&gt;Now we need to make something that EmulationStation can open for us. We'll be building desktop shortcut files - specifically &lt;a href="https://standards.freedesktop.org/desktop-entry-spec/latest/"&gt;XDG Desktop Entries&lt;/a&gt;. Now, you can ask the Steam client to build these for you, but that method has a couple down sides. For starters, you must ask this per game at install time. Second, it will only place them on your user's desktop, and if you have a habit of collecting hundreds more games than you could ever possibly play this can wreak havoc on your otherwise pristine desktop.&lt;/p&gt;
+&lt;p&gt;Instead, we're going to do things the hard way and build them all at once with a shell script! You can &lt;a href="https://raw.githubusercontent.com/lucidmachine/bin/master/importsteamgames.sh"&gt;download the whole Steam games import script from my Github repo&lt;/a&gt;. If you want to learn how this script works, read the next section. If you don't, skip ahead to &lt;a href="#usage"&gt;the usage section&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;2.a importsteamgames.sh - The Long Way&lt;/h2&gt;
+&lt;p&gt;To begin, we point the script to a few important directories.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;readonly&lt;/span&gt; &lt;span class="nv"&gt;ROMS_DIR&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;HOME&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;/RetroPie/roms&amp;quot;&lt;/span&gt;
+&lt;span class="nb"&gt;readonly&lt;/span&gt; &lt;span class="nv"&gt;OUTPUT_DIR&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;ROMS_DIR&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;/steam&amp;quot;&lt;/span&gt;
+&lt;span class="nb"&gt;readonly&lt;/span&gt; &lt;span class="nv"&gt;STEAM_APPS_DIR&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;HOME&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;/.steam/steam/steamapps&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;code&gt;ROMS_DIR&lt;/code&gt; is the directory where your ROM subdirectories live. RetroPie assumes this is &lt;code&gt;${HOME}/RetroPie/roms&lt;/code&gt;, so I've used that by default. Change it if you want your Steam shortcuts directory built elsewhere. &lt;code&gt;OUTPUT_DIR&lt;/code&gt; defines the directory which the script will build and fill with .desktop files, by default the &lt;code&gt;steam&lt;/code&gt; subdirectory of the &lt;code&gt;ROMS_DIR&lt;/code&gt; directory. &lt;code&gt;STEAM_APPS_DIR&lt;/code&gt; is the directory where your Steam apps live. Steam defines this as &lt;code&gt;"${HOME}/.steam/steam/steamapps"&lt;/code&gt; by default, so it's probably still there.&lt;/p&gt;
+&lt;p&gt;Now to get into the meat of it. &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[[&lt;/span&gt; -d &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;OUTPUT_DIR&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;]]&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
+    rm -r &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;OUTPUT_DIR&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+&lt;span class="k"&gt;fi&lt;/span&gt;
+mkdir -p &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;OUTPUT_DIR&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;If the target output directory currently exists we're going to nuke it and recreate it to start from scratch every time.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nv"&gt;app_manifest_names&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;ls &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;STEAM_APPS_DIR&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; grep &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;STEAM_MANIFEST_EXT&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Then we search your Steam apps directory for app manifest files, which are files whose name ends in '.acf'.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt; app_manifest_name in &lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;app_manifest_names&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
+    &lt;span class="nv"&gt;app_manifest_path&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;STEAM_APPS_DIR&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;/&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;app_manifest_name&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+    &lt;span class="nv"&gt;app_id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;getManifestProperty &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;app_manifest_path&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&amp;quot;appid&amp;quot;&amp;#39;&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+    &lt;span class="nv"&gt;app_name&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;getManifestProperty &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;app_manifest_path&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&amp;quot;name&amp;quot;&amp;#39;&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+    &lt;span class="nv"&gt;xdg_desktop_file_path&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;OUTPUT_DIR&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;/&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;app_name&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;.desktop&amp;quot;&lt;/span&gt;
+    &lt;span class="nv"&gt;xdg_desktop_file_contents&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;xdgDesktopTemplate &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;app_id&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;app_name&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+
+    &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;xdg_desktop_file_contents&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &amp;gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;xdg_desktop_file_path&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+    chmod &lt;span class="m"&gt;755&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;xdg_desktop_file_path&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+&lt;span class="k"&gt;done&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;For each and every manifest we found we're going to read the "appid" and "name" properties out of the file, use the ID and name to generate the contents of a XDG .desktop file, then write those contents to a file for this specific app in the target output directory. Phew!&lt;/p&gt;
+&lt;p&gt;You might note that a couple non-trivial operations were glossed over there. Those have been extracted into separate functions, which we'll cover now.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt; getManifestProperty&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+    &lt;span class="nb"&gt;local&lt;/span&gt; &lt;span class="nv"&gt;app_manifest_path&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$1&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+    &lt;span class="nb"&gt;local&lt;/span&gt; &lt;span class="nv"&gt;property_name&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$2&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+
+    &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="k"&gt;$(&lt;/span&gt;
+        grep &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;property_name&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;app_manifest_path&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+        &lt;span class="p"&gt;|&lt;/span&gt; rev &lt;span class="se"&gt;\&lt;/span&gt;
+        &lt;span class="p"&gt;|&lt;/span&gt; cut -f &lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+        &lt;span class="p"&gt;|&lt;/span&gt; rev &lt;span class="se"&gt;\&lt;/span&gt;
+        &lt;span class="p"&gt;|&lt;/span&gt; sed -e &lt;span class="s1"&gt;&amp;#39;s/&amp;quot;//g&amp;#39;&lt;/span&gt;
+    &lt;span class="k"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;In order to get a property from a manifest we use &lt;code&gt;grep&lt;/code&gt; to search for the property name in the manifest file. Then we do some post-processing, because &lt;code&gt;grep&lt;/code&gt; outputs an entire line which looks like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;gt; grep &lt;span class="s2"&gt;&amp;quot;name&amp;quot;&lt;/span&gt; appmanifest_105600.acf 
+    &lt;span class="s2"&gt;&amp;quot;name&amp;quot;&lt;/span&gt;      &lt;span class="s2"&gt;&amp;quot;Terraria&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;We use &lt;code&gt;rev | cut -f 1 | rev&lt;/code&gt; to get the last string on the line, &lt;code&gt;"Terraria"&lt;/code&gt;. This works by reversing the whole thing with &lt;code&gt;rev&lt;/code&gt;, using &lt;code&gt;cut -f 1&lt;/code&gt; to get the &lt;em&gt;first&lt;/em&gt; string on the line, &lt;code&gt;"airarreT"&lt;/code&gt;, and reversing it with &lt;code&gt;rev&lt;/code&gt; one more time. The very last bit, &lt;code&gt;sed -e 's/"//g'&lt;/code&gt;, removes all &lt;code&gt;"&lt;/code&gt; characters, turning &lt;code&gt;"Terraria"&lt;/code&gt; into &lt;code&gt;Terraria&lt;/code&gt;. Now THAT we can use.&lt;/p&gt;
+&lt;p&gt;The final piece of the puzzle is using our parsed out properties to build .desktop file contents.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt; xdgDesktopTemplate&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+    &lt;span class="nb"&gt;local&lt;/span&gt; &lt;span class="nv"&gt;app_id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$1&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+    &lt;span class="nb"&gt;local&lt;/span&gt; &lt;span class="nv"&gt;app_name&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$2&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+
+    cat &lt;span class="s"&gt;&amp;lt;&amp;lt;EOF&lt;/span&gt;
+&lt;span class="s"&gt;[Desktop Entry]&lt;/span&gt;
+&lt;span class="s"&gt;Name=${app_name}&lt;/span&gt;
+&lt;span class="s"&gt;Comment=Play this game on Steam&lt;/span&gt;
+&lt;span class="s"&gt;Exec=steam steam://rungameid/${app_id}&lt;/span&gt;
+&lt;span class="s"&gt;Icon=steam_icon_${app_id}&lt;/span&gt;
+&lt;span class="s"&gt;Terminal=false&lt;/span&gt;
+&lt;span class="s"&gt;Type=Application&lt;/span&gt;
+&lt;span class="s"&gt;Categories=Game;&lt;/span&gt;
+&lt;span class="s"&gt;EOF&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This is just one big &lt;a href="http://tldp.org/LDP/abs/html/here-docs.html"&gt;HEREDOC&lt;/a&gt; with our app ID and name passed in and injected in the appropriate places. Everything between &lt;code&gt;&amp;lt;&amp;lt;EOF&lt;/code&gt; and &lt;code&gt;EOF&lt;/code&gt; is the template. The template itself is copied from one of those Desktop files Steam will create for you if you ask it nicely.&lt;/p&gt;
+&lt;h2 id="usage"&gt;2.b importsteamgames.sh - Usage&lt;/h2&gt;
+
+&lt;p&gt;Now that you've downloaded my Steam games import script to &lt;code&gt;~/bin/importsteamgames.sh&lt;/code&gt; go ahead and run that bad boy.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;gt; ~/bin/importsteamgames.sh
+&amp;gt; ls ~/RetroPie/roms/steam
+Anodyne.desktop
+Bastion.desktop
+...
+Undertale.desktop
+XCom: Enemy Unknown.desktop
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Nice.&lt;/p&gt;
+&lt;h1&gt;3. Add Steam to EmulationStation&lt;/h1&gt;
+&lt;p&gt;Generating all those .desktop files is only half the battle. Now we need to tell EmulationStation how to use those suckers. We'll need to open the configuration file &lt;code&gt;es_systems.cfg&lt;/code&gt; to add a new system for our Steam games. It might live at &lt;code&gt;/etc/emulationstation/es_systems.cfg&lt;/code&gt; or at &lt;code&gt;/opt/retropie/configs/all/emulationstation/es_systems.cfg&lt;/code&gt;. Once you've got it open, add this stanza to the file.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nt"&gt;&amp;lt;system&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;name&amp;gt;&lt;/span&gt;steam&lt;span class="nt"&gt;&amp;lt;/name&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;fullname&amp;gt;&lt;/span&gt;Steam&lt;span class="nt"&gt;&amp;lt;/fullname&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;path&amp;gt;&lt;/span&gt;/home/yourusername/RetroPie/roms/steam&lt;span class="nt"&gt;&amp;lt;/path&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;extension&amp;gt;&lt;/span&gt;.desktop&lt;span class="nt"&gt;&amp;lt;/extension&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;command&amp;gt;&lt;/span&gt;xdg-open %ROM%&lt;span class="nt"&gt;&amp;lt;/command&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;platform&amp;gt;&lt;/span&gt;pc&lt;span class="nt"&gt;&amp;lt;/platform&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;theme&amp;gt;&lt;/span&gt;steam&lt;span class="nt"&gt;&amp;lt;/theme&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/system&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This tells emulationstation that there's a new system called &lt;code&gt;steam&lt;/code&gt; which it should present to humans as &lt;code&gt;Steam&lt;/code&gt; whose games live in &lt;code&gt;/home/yourusername/RetroPie/roms/steam&lt;/code&gt;. Be sure to change that to whatever directory you put your .desktop files in earlier. Those game files will have names that end in &lt;code&gt;.desktop&lt;/code&gt;, and when EmulationStation wants to run one it will run &lt;code&gt;xdg-open&lt;/code&gt; on the selected game file. &lt;code&gt;xdg-open&lt;/code&gt; will in turn open up that .desktop file, read the line &lt;code&gt;Exec=steam steam://rungameid/${app_id}&lt;/code&gt;, and ask steam to run the game with the target app ID. EmulationStation -&amp;gt; XDG -&amp;gt; Steam. The platform line tells any metadata scrapers that when they search for a game in this folder they should search for PC games. The theme line tells EmulationStation that if a theme supports Steam it should use that part of the theme for this system's collection.&lt;/p&gt;
+&lt;p&gt;Now you should be able to launch your Steam games from EmulationStation! But we're not quite done yet.&lt;/p&gt;
+&lt;h1&gt;4. Install an EmulationStation Theme with Steam Support&lt;/h1&gt;
+&lt;p&gt;After going through all that trouble to build your Steam collection in EmulationStation you're gonna want a theme that supports it! There are plenty of themes which have special icons and assets just for Steam, so go get you one. My personal favorite is &lt;a href="https://github.com/ehettervik/es-theme-pixel-metadata"&gt;pixel-metadata&lt;/a&gt;. If you're running RetroPie you can run the setup script and find it in the theme library.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="pixel-metadata gamelist screen" src="https://raw.githubusercontent.com/wetriner/es-theme-gallery/master/pixel-metadata-gamelist.png"&gt;&lt;/p&gt;
+&lt;h1&gt;5. Scrape Game Metadata&lt;/h1&gt;
+&lt;p&gt;The last piece of the puzzle here is to go and grab metadata for your Steam games. Just run your EmulationStation scraper of choice here, same as for the rest of your systems. Now you can happily scroll through all of your games in one place!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;DONE.&lt;/strong&gt;&lt;/p&gt;</content><category term="emulationstation"></category><category term="steam"></category><category term="emulation"></category><category term="frontend"></category><category term="linux"></category><category term="bash"></category><category term="roms"></category></entry><entry><title>Setting Up SSH Public Key Authentication</title><link href="http://ericslenk.com/setting-up-ssh-public-key-authentication.html" rel="alternate"></link><published>2019-02-25T00:00:00-05:00</published><updated>2019-02-25T00:00:00-05:00</updated><author><name>Eric Slenk</name></author><id>tag:ericslenk.com,2019-02-25:/setting-up-ssh-public-key-authentication.html</id><summary type="html">&lt;p&gt;Do you have a computer to compute on, but it's all the way over there? Use SSH, stupid! With keys!&lt;/p&gt;</summary><content type="html">&lt;p&gt;Do you have a computer to compute on, but it's &lt;em&gt;all&lt;/em&gt; the way over &lt;em&gt;there&lt;/em&gt;? Use SSH, stupid! With keys!&lt;/p&gt;
+&lt;h1&gt;0. Have Access to a Remote Computer with an SSH Server&lt;/h1&gt;
+&lt;p&gt;Before you can set up key-based authentication you should have:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A remote computer.&lt;/li&gt;
+&lt;li&gt;A user account with a password on that remote computer.&lt;/li&gt;
+&lt;li&gt;A SSH server installed on that remote computer which is:&lt;ul&gt;
+&lt;li&gt;Configured to allow your remote user account to log in and&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Running&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;These all sound obvious, but I almost never have all 5 at once, so there you go.&lt;/p&gt;
+&lt;p&gt;For our examples we'll assume that your local user is &lt;code&gt;groundcontrol&lt;/code&gt; on the local host named &lt;code&gt;earth&lt;/code&gt;, trying to log in as the remote user &lt;code&gt;majortom&lt;/code&gt; to the remote host &lt;code&gt;tincan&lt;/code&gt;.&lt;/p&gt;
+&lt;h1&gt;1. Generate Your Key Pair&lt;/h1&gt;
+&lt;p&gt;First you need to make a key pair. Run &lt;code&gt;ssh-keygen&lt;/code&gt; to create a public and private key.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;groundcontrol@earth:~$ ssh-keygen
+
+Enter file in which to save the key (/home/groundcontrol/.ssh/id_rsa): /home/groundcontrol/.ssh/tincan
+Enter passphrase (empty for no passphrase): [redacted]
+Enter same passphrase again: [redacted]
+Your identification has been saved in /home/groundcontrol/.ssh/tincan.
+Your public key has been saved in /home/groundcontrol/.ssh/tincan.pub.
+The key fingerprint is:
+SHA256:6qhMpF/b62Zt63i/SVH6fZqqzB7uQc2kyryIwvR+FsQ groundcontrol@earth
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Here we've elected to make a key pair with the name of our remote machine, &lt;code&gt;tincan&lt;/code&gt;. It lives in the &lt;code&gt;.ssh&lt;/code&gt; subdirectory of the user &lt;code&gt;groundcontrol&lt;/code&gt;'s home directory. The private key stays on your local machine, and the public key gets sent to your remote machine.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ssh-keygen&lt;/code&gt; will request an optional passphrase, which it will use to encrypt your private key when it's not being used. Use one.&lt;/p&gt;
+&lt;h1&gt;2. Upload the Public Key to your Remote Machine&lt;/h1&gt;
+&lt;p&gt;Now you must tell your remote SSH server that &lt;code&gt;majortom&lt;/code&gt; can be authenticated using your private key, &lt;code&gt;/home/groundcontrol/.ssh/tincan&lt;/code&gt;. To do so, you must append the contents of your public key, &lt;code&gt;/home/groundcontrol/.ssh/tincan.pub&lt;/code&gt;, to the &lt;code&gt;authorized_keys&lt;/code&gt; file for your remote user, &lt;code&gt;/home/majortom/.ssh/authorized_keys&lt;/code&gt;. We'll do this using &lt;code&gt;ssh-copy-id&lt;/code&gt;, but you can accomplish the same task with &lt;code&gt;scp&lt;/code&gt; or some other file transfer utility if it's not available.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;groundcontrol@earth:~$ ssh-copy-id -i ~/.ssh/tincan.pub majortom@192.168.1.2
+
+/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: &amp;quot;/home/groundcontrol/.ssh/tincan.pub&amp;quot;
+/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+/usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
+majortom@192.168.1.2&amp;#39;s password: 
+
+Number of key(s) added: 1
+
+Now try logging into the machine, with:   &amp;quot;ssh &amp;#39;majortom@129.168.1.2&amp;#39;&amp;quot;
+and check to make sure that only the key(s) you wanted were added.
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;3. Configure an SSH Host&lt;/h1&gt;
+&lt;p&gt;Would you rather type &lt;code&gt;ssh tincan&lt;/code&gt; or &lt;code&gt;ssh majortom@192.168.1.2&lt;/code&gt; to log in to your remote machine? To accomplish the former, append the following to the file &lt;code&gt;/home/groundcontrol/.ssh/config&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Host tincan
+    user majortom
+    HostName 192.168.1.2
+    IdentityFile /home/groundcontrol/.ssh/tincan
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The Host value, &lt;code&gt;tincan&lt;/code&gt;, is the alias for your remote machine. The user value is the name of the user on the remote machine you'll log in as, &lt;code&gt;majortom&lt;/code&gt;. The HostName can be either a DNS name or an IP address for the remote machine. Here it's a local IP, &lt;code&gt;192.168.1.2&lt;/code&gt;. The IdentityFile is the path to the private key you'll use to authenticate to the server, &lt;code&gt;/home/groundcontrol/.ssh/tincan&lt;/code&gt;.&lt;/p&gt;
+&lt;h1&gt;4. Verify&lt;/h1&gt;
+&lt;p&gt;Now go log in to your remote box.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;groundcontrol@earth:~$ ssh tincan
+
+Enter passphrase for key &amp;#39;/home/groundcontrol/.ssh/tincan&amp;#39;: [redacted]
+
+majortom@tincan:~$ cat ~/.ssh/authorized_keys
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;strong&gt; DONE. &lt;/strong&gt;&lt;/p&gt;</content><category term="ssh"></category><category term="cryptography"></category><category term="keys"></category><category term="linux"></category></entry></feed>

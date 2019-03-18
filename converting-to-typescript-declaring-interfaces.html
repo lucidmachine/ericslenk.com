@@ -1,0 +1,285 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="http://ericslenk.com/theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="http://ericslenk.com/theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="http://ericslenk.com/theme/font-awesome/css/font-awesome.min.css">
+
+
+    <link href="http://www.ericslenk.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Lucid Machinery Atom">
+
+    <link href="http://www.ericslenk.com/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Lucid Machinery RSS">
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+
+<meta name="author" content="Eric Slenk" />
+<meta name="description" content="Now that you're set up, start using TypeScript. With types and stuff!" />
+<meta name="keywords" content="typescript, ts, definitions, interfaces, types, javascript, js, bitclock">
+<meta property="og:site_name" content="Lucid Machinery"/>
+<meta property="og:title" content="Converting to TypeScript: Declaring Interfaces"/>
+<meta property="og:description" content="Now that you're set up, start using TypeScript. With types and stuff!"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="http://ericslenk.com/converting-to-typescript-declaring-interfaces.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2019-02-18 00:00:00-05:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="http://ericslenk.com/author/eric-slenk.html">
+<meta property="article:section" content="blog"/>
+<meta property="article:tag" content="typescript"/>
+<meta property="article:tag" content="ts"/>
+<meta property="article:tag" content="definitions"/>
+<meta property="article:tag" content="interfaces"/>
+<meta property="article:tag" content="types"/>
+<meta property="article:tag" content="javascript"/>
+<meta property="article:tag" content="js"/>
+<meta property="article:tag" content="bitclock"/>
+<meta property="og:image" content="https://avatars1.githubusercontent.com/u/213561">
+
+  <title>Lucid Machinery &ndash; Converting to TypeScript: Declaring Interfaces</title>
+
+</head>
+<body>
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NW29DZR"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NW29DZR');</script>
+<!-- End Google Tag Manager -->  <aside>
+    <div>
+      <a href="http://ericslenk.com">
+        <img src="https://avatars1.githubusercontent.com/u/213561" alt="Lucid Machinery Logo" title="Lucid Machinery">
+      </a>
+      <h1><a href="http://ericslenk.com">Lucid Machinery</a></h1>
+
+<p>A Blog by Eric Slenk</p>
+      <nav>
+        <ul class="list">
+          <li><a href="http://ericslenk.com/pages/projects.html#projects">Projects</a></li>
+          <li><a href="http://ericslenk.com/pages/resume.html#resume">Resume</a></li>
+
+        </ul>
+      </nav>
+
+      <ul class="social">
+        <li><a class="sc-envelope-open" href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#108;&#101;&#110;&#107;&#46;&#101;&#114;&#105;&#99;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;" target="_blank"><i class="fa fa-envelope-open"></i></a></li>
+        <li><a class="sc-twitter" href="https://twitter.com/lucidmachinery" target="_blank"><i class="fa fa-twitter"></i></a></li>
+        <li><a class="sc-github" href="https://github.com/lucidmachine" target="_blank"><i class="fa fa-github"></i></a></li>
+        <li><a class="sc-linkedin" href="https://www.linkedin.com/in/eric-slenk-167aa67a/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+
+<article class="single">
+  <header>
+    <h1 id="converting-to-typescript-declaring-interfaces">Converting to TypeScript: Declaring Interfaces</h1>
+    <p>
+          Posted on 2019-02-18 in <a href="http://ericslenk.com/category/blog.html">blog</a>
+
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>Hey nerds. Now that you've <a href="http://ericslenk.com/modularize-your-javascript-with-es6-modules-and-webpack.html">modularized your project with ES6 and Webpack</a> and <a href="http://ericslenk.com/converting-to-typescript-toolchain.html">set up a toolchain to transpile TypeScript to JavaScript</a> you should start <em>using</em> TypeScript. With types and stuff!</p>
+<h1>The Declaration File</h1>
+<p>Your library's types should live in a declaration file, so let's make one and get cracking! Where do we put this thing? What do we call it? The <a href="https://www.typescriptlang.org/docs/handbook/declaration-files/library-structures.html">TypeScript docs on library structures</a> have a lot of suggestions, but you'll probably be interested in one of three cases.</p>
+<p>Suppose you're writing a really awesome module named "rad", and you import it like <code>const rad = require('rad');</code>.</p>
+<ul>
+<li>If your module will be called as a function like <code>rad('yeah');</code>, name it <code>rad/module-function.d.ts</code> and use <a href="https://www.typescriptlang.org/docs/handbook/declaration-files/templates/module-function-d-ts.html">the module-function.d.ts template</a>.</li>
+<li>If your module will be constructed as a class using <code>new</code> like <code>let woo = new rad('yeah');</code>, name it <code>rad/module-class.d.ts</code> and use <a href="https://www.typescriptlang.org/docs/handbook/declaration-files/templates/module-function-d-ts.html">the module-function.d.ts template</a></li>
+<li>If neither of the above apply, name it <code>rad/module.d.ts</code> and use <a href="https://www.typescriptlang.org/docs/handbook/declaration-files/templates/module-d-ts.html">the module.d.ts template</a></li>
+</ul>
+<h1>Interfaces</h1>
+<p>What exactly goes in that declaration file? Interfaces! So. Many. Interfaces. From the docs:</p>
+<blockquote>
+<p>One of TypeScript’s core principles is that type-checking focuses on the shape that values have. ... In TypeScript, interfaces fill the role of naming these types, and are a powerful way of defining contracts within your code as well as contracts with code outside of your project.</p>
+</blockquote>
+<p>TypeScript has a lot of kinds of interfaces and plenty of ways to define those interfaces, but to start we'll focus on two extremely versatile kinds of interfaces that get stuff done.</p>
+<h2>Object Interfaces</h2>
+<p>An object interface is a description of the shape of an object. You can describe which properties should exist on an object which conforms to the interface, what the types of those properties are, and which of those properties are required or optional. For example, let's say we want to greet some chump. Among other things, chumps have names - usually a couple, sometimes more. We might start with a function that looks a bit like this.</p>
+<div class="highlight"><pre><span></span><span class="c1">// index.ts</span>
+<span class="kr">const</span> <span class="nx">rudeGreeting</span> <span class="o">=</span> <span class="p">(</span><span class="nx">victim</span><span class="p">)</span> <span class="o">=&gt;</span>
+    <span class="sb">`Get lost, </span><span class="si">${</span><span class="nx">victim</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="sb">!`</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">rudeGreeting</span><span class="p">({</span><span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Steve&#39;</span><span class="p">}));</span>
+<span class="c1">// &gt; &quot;Get lost, Steve!&quot;</span>
+</pre></div>
+
+
+<p>That seems fine at first blush. The trouble is, we're assuming that <code>victim</code> <em>has</em> a <code>name</code>.</p>
+<div class="highlight"><pre><span></span><span class="c1">// index.ts</span>
+<span class="kr">const</span> <span class="nx">rudeGreeting</span> <span class="o">=</span> <span class="p">(</span><span class="nx">victim</span><span class="p">)</span> <span class="o">=&gt;</span>
+    <span class="sb">`Get lost, </span><span class="si">${</span><span class="nx">victim</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="sb">!`</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">rudeGreeting</span><span class="p">(</span><span class="kc">false</span><span class="p">));</span>
+<span class="c1">// &gt; &quot;Get lost, undefined!&quot;</span>
+</pre></div>
+
+
+<p>That's a bug. We could write some more code to check whether our <code>victim</code>'s got a <code>name</code>, and to specify how the function should behave if our <code>victim</code> <em>doesn't</em> have a <code>name</code>. Or we can lean on TypeScript's compiler to ensure that whatever makes it into our function definitely has a <code>name</code>. We'll define an interface for chumps and require that anything passed into our greeting function is an object which conforms to that chump interface.</p>
+<div class="highlight"><pre><span></span><span class="c1">// module.d.ts</span>
+<span class="kr">interface</span> <span class="nx">Chump</span> <span class="p">{</span>
+    <span class="nx">givenName</span>: <span class="kt">string</span><span class="p">;</span>
+    <span class="nx">middleNames</span>: <span class="kt">string</span><span class="p">[];</span>
+    <span class="nx">familyName</span>: <span class="kt">string</span><span class="p">;</span>
+    <span class="nx">nickName?</span>: <span class="kt">string</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// index.ts</span>
+<span class="kr">import</span> <span class="p">{</span><span class="nx">Chump</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;rad&#39;</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">rudeGreeting</span> <span class="o">=</span> <span class="p">(</span><span class="nx">victim</span>: <span class="kt">Chump</span><span class="p">)</span> <span class="o">=&gt;</span>
+    <span class="sb">`Get lost, </span><span class="si">${</span><span class="nx">victim</span><span class="p">.</span><span class="nx">nickName</span> <span class="o">||</span> <span class="nx">victim</span><span class="p">.</span><span class="nx">givenName</span><span class="si">}</span><span class="sb">!`</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">steve</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">givenName</span><span class="o">:</span> <span class="s2">&quot;Steven&quot;</span><span class="p">,</span>
+    <span class="nx">middleNames</span><span class="o">:</span> <span class="p">[],</span>
+    <span class="nx">familyName</span><span class="o">:</span> <span class="s2">&quot;Chumpsworth&quot;</span><span class="p">,</span>
+    <span class="nx">nickName</span><span class="o">:</span> <span class="s2">&quot;Steve&quot;</span><span class="p">,</span>
+    <span class="nx">isAwful</span>: <span class="kt">true</span>
+
+<span class="p">};</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">rudeGreeting</span><span class="p">(</span><span class="nx">steve</span><span class="p">));</span>
+<span class="c1">// &gt; &quot;Get lost, Steve!&quot;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">rudeGreeting</span><span class="p">(</span><span class="kc">false</span><span class="p">));</span>
+<span class="c1">// &gt; Argument type boolean is not assignable to parameter type Chump</span>
+</pre></div>
+
+
+<p>Heck yeah! When we gave it a properly formed victim everything worked out fine. And when we gave it some invalid crap, the compiler yelled at us! Much better!</p>
+<h2>Function Interfaces</h2>
+<p>A function interface is a description of the shape of a function. You can describe what parameters a function should take and what type of data it should return by using a function interface. For example, let's write a second chump greeting function.</p>
+<div class="highlight"><pre><span></span><span class="c1">// module.d.ts</span>
+<span class="kr">interface</span> <span class="nx">Chump</span> <span class="p">{</span>
+    <span class="nx">givenName</span>: <span class="kt">string</span><span class="p">;</span>
+    <span class="nx">middleNames</span>: <span class="kt">string</span><span class="p">[];</span>
+    <span class="nx">familyName</span>: <span class="kt">string</span><span class="p">;</span>
+    <span class="nx">nickName?</span>: <span class="kt">string</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kr">interface</span> <span class="nx">GreetingFunc</span> <span class="p">{</span>
+    <span class="p">(</span><span class="nx">victim</span>: <span class="kt">Chump</span><span class="p">)</span><span class="o">:</span> <span class="kt">string</span>
+<span class="p">}</span>
+
+
+<span class="c1">// index.ts</span>
+<span class="kr">import</span> <span class="p">{</span><span class="nx">Chump</span><span class="p">,</span> <span class="nx">GreetingFunc</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;rad&#39;</span><span class="p">;</span>
+
+
+<span class="kr">const</span> <span class="nx">rudeGreeting</span>: <span class="kt">GreetingFunc</span> <span class="o">=</span> <span class="p">(</span><span class="nx">victim</span>: <span class="kt">Chump</span><span class="p">)</span> <span class="o">=&gt;</span>
+    <span class="sb">`Get lost, </span><span class="si">${</span><span class="nx">victim</span><span class="p">.</span><span class="nx">nickName</span> <span class="o">||</span> <span class="nx">victim</span><span class="p">.</span><span class="nx">givenName</span><span class="si">}</span><span class="sb">!`</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">politeGreeting</span>: <span class="kt">GreetingFunc</span> <span class="o">=</span> <span class="p">(</span><span class="nx">victim</span>: <span class="kt">Chump</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">fullName</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="nx">victim</span><span class="p">.</span><span class="nx">givenName</span><span class="p">,</span> 
+        <span class="p">...</span><span class="nx">victim</span><span class="p">.</span><span class="nx">middleNames</span><span class="p">,</span> 
+        <span class="nx">victim</span><span class="p">.</span><span class="nx">familyName</span><span class="p">]</span>
+        <span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">);</span>
+    <span class="k">return</span> <span class="sb">`Salutations, </span><span class="si">${</span><span class="nx">fullName</span><span class="si">}</span><span class="sb">!`</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kr">const</span> <span class="nx">metaGreeting</span> <span class="o">=</span> <span class="p">(</span><span class="nx">victim</span>: <span class="kt">Chump</span> <span class="o">&amp;</span> <span class="p">{</span><span class="nx">isAwful</span>: <span class="kt">boolean</span><span class="p">})</span> <span class="o">=&gt;</span>
+    <span class="nx">victim</span><span class="p">.</span><span class="nx">isAwful</span> <span class="o">?</span>
+        <span class="nx">rudeGreeting</span><span class="p">(</span><span class="nx">victim</span><span class="p">)</span> <span class="o">:</span>
+        <span class="nx">politeGreeting</span><span class="p">(</span><span class="nx">victim</span><span class="p">);</span>
+
+
+<span class="kr">const</span> <span class="nx">steve</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">givenName</span><span class="o">:</span> <span class="s2">&quot;Steven&quot;</span><span class="p">,</span>
+    <span class="nx">middleNames</span><span class="o">:</span> <span class="p">[],</span>
+    <span class="nx">familyName</span><span class="o">:</span> <span class="s2">&quot;Chumpsworth&quot;</span><span class="p">,</span>
+    <span class="nx">nickName</span><span class="o">:</span> <span class="s2">&quot;Steve&quot;</span><span class="p">,</span>
+    <span class="nx">isAwful</span>: <span class="kt">true</span>
+<span class="p">};</span>
+
+<span class="kr">const</span> <span class="nx">phyllis</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">givenName</span><span class="o">:</span> <span class="s2">&quot;Phyllis&quot;</span><span class="p">,</span>
+    <span class="nx">middleNames</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;Rose&quot;</span><span class="p">,</span> <span class="s2">&quot;Dandellion&quot;</span><span class="p">],</span>
+    <span class="nx">familyName</span><span class="o">:</span> <span class="s2">&quot;Herpingderp&quot;</span><span class="p">,</span>
+    <span class="nx">isAwful</span>: <span class="kt">false</span>
+<span class="p">};</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">metaGreeting</span><span class="p">(</span><span class="nx">steve</span><span class="p">));</span>
+<span class="c1">// &gt; &quot;Get lost, Steve!&quot;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">metaGreeting</span><span class="p">(</span><span class="nx">phyllis</span><span class="p">));</span>
+<span class="c1">// &gt; &quot;Salutations, Phyllis Rose Dandellion Herpingderp!&quot;</span>
+</pre></div>
+
+
+<p>You can see that both <code>rudeGreeting()</code> and <code>politeGreeting()</code> were defined as implementing our function interface, <code>GreetingFunc</code>. For a bit of bonus fun, we've defined a third function, <code>metaGreeting()</code>, which takes a objects which conform to the Chump interface <em>and also</em> have a boolean property named <code>isAwful</code> by using <a href="https://www.typescriptlang.org/docs/handbook/advanced-types.html#intersection-types">Intersection Types</a>. Read up on it, that's cool as heck.</p>
+<p><strong>DONE.</strong></p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="http://ericslenk.com/tag/typescript.html">typescript</a>
+      <a href="http://ericslenk.com/tag/ts.html">ts</a>
+      <a href="http://ericslenk.com/tag/definitions.html">definitions</a>
+      <a href="http://ericslenk.com/tag/interfaces.html">interfaces</a>
+      <a href="http://ericslenk.com/tag/types.html">types</a>
+      <a href="http://ericslenk.com/tag/javascript.html">javascript</a>
+      <a href="http://ericslenk.com/tag/js.html">js</a>
+      <a href="http://ericslenk.com/tag/bitclock.html">bitclock</a>
+    </p>
+  </div>
+
+
+    <div class="addthis_relatedposts_inline">
+
+
+</article>
+
+    <footer>
+<p>&copy; Eric Slenk </p>
+<p class="disclaimer">As an Amazon Associate I earn from qualifying purchases.</p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101906012-1', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Lucid Machinery ",
+  "url" : "http://ericslenk.com",
+  "image": "https://avatars1.githubusercontent.com/u/213561",
+  "description": "A Blog by Eric Slenk"
+}
+</script>
+
+</body>
+</html>

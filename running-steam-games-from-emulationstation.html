@@ -1,0 +1,276 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="http://ericslenk.com/theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="http://ericslenk.com/theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="http://ericslenk.com/theme/font-awesome/css/font-awesome.min.css">
+
+
+    <link href="http://www.ericslenk.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Lucid Machinery Atom">
+
+    <link href="http://www.ericslenk.com/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Lucid Machinery RSS">
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+
+<meta name="author" content="Eric Slenk" />
+<meta name="description" content="Configure EmulationStation to browse your Steam collection alongside your very legally emulated console classics." />
+<meta name="keywords" content="emulationstation, steam, emulation, frontend, linux, bash, roms">
+<meta property="og:site_name" content="Lucid Machinery"/>
+<meta property="og:title" content="Running Steam Games from EmulationStation"/>
+<meta property="og:description" content="Configure EmulationStation to browse your Steam collection alongside your very legally emulated console classics."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="http://ericslenk.com/running-steam-games-from-emulationstation.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2019-03-04 00:00:00-05:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="http://ericslenk.com/author/eric-slenk.html">
+<meta property="article:section" content="blog"/>
+<meta property="article:tag" content="emulationstation"/>
+<meta property="article:tag" content="steam"/>
+<meta property="article:tag" content="emulation"/>
+<meta property="article:tag" content="frontend"/>
+<meta property="article:tag" content="linux"/>
+<meta property="article:tag" content="bash"/>
+<meta property="article:tag" content="roms"/>
+<meta property="og:image" content="https://avatars1.githubusercontent.com/u/213561">
+
+  <title>Lucid Machinery &ndash; Running Steam Games from EmulationStation</title>
+
+</head>
+<body>
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NW29DZR"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NW29DZR');</script>
+<!-- End Google Tag Manager -->  <aside>
+    <div>
+      <a href="http://ericslenk.com">
+        <img src="https://avatars1.githubusercontent.com/u/213561" alt="Lucid Machinery Logo" title="Lucid Machinery">
+      </a>
+      <h1><a href="http://ericslenk.com">Lucid Machinery</a></h1>
+
+<p>A Blog by Eric Slenk</p>
+      <nav>
+        <ul class="list">
+          <li><a href="http://ericslenk.com/pages/projects.html#projects">Projects</a></li>
+          <li><a href="http://ericslenk.com/pages/resume.html#resume">Resume</a></li>
+
+        </ul>
+      </nav>
+
+      <ul class="social">
+        <li><a class="sc-envelope-open" href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#108;&#101;&#110;&#107;&#46;&#101;&#114;&#105;&#99;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;" target="_blank"><i class="fa fa-envelope-open"></i></a></li>
+        <li><a class="sc-twitter" href="https://twitter.com/lucidmachinery" target="_blank"><i class="fa fa-twitter"></i></a></li>
+        <li><a class="sc-github" href="https://github.com/lucidmachine" target="_blank"><i class="fa fa-github"></i></a></li>
+        <li><a class="sc-linkedin" href="https://www.linkedin.com/in/eric-slenk-167aa67a/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+
+<article class="single">
+  <header>
+    <h1 id="running-steam-games-from-emulationstation">Running Steam Games from EmulationStation</h1>
+    <p>
+          Posted on 2019-03-04 in <a href="http://ericslenk.com/category/blog.html">blog</a>
+
+
+    </p>
+  </header>
+
+
+  <div>
+    <p><a href="https://emulationstation.org/">EmulationStation</a> is a controller-friendly, graphical, themeable, flexible, open-source application for browsing and launching your games. If you want one unified place to look through your game library and figure out what the heck to play this evening, then this is your app! Its bread and butter is launching ROMs on emulators, but with a bit of configuration it will handle your Steam collection alongside your very legally emulated console classics. This walkthrough will get your Steam games into your EmulationStation collection. It's written to use Linux scripts and commands, but should translate to macOS or even Windows with a bit of careful thought.</p>
+<h1>0. Get EmulationStation</h1>
+<p>If you don't have EmulationStation yet I highly recommend using the <a href="https://retropie.org.uk/">RetroPie</a> fork of EmulationStation and the whole RetroPie ecosystem. It's a wonderful project. Get started with the <a href="https://github.com/RetroPie/RetroPie-Setup">RetroPie setup tool</a>.</p>
+<h1>1. Install Steam Games</h1>
+<p>Step number one is to grab some games to surface. Go <a href="https://store.steampowered.com/about/">download the Steam client</a> if you don't already have it. Then use Steam to install a game or two. Launch one of those games to make sure everything's working fine before you move on.</p>
+<h1>2. Create Game Shortcuts</h1>
+<p>Now we need to make something that EmulationStation can open for us. We'll be building desktop shortcut files - specifically <a href="https://standards.freedesktop.org/desktop-entry-spec/latest/">XDG Desktop Entries</a>. Now, you can ask the Steam client to build these for you, but that method has a couple down sides. For starters, you must ask this per game at install time. Second, it will only place them on your user's desktop, and if you have a habit of collecting hundreds more games than you could ever possibly play this can wreak havoc on your otherwise pristine desktop.</p>
+<p>Instead, we're going to do things the hard way and build them all at once with a shell script! You can <a href="https://raw.githubusercontent.com/lucidmachine/bin/master/importsteamgames.sh">download the whole Steam games import script from my Github repo</a>. If you want to learn how this script works, read the next section. If you don't, skip ahead to <a href="#usage">the usage section</a>.</p>
+<h2>2.a importsteamgames.sh - The Long Way</h2>
+<p>To begin, we point the script to a few important directories.</p>
+<div class="highlight"><pre><span></span><span class="nb">readonly</span> <span class="nv">ROMS_DIR</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span><span class="s2">/RetroPie/roms&quot;</span>
+<span class="nb">readonly</span> <span class="nv">OUTPUT_DIR</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">ROMS_DIR</span><span class="si">}</span><span class="s2">/steam&quot;</span>
+<span class="nb">readonly</span> <span class="nv">STEAM_APPS_DIR</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span><span class="s2">/.steam/steam/steamapps&quot;</span>
+</pre></div>
+
+
+<p><code>ROMS_DIR</code> is the directory where your ROM subdirectories live. RetroPie assumes this is <code>${HOME}/RetroPie/roms</code>, so I've used that by default. Change it if you want your Steam shortcuts directory built elsewhere. <code>OUTPUT_DIR</code> defines the directory which the script will build and fill with .desktop files, by default the <code>steam</code> subdirectory of the <code>ROMS_DIR</code> directory. <code>STEAM_APPS_DIR</code> is the directory where your Steam apps live. Steam defines this as <code>"${HOME}/.steam/steam/steamapps"</code> by default, so it's probably still there.</p>
+<p>Now to get into the meat of it. </p>
+<div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">[[</span> -d <span class="s2">&quot;</span><span class="si">${</span><span class="nv">OUTPUT_DIR</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
+    rm -r <span class="s2">&quot;</span><span class="si">${</span><span class="nv">OUTPUT_DIR</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="k">fi</span>
+mkdir -p <span class="s2">&quot;</span><span class="si">${</span><span class="nv">OUTPUT_DIR</span><span class="si">}</span><span class="s2">&quot;</span>
+</pre></div>
+
+
+<p>If the target output directory currently exists we're going to nuke it and recreate it to start from scratch every time.</p>
+<div class="highlight"><pre><span></span><span class="nv">app_manifest_names</span><span class="o">=</span><span class="k">$(</span>ls <span class="s2">&quot;</span><span class="si">${</span><span class="nv">STEAM_APPS_DIR</span><span class="si">}</span><span class="s2">&quot;</span> <span class="p">|</span> grep <span class="s2">&quot;</span><span class="si">${</span><span class="nv">STEAM_MANIFEST_EXT</span><span class="si">}</span><span class="s2">&quot;</span><span class="k">)</span>
+</pre></div>
+
+
+<p>Then we search your Steam apps directory for app manifest files, which are files whose name ends in '.acf'.</p>
+<div class="highlight"><pre><span></span><span class="k">for</span> app_manifest_name in <span class="si">${</span><span class="nv">app_manifest_names</span><span class="si">}</span><span class="p">;</span> <span class="k">do</span>
+    <span class="nv">app_manifest_path</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">STEAM_APPS_DIR</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">app_manifest_name</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="nv">app_id</span><span class="o">=</span><span class="k">$(</span>getManifestProperty <span class="s2">&quot;</span><span class="si">${</span><span class="nv">app_manifest_path</span><span class="si">}</span><span class="s2">&quot;</span> <span class="s1">&#39;&quot;appid&quot;&#39;</span><span class="k">)</span>
+    <span class="nv">app_name</span><span class="o">=</span><span class="k">$(</span>getManifestProperty <span class="s2">&quot;</span><span class="si">${</span><span class="nv">app_manifest_path</span><span class="si">}</span><span class="s2">&quot;</span> <span class="s1">&#39;&quot;name&quot;&#39;</span><span class="k">)</span>
+    <span class="nv">xdg_desktop_file_path</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">OUTPUT_DIR</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">app_name</span><span class="si">}</span><span class="s2">.desktop&quot;</span>
+    <span class="nv">xdg_desktop_file_contents</span><span class="o">=</span><span class="k">$(</span>xdgDesktopTemplate <span class="s2">&quot;</span><span class="si">${</span><span class="nv">app_id</span><span class="si">}</span><span class="s2">&quot;</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">app_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="k">)</span>
+
+    <span class="nb">echo</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">xdg_desktop_file_contents</span><span class="si">}</span><span class="s2">&quot;</span> &gt; <span class="s2">&quot;</span><span class="si">${</span><span class="nv">xdg_desktop_file_path</span><span class="si">}</span><span class="s2">&quot;</span>
+    chmod <span class="m">755</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">xdg_desktop_file_path</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="k">done</span>
+</pre></div>
+
+
+<p>For each and every manifest we found we're going to read the "appid" and "name" properties out of the file, use the ID and name to generate the contents of a XDG .desktop file, then write those contents to a file for this specific app in the target output directory. Phew!</p>
+<p>You might note that a couple non-trivial operations were glossed over there. Those have been extracted into separate functions, which we'll cover now.</p>
+<div class="highlight"><pre><span></span><span class="k">function</span> getManifestProperty<span class="o">()</span> <span class="o">{</span>
+    <span class="nb">local</span> <span class="nv">app_manifest_path</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span>
+    <span class="nb">local</span> <span class="nv">property_name</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$2</span><span class="s2">&quot;</span>
+
+    <span class="nb">echo</span> <span class="k">$(</span>
+        grep <span class="s2">&quot;</span><span class="si">${</span><span class="nv">property_name</span><span class="si">}</span><span class="s2">&quot;</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">app_manifest_path</span><span class="si">}</span><span class="s2">&quot;</span> <span class="se">\</span>
+        <span class="p">|</span> rev <span class="se">\</span>
+        <span class="p">|</span> cut -f <span class="m">1</span> <span class="se">\</span>
+        <span class="p">|</span> rev <span class="se">\</span>
+        <span class="p">|</span> sed -e <span class="s1">&#39;s/&quot;//g&#39;</span>
+    <span class="k">)</span>
+<span class="o">}</span>
+</pre></div>
+
+
+<p>In order to get a property from a manifest we use <code>grep</code> to search for the property name in the manifest file. Then we do some post-processing, because <code>grep</code> outputs an entire line which looks like this:</p>
+<div class="highlight"><pre><span></span>&gt; grep <span class="s2">&quot;name&quot;</span> appmanifest_105600.acf 
+    <span class="s2">&quot;name&quot;</span>      <span class="s2">&quot;Terraria&quot;</span>
+</pre></div>
+
+
+<p>We use <code>rev | cut -f 1 | rev</code> to get the last string on the line, <code>"Terraria"</code>. This works by reversing the whole thing with <code>rev</code>, using <code>cut -f 1</code> to get the <em>first</em> string on the line, <code>"airarreT"</code>, and reversing it with <code>rev</code> one more time. The very last bit, <code>sed -e 's/"//g'</code>, removes all <code>"</code> characters, turning <code>"Terraria"</code> into <code>Terraria</code>. Now THAT we can use.</p>
+<p>The final piece of the puzzle is using our parsed out properties to build .desktop file contents.</p>
+<div class="highlight"><pre><span></span><span class="k">function</span> xdgDesktopTemplate<span class="o">()</span> <span class="o">{</span>
+    <span class="nb">local</span> <span class="nv">app_id</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span>
+    <span class="nb">local</span> <span class="nv">app_name</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$2</span><span class="s2">&quot;</span>
+
+    cat <span class="s">&lt;&lt;EOF</span>
+<span class="s">[Desktop Entry]</span>
+<span class="s">Name=${app_name}</span>
+<span class="s">Comment=Play this game on Steam</span>
+<span class="s">Exec=steam steam://rungameid/${app_id}</span>
+<span class="s">Icon=steam_icon_${app_id}</span>
+<span class="s">Terminal=false</span>
+<span class="s">Type=Application</span>
+<span class="s">Categories=Game;</span>
+<span class="s">EOF</span>
+<span class="o">}</span>
+</pre></div>
+
+
+<p>This is just one big <a href="http://tldp.org/LDP/abs/html/here-docs.html">HEREDOC</a> with our app ID and name passed in and injected in the appropriate places. Everything between <code>&lt;&lt;EOF</code> and <code>EOF</code> is the template. The template itself is copied from one of those Desktop files Steam will create for you if you ask it nicely.</p>
+<h2 id="usage">2.b importsteamgames.sh - Usage</h2>
+
+<p>Now that you've downloaded my Steam games import script to <code>~/bin/importsteamgames.sh</code> go ahead and run that bad boy.</p>
+<div class="highlight"><pre><span></span>&gt; ~/bin/importsteamgames.sh
+&gt; ls ~/RetroPie/roms/steam
+Anodyne.desktop
+Bastion.desktop
+...
+Undertale.desktop
+XCom: Enemy Unknown.desktop
+</pre></div>
+
+
+<p>Nice.</p>
+<h1>3. Add Steam to EmulationStation</h1>
+<p>Generating all those .desktop files is only half the battle. Now we need to tell EmulationStation how to use those suckers. We'll need to open the configuration file <code>es_systems.cfg</code> to add a new system for our Steam games. It might live at <code>/etc/emulationstation/es_systems.cfg</code> or at <code>/opt/retropie/configs/all/emulationstation/es_systems.cfg</code>. Once you've got it open, add this stanza to the file.</p>
+<div class="highlight"><pre><span></span><span class="nt">&lt;system&gt;</span>
+    <span class="nt">&lt;name&gt;</span>steam<span class="nt">&lt;/name&gt;</span>
+    <span class="nt">&lt;fullname&gt;</span>Steam<span class="nt">&lt;/fullname&gt;</span>
+    <span class="nt">&lt;path&gt;</span>/home/yourusername/RetroPie/roms/steam<span class="nt">&lt;/path&gt;</span>
+    <span class="nt">&lt;extension&gt;</span>.desktop<span class="nt">&lt;/extension&gt;</span>
+    <span class="nt">&lt;command&gt;</span>xdg-open %ROM%<span class="nt">&lt;/command&gt;</span>
+    <span class="nt">&lt;platform&gt;</span>pc<span class="nt">&lt;/platform&gt;</span>
+    <span class="nt">&lt;theme&gt;</span>steam<span class="nt">&lt;/theme&gt;</span>
+<span class="nt">&lt;/system&gt;</span>
+</pre></div>
+
+
+<p>This tells emulationstation that there's a new system called <code>steam</code> which it should present to humans as <code>Steam</code> whose games live in <code>/home/yourusername/RetroPie/roms/steam</code>. Be sure to change that to whatever directory you put your .desktop files in earlier. Those game files will have names that end in <code>.desktop</code>, and when EmulationStation wants to run one it will run <code>xdg-open</code> on the selected game file. <code>xdg-open</code> will in turn open up that .desktop file, read the line <code>Exec=steam steam://rungameid/${app_id}</code>, and ask steam to run the game with the target app ID. EmulationStation -&gt; XDG -&gt; Steam. The platform line tells any metadata scrapers that when they search for a game in this folder they should search for PC games. The theme line tells EmulationStation that if a theme supports Steam it should use that part of the theme for this system's collection.</p>
+<p>Now you should be able to launch your Steam games from EmulationStation! But we're not quite done yet.</p>
+<h1>4. Install an EmulationStation Theme with Steam Support</h1>
+<p>After going through all that trouble to build your Steam collection in EmulationStation you're gonna want a theme that supports it! There are plenty of themes which have special icons and assets just for Steam, so go get you one. My personal favorite is <a href="https://github.com/ehettervik/es-theme-pixel-metadata">pixel-metadata</a>. If you're running RetroPie you can run the setup script and find it in the theme library.</p>
+<p><img alt="pixel-metadata gamelist screen" src="https://raw.githubusercontent.com/wetriner/es-theme-gallery/master/pixel-metadata-gamelist.png"></p>
+<h1>5. Scrape Game Metadata</h1>
+<p>The last piece of the puzzle here is to go and grab metadata for your Steam games. Just run your EmulationStation scraper of choice here, same as for the rest of your systems. Now you can happily scroll through all of your games in one place!</p>
+<p><strong>DONE.</strong></p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="http://ericslenk.com/tag/emulationstation.html">emulationstation</a>
+      <a href="http://ericslenk.com/tag/steam.html">steam</a>
+      <a href="http://ericslenk.com/tag/emulation.html">emulation</a>
+      <a href="http://ericslenk.com/tag/frontend.html">frontend</a>
+      <a href="http://ericslenk.com/tag/linux.html">linux</a>
+      <a href="http://ericslenk.com/tag/bash.html">bash</a>
+      <a href="http://ericslenk.com/tag/roms.html">roms</a>
+    </p>
+  </div>
+
+
+    <div class="addthis_relatedposts_inline">
+
+
+</article>
+
+    <footer>
+<p>&copy; Eric Slenk </p>
+<p class="disclaimer">As an Amazon Associate I earn from qualifying purchases.</p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101906012-1', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Lucid Machinery ",
+  "url" : "http://ericslenk.com",
+  "image": "https://avatars1.githubusercontent.com/u/213561",
+  "description": "A Blog by Eric Slenk"
+}
+</script>
+
+</body>
+</html>

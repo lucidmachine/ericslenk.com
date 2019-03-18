@@ -1,0 +1,213 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="http://ericslenk.com/theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="http://ericslenk.com/theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="http://ericslenk.com/theme/font-awesome/css/font-awesome.min.css">
+
+
+    <link href="http://www.ericslenk.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Lucid Machinery Atom">
+
+    <link href="http://www.ericslenk.com/feeds/rss.xml" type="application/rss+xml" rel="alternate" title="Lucid Machinery RSS">
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+
+<meta name="author" content="Eric Slenk" />
+<meta name="description" content="Do you have a computer to compute on, but it's all the way over there? Use SSH, stupid! With keys!" />
+<meta name="keywords" content="ssh, cryptography, keys, linux">
+<meta property="og:site_name" content="Lucid Machinery"/>
+<meta property="og:title" content="Setting Up SSH Public Key Authentication"/>
+<meta property="og:description" content="Do you have a computer to compute on, but it's all the way over there? Use SSH, stupid! With keys!"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="http://ericslenk.com/setting-up-ssh-public-key-authentication.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2019-02-25 00:00:00-05:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="http://ericslenk.com/author/eric-slenk.html">
+<meta property="article:section" content="blog"/>
+<meta property="article:tag" content="ssh"/>
+<meta property="article:tag" content="cryptography"/>
+<meta property="article:tag" content="keys"/>
+<meta property="article:tag" content="linux"/>
+<meta property="og:image" content="https://avatars1.githubusercontent.com/u/213561">
+
+  <title>Lucid Machinery &ndash; Setting Up SSH Public Key Authentication</title>
+
+</head>
+<body>
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NW29DZR"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NW29DZR');</script>
+<!-- End Google Tag Manager -->  <aside>
+    <div>
+      <a href="http://ericslenk.com">
+        <img src="https://avatars1.githubusercontent.com/u/213561" alt="Lucid Machinery Logo" title="Lucid Machinery">
+      </a>
+      <h1><a href="http://ericslenk.com">Lucid Machinery</a></h1>
+
+<p>A Blog by Eric Slenk</p>
+      <nav>
+        <ul class="list">
+          <li><a href="http://ericslenk.com/pages/projects.html#projects">Projects</a></li>
+          <li><a href="http://ericslenk.com/pages/resume.html#resume">Resume</a></li>
+
+        </ul>
+      </nav>
+
+      <ul class="social">
+        <li><a class="sc-envelope-open" href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#108;&#101;&#110;&#107;&#46;&#101;&#114;&#105;&#99;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;" target="_blank"><i class="fa fa-envelope-open"></i></a></li>
+        <li><a class="sc-twitter" href="https://twitter.com/lucidmachinery" target="_blank"><i class="fa fa-twitter"></i></a></li>
+        <li><a class="sc-github" href="https://github.com/lucidmachine" target="_blank"><i class="fa fa-github"></i></a></li>
+        <li><a class="sc-linkedin" href="https://www.linkedin.com/in/eric-slenk-167aa67a/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+
+<article class="single">
+  <header>
+    <h1 id="setting-up-ssh-public-key-authentication">Setting Up SSH Public Key Authentication</h1>
+    <p>
+          Posted on 2019-02-25 in <a href="http://ericslenk.com/category/blog.html">blog</a>
+
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>Do you have a computer to compute on, but it's <em>all</em> the way over <em>there</em>? Use SSH, stupid! With keys!</p>
+<h1>0. Have Access to a Remote Computer with an SSH Server</h1>
+<p>Before you can set up key-based authentication you should have:</p>
+<ul>
+<li>A remote computer.</li>
+<li>A user account with a password on that remote computer.</li>
+<li>A SSH server installed on that remote computer which is:<ul>
+<li>Configured to allow your remote user account to log in and</li>
+<li><strong>Running</strong></li>
+</ul>
+</li>
+</ul>
+<p>These all sound obvious, but I almost never have all 5 at once, so there you go.</p>
+<p>For our examples we'll assume that your local user is <code>groundcontrol</code> on the local host named <code>earth</code>, trying to log in as the remote user <code>majortom</code> to the remote host <code>tincan</code>.</p>
+<h1>1. Generate Your Key Pair</h1>
+<p>First you need to make a key pair. Run <code>ssh-keygen</code> to create a public and private key.</p>
+<div class="highlight"><pre><span></span>groundcontrol@earth:~$ ssh-keygen
+
+Enter file in which to save the key (/home/groundcontrol/.ssh/id_rsa): /home/groundcontrol/.ssh/tincan
+Enter passphrase (empty for no passphrase): [redacted]
+Enter same passphrase again: [redacted]
+Your identification has been saved in /home/groundcontrol/.ssh/tincan.
+Your public key has been saved in /home/groundcontrol/.ssh/tincan.pub.
+The key fingerprint is:
+SHA256:6qhMpF/b62Zt63i/SVH6fZqqzB7uQc2kyryIwvR+FsQ groundcontrol@earth
+</pre></div>
+
+
+<p>Here we've elected to make a key pair with the name of our remote machine, <code>tincan</code>. It lives in the <code>.ssh</code> subdirectory of the user <code>groundcontrol</code>'s home directory. The private key stays on your local machine, and the public key gets sent to your remote machine.</p>
+<p><code>ssh-keygen</code> will request an optional passphrase, which it will use to encrypt your private key when it's not being used. Use one.</p>
+<h1>2. Upload the Public Key to your Remote Machine</h1>
+<p>Now you must tell your remote SSH server that <code>majortom</code> can be authenticated using your private key, <code>/home/groundcontrol/.ssh/tincan</code>. To do so, you must append the contents of your public key, <code>/home/groundcontrol/.ssh/tincan.pub</code>, to the <code>authorized_keys</code> file for your remote user, <code>/home/majortom/.ssh/authorized_keys</code>. We'll do this using <code>ssh-copy-id</code>, but you can accomplish the same task with <code>scp</code> or some other file transfer utility if it's not available.</p>
+<div class="highlight"><pre><span></span>groundcontrol@earth:~$ ssh-copy-id -i ~/.ssh/tincan.pub majortom@192.168.1.2
+
+/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: &quot;/home/groundcontrol/.ssh/tincan.pub&quot;
+/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+/usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
+majortom@192.168.1.2&#39;s password: 
+
+Number of key(s) added: 1
+
+Now try logging into the machine, with:   &quot;ssh &#39;majortom@129.168.1.2&#39;&quot;
+and check to make sure that only the key(s) you wanted were added.
+</pre></div>
+
+
+<h1>3. Configure an SSH Host</h1>
+<p>Would you rather type <code>ssh tincan</code> or <code>ssh majortom@192.168.1.2</code> to log in to your remote machine? To accomplish the former, append the following to the file <code>/home/groundcontrol/.ssh/config</code>:</p>
+<div class="highlight"><pre><span></span>Host tincan
+    user majortom
+    HostName 192.168.1.2
+    IdentityFile /home/groundcontrol/.ssh/tincan
+</pre></div>
+
+
+<p>The Host value, <code>tincan</code>, is the alias for your remote machine. The user value is the name of the user on the remote machine you'll log in as, <code>majortom</code>. The HostName can be either a DNS name or an IP address for the remote machine. Here it's a local IP, <code>192.168.1.2</code>. The IdentityFile is the path to the private key you'll use to authenticate to the server, <code>/home/groundcontrol/.ssh/tincan</code>.</p>
+<h1>4. Verify</h1>
+<p>Now go log in to your remote box.</p>
+<div class="highlight"><pre><span></span>groundcontrol@earth:~$ ssh tincan
+
+Enter passphrase for key &#39;/home/groundcontrol/.ssh/tincan&#39;: [redacted]
+
+majortom@tincan:~$ cat ~/.ssh/authorized_keys
+</pre></div>
+
+
+<p><strong> DONE. </strong></p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="http://ericslenk.com/tag/ssh.html">ssh</a>
+      <a href="http://ericslenk.com/tag/cryptography.html">cryptography</a>
+      <a href="http://ericslenk.com/tag/keys.html">keys</a>
+      <a href="http://ericslenk.com/tag/linux.html">linux</a>
+    </p>
+  </div>
+
+
+    <div class="addthis_relatedposts_inline">
+
+
+</article>
+
+    <footer>
+<p>&copy; Eric Slenk </p>
+<p class="disclaimer">As an Amazon Associate I earn from qualifying purchases.</p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-101906012-1', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " Lucid Machinery ",
+  "url" : "http://ericslenk.com",
+  "image": "https://avatars1.githubusercontent.com/u/213561",
+  "description": "A Blog by Eric Slenk"
+}
+</script>
+
+</body>
+</html>

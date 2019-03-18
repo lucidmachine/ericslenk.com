@@ -1,0 +1,1009 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Lucid Machinery</title><link href="http://ericslenk.com/" rel="alternate"></link><link href="http://www.ericslenk.com/feeds/all.atom.xml" rel="self"></link><id>http://ericslenk.com/</id><updated>2019-03-18T00:00:00-04:00</updated><entry><title>Personal Goals Review - 2019-03-18</title><link href="http://ericslenk.com/personal-goals-review-2019-03-18.html" rel="alternate"></link><published>2019-03-18T00:00:00-04:00</published><updated>2019-03-18T00:00:00-04:00</updated><author><name>Eric Slenk</name></author><id>tag:ericslenk.com,2019-03-18:/personal-goals-review-2019-03-18.html</id><summary type="html">&lt;p&gt;Review of progress toward my personal goals for 2019-02-23 to 2019-03-17.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Goals&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Relationships:&lt;/strong&gt; I managed to spend more time with friends and family over the past few weeks than I have in a while, which has been nice. I travelled one weekend, hosted another, and squeezed some drinks in during some weeknights.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Career:&lt;/strong&gt; Not a whole lot of wins here over the past few weeks. I missed a couple deadlines for personal projects and had to cancel this March's JVM User Group for lack of content, though. Feels bad, man.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Health and Longevity:&lt;/strong&gt; I suspect that I might have injured my knee years ago, that it never healed properly, and that compensation for that injury may have screwed up my back. I should see a medical professional about this.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Financial Independence:&lt;/strong&gt; We have a better understanding of our finances now and are in decent shape. Spending's been reigned in a bit, and our debts are being paid down.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Habits&lt;/h1&gt;
+&lt;h2&gt;Leave Work on Time&lt;/h2&gt;
+&lt;p&gt;Mixed results again. This has gone okay maybe... 50-60% of the time? The phone alarm trigger works around 50% of the time as well. There have been a lot of little emergencies at work due to system instability, though.&lt;/p&gt;
+&lt;h3&gt;Updated Habit&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Trigger(s):&lt;/strong&gt; &lt;strong&gt;Computer and phone&lt;/strong&gt; reminders at 3:30pm, &lt;strong&gt;computer and phone reminders&lt;/strong&gt; at 4:00pm, &lt;strong&gt;computer and phone reminders and auto-close computer&lt;/strong&gt; communication apps at 4:30pm, auto-logout at 5:00pm.&lt;/li&gt;
+&lt;li&gt;Action(s): Stop current task. Close email and chat applications. Fill out work log. GTFO.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Personal Goals Reviews&lt;/h2&gt;
+&lt;p&gt;"Leave Work on Time" struck again. I had another silly emergency come up on the afternoon I meant to write this post, so I left work late in a terrible mood and decided to write it the next morning. But my next morning got consumed by trying to work on time-sensitive personal technology projects. When I ran out of time for all of it I got depressed and just decided to take a week off to recollect. I'm going to try releasing these reviews every other Monday rather than every other Friday in order to insulate this habit from work.&lt;/p&gt;
+&lt;h3&gt;Updated Habit&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Trigger(s): Every other weekend&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Actions: Open my goals and habits document and my project management software. Write a blog post summarizing what progress I have made toward my goals, habits, and projects, and whether any of them need revision.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Tech Blagging&lt;/h2&gt;
+&lt;p&gt;I've been writing a technical blog post on a weekly basis since the start of the year now, but I haven't mentioned it here for reasons that are beyond me. As stated above, the project I had lined up for the latest post was too large in scope. In order to accomodate more complex and interesting projects I'm going to scale back posting to once every other Monday, on the weeks I don't do Personal Goal Reviews. I'm also going to allow myself to write progress posts when a project isn't neatly finished on time.&lt;/p&gt;
+&lt;h3&gt;Habit&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Trigger(s): Every other weekend&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Actions: Open my project management software. Work on an interesting personal tech project. Blag about it.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Bedtime Routine&lt;/h2&gt;
+&lt;p&gt;I've been enjoying &lt;a href="https://amzn.to/2TdQYyS"&gt;a chamomile, vanilla, and honey tea&lt;/a&gt; and slowly working through &lt;a href="https://amzn.to/2FhixDJ"&gt;Structure and Interpretation of Computer Programs&lt;/a&gt;. The wizard book isn't exactly light reading, but I find it fairly well written and very engaging. I'm especially intrigued because it is written around a Lisp dialect called &lt;a href="http://www.scheme-reports.org/"&gt;Scheme&lt;/a&gt;, and I am concurrently learning a Lisp dialect called &lt;a href="https://clojure.org/"&gt;Clojure&lt;/a&gt; and it's pretty neat to see all the parallels and to work through the examples in Clojure.&lt;/p&gt;
+&lt;h2&gt;Financial Reviews&lt;/h2&gt;
+&lt;p&gt;This has gone well so far. We've done a couple reviews now and I feel I have a better sense of our financial outlook. We've gotten our debt back under control and have started working on our spending habits again.&lt;/p&gt;
+&lt;h1&gt;Projects&lt;/h1&gt;
+&lt;h2&gt;Hardware Bitclock&lt;/h2&gt;
+&lt;p&gt;This is the project I meant to have ready by Pi Day, but totally failed to execute. I got stuck selecting my hardware and software, then I ran out of time re-learning some basic electronics before pushing it off and spending time with friends. I was sort of hoping to use my existing BitClock TypeScript library and Node.js to drive the thing with a Raspberry Pi, mostly because it would be thematically appropriate for a local event. But when I started work on it I quickly realized I was lacking additional hardware and software &lt;em&gt;and&lt;/em&gt; that the Raspberry Pi's 3.3V GPIO was going to force me to complicate the circuit design even more than I was prepared for. I think I'm going to implement the project on an Ardiono Uno, but that may involve a rewrite in C? That's not the worst thing in the world, and I'm not afraid to dive back into C, but it's an open question. This may also be an opportunity to check out software platforms which allow you to run JS on Arduino-compatible boards such as &lt;a href="http://johnny-five.io/"&gt;Johnny-Five&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Easier Blog Publication&lt;/h2&gt;
+&lt;p&gt;Since I no longer intend to publish blog posts right after work my requirements have changed and the priority of this project has plummeted. I've also run out of my IntelliJ Ultimate license and am trying to do away with it in my personal life, so my needs are a little different as well. I do still want to streamline my publicatin process, and I do still want to enable content scheduling, but this is way less urgent.&lt;/p&gt;</content><category term="2019"></category><category term="goals"></category><category term="review"></category></entry><entry><title>Running Steam Games from EmulationStation</title><link href="http://ericslenk.com/running-steam-games-from-emulationstation.html" rel="alternate"></link><published>2019-03-04T00:00:00-05:00</published><updated>2019-03-04T00:00:00-05:00</updated><author><name>Eric Slenk</name></author><id>tag:ericslenk.com,2019-03-04:/running-steam-games-from-emulationstation.html</id><summary type="html">&lt;p&gt;Configure EmulationStation to browse your Steam collection alongside your very legally emulated console classics.&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="https://emulationstation.org/"&gt;EmulationStation&lt;/a&gt; is a controller-friendly, graphical, themeable, flexible, open-source application for browsing and launching your games. If you want one unified place to look through your game library and figure out what the heck to play this evening, then this is your app! Its bread and butter is launching ROMs on emulators, but with a bit of configuration it will handle your Steam collection alongside your very legally emulated console classics. This walkthrough will get your Steam games into your EmulationStation collection. It's written to use Linux scripts and commands, but should translate to macOS or even Windows with a bit of careful thought.&lt;/p&gt;
+&lt;h1&gt;0. Get EmulationStation&lt;/h1&gt;
+&lt;p&gt;If you don't have EmulationStation yet I highly recommend using the &lt;a href="https://retropie.org.uk/"&gt;RetroPie&lt;/a&gt; fork of EmulationStation and the whole RetroPie ecosystem. It's a wonderful project. Get started with the &lt;a href="https://github.com/RetroPie/RetroPie-Setup"&gt;RetroPie setup tool&lt;/a&gt;.&lt;/p&gt;
+&lt;h1&gt;1. Install Steam Games&lt;/h1&gt;
+&lt;p&gt;Step number one is to grab some games to surface. Go &lt;a href="https://store.steampowered.com/about/"&gt;download the Steam client&lt;/a&gt; if you don't already have it. Then use Steam to install a game or two. Launch one of those games to make sure everything's working fine before you move on.&lt;/p&gt;
+&lt;h1&gt;2. Create Game Shortcuts&lt;/h1&gt;
+&lt;p&gt;Now we need to make something that EmulationStation can open for us. We'll be building desktop shortcut files - specifically &lt;a href="https://standards.freedesktop.org/desktop-entry-spec/latest/"&gt;XDG Desktop Entries&lt;/a&gt;. Now, you can ask the Steam client to build these for you, but that method has a couple down sides. For starters, you must ask this per game at install time. Second, it will only place them on your user's desktop, and if you have a habit of collecting hundreds more games than you could ever possibly play this can wreak havoc on your otherwise pristine desktop.&lt;/p&gt;
+&lt;p&gt;Instead, we're going to do things the hard way and build them all at once with a shell script! You can &lt;a href="https://raw.githubusercontent.com/lucidmachine/bin/master/importsteamgames.sh"&gt;download the whole Steam games import script from my Github repo&lt;/a&gt;. If you want to learn how this script works, read the next section. If you don't, skip ahead to &lt;a href="#usage"&gt;the usage section&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;2.a importsteamgames.sh - The Long Way&lt;/h2&gt;
+&lt;p&gt;To begin, we point the script to a few important directories.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;readonly&lt;/span&gt; &lt;span class="nv"&gt;ROMS_DIR&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;HOME&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;/RetroPie/roms&amp;quot;&lt;/span&gt;
+&lt;span class="nb"&gt;readonly&lt;/span&gt; &lt;span class="nv"&gt;OUTPUT_DIR&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;ROMS_DIR&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;/steam&amp;quot;&lt;/span&gt;
+&lt;span class="nb"&gt;readonly&lt;/span&gt; &lt;span class="nv"&gt;STEAM_APPS_DIR&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;HOME&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;/.steam/steam/steamapps&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;code&gt;ROMS_DIR&lt;/code&gt; is the directory where your ROM subdirectories live. RetroPie assumes this is &lt;code&gt;${HOME}/RetroPie/roms&lt;/code&gt;, so I've used that by default. Change it if you want your Steam shortcuts directory built elsewhere. &lt;code&gt;OUTPUT_DIR&lt;/code&gt; defines the directory which the script will build and fill with .desktop files, by default the &lt;code&gt;steam&lt;/code&gt; subdirectory of the &lt;code&gt;ROMS_DIR&lt;/code&gt; directory. &lt;code&gt;STEAM_APPS_DIR&lt;/code&gt; is the directory where your Steam apps live. Steam defines this as &lt;code&gt;"${HOME}/.steam/steam/steamapps"&lt;/code&gt; by default, so it's probably still there.&lt;/p&gt;
+&lt;p&gt;Now to get into the meat of it. &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[[&lt;/span&gt; -d &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;OUTPUT_DIR&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;]]&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
+    rm -r &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;OUTPUT_DIR&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+&lt;span class="k"&gt;fi&lt;/span&gt;
+mkdir -p &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;OUTPUT_DIR&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;If the target output directory currently exists we're going to nuke it and recreate it to start from scratch every time.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nv"&gt;app_manifest_names&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;ls &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;STEAM_APPS_DIR&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; grep &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;STEAM_MANIFEST_EXT&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Then we search your Steam apps directory for app manifest files, which are files whose name ends in '.acf'.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt; app_manifest_name in &lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;app_manifest_names&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
+    &lt;span class="nv"&gt;app_manifest_path&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;STEAM_APPS_DIR&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;/&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;app_manifest_name&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+    &lt;span class="nv"&gt;app_id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;getManifestProperty &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;app_manifest_path&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&amp;quot;appid&amp;quot;&amp;#39;&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+    &lt;span class="nv"&gt;app_name&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;getManifestProperty &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;app_manifest_path&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&amp;quot;name&amp;quot;&amp;#39;&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+    &lt;span class="nv"&gt;xdg_desktop_file_path&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;OUTPUT_DIR&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;/&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;app_name&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;.desktop&amp;quot;&lt;/span&gt;
+    &lt;span class="nv"&gt;xdg_desktop_file_contents&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;xdgDesktopTemplate &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;app_id&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;app_name&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+
+    &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;xdg_desktop_file_contents&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &amp;gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;xdg_desktop_file_path&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+    chmod &lt;span class="m"&gt;755&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;xdg_desktop_file_path&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+&lt;span class="k"&gt;done&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;For each and every manifest we found we're going to read the "appid" and "name" properties out of the file, use the ID and name to generate the contents of a XDG .desktop file, then write those contents to a file for this specific app in the target output directory. Phew!&lt;/p&gt;
+&lt;p&gt;You might note that a couple non-trivial operations were glossed over there. Those have been extracted into separate functions, which we'll cover now.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt; getManifestProperty&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+    &lt;span class="nb"&gt;local&lt;/span&gt; &lt;span class="nv"&gt;app_manifest_path&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$1&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+    &lt;span class="nb"&gt;local&lt;/span&gt; &lt;span class="nv"&gt;property_name&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$2&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+
+    &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="k"&gt;$(&lt;/span&gt;
+        grep &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;property_name&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;app_manifest_path&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+        &lt;span class="p"&gt;|&lt;/span&gt; rev &lt;span class="se"&gt;\&lt;/span&gt;
+        &lt;span class="p"&gt;|&lt;/span&gt; cut -f &lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+        &lt;span class="p"&gt;|&lt;/span&gt; rev &lt;span class="se"&gt;\&lt;/span&gt;
+        &lt;span class="p"&gt;|&lt;/span&gt; sed -e &lt;span class="s1"&gt;&amp;#39;s/&amp;quot;//g&amp;#39;&lt;/span&gt;
+    &lt;span class="k"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;In order to get a property from a manifest we use &lt;code&gt;grep&lt;/code&gt; to search for the property name in the manifest file. Then we do some post-processing, because &lt;code&gt;grep&lt;/code&gt; outputs an entire line which looks like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;gt; grep &lt;span class="s2"&gt;&amp;quot;name&amp;quot;&lt;/span&gt; appmanifest_105600.acf 
+    &lt;span class="s2"&gt;&amp;quot;name&amp;quot;&lt;/span&gt;      &lt;span class="s2"&gt;&amp;quot;Terraria&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;We use &lt;code&gt;rev | cut -f 1 | rev&lt;/code&gt; to get the last string on the line, &lt;code&gt;"Terraria"&lt;/code&gt;. This works by reversing the whole thing with &lt;code&gt;rev&lt;/code&gt;, using &lt;code&gt;cut -f 1&lt;/code&gt; to get the &lt;em&gt;first&lt;/em&gt; string on the line, &lt;code&gt;"airarreT"&lt;/code&gt;, and reversing it with &lt;code&gt;rev&lt;/code&gt; one more time. The very last bit, &lt;code&gt;sed -e 's/"//g'&lt;/code&gt;, removes all &lt;code&gt;"&lt;/code&gt; characters, turning &lt;code&gt;"Terraria"&lt;/code&gt; into &lt;code&gt;Terraria&lt;/code&gt;. Now THAT we can use.&lt;/p&gt;
+&lt;p&gt;The final piece of the puzzle is using our parsed out properties to build .desktop file contents.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;function&lt;/span&gt; xdgDesktopTemplate&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+    &lt;span class="nb"&gt;local&lt;/span&gt; &lt;span class="nv"&gt;app_id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$1&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+    &lt;span class="nb"&gt;local&lt;/span&gt; &lt;span class="nv"&gt;app_name&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$2&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+
+    cat &lt;span class="s"&gt;&amp;lt;&amp;lt;EOF&lt;/span&gt;
+&lt;span class="s"&gt;[Desktop Entry]&lt;/span&gt;
+&lt;span class="s"&gt;Name=${app_name}&lt;/span&gt;
+&lt;span class="s"&gt;Comment=Play this game on Steam&lt;/span&gt;
+&lt;span class="s"&gt;Exec=steam steam://rungameid/${app_id}&lt;/span&gt;
+&lt;span class="s"&gt;Icon=steam_icon_${app_id}&lt;/span&gt;
+&lt;span class="s"&gt;Terminal=false&lt;/span&gt;
+&lt;span class="s"&gt;Type=Application&lt;/span&gt;
+&lt;span class="s"&gt;Categories=Game;&lt;/span&gt;
+&lt;span class="s"&gt;EOF&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This is just one big &lt;a href="http://tldp.org/LDP/abs/html/here-docs.html"&gt;HEREDOC&lt;/a&gt; with our app ID and name passed in and injected in the appropriate places. Everything between &lt;code&gt;&amp;lt;&amp;lt;EOF&lt;/code&gt; and &lt;code&gt;EOF&lt;/code&gt; is the template. The template itself is copied from one of those Desktop files Steam will create for you if you ask it nicely.&lt;/p&gt;
+&lt;h2 id="usage"&gt;2.b importsteamgames.sh - Usage&lt;/h2&gt;
+
+&lt;p&gt;Now that you've downloaded my Steam games import script to &lt;code&gt;~/bin/importsteamgames.sh&lt;/code&gt; go ahead and run that bad boy.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&amp;gt; ~/bin/importsteamgames.sh
+&amp;gt; ls ~/RetroPie/roms/steam
+Anodyne.desktop
+Bastion.desktop
+...
+Undertale.desktop
+XCom: Enemy Unknown.desktop
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Nice.&lt;/p&gt;
+&lt;h1&gt;3. Add Steam to EmulationStation&lt;/h1&gt;
+&lt;p&gt;Generating all those .desktop files is only half the battle. Now we need to tell EmulationStation how to use those suckers. We'll need to open the configuration file &lt;code&gt;es_systems.cfg&lt;/code&gt; to add a new system for our Steam games. It might live at &lt;code&gt;/etc/emulationstation/es_systems.cfg&lt;/code&gt; or at &lt;code&gt;/opt/retropie/configs/all/emulationstation/es_systems.cfg&lt;/code&gt;. Once you've got it open, add this stanza to the file.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nt"&gt;&amp;lt;system&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;name&amp;gt;&lt;/span&gt;steam&lt;span class="nt"&gt;&amp;lt;/name&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;fullname&amp;gt;&lt;/span&gt;Steam&lt;span class="nt"&gt;&amp;lt;/fullname&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;path&amp;gt;&lt;/span&gt;/home/yourusername/RetroPie/roms/steam&lt;span class="nt"&gt;&amp;lt;/path&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;extension&amp;gt;&lt;/span&gt;.desktop&lt;span class="nt"&gt;&amp;lt;/extension&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;command&amp;gt;&lt;/span&gt;xdg-open %ROM%&lt;span class="nt"&gt;&amp;lt;/command&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;platform&amp;gt;&lt;/span&gt;pc&lt;span class="nt"&gt;&amp;lt;/platform&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;theme&amp;gt;&lt;/span&gt;steam&lt;span class="nt"&gt;&amp;lt;/theme&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/system&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This tells emulationstation that there's a new system called &lt;code&gt;steam&lt;/code&gt; which it should present to humans as &lt;code&gt;Steam&lt;/code&gt; whose games live in &lt;code&gt;/home/yourusername/RetroPie/roms/steam&lt;/code&gt;. Be sure to change that to whatever directory you put your .desktop files in earlier. Those game files will have names that end in &lt;code&gt;.desktop&lt;/code&gt;, and when EmulationStation wants to run one it will run &lt;code&gt;xdg-open&lt;/code&gt; on the selected game file. &lt;code&gt;xdg-open&lt;/code&gt; will in turn open up that .desktop file, read the line &lt;code&gt;Exec=steam steam://rungameid/${app_id}&lt;/code&gt;, and ask steam to run the game with the target app ID. EmulationStation -&amp;gt; XDG -&amp;gt; Steam. The platform line tells any metadata scrapers that when they search for a game in this folder they should search for PC games. The theme line tells EmulationStation that if a theme supports Steam it should use that part of the theme for this system's collection.&lt;/p&gt;
+&lt;p&gt;Now you should be able to launch your Steam games from EmulationStation! But we're not quite done yet.&lt;/p&gt;
+&lt;h1&gt;4. Install an EmulationStation Theme with Steam Support&lt;/h1&gt;
+&lt;p&gt;After going through all that trouble to build your Steam collection in EmulationStation you're gonna want a theme that supports it! There are plenty of themes which have special icons and assets just for Steam, so go get you one. My personal favorite is &lt;a href="https://github.com/ehettervik/es-theme-pixel-metadata"&gt;pixel-metadata&lt;/a&gt;. If you're running RetroPie you can run the setup script and find it in the theme library.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="pixel-metadata gamelist screen" src="https://raw.githubusercontent.com/wetriner/es-theme-gallery/master/pixel-metadata-gamelist.png"&gt;&lt;/p&gt;
+&lt;h1&gt;5. Scrape Game Metadata&lt;/h1&gt;
+&lt;p&gt;The last piece of the puzzle here is to go and grab metadata for your Steam games. Just run your EmulationStation scraper of choice here, same as for the rest of your systems. Now you can happily scroll through all of your games in one place!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;DONE.&lt;/strong&gt;&lt;/p&gt;</content><category term="emulationstation"></category><category term="steam"></category><category term="emulation"></category><category term="frontend"></category><category term="linux"></category><category term="bash"></category><category term="roms"></category></entry><entry><title>Setting Up SSH Public Key Authentication</title><link href="http://ericslenk.com/setting-up-ssh-public-key-authentication.html" rel="alternate"></link><published>2019-02-25T00:00:00-05:00</published><updated>2019-02-25T00:00:00-05:00</updated><author><name>Eric Slenk</name></author><id>tag:ericslenk.com,2019-02-25:/setting-up-ssh-public-key-authentication.html</id><summary type="html">&lt;p&gt;Do you have a computer to compute on, but it's all the way over there? Use SSH, stupid! With keys!&lt;/p&gt;</summary><content type="html">&lt;p&gt;Do you have a computer to compute on, but it's &lt;em&gt;all&lt;/em&gt; the way over &lt;em&gt;there&lt;/em&gt;? Use SSH, stupid! With keys!&lt;/p&gt;
+&lt;h1&gt;0. Have Access to a Remote Computer with an SSH Server&lt;/h1&gt;
+&lt;p&gt;Before you can set up key-based authentication you should have:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A remote computer.&lt;/li&gt;
+&lt;li&gt;A user account with a password on that remote computer.&lt;/li&gt;
+&lt;li&gt;A SSH server installed on that remote computer which is:&lt;ul&gt;
+&lt;li&gt;Configured to allow your remote user account to log in and&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Running&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;These all sound obvious, but I almost never have all 5 at once, so there you go.&lt;/p&gt;
+&lt;p&gt;For our examples we'll assume that your local user is &lt;code&gt;groundcontrol&lt;/code&gt; on the local host named &lt;code&gt;earth&lt;/code&gt;, trying to log in as the remote user &lt;code&gt;majortom&lt;/code&gt; to the remote host &lt;code&gt;tincan&lt;/code&gt;.&lt;/p&gt;
+&lt;h1&gt;1. Generate Your Key Pair&lt;/h1&gt;
+&lt;p&gt;First you need to make a key pair. Run &lt;code&gt;ssh-keygen&lt;/code&gt; to create a public and private key.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;groundcontrol@earth:~$ ssh-keygen
+
+Enter file in which to save the key (/home/groundcontrol/.ssh/id_rsa): /home/groundcontrol/.ssh/tincan
+Enter passphrase (empty for no passphrase): [redacted]
+Enter same passphrase again: [redacted]
+Your identification has been saved in /home/groundcontrol/.ssh/tincan.
+Your public key has been saved in /home/groundcontrol/.ssh/tincan.pub.
+The key fingerprint is:
+SHA256:6qhMpF/b62Zt63i/SVH6fZqqzB7uQc2kyryIwvR+FsQ groundcontrol@earth
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Here we've elected to make a key pair with the name of our remote machine, &lt;code&gt;tincan&lt;/code&gt;. It lives in the &lt;code&gt;.ssh&lt;/code&gt; subdirectory of the user &lt;code&gt;groundcontrol&lt;/code&gt;'s home directory. The private key stays on your local machine, and the public key gets sent to your remote machine.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ssh-keygen&lt;/code&gt; will request an optional passphrase, which it will use to encrypt your private key when it's not being used. Use one.&lt;/p&gt;
+&lt;h1&gt;2. Upload the Public Key to your Remote Machine&lt;/h1&gt;
+&lt;p&gt;Now you must tell your remote SSH server that &lt;code&gt;majortom&lt;/code&gt; can be authenticated using your private key, &lt;code&gt;/home/groundcontrol/.ssh/tincan&lt;/code&gt;. To do so, you must append the contents of your public key, &lt;code&gt;/home/groundcontrol/.ssh/tincan.pub&lt;/code&gt;, to the &lt;code&gt;authorized_keys&lt;/code&gt; file for your remote user, &lt;code&gt;/home/majortom/.ssh/authorized_keys&lt;/code&gt;. We'll do this using &lt;code&gt;ssh-copy-id&lt;/code&gt;, but you can accomplish the same task with &lt;code&gt;scp&lt;/code&gt; or some other file transfer utility if it's not available.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;groundcontrol@earth:~$ ssh-copy-id -i ~/.ssh/tincan.pub majortom@192.168.1.2
+
+/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: &amp;quot;/home/groundcontrol/.ssh/tincan.pub&amp;quot;
+/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+/usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
+majortom@192.168.1.2&amp;#39;s password: 
+
+Number of key(s) added: 1
+
+Now try logging into the machine, with:   &amp;quot;ssh &amp;#39;majortom@129.168.1.2&amp;#39;&amp;quot;
+and check to make sure that only the key(s) you wanted were added.
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;3. Configure an SSH Host&lt;/h1&gt;
+&lt;p&gt;Would you rather type &lt;code&gt;ssh tincan&lt;/code&gt; or &lt;code&gt;ssh majortom@192.168.1.2&lt;/code&gt; to log in to your remote machine? To accomplish the former, append the following to the file &lt;code&gt;/home/groundcontrol/.ssh/config&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Host tincan
+    user majortom
+    HostName 192.168.1.2
+    IdentityFile /home/groundcontrol/.ssh/tincan
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The Host value, &lt;code&gt;tincan&lt;/code&gt;, is the alias for your remote machine. The user value is the name of the user on the remote machine you'll log in as, &lt;code&gt;majortom&lt;/code&gt;. The HostName can be either a DNS name or an IP address for the remote machine. Here it's a local IP, &lt;code&gt;192.168.1.2&lt;/code&gt;. The IdentityFile is the path to the private key you'll use to authenticate to the server, &lt;code&gt;/home/groundcontrol/.ssh/tincan&lt;/code&gt;.&lt;/p&gt;
+&lt;h1&gt;4. Verify&lt;/h1&gt;
+&lt;p&gt;Now go log in to your remote box.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;groundcontrol@earth:~$ ssh tincan
+
+Enter passphrase for key &amp;#39;/home/groundcontrol/.ssh/tincan&amp;#39;: [redacted]
+
+majortom@tincan:~$ cat ~/.ssh/authorized_keys
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;strong&gt; DONE. &lt;/strong&gt;&lt;/p&gt;</content><category term="ssh"></category><category term="cryptography"></category><category term="keys"></category><category term="linux"></category></entry><entry><title>Personal Goals Review - 2019-02-23</title><link href="http://ericslenk.com/personal-goals-review-2019-02-23.html" rel="alternate"></link><published>2019-02-23T00:00:00-05:00</published><updated>2019-02-23T00:00:00-05:00</updated><author><name>Eric Slenk</name></author><id>tag:ericslenk.com,2019-02-23:/personal-goals-review-2019-02-23.html</id><summary type="html">&lt;p&gt;Review of progress toward my personal goals for 2019-02-08 to 2019-02-23.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Goals&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Relationships:&lt;/strong&gt; I made it out to a few social events, which were great. A party here, a date there, &lt;a href="http://www.democamplansing.com/"&gt;DemoCamp Lansing&lt;/a&gt; over yonder. That said, I'd like to spend more quality time with people next fortnight. &lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Career:&lt;/strong&gt; Not a whole lot of wins to speak of on the career front. I'm continuing to learn more about Angular as I migrate AngularJS code, but frankly we're catching up to the rest of the world in this respect. I experienced a few setbacks in personal projects, too. I somehow uninstalled the entire networking stack on my gaming rig. Taking the time to fix the dang thing derailed development and writing I had planned.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Health and Longevity:&lt;/strong&gt; My shoulder feels better this fortnight, but I have no idea why. Still haven't seen a medical professional. And I don't think I rode my bike at all aside from commutes.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Financial Independence:&lt;/strong&gt; I am, for the first time in my adult life, &lt;strong&gt;WORTH A POSITIVE AMOUNT OF DOLLARS!&lt;/strong&gt; I'm still figuring out what my role is in the management of my family's finances at this point. We've curbed a bit of impulse spending, but I think I need to get back into habitually actively managing our accounts and I really didn't prioritize this or attempt to establish any habits about it.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Habits&lt;/h1&gt;
+&lt;h2&gt;Leave Work on Time&lt;/h2&gt;
+&lt;p&gt;This has gone poorly for a few reasons. First, my team at work has been pair/trio/mob programming on all of the feature development we've done over the past fortnight. Mob programming has plenty of advantages, but when you're all collectively working on a problem it can be unpalatable to say "hey, it's 4pm and I think we should just drop it." Plus, the odds are that I'll be looking at somebody &lt;em&gt;else's&lt;/em&gt; screen when the reminders go off on &lt;em&gt;my&lt;/em&gt; computer. I've set a corresponding series of reminders on my phone to sort of work around the problem of not looking at my computer while the reminders go off. As for getting the team to stop, I'll just have to get used to it and trust that they want to go home as much as I do.&lt;/p&gt;
+&lt;p&gt;Second, I took it upon myself to make wide-ranging updates to our team's frontend code alone. Since I elected to do so alone I've been doing this work at times the team isn't mob programming - in the late afternoon. This effort is nearly complete, so the issue will sort of resolve itself in short order. But I will do the remaining work in the early morning, before our team begins programming. If I don't get to work on time to do migration work, so be it. At least I'll have my sanity.&lt;/p&gt;
+&lt;p&gt;Finally, I've just realized that my computer didn't automatically log me out at 5pm yesterday like it's supposed to... I'll look into that.&lt;/p&gt;
+&lt;h3&gt;Updated Habit&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Trigger(s):&lt;/strong&gt; &lt;strong&gt;Computer and phone&lt;/strong&gt; reminders at 3:30pm, &lt;strong&gt;computer and phone reminders&lt;/strong&gt; at 4:00pm, &lt;strong&gt;computer and phone reminders and auto-close computer&lt;/strong&gt; communication apps at 4:30pm, auto-logout at 5:00pm.&lt;/li&gt;
+&lt;li&gt;Action(s): Stop current task. Close email and chat applications. Fill out work log. GTFO.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Personal Goals Reviews&lt;/h2&gt;
+&lt;p&gt;This post is a day late for a couple reasons. For one, I didn't have the right tools at the right times to write the post. I remembered that I had to write this post early yesterday morning at work - well before the post was due, but well after I had the opportunity to pack my personal laptop and bring it to work. This has been a problem before, but I managed to work around it the past few times. I think the requirement that I write these posts on my personal laptop is a real hindrance here, so I'm going to start a project, Easier Blog Publication, to work around that. I always have access to my personal phone and keyboard in the office, so I'm going to see if I can retool my blogging setup to allow for writing and publication from my phone.&lt;/p&gt;
+&lt;p&gt;The second reason was that my work day was especially mentally exhausting and especially long, so by the time I left the office I was a wreck. I got home late and passed out on the couch and by the time I felt remotely okay it was like 8pm. I pushed this post off until today to just take care of myself for the rest of the night. I've increased the priority of Leave Work on Time to address this, as it's really a problem of violating that boundary.&lt;/p&gt;
+&lt;h2&gt;Bedtime Routine&lt;/h2&gt;
+&lt;p&gt;At least &lt;em&gt;this&lt;/em&gt; habit's still on track! I've been digging mint tea and re-reading William Gibson's Bridge trilogy. I finished the first book in the trilogy, &lt;a href="https://amzn.to/2MXEv0I"&gt;Virtual Light&lt;/a&gt;, and am well into the second, &lt;a href="https://amzn.to/2Xk7NLV"&gt;Idoru&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Financial Reviews&lt;/h2&gt;
+&lt;p&gt;Our family's finances have slipped, and I've been asked to take back some of the active management responsibilities. To get started I'll take a couple hours every other week to just categorize some transactions and get a high-level overview of our finances. I'm going to let the trigger be a calendar reminder and see if involving my wife adds enough social pressure to make it effective.&lt;/p&gt;
+&lt;h3&gt;New Habit&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Trigger(s): Calendar Reminder.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Action(s): Update transaction log in Mint. Obtain high-level overview.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Projects&lt;/h1&gt;
+&lt;h2&gt;Converting to TypeScript&lt;/h2&gt;
+&lt;p&gt;I published &lt;a href="http://ericslenk.com/converting-to-typescript-declaring-interfaces.html"&gt;an article on declaring interfaces in TypeScript&lt;/a&gt; in &lt;a href="http://ericslenk.com/tag/typescript.html"&gt;the Converting to TypeScript mini-series&lt;/a&gt;. This is still going pretty well, and I'm still learning a bunch.&lt;/p&gt;
+&lt;h2&gt;Emulation Box&lt;/h2&gt;
+&lt;p&gt;I'm writing a couple tutorials based on the setup of my emulation box soon, so keep an eye out for those. I sort of accidentally borked my Steam Machine a little while back, so I took a weekend and change to rebuild it. It's now based on &lt;a href="https://xubuntu.org/"&gt;Xubuntu 18.04&lt;/a&gt; and &lt;a href="https://retropie.org.uk/"&gt;RetroPie&lt;/a&gt;, and I wrote some scripts and some config files so that it can detect and launch all of my Steam games from &lt;a href="https://emulationstation.org/"&gt;EmulationStation&lt;/a&gt; along side my ROM collection. I'm just &lt;em&gt;so&lt;/em&gt; pleased with how it turned out. While I'm at it I might take the opportunity to write a bit more about video game emulation, who knows?&lt;/p&gt;
+&lt;h2&gt;Easier Blog Publication&lt;/h2&gt;
+&lt;p&gt;Presently my blogging setup looks like:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Writing: Markdown and IntelliJ IDEA - I don't need a full IDE for this, but it meets many of my other needs as well.&lt;/li&gt;
+&lt;li&gt;Building: Pelican, several Pelican packages, Python 3, Make&lt;/li&gt;
+&lt;li&gt;Preview: Pelican, several Pelican packages, Python 3, Make - This is the same as building, as the process is literally building the site and running it on a local development server.&lt;/li&gt;
+&lt;li&gt;Version Control: Git and Github&lt;/li&gt;
+&lt;li&gt;Publication: Pelican, Python 3, Make, rsync, and one big-ass password (no crypto keys, too lazy I guess?)&lt;/li&gt;
+&lt;li&gt;Publication Scheduling: Me, a human, who does not always like or remember to publish content early in the morning before work&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This has served me pretty well until now, but I would love to be able to draft posts on my phone, on a different computer, etc. to give myself more flexibility. Requiring that the local device build, preview, and publish the site's content has proven to be a real impediment to this. I'm also going to try to figure out how to push content ahead of time and have it publish at a given future date. I think I could do this right now with Pelican if I had an automated daily process which rebuilt and re-published the site from my Github repo, but I don't, so I can't. I'll re-evaluate my writing and site development needs and work toward meeting those expanding needs.&lt;/p&gt;</content><category term="2019"></category><category term="goals"></category><category term="review"></category></entry><entry><title>Converting to TypeScript: Declaring Interfaces</title><link href="http://ericslenk.com/converting-to-typescript-declaring-interfaces.html" rel="alternate"></link><published>2019-02-18T00:00:00-05:00</published><updated>2019-02-18T00:00:00-05:00</updated><author><name>Eric Slenk</name></author><id>tag:ericslenk.com,2019-02-18:/converting-to-typescript-declaring-interfaces.html</id><summary type="html">&lt;p&gt;Now that you're set up, start &lt;em&gt;using&lt;/em&gt; TypeScript. With types and stuff!&lt;/p&gt;</summary><content type="html">&lt;p&gt;Hey nerds. Now that you've &lt;a href="http://ericslenk.com/modularize-your-javascript-with-es6-modules-and-webpack.html"&gt;modularized your project with ES6 and Webpack&lt;/a&gt; and &lt;a href="http://ericslenk.com/converting-to-typescript-toolchain.html"&gt;set up a toolchain to transpile TypeScript to JavaScript&lt;/a&gt; you should start &lt;em&gt;using&lt;/em&gt; TypeScript. With types and stuff!&lt;/p&gt;
+&lt;h1&gt;The Declaration File&lt;/h1&gt;
+&lt;p&gt;Your library's types should live in a declaration file, so let's make one and get cracking! Where do we put this thing? What do we call it? The &lt;a href="https://www.typescriptlang.org/docs/handbook/declaration-files/library-structures.html"&gt;TypeScript docs on library structures&lt;/a&gt; have a lot of suggestions, but you'll probably be interested in one of three cases.&lt;/p&gt;
+&lt;p&gt;Suppose you're writing a really awesome module named "rad", and you import it like &lt;code&gt;const rad = require('rad');&lt;/code&gt;.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;If your module will be called as a function like &lt;code&gt;rad('yeah');&lt;/code&gt;, name it &lt;code&gt;rad/module-function.d.ts&lt;/code&gt; and use &lt;a href="https://www.typescriptlang.org/docs/handbook/declaration-files/templates/module-function-d-ts.html"&gt;the module-function.d.ts template&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;If your module will be constructed as a class using &lt;code&gt;new&lt;/code&gt; like &lt;code&gt;let woo = new rad('yeah');&lt;/code&gt;, name it &lt;code&gt;rad/module-class.d.ts&lt;/code&gt; and use &lt;a href="https://www.typescriptlang.org/docs/handbook/declaration-files/templates/module-function-d-ts.html"&gt;the module-function.d.ts template&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;If neither of the above apply, name it &lt;code&gt;rad/module.d.ts&lt;/code&gt; and use &lt;a href="https://www.typescriptlang.org/docs/handbook/declaration-files/templates/module-d-ts.html"&gt;the module.d.ts template&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Interfaces&lt;/h1&gt;
+&lt;p&gt;What exactly goes in that declaration file? Interfaces! So. Many. Interfaces. From the docs:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;One of TypeScript’s core principles is that type-checking focuses on the shape that values have. ... In TypeScript, interfaces fill the role of naming these types, and are a powerful way of defining contracts within your code as well as contracts with code outside of your project.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;TypeScript has a lot of kinds of interfaces and plenty of ways to define those interfaces, but to start we'll focus on two extremely versatile kinds of interfaces that get stuff done.&lt;/p&gt;
+&lt;h2&gt;Object Interfaces&lt;/h2&gt;
+&lt;p&gt;An object interface is a description of the shape of an object. You can describe which properties should exist on an object which conforms to the interface, what the types of those properties are, and which of those properties are required or optional. For example, let's say we want to greet some chump. Among other things, chumps have names - usually a couple, sometimes more. We might start with a function that looks a bit like this.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;// index.ts&lt;/span&gt;
+&lt;span class="kr"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;rudeGreeting&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;victim&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt;
+    &lt;span class="sb"&gt;`Get lost, &lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nx"&gt;victim&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;name&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="sb"&gt;!`&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;rudeGreeting&lt;/span&gt;&lt;span class="p"&gt;({&lt;/span&gt;&lt;span class="nx"&gt;name&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;Steve&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;}));&lt;/span&gt;
+&lt;span class="c1"&gt;// &amp;gt; &amp;quot;Get lost, Steve!&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;That seems fine at first blush. The trouble is, we're assuming that &lt;code&gt;victim&lt;/code&gt; &lt;em&gt;has&lt;/em&gt; a &lt;code&gt;name&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;// index.ts&lt;/span&gt;
+&lt;span class="kr"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;rudeGreeting&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;victim&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt;
+    &lt;span class="sb"&gt;`Get lost, &lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nx"&gt;victim&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;name&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="sb"&gt;!`&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;rudeGreeting&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kc"&gt;false&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;
+&lt;span class="c1"&gt;// &amp;gt; &amp;quot;Get lost, undefined!&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;That's a bug. We could write some more code to check whether our &lt;code&gt;victim&lt;/code&gt;'s got a &lt;code&gt;name&lt;/code&gt;, and to specify how the function should behave if our &lt;code&gt;victim&lt;/code&gt; &lt;em&gt;doesn't&lt;/em&gt; have a &lt;code&gt;name&lt;/code&gt;. Or we can lean on TypeScript's compiler to ensure that whatever makes it into our function definitely has a &lt;code&gt;name&lt;/code&gt;. We'll define an interface for chumps and require that anything passed into our greeting function is an object which conforms to that chump interface.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;// module.d.ts&lt;/span&gt;
+&lt;span class="kr"&gt;interface&lt;/span&gt; &lt;span class="nx"&gt;Chump&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nx"&gt;givenName&lt;/span&gt;: &lt;span class="kt"&gt;string&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="nx"&gt;middleNames&lt;/span&gt;: &lt;span class="kt"&gt;string&lt;/span&gt;&lt;span class="p"&gt;[];&lt;/span&gt;
+    &lt;span class="nx"&gt;familyName&lt;/span&gt;: &lt;span class="kt"&gt;string&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="nx"&gt;nickName?&lt;/span&gt;: &lt;span class="kt"&gt;string&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="c1"&gt;// index.ts&lt;/span&gt;
+&lt;span class="kr"&gt;import&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="nx"&gt;Chump&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="nx"&gt;from&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;rad&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="kr"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;rudeGreeting&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;victim&lt;/span&gt;: &lt;span class="kt"&gt;Chump&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt;
+    &lt;span class="sb"&gt;`Get lost, &lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nx"&gt;victim&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;nickName&lt;/span&gt; &lt;span class="o"&gt;||&lt;/span&gt; &lt;span class="nx"&gt;victim&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;givenName&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="sb"&gt;!`&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="kr"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;steve&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nx"&gt;givenName&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Steven&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="nx"&gt;middleNames&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[],&lt;/span&gt;
+    &lt;span class="nx"&gt;familyName&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Chumpsworth&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="nx"&gt;nickName&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Steve&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="nx"&gt;isAwful&lt;/span&gt;: &lt;span class="kt"&gt;true&lt;/span&gt;
+
+&lt;span class="p"&gt;};&lt;/span&gt;
+
+&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;rudeGreeting&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;steve&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;
+&lt;span class="c1"&gt;// &amp;gt; &amp;quot;Get lost, Steve!&amp;quot;&lt;/span&gt;
+
+&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;rudeGreeting&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kc"&gt;false&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;
+&lt;span class="c1"&gt;// &amp;gt; Argument type boolean is not assignable to parameter type Chump&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Heck yeah! When we gave it a properly formed victim everything worked out fine. And when we gave it some invalid crap, the compiler yelled at us! Much better!&lt;/p&gt;
+&lt;h2&gt;Function Interfaces&lt;/h2&gt;
+&lt;p&gt;A function interface is a description of the shape of a function. You can describe what parameters a function should take and what type of data it should return by using a function interface. For example, let's write a second chump greeting function.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;// module.d.ts&lt;/span&gt;
+&lt;span class="kr"&gt;interface&lt;/span&gt; &lt;span class="nx"&gt;Chump&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nx"&gt;givenName&lt;/span&gt;: &lt;span class="kt"&gt;string&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="nx"&gt;middleNames&lt;/span&gt;: &lt;span class="kt"&gt;string&lt;/span&gt;&lt;span class="p"&gt;[];&lt;/span&gt;
+    &lt;span class="nx"&gt;familyName&lt;/span&gt;: &lt;span class="kt"&gt;string&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="nx"&gt;nickName?&lt;/span&gt;: &lt;span class="kt"&gt;string&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="kr"&gt;interface&lt;/span&gt; &lt;span class="nx"&gt;GreetingFunc&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;victim&lt;/span&gt;: &lt;span class="kt"&gt;Chump&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="kt"&gt;string&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+
+&lt;span class="c1"&gt;// index.ts&lt;/span&gt;
+&lt;span class="kr"&gt;import&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="nx"&gt;Chump&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;GreetingFunc&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="nx"&gt;from&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;rad&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+
+&lt;span class="kr"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;rudeGreeting&lt;/span&gt;: &lt;span class="kt"&gt;GreetingFunc&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;victim&lt;/span&gt;: &lt;span class="kt"&gt;Chump&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt;
+    &lt;span class="sb"&gt;`Get lost, &lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nx"&gt;victim&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;nickName&lt;/span&gt; &lt;span class="o"&gt;||&lt;/span&gt; &lt;span class="nx"&gt;victim&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;givenName&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="sb"&gt;!`&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="kr"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;politeGreeting&lt;/span&gt;: &lt;span class="kt"&gt;GreetingFunc&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;victim&lt;/span&gt;: &lt;span class="kt"&gt;Chump&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="kr"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;fullName&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;
+        &lt;span class="nx"&gt;victim&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;givenName&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; 
+        &lt;span class="p"&gt;...&lt;/span&gt;&lt;span class="nx"&gt;victim&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;middleNames&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; 
+        &lt;span class="nx"&gt;victim&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;familyName&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+        &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;join&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39; &amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="sb"&gt;`Salutations, &lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nx"&gt;fullName&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="sb"&gt;!`&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;};&lt;/span&gt;
+
+&lt;span class="kr"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;metaGreeting&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;victim&lt;/span&gt;: &lt;span class="kt"&gt;Chump&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="nx"&gt;isAwful&lt;/span&gt;: &lt;span class="kt"&gt;boolean&lt;/span&gt;&lt;span class="p"&gt;})&lt;/span&gt; &lt;span class="o"&gt;=&amp;gt;&lt;/span&gt;
+    &lt;span class="nx"&gt;victim&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;isAwful&lt;/span&gt; &lt;span class="o"&gt;?&lt;/span&gt;
+        &lt;span class="nx"&gt;rudeGreeting&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;victim&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt;
+        &lt;span class="nx"&gt;politeGreeting&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;victim&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+
+
+&lt;span class="kr"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;steve&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nx"&gt;givenName&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Steven&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="nx"&gt;middleNames&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[],&lt;/span&gt;
+    &lt;span class="nx"&gt;familyName&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Chumpsworth&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="nx"&gt;nickName&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Steve&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="nx"&gt;isAwful&lt;/span&gt;: &lt;span class="kt"&gt;true&lt;/span&gt;
+&lt;span class="p"&gt;};&lt;/span&gt;
+
+&lt;span class="kr"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;phyllis&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nx"&gt;givenName&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Phyllis&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="nx"&gt;middleNames&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Rose&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Dandellion&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+    &lt;span class="nx"&gt;familyName&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Herpingderp&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="nx"&gt;isAwful&lt;/span&gt;: &lt;span class="kt"&gt;false&lt;/span&gt;
+&lt;span class="p"&gt;};&lt;/span&gt;
+
+&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;metaGreeting&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;steve&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;
+&lt;span class="c1"&gt;// &amp;gt; &amp;quot;Get lost, Steve!&amp;quot;&lt;/span&gt;
+
+&lt;span class="nx"&gt;console&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;log&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;metaGreeting&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;phyllis&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;
+&lt;span class="c1"&gt;// &amp;gt; &amp;quot;Salutations, Phyllis Rose Dandellion Herpingderp!&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;You can see that both &lt;code&gt;rudeGreeting()&lt;/code&gt; and &lt;code&gt;politeGreeting()&lt;/code&gt; were defined as implementing our function interface, &lt;code&gt;GreetingFunc&lt;/code&gt;. For a bit of bonus fun, we've defined a third function, &lt;code&gt;metaGreeting()&lt;/code&gt;, which takes a objects which conform to the Chump interface &lt;em&gt;and also&lt;/em&gt; have a boolean property named &lt;code&gt;isAwful&lt;/code&gt; by using &lt;a href="https://www.typescriptlang.org/docs/handbook/advanced-types.html#intersection-types"&gt;Intersection Types&lt;/a&gt;. Read up on it, that's cool as heck.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;DONE.&lt;/strong&gt;&lt;/p&gt;</content><category term="typescript"></category><category term="ts"></category><category term="definitions"></category><category term="interfaces"></category><category term="types"></category><category term="javascript"></category><category term="js"></category><category term="bitclock"></category></entry><entry><title>Personal Goals Review - 2019-02-08</title><link href="http://ericslenk.com/personal-goals-review-2019-02-08.html" rel="alternate"></link><published>2019-02-08T00:00:00-05:00</published><updated>2019-02-08T00:00:00-05:00</updated><author><name>Eric Slenk</name></author><id>tag:ericslenk.com,2019-02-08:/personal-goals-review-2019-02-08.html</id><summary type="html">&lt;p&gt;Review of progress toward my personal goals for 2019-01-25 to 2019-02-08.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Goals&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Relationships: I spent some time with some people, which was nice. But perhaps not enough time, which isn't.&lt;/li&gt;
+&lt;li&gt;Career: I learned a lot of valuable skills this fortnight. I also had considerable success in dealing with some tough situations at work. And I've received some pretty favorable reviews!&lt;/li&gt;
+&lt;li&gt;Health and Longevity: What the heck is my shoulder doing? I should probably actually see a doctor soon.&lt;/li&gt;
+&lt;li&gt;Financial Independence: We started talking about and handling our debt emergency, which was good. But we stopped working on it actively after like a week, which was bad.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Habits&lt;/h1&gt;
+&lt;h2&gt;Personal Goals Reviews&lt;/h2&gt;
+&lt;p&gt;I opened this review at the start of the fortnight and occasionally updated it with notable events throughout the fortnight. This experiment had two goals: 1) determine whether I can reduce the amount of time writing these reviews and 2) get a more accurate, holistic snapshot of the whole fortnight rather than a Friday-centric, fuzzy memory. Naturally, I totally forgot to open it for the rest of the fortnight. At least the reminder worked.&lt;/p&gt;
+&lt;h2&gt;Bedtime Routine&lt;/h2&gt;
+&lt;p&gt;I've reliably performed the whole ritual each night this fortnight. I'm still enjoying the tea and &lt;a href="https://amzn.to/2FPfi86"&gt;The Design of Everyday Things by Donald A. Norman&lt;/a&gt;. I've also begun to reread &lt;a href="https://amzn.to/2MXEv0I"&gt;Virtual Light by William Gibson&lt;/a&gt;. It turns out that The Design of Everyday Things is the sort of book about which I'm inclined to take notes, and taking notes is not at all conducive to going to sleep. I think using "after dinner" was an effective trigger, though I note that I haven't eaten dinner at a consistent time this week.&lt;/p&gt;
+&lt;h2&gt;Leave Work on Time&lt;/h2&gt;
+&lt;p&gt;Barring a few work emergencies I've continued to enjoy leaving work at reasonable times.&lt;/p&gt;
+&lt;h1&gt;Projects&lt;/h1&gt;
+&lt;h2&gt;Bitclock&lt;/h2&gt;
+&lt;p&gt;&lt;iframe src="https://lucidmachine.github.io/bitclock/" style="border: none; height: 150px"&gt;&lt;/iframe&gt;&lt;/p&gt;
+&lt;p&gt;I &lt;a href="http://ericslenk.com/modularize-your-javascript-with-es6-modules-and-webpack.html"&gt;modularized Bitclock using Webpack&lt;/a&gt; and then &lt;a href="http://ericslenk.com/converting-to-typescript-toolchain.html"&gt;converted Bitclock from JavaScript to TypeScript&lt;/a&gt; this fortnight. The exercise taught me plenty about modern frontend tooling and gave me a bit more experience in TypeScript! I'm pretty excited about TypeScript's type system - especially Interfaces and union types. And I even got to leverage a bit of this knowledge at work throughout the week.&lt;/p&gt;</content><category term="2019"></category><category term="goals"></category><category term="review"></category></entry><entry><title>Converting to TypeScript: Toolchain</title><link href="http://ericslenk.com/converting-to-typescript-toolchain.html" rel="alternate"></link><published>2019-02-04T00:00:00-05:00</published><updated>2019-02-04T00:00:00-05:00</updated><author><name>Eric Slenk</name></author><id>tag:ericslenk.com,2019-02-04:/converting-to-typescript-toolchain.html</id><summary type="html">&lt;p&gt;Upgrade your project's toolchain to build TypeScript alongside JavaScript.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This article assumes that your project is already built using Webpack and structured in a standard way. If your project doesn't use Webpack yet check out &lt;a href="http://ericslenk.com/modularize-your-javascript-with-es6-modules-and-webpack.html"&gt;Modularize Your JavaScript with ES6 and Webpack&lt;/a&gt;.&lt;/p&gt;
+&lt;h1&gt;Install TypeScript Toolchain&lt;/h1&gt;
+&lt;p&gt;To get started get yourself the TypeScript compiler, the TypeScript loader for Webpack, and a TypeScript linter plugin for ESLint.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ npm install --save-dev typescript ts-loader tslint @typescript-eslint/eslint-plugin-tslint
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;Configure TypeScript Compiler&lt;/h1&gt;
+&lt;p&gt;Next you need to tell the TypeScript compiler how to do its job. Computers sure are dumb. Create the file &lt;code&gt;tsconfig.json&lt;/code&gt; in your project's top-level directory and add the following.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;// tsconfig.json&lt;/span&gt;
+
+&lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="s2"&gt;&amp;quot;compilerOptions&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="s2"&gt;&amp;quot;outDir&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;./dist/&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;&amp;quot;sourceMap&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;&amp;quot;noImplicitAny&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;&amp;quot;module&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;es6&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;&amp;quot;allowJs&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="s2"&gt;&amp;quot;moduleResolution&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;node&amp;quot;&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This tells the TypeScript compiler take your TypeScript and JavaScript files as input and output ES5 JavaScript with &lt;a href="https://developer.mozilla.org/en-US/docs/Tools/Debugger/How_to/Use_a_source_map"&gt;source maps&lt;/a&gt; so that your browser will run the equivalent ES5 code but let you debug the corresponding TypeScript source.&lt;/p&gt;
+&lt;p&gt;The last line tells the compiler to look for modules in the same way that Node.js does. This isn't strictly necessary, but some development tools which analyze your code and assume this resolution strategy might benefit here. See the &lt;a href="https://www.typescriptlang.org/docs/handbook/module-resolution.html#classic"&gt;TypeScript documentation on module resolution strategies&lt;/a&gt; for details.&lt;/p&gt;
+&lt;h1&gt;Reconfigure Webpack&lt;/h1&gt;
+&lt;p&gt;Now you need to configure Webpack to run the TypeScript compiler when building your project. If you don't already have a file &lt;code&gt;webpack.config.js&lt;/code&gt; in your project's top-level directory, create it and add the following.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;// webpack.config.js&lt;/span&gt;
+
+&lt;span class="kr"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;path&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;require&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;path&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+
+&lt;span class="nx"&gt;module&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;exports&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nx"&gt;entry&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;./src/index.ts&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="nx"&gt;devtool&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;inline-source-map&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="nx"&gt;module&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="nx"&gt;rules&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;
+            &lt;span class="p"&gt;{&lt;/span&gt;
+                &lt;span class="nx"&gt;test&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="sr"&gt;/\.ts$/&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                &lt;span class="nx"&gt;use&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;ts-loader&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                &lt;span class="nx"&gt;include&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="sr"&gt;/src/&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                &lt;span class="nx"&gt;exclude&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="sr"&gt;/node_modules/&lt;/span&gt;
+            &lt;span class="p"&gt;}&lt;/span&gt;
+        &lt;span class="p"&gt;]&lt;/span&gt;
+    &lt;span class="p"&gt;},&lt;/span&gt;
+    &lt;span class="nx"&gt;resolve&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="nx"&gt;extensions&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;.ts&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;.js&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+    &lt;span class="p"&gt;},&lt;/span&gt;
+    &lt;span class="nx"&gt;output&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="nx"&gt;filename&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;main.js&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+        &lt;span class="nx"&gt;path&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nx"&gt;path&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;resolve&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;__dirname&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;dist&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;};&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This tells Webpack to build your project starting with the entry point &lt;code&gt;src/index.ts&lt;/code&gt; and output the result at &lt;code&gt;dist/main.js&lt;/code&gt;. Any files with extensions '.ts' or '.js' will be picked up. That module rule tells Webpack that any file in the &lt;code&gt;src/&lt;/code&gt; directory with a '.ts' extension should be built using ts-loader, which runs the TypeScript compiler against those files.&lt;/p&gt;
+&lt;h1&gt;index.ts&lt;/h1&gt;
+&lt;p&gt;Now to convert your entry point, &lt;code&gt;index.js&lt;/code&gt;, to TypeScript. This is the easy part. Rename the file to &lt;code&gt;index.ts&lt;/code&gt;. That's it! Build your project and see for yourself!&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ npm run rebuild
+
+...
+
+Version: webpack 4.29.0
+Time: 1663ms
+Built at: 02/03/2019 1:16:46 PM
+  Asset      Size  Chunks             Chunk Names
+main.js  15.8 KiB       0  [emitted]  main
+Entrypoint main = main.js
+[0] ./src/index.ts + 4 modules 3.42 KiB {0} [built]
+    | ./src/index.ts 452 bytes [built]
+    | ./src/js/bitclock-backend.js 797 bytes [built]
+    | ./src/js/bitclock-frontend-dom.js 572 bytes [built]
+    | ./src/js/bitclock-frontend-canvas.js 1.34 KiB [built]
+    | ./src/js/bitclock-frontend-favicon.js 302 bytes [built]
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;strong&gt;DONE.&lt;/strong&gt;&lt;/p&gt;</content><category term="typescript"></category><category term="ts"></category><category term="toolchain"></category><category term="webpack"></category><category term="javascript"></category><category term="js"></category><category term="bitclock"></category></entry><entry><title>Modularize Your JavaScript with ES6 Modules and Webpack</title><link href="http://ericslenk.com/modularize-your-javascript-with-es6-modules-and-webpack.html" rel="alternate"></link><published>2019-01-28T00:00:00-05:00</published><updated>2019-01-28T00:00:00-05:00</updated><author><name>Eric Slenk</name></author><id>tag:ericslenk.com,2019-01-28:/modularize-your-javascript-with-es6-modules-and-webpack.html</id><summary type="html">&lt;p&gt;Do you have a bunch of old JavaScript code that's harder to look at than Ted Cruz's face? Try ES6 Modules today!&lt;/p&gt;</summary><content type="html">&lt;p&gt;Do you have a bunch of old JavaScript code that's &lt;a href="https://www.psychologytoday.com/us/blog/the-fallible-mind/201601/why-ted-cruz-s-facial-expression-makes-me-uneasy"&gt;harder to look at than Ted Cruz's face&lt;/a&gt;? Or maybe you're looking for some way to keep your shiny new project from devolving into the utter chaos to which your last project succumbed? Friend, have I got a miracle cure for you! Try ES6 Modules today! &lt;/p&gt;
+&lt;h1&gt;Why Modules?&lt;/h1&gt;
+&lt;p&gt;Modules are just little self-contained chunks of your program. Small, self-contained code is easier to reason about and simpler to maintain, debug, and write. You can read a single module much more quickly than an entire code base, and if its boundaries have been set in juuuust the right places you might not have to read anything from outside of that module in order to understand what it's doing. Self-contained modules also lend themselves to reuse and composition into higher-level applications.&lt;/p&gt;
+&lt;h1&gt;Determining Module Boundaries&lt;/h1&gt;
+&lt;p&gt;Now that you're convinced that modules will solve all of your problems forever you may wonder, "just how &lt;em&gt;do&lt;/em&gt; I modularize my code?" Excellent question. Nobody knows! But these guidelines might help:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Do as &lt;strong&gt;few things&lt;/strong&gt; as possible. If you can get the number down to 1 you're doing really well, and if you get the number down to 0 you can just delete the module and you win at Programming.&lt;/li&gt;
+&lt;li&gt;Talk with as &lt;strong&gt;few other modules&lt;/strong&gt; as possible. Modules are hermits.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Combine&lt;/strong&gt; modules which &lt;strong&gt;always talk to each other&lt;/strong&gt; to get anything done. That'll shut 'em up.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Do not look inside&lt;/strong&gt; of another module. That's just rude.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Writing ES6 Modules&lt;/h1&gt;
+&lt;p&gt;These days modules are a standard part of vanilla JavaScript. You can go read the &lt;a href="https://www.ecma-international.org/ecma-262/6.0/#sec-modules"&gt;ES6 specification for modules&lt;/a&gt; if you're curious, but don't. To get started you just need to learn to use a couple of statements in your JS files.&lt;/p&gt;
+&lt;h2&gt;export&lt;/h2&gt;
+&lt;p&gt;Use the &lt;code&gt;export&lt;/code&gt; statement at the end of a module file to say which parts of your code the rest of the world may use. There are an awful lot of ways you can write this (see the &lt;a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export#Syntax"&gt;the MDN article on export&lt;/a&gt; for details), but &lt;code&gt;export { name1, name2, …, nameN };&lt;/code&gt; will usually suffice. In Bitclock the backend module looks like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;// bitclock-backend.js&lt;/span&gt;
+
+&lt;span class="c1"&gt;// ...&lt;/span&gt;
+&lt;span class="kr"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;placeValues&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
+
+&lt;span class="kr"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;isBitActive&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;placeValue&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;digit&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;=&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;placeValue&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="nx"&gt;digit&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="kr"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;bitDigit&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;digit&lt;/span&gt; &lt;span class="p"&gt;=&amp;gt;&lt;/span&gt;
+    &lt;span class="nx"&gt;placeValues&lt;/span&gt;
+        &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;map&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;placeValue&lt;/span&gt; &lt;span class="p"&gt;=&amp;gt;&lt;/span&gt;
+            &lt;span class="nx"&gt;isBitActive&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;placeValue&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;digit&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;?&lt;/span&gt;
+                &lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt;
+                &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+
+&lt;span class="kr"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;bitTime&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;date&lt;/span&gt; &lt;span class="p"&gt;=&amp;gt;&lt;/span&gt;
+    &lt;span class="nx"&gt;timeAsDigits&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;date&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;map&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;digit&lt;/span&gt; &lt;span class="p"&gt;=&amp;gt;&lt;/span&gt;
+            &lt;span class="nx"&gt;bitDigit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;digit&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;
+
+&lt;span class="kr"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;getCurrentBitTime&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;=&amp;gt;&lt;/span&gt;
+    &lt;span class="nx"&gt;bitTime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="nb"&gt;Date&lt;/span&gt;&lt;span class="p"&gt;());&lt;/span&gt;
+
+&lt;span class="kr"&gt;export&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="nx"&gt;bitDigit&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;bitTime&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;getCurrentBitTime&lt;/span&gt; &lt;span class="p"&gt;};&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The rest of the world is allowed to use just 3 of the many functions defined in our backend module. Any code which imports this can create a BitDigit from a given digit, create a BitTime from a given time, or get a BitTime for the current time.&lt;/p&gt;
+&lt;h2&gt;import&lt;/h2&gt;
+&lt;p&gt;Use the &lt;code&gt;import&lt;/code&gt; statement at the beginning of a module file to say which parts of which other modules your module may use. Import statements will often look like &lt;code&gt;import { export1 , export2 } from "module-name";&lt;/code&gt;. Like the export statement, there are also a boatlod of ways to write an import statement outlined in the &lt;a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import"&gt;MDN article on import&lt;/a&gt;. In Bitclock our top-level module looks like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;// index.js&lt;/span&gt;
+
+&lt;span class="kr"&gt;import&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="nx"&gt;getCurrentBitTime&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="nx"&gt;from&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;./js/bitclock-backend&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="kr"&gt;import&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="nx"&gt;updateClockDivs&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="nx"&gt;from&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;./js/bitclock-frontend-dom&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="c1"&gt;// ...&lt;/span&gt;
+
+&lt;span class="kr"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;update&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="kr"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;currentBitTime&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;getCurrentBitTime&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+
+    &lt;span class="nx"&gt;updateClockDivs&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;currentBitTime&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="c1"&gt;// ...&lt;/span&gt;
+&lt;span class="p"&gt;};&lt;/span&gt;
+&lt;span class="c1"&gt;// ...&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Here the top-level code has imported just 1 of the 3 functions exported from the backend module and a function from the DOM rendering frontend module and combined those functions into a function which updates the DOM rendering frontend with the current BitTime retrieved from the backend.&lt;/p&gt;
+&lt;h1&gt;Using your Modules with Webpack&lt;/h1&gt;
+&lt;p&gt;Splitting your code up into a bunch of little JS files which import each other is only, like, half the battle, and the other half isn't "knowing." You must now &lt;strong&gt;somehow&lt;/strong&gt; get all of those modules into an appication to &lt;strong&gt;do&lt;/strong&gt; something. At the time of writing &lt;a href="https://caniuse.com/#feat=es6-module"&gt;less than 80% of browsers support loading JS modules via the script tag&lt;/a&gt;, so I'd avoid doing so for now. Plus, you'll have to contend with &lt;a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/Errors/CORSRequestNotHttp?utm_source=devtools&amp;amp;utm_medium=firefox-cors-errors&amp;amp;utm_campaign=default"&gt;CORS policies regarding local files&lt;/a&gt; if you do, and that's a bummer. Instead, let's install an assload of tools and restructure our project! We're going to use &lt;a href="https://webpack.js.org/"&gt;Webpack&lt;/a&gt; to bundle our modularized application. Webpack neatly circumvents those problems and &lt;a href="https://webpack.js.org/guides/tree-shaking/"&gt;gets rid of unnecessary code&lt;/a&gt; to boot. Much better!&lt;/p&gt;
+&lt;h2&gt;Installing NPM via NVM&lt;/h2&gt;
+&lt;p&gt;In order to use Webpack we're going to need NPM. If you have a current version of NPM, move on. Otherwise, install Node Version Manager (NVM) and then use it to install the latest stable version of Node.js and NPM.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh &lt;span class="p"&gt;|&lt;/span&gt; bash
+$ nvm install node
+$ nvm use node
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Restructuring Your Project&lt;/h2&gt;
+&lt;p&gt;From here on out we'll be building our application distribution from source using Webpack, so we should structure our project's directories and files to reflect that and to minimize the amount of Webpack configuration we'll have to do later.&lt;/p&gt;
+&lt;h3&gt;src/ and dist/&lt;/h3&gt;
+&lt;p&gt;If your source files weren't in their own directory before, make it so. Create the directory &lt;code&gt;src/&lt;/code&gt; and move your JS and anything else that will need to be built by Webpack in here. The JS file which will serve as your entry point should be moved in here as well. Webpack expects &lt;code&gt;src/index.js&lt;/code&gt; by default, so let's use that.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;src/
+├── index.js
+└── js
+    ├── bitclock-backend.js
+    ├── bitclock-frontend-canvas.js
+    ├── bitclock-frontend-dom.js
+    └── bitclock-frontend-favicon.js
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now let's make our distribution directory, &lt;code&gt;dist/&lt;/code&gt;, and place in it anything that will be distributed to end users without being built first. Things like CSS stylesheets or static image assets belong in here. This should also contain your HTML entry point. We'll place it at &lt;code&gt;dist/index.html&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;dist/
+├── css
+│   └── clock.css
+└── index.html
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;package.json&lt;/h3&gt;
+&lt;p&gt;Now we'll need to create or update your project's package specification. Use NPM's init wizard in your project's top-level directory to bootstrap your &lt;code&gt;package.json&lt;/code&gt; file if you don't already have one.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ npm init
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;New open up &lt;code&gt;package.json&lt;/code&gt; and add a few utility scripts for later.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;  &lt;span class="s2"&gt;&amp;quot;scripts&amp;quot;&lt;/span&gt;&lt;span class="err"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;quot;build&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;webpack&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;quot;clean&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;rm -rf node_modules &amp;amp;&amp;amp; rm dist/main.js&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;quot;reinstall&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;npm run clean &amp;amp;&amp;amp; npm install&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;quot;rebuild&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;npm run clean &amp;amp;&amp;amp; npm install &amp;amp;&amp;amp; npm run build&amp;quot;&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;&lt;span class="err"&gt;,&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;index.html&lt;/h3&gt;
+&lt;p&gt;Finally, you'll need to modify your HTML entry point to pull in the bundle which Webpack will build.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c"&gt;&amp;lt;!-- index.html --&amp;gt;&lt;/span&gt;
+
+&lt;span class="c"&gt;&amp;lt;!-- ... --&amp;gt;&lt;/span&gt;
+  &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt; &lt;span class="na"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;main.js&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;body&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="c"&gt;&amp;lt;!-- ... --&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Webpack&lt;/h2&gt;
+&lt;p&gt;Now that you've prepared your project for Webpack it's time to get installing! So exciting! Run the following to add Webpack and its CLI as development dependencies to your project.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ npm install --save-dev webpack webpack-cli
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Hot damn that's a lot of Webpack! Now let's finally &lt;em&gt;do&lt;/em&gt; something with it. The build script that we added to our &lt;code&gt;package.json&lt;/code&gt; file will use Webpack's CLI to run Webpack against our &lt;code&gt;src/&lt;/code&gt; directory and compile our modularized JavaScript into the big old JS file, &lt;code&gt;dist/main.js&lt;/code&gt;, which &lt;code&gt;dist/index.html&lt;/code&gt; is expecting.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;npm&lt;/span&gt; &lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;script&lt;/span&gt; &lt;span class="n"&gt;build&lt;/span&gt;
+
+&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;bitclock&lt;/span&gt;&lt;span class="mf"&gt;@1.0.0&lt;/span&gt; &lt;span class="n"&gt;build&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;home&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;lucidmachine&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bitclock&lt;/span&gt;
+&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;webpack&lt;/span&gt;
+
+&lt;span class="nl"&gt;Hash&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;b1f1afb47ea5ff1a1965&lt;/span&gt;
+&lt;span class="nl"&gt;Version&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;webpack&lt;/span&gt; &lt;span class="mf"&gt;4.29.0&lt;/span&gt;
+&lt;span class="nl"&gt;Time&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;173&lt;/span&gt;&lt;span class="n"&gt;ms&lt;/span&gt;
+&lt;span class="n"&gt;Built&lt;/span&gt; &lt;span class="nl"&gt;at&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="mo"&gt;01&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;28&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="mi"&gt;2019&lt;/span&gt; &lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;46&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;58&lt;/span&gt; &lt;span class="n"&gt;PM&lt;/span&gt;
+  &lt;span class="n"&gt;Asset&lt;/span&gt;      &lt;span class="n"&gt;Size&lt;/span&gt;  &lt;span class="n"&gt;Chunks&lt;/span&gt;             &lt;span class="n"&gt;Chunk&lt;/span&gt; &lt;span class="n"&gt;Names&lt;/span&gt;
+&lt;span class="n"&gt;main&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;js&lt;/span&gt;  &lt;span class="mf"&gt;1.96&lt;/span&gt; &lt;span class="n"&gt;KiB&lt;/span&gt;       &lt;span class="mi"&gt;0&lt;/span&gt;  &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;emitted&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;  &lt;span class="n"&gt;main&lt;/span&gt;
+&lt;span class="n"&gt;Entrypoint&lt;/span&gt; &lt;span class="n"&gt;main&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;main&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;js&lt;/span&gt;
+&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;index&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;js&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt; &lt;span class="n"&gt;modules&lt;/span&gt; &lt;span class="mf"&gt;3.42&lt;/span&gt; &lt;span class="n"&gt;KiB&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;built&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+    &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;index&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;js&lt;/span&gt; &lt;span class="mi"&gt;453&lt;/span&gt; &lt;span class="n"&gt;bytes&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;built&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+    &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;js&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bitclock&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;backend&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;js&lt;/span&gt; &lt;span class="mi"&gt;797&lt;/span&gt; &lt;span class="n"&gt;bytes&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;built&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+    &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;js&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bitclock&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;frontend&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;dom&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;js&lt;/span&gt; &lt;span class="mi"&gt;572&lt;/span&gt; &lt;span class="n"&gt;bytes&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;built&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+    &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;js&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bitclock&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;frontend&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;canvas&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;js&lt;/span&gt; &lt;span class="mf"&gt;1.34&lt;/span&gt; &lt;span class="n"&gt;KiB&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;built&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+    &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;src&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;js&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bitclock&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;frontend&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;favicon&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;js&lt;/span&gt; &lt;span class="mi"&gt;302&lt;/span&gt; &lt;span class="n"&gt;bytes&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;built&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Ooooooo something happened!&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;.
+├── dist
+│   ├── css
+│   │   └── clock.css
+│   ├── index.html
+│   └── main.js
+├── package.json
+├── package-lock.json
+└── src
+    ├── index.js
+    └── js
+        ├── bitclock-backend.js
+        ├── bitclock-frontend-canvas.js
+        ├── bitclock-frontend-dom.js
+        └── bitclock-frontend-favicon.js
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;img alt="OH YEAH!!!" src="https://media.giphy.com/media/VRa3YCyi3JSWk/giphy.gif"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;DONE.&lt;/strong&gt;&lt;/p&gt;</content><category term="es6"></category><category term="modules"></category><category term="webpack"></category><category term="bitclock"></category><category term="javascript"></category><category term="js"></category></entry><entry><title>Personal Goals Review - 2019-01-25</title><link href="http://ericslenk.com/personal-goals-review-2019-01-25.html" rel="alternate"></link><published>2019-01-25T00:00:00-05:00</published><updated>2019-01-25T00:00:00-05:00</updated><author><name>Eric Slenk</name></author><id>tag:ericslenk.com,2019-01-25:/personal-goals-review-2019-01-25.html</id><summary type="html">&lt;p&gt;Review of progress toward my personal goals for 2019-01-11 to 2019-01-25.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Goals&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Relationships: I made plenty of time with friends.&lt;/li&gt;
+&lt;li&gt;Career: I've learned a fair amount about AngularJS and begun to pick up Angular 7 and TypeScript.&lt;/li&gt;
+&lt;li&gt;Health and Longevity: I finally got my winter bike in good working order and rode it to work for the past week.&lt;/li&gt;
+&lt;li&gt;Financial Independence: I've neglected the budget pretty badly and it's in disrepair. :/&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Habits&lt;/h1&gt;
+&lt;h2&gt;Personal Goals Reviews&lt;/h2&gt;
+&lt;p&gt;This is my second review! I remembered to write this review after sprint reviews ended at work, so that seems to be an effective trigger. However, I meant for the trigger to be [hand waving] some magical thing the night before. That - totally unsurprisingly - did not work out and I forgot to pack my personal laptop. I only got away with it because I happened to work from home today due to illness. In the future I'll just let sprint review and a calendar reminder work as triggers.&lt;/p&gt;
+&lt;h3&gt;Updated Habit&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Trigger(s): Sprint Review Friday, reminder at 5:30pm&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Actions: Open my goals and habits document and my project management software. Write a blog post summarizing what progress I have made toward my goals, habits, and projects, and whether any of them need revision.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Bedtime Routine&lt;/h2&gt;
+&lt;p&gt;I've been successful in performing the ritual 9/10 weeknights. I've even come to enjoy the routine again. Packing for the next day I can take or leave, but I look forward to a nice mug of tea and a bit of light reading at the end of the day. A dear friend lent me a copy of &lt;a href="https://amzn.to/2B3ZsSZ"&gt;The Name of the Wind by Patrick Rothfuss&lt;/a&gt; and it's been a delight. Now I'm working through &lt;a href="https://amzn.to/2FPfi86"&gt;The Design of Everyday Things by Donald A. Norman&lt;/a&gt;. The thing that troubles me, though, is that my 9pm alarm trigger is maybe 40% effective. I think this fortnight I'll try starting the routine when supper ends. This is often when I naturally start anyway.&lt;/p&gt;
+&lt;h3&gt;Updated Habit&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Trigger(s): End of supper&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Actions: Quit current activity. Pack clothes, books, and laptop for the next day. Brush teeth. Make a mug of tea. Read book in bed. Go to sleep.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Leave Work on Time&lt;/h2&gt;
+&lt;p&gt;I left work before 5pm 8/10 workdays this fortnight. The 3 calendar reminders seem to have done the trick here. I had to use a combination of iCal and Automator to get things working the way that I wanted, but they've been reliable. I tend to switch from deep work to procedural stuff and planning or teaching between the first two reminders. Now I'm getting home in a consistent, earlier time window. I eat better, have more energy in the evening, and spend more time with friends and family. I'm just a bit happier overall. I honestly think these factors have contributed to the success of my bedtime routine as well.&lt;/p&gt;
+&lt;h3&gt;Updated Habit&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Trigger(s): Reminder at 3:30pm, reminder and auto-close communication apps at 4:30pm, logout at 5:00pm&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Actions: Stop current task. Close email and chat applications. Fill out work log. GTFO.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Projects&lt;/h1&gt;
+&lt;h2&gt;Bitclock&lt;/h2&gt;
+&lt;p&gt;&lt;iframe src="https://lucidmachine.github.io/bitclock/" style="border: none; height: 150px"&gt;&lt;/iframe&gt;&lt;/p&gt;
+&lt;p&gt;This fortnight I dusted off Bitclock, which is a binary clock widget. Then I wrote &lt;a href="/refactoring-bitclock.html"&gt;a whole blog post about it&lt;/a&gt;. I refactored it to prepare to port it to meatspace and to rewrite it with a few different tech stacks in order to build some extremely career-relevant knowledge. Plus, it was fun. I still really love that little thing. And maybe soon I'll be able to put it on my desk or hang it on my wall and drone on about it.&lt;/p&gt;</content><category term="2019"></category><category term="goals"></category><category term="review"></category></entry><entry><title>Refactoring Bitclock</title><link href="http://ericslenk.com/refactoring-bitclock.html" rel="alternate"></link><published>2019-01-21T00:00:00-05:00</published><updated>2019-01-21T00:00:00-05:00</updated><author><name>Eric Slenk</name></author><id>tag:ericslenk.com,2019-01-21:/refactoring-bitclock.html</id><summary type="html">&lt;p&gt;Half a decade ago I made a humble little widget named bitclock to practice reading binary. I've rearchitected bitclock to begin porting it to meatspace.&lt;/p&gt;</summary><content type="html">&lt;iframe src="https://lucidmachine.github.io/bitclock/" style="border: none; height: 150px"&gt;&lt;/iframe&gt;
+
+&lt;h1&gt;What is Bitclock?&lt;/h1&gt;
+&lt;p&gt;Half a decade ago I made a humble little widget named &lt;a href="https://lucidmachine.github.io/bitclock/"&gt;bitclock&lt;/a&gt; to practice reading binary integers (bits). It's embedded above for demonstration, or you can view it on &lt;a href="https://lucidmachine.github.io/bitclock/"&gt;its Github Pages site&lt;/a&gt;. You can check out its code at &lt;a href="https://github.com/lucidmachine/bitclock"&gt;the project's Github repository&lt;/a&gt;. Bitclock's original implementation was a 4x4 grid of bits in which each column represented a digit of the current time, and each row represented a place value in the digit. It renders on a webpage and dynamically updates that page's favicon.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Interpretation of Bitclock" src="https://lucidmachine.github.io/bitclock/img/interpretation.png"&gt;&lt;/p&gt;
+&lt;h1&gt;Why refactor Bitclock?&lt;/h1&gt;
+&lt;p&gt;While I still enjoy it an awful lot I've begun to wish it existed in more places. I'd love to build a hardware version, and might like to port it to mobile platforms, a command-line interface, etc. Plus, I've always wanted to add more display features e.g. configurable colors and sizes, optional second or microsecond precision, timezones, multiple clocks on a page, etc. It should also be useful as a reference problem to compare technology stacks. One could make an implementation in AngularJS and an implementation in Angular 7 to compare and contrast functionality between the two stacks.&lt;/p&gt;
+&lt;h1&gt;How has it been refactored?&lt;/h1&gt;
+&lt;p&gt;Today I finally wrote a proper README for bitclock which formalizes its data structures. I've also defined a frontend/backend architecture for it. Loosely, a backend is anything which spits out a BitTime, and a frontend is anything that can turn a BitTime into user-interpretable output. The reference code itself has been rewritten to those specifications and split up by transformation stage. &lt;/p&gt;
+&lt;h1&gt;What's next?&lt;/h1&gt;
+&lt;p&gt;The very next step is refactoring to use more modern JS conventions such as modularization and maybe some build tools. Once the application is properly modularized it will be ported to the Raspberry Pi Zero with GPIO using Node.js and to an Angular 7 based webapp.&lt;/p&gt;</content><category term="bitclock"></category><category term="refactoring"></category><category term="javascript"></category><category term="projects"></category></entry><entry><title>AngularJS Binding Cheat Sheet</title><link href="http://ericslenk.com/angularjs-binding-cheat-sheet.html" rel="alternate"></link><published>2019-01-13T00:00:00-05:00</published><updated>2019-01-13T00:00:00-05:00</updated><author><name>Eric Slenk</name></author><id>tag:ericslenk.com,2019-01-13:/angularjs-binding-cheat-sheet.html</id><summary type="html">&lt;p&gt;A quick guide for AngularJS isolate scope binding syntax.&lt;/p&gt;</summary><content type="html">&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Syntax&lt;/th&gt;
+&lt;th&gt;Value&lt;/th&gt;
+&lt;th&gt;Direction&lt;/th&gt;
+&lt;th&gt;Evaluated&lt;/th&gt;
+&lt;th&gt;Aliased?&lt;/th&gt;
+&lt;th&gt;Optional?&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;foo: @&lt;/td&gt;
+&lt;td&gt;Value of DOM attribute&lt;/td&gt;
+&lt;td&gt;Out  -&amp;gt; In&lt;/td&gt;
+&lt;td&gt;Out&lt;/td&gt;
+&lt;td&gt;No&lt;/td&gt;
+&lt;td&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;foo: @?&lt;/td&gt;
+&lt;td&gt;Value of DOM attribute&lt;/td&gt;
+&lt;td&gt;Out  -&amp;gt; In&lt;/td&gt;
+&lt;td&gt;Out&lt;/td&gt;
+&lt;td&gt;No&lt;/td&gt;
+&lt;td&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;bar: @foo&lt;/td&gt;
+&lt;td&gt;Value of DOM attribute&lt;/td&gt;
+&lt;td&gt;Out  -&amp;gt; In&lt;/td&gt;
+&lt;td&gt;Out&lt;/td&gt;
+&lt;td&gt;Yes&lt;/td&gt;
+&lt;td&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;bar: @?foo&lt;/td&gt;
+&lt;td&gt;Value of DOM attribute&lt;/td&gt;
+&lt;td&gt;Out  -&amp;gt; In&lt;/td&gt;
+&lt;td&gt;Out&lt;/td&gt;
+&lt;td&gt;Yes&lt;/td&gt;
+&lt;td&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;foo: =&lt;/td&gt;
+&lt;td&gt;Expression passed by attribute&lt;/td&gt;
+&lt;td&gt;Out &amp;lt;-&amp;gt; In&lt;/td&gt;
+&lt;td&gt;In&lt;/td&gt;
+&lt;td&gt;No&lt;/td&gt;
+&lt;td&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;foo: =?&lt;/td&gt;
+&lt;td&gt;Expression passed by attribute&lt;/td&gt;
+&lt;td&gt;Out &amp;lt;-&amp;gt; In&lt;/td&gt;
+&lt;td&gt;In&lt;/td&gt;
+&lt;td&gt;No&lt;/td&gt;
+&lt;td&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;bar: =foo&lt;/td&gt;
+&lt;td&gt;Expression passed by attribute&lt;/td&gt;
+&lt;td&gt;Out &amp;lt;-&amp;gt; In&lt;/td&gt;
+&lt;td&gt;In&lt;/td&gt;
+&lt;td&gt;Yes&lt;/td&gt;
+&lt;td&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;bar: =?foo&lt;/td&gt;
+&lt;td&gt;Expression passed by attribute&lt;/td&gt;
+&lt;td&gt;Out &amp;lt;-&amp;gt; In&lt;/td&gt;
+&lt;td&gt;In&lt;/td&gt;
+&lt;td&gt;Yes&lt;/td&gt;
+&lt;td&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;foo: &amp;lt;&lt;/td&gt;
+&lt;td&gt;Expression passed by attribute&lt;/td&gt;
+&lt;td&gt;Out  -&amp;gt; In&lt;/td&gt;
+&lt;td&gt;In&lt;/td&gt;
+&lt;td&gt;No&lt;/td&gt;
+&lt;td&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;foo: &amp;lt;?&lt;/td&gt;
+&lt;td&gt;Expression passed by attribute&lt;/td&gt;
+&lt;td&gt;Out  -&amp;gt; In&lt;/td&gt;
+&lt;td&gt;In&lt;/td&gt;
+&lt;td&gt;No&lt;/td&gt;
+&lt;td&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;bar: &amp;lt;foo&lt;/td&gt;
+&lt;td&gt;Expression passed by attribute&lt;/td&gt;
+&lt;td&gt;Out  -&amp;gt; In&lt;/td&gt;
+&lt;td&gt;In&lt;/td&gt;
+&lt;td&gt;Yes&lt;/td&gt;
+&lt;td&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;bar: &amp;lt;?foo&lt;/td&gt;
+&lt;td&gt;Expression passed by attribute&lt;/td&gt;
+&lt;td&gt;Out  -&amp;gt; In&lt;/td&gt;
+&lt;td&gt;In&lt;/td&gt;
+&lt;td&gt;Yes&lt;/td&gt;
+&lt;td&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;foo: &amp;amp;&lt;/td&gt;
+&lt;td&gt;Value passed by attribute&lt;/td&gt;
+&lt;td&gt;Out &amp;lt;-  In&lt;/td&gt;
+&lt;td&gt;Out&lt;/td&gt;
+&lt;td&gt;No&lt;/td&gt;
+&lt;td&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;foo: &amp;amp;?&lt;/td&gt;
+&lt;td&gt;Value passed by attribute&lt;/td&gt;
+&lt;td&gt;Out &amp;lt;-  In&lt;/td&gt;
+&lt;td&gt;Out&lt;/td&gt;
+&lt;td&gt;No&lt;/td&gt;
+&lt;td&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;bar: &amp;amp;foo&lt;/td&gt;
+&lt;td&gt;Value passed by attribute&lt;/td&gt;
+&lt;td&gt;Out &amp;lt;-  In&lt;/td&gt;
+&lt;td&gt;Out&lt;/td&gt;
+&lt;td&gt;Yes&lt;/td&gt;
+&lt;td&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;bar: &amp;amp;?foo&lt;/td&gt;
+&lt;td&gt;Value passed by attribute&lt;/td&gt;
+&lt;td&gt;Out &amp;lt;-  In&lt;/td&gt;
+&lt;td&gt;Out&lt;/td&gt;
+&lt;td&gt;Yes&lt;/td&gt;
+&lt;td&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</content><category term="AngularJS"></category><category term="binding"></category><category term="isolate scope"></category><category term="cheat sheet"></category></entry><entry><title>Personal Goals Review - 2019-01-11</title><link href="http://ericslenk.com/personal-goals-review-2019-01-11.html" rel="alternate"></link><published>2019-01-11T00:00:00-05:00</published><updated>2019-01-11T00:00:00-05:00</updated><author><name>Eric Slenk</name></author><id>tag:ericslenk.com,2019-01-11:/personal-goals-review-2019-01-11.html</id><summary type="html">&lt;p&gt;Review of progress toward my personal goals for 2019-01-01 to 2019-01-11.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Habits&lt;/h1&gt;
+&lt;h2&gt;Personal Goals Reviews&lt;/h2&gt;
+&lt;p&gt;This is my first review! To trigger this review I packed my personal laptop in my bag before work. The laptop in the bag proved an effective visual reminder to write this review, and allowed me to start my task as soon as I remembered it. However, I am concerned about whether I can continue to remember to pack my laptop on the appropriate mornings.&lt;/p&gt;
+&lt;p&gt;Modifications: Pack personal laptop the night before.&lt;/p&gt;
+&lt;h2&gt;Morning Routine&lt;/h2&gt;
+&lt;p&gt;I haven't had much success with this habit yet. On day 1 I happily got out of bed, shut off my alarm clock by barcode, and patted myself on the back whilst reading a book and drinking my coffee. On day 2 I turned my phone off, went back to sleep, &lt;em&gt;thankfully&lt;/em&gt; woke up when I heard the garbage truck outside, and rushed off to work barely on time. The rest of the fortnite was similarly unsuccessful. I think the real problem here is that I'm not getting enough sleep, and the barcode alarm clock does not address that. I should focus on my bedtime routine before shifting my focus back to anything more lofty than waking up on time for work.&lt;/p&gt;
+&lt;p&gt;Modifications: Don't bother with productive work yet.&lt;/p&gt;
+&lt;h2&gt;Bedtime Routine&lt;/h2&gt;
+&lt;p&gt;I only managed to get to bed before 9pm on day 1. On day 2 I stayed up past midnight and regretted it immediately. Most other nights I got to sleep by 10pm. I need a better trigger here, but I'm not sure what. Over the next fortnite I'll try to determine what prevents me from going to sleep when I hear that alarm. As for actions, I've rediscovered that drinking a glass of water helps me wake up feeling more alert and with a certain urge to get out of bed. I should drink a glass of water before bed each night.&lt;/p&gt;
+&lt;p&gt;Modifications: Drink a glass of water.&lt;/p&gt;
+&lt;h2&gt;Leave Work on Time&lt;/h2&gt;
+&lt;p&gt;I had a lot of success with leaving work before 5pm. However, my automated triggers stopped working after day 1, and I haven't taken the time to determine why or how to fix them. I've added a task to fix the issue by Monday.&lt;/p&gt;
+&lt;p&gt;Modifications: None.&lt;/p&gt;</content><category term="2019"></category><category term="goals"></category><category term="review"></category></entry><entry><title>2019 Goals</title><link href="http://ericslenk.com/2019-goals.html" rel="alternate"></link><published>2019-01-07T00:00:00-05:00</published><updated>2019-01-07T00:00:00-05:00</updated><author><name>Eric Slenk</name></author><id>tag:ericslenk.com,2019-01-07:/2019-goals.html</id><summary type="html">&lt;p&gt;After reflecting on 2018 I've identified four goals for 2019 and the habits I'll develop to achieve those goals.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Goals&lt;/h1&gt;
+&lt;p&gt;I have four ultimate goals for 2019.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Relationships: I will strengthen my interpersonal relationships and meet more people in my local community.&lt;/li&gt;
+&lt;li&gt;Career: I will hone my existing skills, learn new skills, and experiment with how best to provide value to those around me.&lt;/li&gt;
+&lt;li&gt;Health and Longevity: I will live this precious life as well as I can for as long as I can.&lt;/li&gt;
+&lt;li&gt;Financial Independence:
+I will liberate myself from my debts.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Habits&lt;/h1&gt;
+&lt;p&gt;In order to empower myself to achieve my goals I will try to build these habits.&lt;/p&gt;
+&lt;h2&gt;Personal Goals Reviews&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Trigger: End of work on Sprint Review Fridays&lt;/li&gt;
+&lt;li&gt;Actions: Open my goals and habits document and my project management software. Write a blog post summarizing what progress I have made toward my goals, habits, and projects, and whether any of them need revision.&lt;/li&gt;
+&lt;li&gt;Concerns: Using the end of a particular workday ritual as a trigger might prove challenging, as I'll still be in the office when the trigger occurs. Either I need to figure out how to do the actions before leaving the office without using company property or I need to defer the trigger to after I get home, which leaves me an awful lot of time to forget the trigger has occurred.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Morning Routine&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Trigger: Waking up&lt;/li&gt;
+&lt;li&gt;Actions: Brew some fresh coffee. Write my intentions for the day. Review my calendar and tasks. Begin working on personal projects.&lt;/li&gt;
+&lt;li&gt;Concerns: I haven't been waking up at a consistent time, and I haven't been waking up early enough to accomplish anything. I need to find some methods to consistently wake up at a given time and then slowly begin waking earlier. I've had success using an alarm app called &lt;a href="https://play.google.com/store/apps/details?id=com.kog.alarmclock"&gt;I Can't Wake Up! Alarm Clock&lt;/a&gt; which required me to scan the barcode on my coffee to disable the alarm, and will try this strategy again.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Bedtime Routine&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Trigger: 9pm alarm&lt;/li&gt;
+&lt;li&gt;Actions: Quit current activity. Pack clothes, food, books, and laptop for the next day. Brush teeth. Read book in bed. Go to sleep.&lt;/li&gt;
+&lt;li&gt;Concerns: It is extremely easy to ignore the alarm. This probably needs a different trigger or reinforcement.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Leave Work on Time&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Trigger: Finish a task after 3pm OR 4:30pm &lt;/li&gt;
+&lt;li&gt;Actions: Stop current task. Close email and chat applications. Fill out work log. GTFO.&lt;/li&gt;
+&lt;li&gt;Concerns: Alarm based triggers are easily ignored, and when I'm in the midst of a task at the end of the work day I often get fixated on the task. I'm going to try to program my work computer to do increasingly annoying things that will make me quit for the day, e.g. close communication apps at 4:30pm, hibernate at 5:00pm.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Projects&lt;/h1&gt;
+&lt;p&gt;These are a few candidate projects which I think will help me achieve my goals for the year. None of them are set in stone, and I'm giving myself plenty of room to redefine them, add more, or abandon them all as I feel suits my needs.&lt;/p&gt;
+&lt;h2&gt;Teach Programming&lt;/h2&gt;
+&lt;p&gt;I will teach a small group of my friends the basics of programming computers. This is probably the single most rewarding and valuable skill I've developed over the past decade of my life and I'd like to share that with others. I hope that basic software development skills will empower my friends to take on small projects to improve their lives directly, expand the ways in which they think about the world, and let those who are interested explore software development careers.&lt;/p&gt;
+&lt;p&gt;Goals: Form Stronger Relationships, Build Career&lt;/p&gt;
+&lt;h2&gt;Contact Calendar&lt;/h2&gt;
+&lt;p&gt;I will make a calendar to track when I need to contact friends and family. It's easy for me to get too focused on my own priorities or on fires I need to put out and forget to reach out to the people I care about more than once every month or two. Something as simple as another Google Calendar or even a paper calendar with people's names on it would be a vast improvement in managing my personal relationships.&lt;/p&gt;
+&lt;p&gt;Goals: Relationships&lt;/p&gt;
+&lt;h2&gt;Lansing Codes Contributions&lt;/h2&gt;
+&lt;p&gt;I will make more meaningful contributions to &lt;a href="https://www.lansing.codes/"&gt;Lansing Codes&lt;/a&gt; projects. Back in October I participated in &lt;a href="https://hacktoberfest.digitalocean.com/"&gt;Hacktoberfest&lt;/a&gt; by working with a few local developers to migrate the &lt;a href="https://github.com/lansingcodes/api"&gt;Lansing Codes API&lt;/a&gt; from a Rails app to a &lt;a href="https://nodejs.org/en/"&gt;Node.js&lt;/a&gt; and &lt;a href="https://feathersjs.com/"&gt;Feathers&lt;/a&gt; app. This was a great way to meet people in my community and quickly build a lot of knowledge with tools and techniques I hadn't used before and wouldn't have the opportunity to learn at work. And it solved the decision paralysis I've faced for years when trying to pick an open source software project to which I might contribute. I will finish work on the API migration, work on some enhancements I personally want, and try my hand at project maintenance.&lt;/p&gt;
+&lt;p&gt;Goals: Career, Relationships&lt;/p&gt;
+&lt;h2&gt;Static Sites&lt;/h2&gt;
+&lt;p&gt;I will experiment with static site generator stacks to find one best suited to quickly build simple, low-maintenance websites. I think an ability to rapidly build low-maintenance websites would be advantageous to me and to a lot of the people I know. I may be able to monetize this skill, too.&lt;/p&gt;
+&lt;p&gt;Goals: Career, Financial Independence&lt;/p&gt;
+&lt;h2&gt;Personal Site&lt;/h2&gt;
+&lt;p&gt;I will make improvements to my personal website and begin producing consistent and valuable content here. I think covering some of the stuff I learn at work or in my personal projects would help reinforce my learning and deliver valuable knowledge to others. I could also leverage an audience to my advantage.&lt;/p&gt;
+&lt;p&gt;Goals: Career, Financial Independence&lt;/p&gt;
+&lt;h2&gt;Bike Touring&lt;/h2&gt;
+&lt;p&gt;I will at least three multi-day bike trips while the weather's good for camping. Getting into and staying in touring shape is a good motivator to ride and exercise more, and the trip itself can be a lot of fun. &lt;/p&gt;
+&lt;p&gt;Goals: Health and Longevity&lt;/p&gt;</content><category term="2019"></category><category term="planning"></category><category term="goals"></category><category term="habits"></category><category term="projects"></category></entry><entry><title>2018 Retrospective</title><link href="http://ericslenk.com/2018-retrospective.html" rel="alternate"></link><published>2019-01-01T00:00:00-05:00</published><updated>2019-01-01T00:00:00-05:00</updated><author><name>Eric Slenk</name></author><id>tag:ericslenk.com,2019-01-01:/2018-retrospective.html</id><summary type="html">&lt;p&gt;In February 2018 I planned the rest of my year by establishing a few value-driven goals and derived goals and projects from those goals. Now that the year's ended I evaluate how that went.&lt;/p&gt;</summary><content type="html">&lt;p&gt;In February 2018 I planned the rest of my year by establishing a few value-driven goals and derived goals and projects from those goals. Now that the year's ended I evaluate how that went.&lt;/p&gt;
+&lt;h1&gt;What Went Well?&lt;/h1&gt;
+&lt;h2&gt;Goal Setting&lt;/h2&gt;
+&lt;p&gt;I'm glad that I set those goals. The exercise challenged me to identify my personal values. I was also able to invent projects I had not previously considered which were aligned with those values.&lt;/p&gt;
+&lt;p&gt;The document was useful throughout the year. Having clearly documented goals allowed me to relate progress in personal projects directly toward those goals, and it felt good as I cleared tasks to know precisely what value I had provided myself. And when I cleared entire projects, I felt a real sense of accomplishment and knew exactly what to focus my attention on next.&lt;/p&gt;
+&lt;h2&gt;Accomplishments&lt;/h2&gt;
+&lt;p&gt;I accomplished a lot this past year, so I'd like to just take a moment to pat myself on the back and share some highlights.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;I married my wonderful partner and we began building our community.&lt;/li&gt;
+&lt;li&gt;I finally finished my undergrad degree after 9 long years. Eat it, Calc II!&lt;/li&gt;
+&lt;li&gt;I went on my first full length bike tour from Lansing to Grand Rapids. This was an eye-opening experience.&lt;/li&gt;
+&lt;li&gt;I made several meaningful open source software contributions to the Lansing Codes API project.&lt;/li&gt;
+&lt;li&gt;I attended several Lansing-area software development Meetups and even helped revive the Java User Group as a JVM User Group.&lt;/li&gt;
+&lt;li&gt;I got into the habit of reading nonfiction books over lunch.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;What Needs Improvement?&lt;/h1&gt;
+&lt;h2&gt;Habits&lt;/h2&gt;
+&lt;p&gt;When I wrote my goals I assigned to several second-level goals habits which I thought would help me accomplish those goals. I failed to establish nearly all of those habits. I had trouble selecting successful triggers for those habits and scheduling those habits.&lt;/p&gt;
+&lt;p&gt;Habits with calendar-based triggers were quickly ignored and eventually removed from my calendar entirely. I think the chief problem is that I hate to be interrupted, no matter how trivial my current activity. The calendar trigger is also too inflexible to work around times when I am legitimately engaged in more pressing matters. Perhaps using a different calendar application with more flexible snoozing options would have helped.&lt;/p&gt;
+&lt;p&gt;I immediately bit off more than I could chew and overfilled my calendar with commitments I couldn't keep. I knew it was untenable after the first week, but didn't try to pare down my commitments. It was only after I went back to school in the summer and lost all of my free time that I finally admitted to myself that I was in over my head and cleared my calendar. And after I graduated, I never got back to working on my habits at a reasonable pace.&lt;/p&gt;
+&lt;p&gt;I also fell out of the best habit I had developed in the previous year - my morning routine. In 2017 I would wake early at about 5am, mindlessly shuffle to the kitchen to cook breakfast, and then spend the 1-2 hours between breakfast and my morning commute doing something productive. This year I stopped eating breakfast. At first I enjoyed the fact that I had reclaimed 15-45 minutes of cooking and washing dishes. But I soon discovered that I could wake at 6am rather than 5am, or even as late as 7:30am and still get to work on time. This was the end of my productive mornings. Without the routine I would only wake early if I had something extremely exciting to work on, which is not at all sustainable. Now I wake at 7:30am every day.&lt;/p&gt;
+&lt;h2&gt;Alignment of Goals and Projects&lt;/h2&gt;
+&lt;p&gt;While many of my goals and related projects were good, I also established several projects which I was not enthusiastic about and which were never touched. I think they were fundamentally not aligned with goals or values I really had. For example, I tried to play more video games in order to improve my relationships with my friends. But most of the time I spent playing games was alone, and most of the time I spent with my friends we didn't play games. I also established one top-level goal, "Appreciate Art", which I discovered I just don't value that highly.&lt;/p&gt;
+&lt;h2&gt;Task Orientation&lt;/h2&gt;
+&lt;p&gt;I planned a lot of projects and their tasks for my entire year all the way back in February. As a result I often found that by the time I got around to working on a project my estimate of the tasks involved was pretty far off. Tasks also cluttered up the document. I think these are signs that I overdid planning. I think I'd do well to plan individual tasks once I'm ready to focus on the project.&lt;/p&gt;
+&lt;h1&gt;Next Steps&lt;/h1&gt;
+&lt;p&gt;As I plan for 2019 I will separate the management of my goals, habits, and projects. Goals and habits will live in their own separate documents, and I expect to track projects and tasks in separate task management software. I'll probably seek new project management software with more flexible labelling, project structuring, and recurring tasks.&lt;/p&gt;
+&lt;p&gt;I'll also plan far fewer things. I'll scale back the number of goals I have and the number of habits I'll establish in order to keep them manageable and allow myself flexibility. I'll plan tasks only when I'm ready to take on my next project.&lt;/p&gt;
+&lt;p&gt;Finally, I'll get into the habit of retrospecting on my habits and projects on a regular basis. I'll tweak habits as necessary, and I'll re-evaluate whether projects need to be added, removed, or rescheduled.&lt;/p&gt;</content><category term="2018"></category><category term="retrospective"></category><category term="retro"></category><category term="goals"></category><category term="productivity"></category><category term="habits"></category></entry><entry><title>Making Software: What Really Works, and Why We Believe It</title><link href="http://ericslenk.com/making-software-what-really-works-and-why-we-believe-it.html" rel="alternate"></link><published>2017-03-25T00:00:00-04:00</published><updated>2017-03-25T00:00:00-04:00</updated><author><name>Eric Slenk</name></author><id>tag:ericslenk.com,2017-03-25:/making-software-what-really-works-and-why-we-believe-it.html</id><summary type="html">&lt;p&gt;A review of Making Software: What Really Works, and Why We Believe It by Andy Oram and Greg Wilson&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Book Metadata&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;ISBN-13: 978-0596808327&lt;/li&gt;
+&lt;li&gt;Author(s): Andy Oram and Greg Wilson&lt;/li&gt;
+&lt;li&gt;Published: October 30, 2010&lt;/li&gt;
+&lt;li&gt;Amazon: https://www.amazon.com/Making-Software-Really-Works-Believe/dp/0596808321/ref=sr_1_1?s=books&amp;amp;ie=UTF8&amp;amp;qid=1490467041&amp;amp;sr=1-1&amp;amp;keywords=making+software+what+really+works+and+why+we+believe+it&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Notes&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;There are too few good, generalizable studies in Software Engineering.&lt;/li&gt;
+&lt;li&gt;May need studies to provide "tiers" of observations:&lt;ul&gt;
+&lt;li&gt;Context/ audience-specific observations&lt;/li&gt;
+&lt;li&gt;General, regorous observations&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Test Driven Development:&lt;ul&gt;
+&lt;li&gt;Makes &lt;strong&gt;no difference&lt;/strong&gt; when measuring the &lt;strong&gt;internal quality&lt;/strong&gt; metrics such as complexity.&lt;/li&gt;
+&lt;li&gt;Makes &lt;strong&gt;small improvements&lt;/strong&gt; to &lt;strong&gt;external quality&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Has a high learning curve.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Code &lt;strong&gt;coverage&lt;/strong&gt; is &lt;strong&gt;very weakly&lt;/strong&gt; related to quality.&lt;/li&gt;
+&lt;li&gt;Code &lt;strong&gt;churn&lt;/strong&gt; is &lt;strong&gt;highly related&lt;/strong&gt; to &lt;strong&gt;defects&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Metric&lt;/th&gt;
+&lt;th align="right"&gt;Precision&lt;/th&gt;
+&lt;th align="right"&gt;Recall&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Org. Structure&lt;/td&gt;
+&lt;td align="right"&gt;86.2%&lt;/td&gt;
+&lt;td align="right"&gt;84.0%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Code Complexity&lt;/td&gt;
+&lt;td align="right"&gt;78.6%&lt;/td&gt;
+&lt;td align="right"&gt;79.9%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Code Churn&lt;/td&gt;
+&lt;td align="right"&gt;79.3%&lt;/td&gt;
+&lt;td align="right"&gt;66.0%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Social Network&lt;/td&gt;
+&lt;td align="right"&gt;76.9%&lt;/td&gt;
+&lt;td align="right"&gt;70.5%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Dependencies&lt;/td&gt;
+&lt;td align="right"&gt;74.4%&lt;/td&gt;
+&lt;td align="right"&gt;69.9%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Code Coverage&lt;/td&gt;
+&lt;td align="right"&gt;83.8%&lt;/td&gt;
+&lt;td align="right"&gt;54.5%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</content><category term="book"></category><category term="programming"></category><category term="software engineering"></category><category term="science"></category></entry></feed>
