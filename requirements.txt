@@ -2,7 +2,5 @@ pip
 wheel
 Pelican
 Markdown
-py_w3c
-yuicompressor
 HTMLParser
 markup

@@ -38,7 +38,7 @@ DEFAULT_PAGINATION = 10
 
 # Plugins
 PLUGIN_PATHS = ['plugins']
-PLUGINS = ['sitemap', 'yuicompressor']#'w3c_validate', 'yuicompressor']
+PLUGINS = ['sitemap']
 
 # Sitemap
 SITEMAP = {

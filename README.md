@@ -2,7 +2,7 @@
 In order to set up the Pelican environment, use pip to install the Pelican package and optional dependency packages Markdown, py_w3c, and yuicompressor.
 
 ```
-sudo pip3 install Pelican Markdown py_w3c yuicompressor HTMLParser markup
+sudo pip3 install Pelican Markdown HTMLParser markup
 ```
 
 # Composition
