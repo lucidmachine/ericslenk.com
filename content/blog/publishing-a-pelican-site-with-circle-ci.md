@@ -1,5 +1,5 @@
 Title: Publishing A Pelican Site With CircleCI
-Date: 2019-03-24
+Date: 2019-03-25
 Category:
 Tags: Pelican, static sites, CircleCI, continuous integration 
 Summary: How to publish your Pelican static site from CircleCI.
