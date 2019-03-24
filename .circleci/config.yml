@@ -20,6 +20,13 @@ jobs:
     steps:
       - checkout
 
+      # Download Pelican plugins and themes, which are submodules
+      - run:
+          name: "Pull Submodules"
+          command: |
+            git submodule init
+            git submodule update --remote
+
       # Download and cache dependencies
       - restore_cache:
           keys:
@@ -28,7 +35,7 @@ jobs:
             - v1-dependencies-
 
       - run:
-          name: install dependencies
+          name: "Install Dependencies"
           command: |
             python3 -m venv venv
             . venv/bin/activate
@@ -40,7 +47,7 @@ jobs:
           key: v1-dependencies-{{ checksum "requirements.txt" }}
 
       - run:
-          name: build site
+          name: "Build Site"
           command: |
             . venv/bin/activate
             make html
