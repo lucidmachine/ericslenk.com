@@ -66,14 +66,14 @@ SITEURL = 'http://www.ericslenk.com'
 STATIC_PATHS = ['images', '.htaccess']
 
 # Feeds
-AUTHOR_FEED_ATOM = 'feeds/%s.atom.xml'
-AUTHOR_FEED_RSS = 'feeds/%s.rss.xml'
-CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
-CATEGORY_FEED_RSS = 'feeds/%s.rss.xml'
+AUTHOR_FEED_ATOM = 'feeds/{slug}.atom.xml'
+AUTHOR_FEED_RSS = 'feeds/{slug}.rss.xml'
+CATEGORY_FEED_ATOM = 'feeds/{slug}.atom.xml'
+CATEGORY_FEED_RSS = 'feeds/{slug}.rss.xml'
 FEED_ALL_ATOM = 'feeds/atom.xml'
 FEED_ALL_RSS = 'feeds/rss.xml'
 FEED_DOMAIN = SITEURL
 FEED_MAX_ITEMS = None
-TAG_FEED_ATOM = 'feeds/%s.atom.xml'
-TAG_FEED_RSS = 'feeds/%s.rss.xml'
+TAG_FEED_ATOM = 'feeds/{slug}.atom.xml'
+TAG_FEED_RSS = 'feeds/{slug}.rss.xml'
 
