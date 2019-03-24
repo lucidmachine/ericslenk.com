@@ -7,6 +7,7 @@ Status: published
 
 # 0. Prerequisites
 Before we get started you'll need to get yourself:
+
 * A [Pelican](https://blog.getpelican.com/) site with some content.
 * A [Github](https://github.com/) repository for that Pelican site.
 * A [CircleCI](https://circleci.com/) account.
