@@ -103,7 +103,7 @@ workflows:
 
   commit:
     jobs:
-      - deploy
+      - build
 
   weekly:
     triggers:
