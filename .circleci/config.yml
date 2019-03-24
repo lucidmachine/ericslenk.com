@@ -100,10 +100,12 @@ workflows:
   commit:
     jobs:
       - build
+      - deploy
+
   weekly:
     triggers:
       - schedule:
-          cron: "10 * * * *"
+          cron: "0 7 * * *"
           filters:
             branches:
               only:
