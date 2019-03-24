@@ -88,6 +88,10 @@ jobs:
           command: |
             sudo apt-get install -y rsync
       - run:
+          name: "Add Host Fingerprints"
+          command: |
+            echo "$known_hosts" > ~/.ssh/known_hosts
+      - run:
           name: "Publish Site"
           command: |
             . venv/bin/activate
