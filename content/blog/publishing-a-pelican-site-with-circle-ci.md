@@ -229,7 +229,7 @@ The "weekly" workflow has been given a "triggers" map, where we have defined a s
 We're so close! If you've followed all of the steps thus far the build job should succeed when you check in code. But the deploy job requires SSH access to your webhost. Let's make some keys named "webhost" and put them in the right places.
 
 ## Generate a SSH Key Pair and Add Public Key to Webhost
-See [Setting Up SSH Public Key Authentication]({filename}/setting-up-ssh-public-key-authentication.md).
+See [Setting Up SSH Public Key Authentication]({filename}/blog/setting-up-ssh-public-key-authentication.md).
 
 ```
 > ssh-keygen -f ~/.ssh/webhost
