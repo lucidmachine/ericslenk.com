@@ -154,6 +154,10 @@ jobs:
           command: |
             sudo apt-get install -y rsync
       - run:
+          name: "Add Host Fingerprints"
+          command: |
+            echo "$known_hosts" > ~/.ssh/known_hosts
+      - run:
           name: "Publish Site"
           command: |
             . venv/bin/activate
@@ -166,7 +170,8 @@ The above configuration defines a very similar job named "deploy". When CircleCI
 3. Install your Python dependencies if `requirements.txt` has been modified.
 4. Install your SSH keys. Keys must be added in the CircleCI webapp.
 5. Install rsync. It's not installed in any CircleCI Docker images by default, but we'll need it to publish.
-6. Generate your site and use rsync to deploy the generated site to your server.
+6. Write the contents of your `$known_hosts` environment variable to the SSH known hosts file. We'll define the contents of this environment variable in the CircleCI UI later.
+7. Generate your site and use rsync to deploy the generated site to your server.
 
 
 
@@ -219,7 +224,7 @@ The "weekly" workflow has been given a "triggers" map, where we have defined a s
 
 
 
-# 4. Configre SSH Keys
+# 4. Configre SSH Keys and Hosts
 We're so close! If you've followed all of the steps thus far the build job should succeed when you check in code. But the deploy job requires SSH access to your webhost. Let's make some keys named "webhost" and put them in the right places.
 
 ## Generate a SSH Key Pair and Add Public Key to Webhost
@@ -231,6 +236,21 @@ See [Setting Up SSH Public Key Authentication]({filename}/setting-up-ssh-public-
 ```
 
 ## Add Private Key to CircleCI
-Log in to CircleCI, open "Add Projects", and locate your site's project. Click "Set Up Project" if it hasn't already been set up, or click the project's name if it has. Now open up your project's settings. Click the link to "SSH Permissions". Now click the "Add SSH Key" button. Add the hostname of your webhost in the "Hostname" field, and paste the contents of your webhost private key into the "Private Key** field.
+Log in to CircleCI, open "Add Projects", and locate your site's project. Click "Set Up Project" if it hasn't already been set up, or click the project's name if it has. Now open up your project's settings. Click the link to "SSH Permissions". Now click the "Add SSH Key" button. Add the hostname of your webhost in the "Hostname" field, and paste the contents of your webhost private key into the "Private Key" field.
+
+## Add known_hosts
+For SSH to trust your webhost there must be fingerprints for that host in the known_hosts file. Grab your webhost's fingerprints by running the following and copying the output to your clipboard:
+
+```
+> ssh-keyscan webhost
+```
+
+If that doesn't work, try copying the contents of your local file `~/.ssh/known_hosts`.
+
+Now log in to CircleCI and open your project's settings. Click the link to "Environment Variables". Click the "Add Variable" button. In the "Name" field type "known_hosts" and in the "Value" field paste your known_hosts content. Click "Add Variable" to save.
+
+
+# 5. Verify
+Now go write some stupid blog post, maybe about Publishing A Pelican Site With Circle CI?
 
 **DONE.**
