@@ -99,7 +99,7 @@ workflows:
 
   commit:
     jobs:
-      - build
+      #- build
       - deploy
 
   weekly:
