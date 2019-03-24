@@ -2,57 +2,95 @@
 #
 # Check https://circleci.com/docs/2.0/language-python/ for more details
 #
-version: 2
-jobs:
-  build:
-    docker:
-      # specify the version you desire here
-      # use `-browsers` prefix for selenium tests, e.g. `3.6.1-browsers`
-      - image: circleci/python:3.6.1
+workflows:
+  version: 2
+  commit:
+    jobs:
+      build:
+        docker:
+          # specify the version you desire here
+          # use `-browsers` prefix for selenium tests, e.g. `3.6.1-browsers`
+          - image: circleci/python:3.6.1
 
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/postgres:9.4
+          # Specify service dependencies here if necessary
+          # CircleCI maintains a library of pre-built images
+          # documented at https://circleci.com/docs/2.0/circleci-images/
+          # - image: circleci/postgres:9.4
 
-    working_directory: ~/repo
+        working_directory: ~/repo
 
-    steps:
-      - checkout
+        steps:
+          - checkout
 
-      # Download Pelican plugins and themes, which are submodules
-      - run:
-          name: "Pull Submodules"
-          command: |
-            git submodule init
-            git submodule update --remote
+          # Download Pelican plugins and themes, which are submodules
+          - run:
+              name: "Pull Submodules"
+              command: |
+                git submodule init
+                git submodule update --remote
 
-      # Download and cache dependencies
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "requirements.txt" }}
-            # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-
+          # Download and cache dependencies
+          - restore_cache:
+              keys:
+                - v1-dependencies-{{ checksum "requirements.txt" }}
+                # fallback to using the latest cache if no exact match is found
+                - v1-dependencies-
 
-      - run:
-          name: "Install Dependencies"
-          command: |
-            python3 -m venv venv
-            . venv/bin/activate
-            pip install -r requirements.txt
+          - run:
+              name: "Install Dependencies"
+              command: |
+                python3 -m venv venv
+                . venv/bin/activate
+                pip install -r requirements.txt
 
-      - save_cache:
-          paths:
-            - ./venv
-          key: v1-dependencies-{{ checksum "requirements.txt" }}
+          - save_cache:
+              paths:
+                - ./venv
+              key: v1-dependencies-{{ checksum "requirements.txt" }}
 
-      - run:
-          name: "Build Site"
-          command: |
-            . venv/bin/activate
-            make html
+          - run:
+              name: "Build Site"
+              command: |
+                . venv/bin/activate
+                make html
 
-      # Store the generated site
-      - store_artifacts:
-          path: output
-          destination: output
+          # Store the generated site
+          - store_artifacts:
+              path: output
+              destination: output
+
+  scheduledpublish:
+    triggers:
+      - schedule:
+          cron: "35 * * * *"
+    jobs:    
+      buildandpublish:
+        docker:
+          - image: circleci/python:3.6.1
+        working_directory: ~/repo
+        steps:
+          - checkout
+          - run:
+              name: "Pull Submodules"
+              command: |
+                git submodule init
+                git submodule update --remote
+          - restore_cache:
+              keys:
+                - v1-dependencies-{{ checksum "requirements.txt" }}
+                - v1-dependencies-
+          - run:
+              name: "Install Dependencies"
+              command: |
+                python3 -m venv venv
+                . venv/bin/activate
+                pip install -r requirements.txt
+          - save_cache:
+              paths:
+                - ./venv
+              key: v1-dependencies-{{ checksum "requirements.txt" }}
+          - run:
+              name: "Publish Site"
+              command: |
+                . venv/bin/activate
+                make rsync_upload
