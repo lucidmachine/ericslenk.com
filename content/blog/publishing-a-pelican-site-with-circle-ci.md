@@ -45,10 +45,10 @@ Now you need to tell CircleCI what things it can do with your project. Create a 
 version: 2.1
 ```
 
-We're going to use config version 2.1, as it's introduced Executors, Commands
+We're going to use config version 2.1, as it's introduced a couple very handy concepts which help de-duplicate your config code, Executors and Commands.
 
 # 3. Executors
-CircleCI Executors are things which can execute your jobs. We'll define an Executor which is a Docker container that has Python 3.7.2 installed.
+[CircleCI Executors](https://circleci.com/docs/2.0/configuration-reference/#executors-requires-version-21) are things which can execute your jobs. We'll define an Executor which is a Docker container that has Python 3.7.2 installed.
 
 ```yaml
 executors:
@@ -60,7 +60,7 @@ executors:
 Okay. But what can we do with that?
 
 # 4. Commands
-CircleCI Commands are callable, reusable lists of actions you can execute in Jobs in your Executor. When we define our Jobs later we're going to need to install Pelican at the beginning of every job, so let's define an "install-pelican" Command to de-duplicate our code.
+[CircleCI Commands](https://circleci.com/docs/2.0/configuration-reference/#commands-requires-version-21) are named, reusable sequences of actions you can execute in Jobs in your Executor. When we define our Jobs later we're going to need to install Pelican at the beginning of every job, so let's define an "install-pelican" Command to de-duplicate our code.
 
 ```yaml
 commands:
@@ -97,7 +97,7 @@ When a CircleCI Job runs this Command, it will:
 
 
 # 5. Jobs
-Jobs are the top-level executable thing you can tell an Executor to Execute. You can compose multiple Commands in your Jobs. We're going to define two Jobs for your Pelican site: build and deploy.
+[CircleCI Jobs](https://circleci.com/docs/2.0/configuration-reference/#executors-requires-version-21) are the top-level executable thing you can tell an Executor to Execute. You can compose multiple Commands in your Jobs. We're going to define two Jobs for your Pelican site: build and deploy.
 
 ## 5.a Build Job
 Our "build" job will install Pelican and its dependencies, run Pelican to generate your site, and store the generated site for you to look over.
@@ -173,7 +173,7 @@ The above configuration defines a very similar job named "deploy". "deploy" will
 
 
 # 6. Configure CircleCI Workflows
-Once we've told CircleCI *what* Jobs it can do and how to do them, we must define *when* to execute those Jobs.
+[CircleCI Workflows](https://circleci.com/docs/2.0/configuration-reference/#workflows) are definitions of *when* to execute *which* Jobs. Now that we've defined our Jobs, let's tell CircleCI when they should fire.
 
 ## 6.a Build on Commit
 To define our "commit" workflow, create a map named "workflows" at the top level and add a map named "commit" to your "workflows" map.
@@ -211,10 +211,10 @@ workflows:
 The "weekly" workflow has been given a "triggers" map, where we have defined a single [schedule-based trigger](https://circleci.com/docs/2.0/configuration-reference/#schedule). The "cron" property of our first schedule is a cron-like string which says to fire on the 0th minute of the 10th hour of any day or month on Mondays. Keep in mind that times are in GMT.
 
 
-# 4. Configre SSH Keys and Hosts
+# 7. Configure SSH Keys and Hosts
 We're so close! If you've followed all of the steps thus far the "build" Job should succeed when you check in code. But the "deploy" Job requires SSH access to your webhost. Let's make some SSH keys named "webhost" and put them in the right places.
 
-## Generate a SSH Key Pair and Add Public Key to Webhost
+## 7.a. Generate a SSH Key Pair and Add Public Key to Webhost
 See [Setting Up SSH Public Key Authentication]({filename}/blog/setting-up-ssh-public-key-authentication.md).
 
 ```
@@ -222,10 +222,10 @@ See [Setting Up SSH Public Key Authentication]({filename}/blog/setting-up-ssh-pu
 > ssh-copy-id -i ~/.ssh/webhost.pub user@webhost
 ```
 
-## Add Private Key to CircleCI
+## 7.b. Add Private Key to CircleCI
 Log in to CircleCI, open "Add Projects", and locate your site's project. Click "Set Up Project" if it hasn't already been set up, or click the project's name if it has. Now open up your project's settings. Click the link to "SSH Permissions". Now click the "Add SSH Key" button. Add the hostname of your webhost in the "Hostname" field, and paste the contents of your webhost private key into the "Private Key" field.
 
-## Add known_hosts
+## 7.c. Add known_hosts
 For SSH to trust your webhost there must be fingerprints for that host in the known_hosts file. Grab your webhost's fingerprints by running the following and copying the output to your clipboard:
 
 ```
@@ -237,7 +237,7 @@ If that doesn't work, try copying the contents of your local file `~/.ssh/known_
 Now log in to CircleCI and open your project's settings. Click the link to "Environment Variables". Click the "Add Variable" button. In the "Name" field type "known_hosts" and in the "Value" field paste your known_hosts content. Click "Add Variable" to save.
 
 
-# 5. Verify
+# 8. Verify
 Now go write some stupid blog post, maybe about Publishing A Pelican Site With Circle CI?
 
 **DONE.**
