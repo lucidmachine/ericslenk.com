@@ -108,7 +108,7 @@ workflows:
   weekly:
     triggers:
       - schedule:
-          cron: "0 7 * * 1"
+          cron: "0 10 * * 1"  # 10am GMT (6am EST), Monday
           filters:
             branches:
               only:
