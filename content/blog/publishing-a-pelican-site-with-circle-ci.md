@@ -5,6 +5,8 @@ Tags: Pelican, static sites, CircleCI, continuous integration
 Summary: How to publish your Pelican static site from CircleCI.
 Status: published
 
+Today we're going to learn how to build and publish a static website from The Cloud (Other People's Computers)!
+
 # 0. Prerequisites
 Before we get started you'll need to get yourself:
 
@@ -39,16 +41,101 @@ Cool? Cool.
 
 
 # 2. Create CircleCI Config
-Now you need to tell CircleCI what things it can do with your project. Create a CircleCI configuration file `.circleci/config.yml`. Its contents should look like this:
+Now you need to tell CircleCI what things it can do with your project. Create a CircleCI configuration file `.circleci/config.yml`. Its contents look like this when we're done:
 
 ```yaml
 version: 2.1
+
+
+executors:
+  pelican-executor:
+    docker:
+      - image: circleci/python:3.7.2
+
+
+commands:
+  install-pelican:
+    steps:
+      - checkout
+      - run:
+          name: "Pull Submodules"
+          command: |
+            git submodule init
+            git submodule update --remote
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "requirements.txt" }}
+            - v1-dependencies-
+      - run:
+          name: "Install Dependencies"
+          command: |
+            python3 -m venv venv
+            . venv/bin/activate
+            pip install -r requirements.txt
+      - save_cache:
+          paths:
+            - ./venv
+          key: v1-dependencies-{{ checksum "requirements.txt" }}
+
+          
+jobs:
+  build:
+    executor: pelican-executor
+    working_directory: ~/repo
+    steps:
+      - install-pelican
+      - run:
+          name: "Build Site"
+          command: |
+            . venv/bin/activate
+            make html
+      - store_artifacts:
+          path: output
+          destination: output
+
+  deploy:
+    executor: pelican-executor
+    working_directory: ~/repo
+    steps:
+      - install-pelican
+      - add_ssh_keys
+      - run:
+          name: "Install rsync"
+          command: |
+            sudo apt-get install -y rsync
+      - run:
+          name: "Add Host Fingerprints"
+          command: |
+            echo "$known_hosts" > ~/.ssh/known_hosts
+      - run:
+          name: "Publish Site"
+          command: |
+            . venv/bin/activate
+            make rsync_upload
+
+
+workflows:
+  commit:
+    jobs:
+      - build
+
+  weekly:
+    triggers:
+      - schedule:
+          cron: "0 10 * * 1"  # 10am GMT (6am EST), Monday
+          filters:
+            branches:
+              only:
+                - master
+    jobs:
+      - deploy
+
 ```
 
 We're going to use config version 2.1, as it's introduced a couple very handy concepts which help de-duplicate your config code, Executors and Commands.
 
 # 3. Executors
-[CircleCI Executors](https://circleci.com/docs/2.0/configuration-reference/#executors-requires-version-21) are things which can execute your jobs. We'll define an Executor which is a Docker container that has Python 3.7.2 installed.
+[CircleCI Executors](https://circleci.com/docs/2.0/configuration-reference/#executors-requires-version-21) are things which can execute your jobs. We define an Executor which is a Docker container that has Python 3.7.2 installed.
 
 ```yaml
 executors:
@@ -97,7 +184,7 @@ When a CircleCI Job runs this Command, it will:
 
 
 # 5. Jobs
-[CircleCI Jobs](https://circleci.com/docs/2.0/configuration-reference/#executors-requires-version-21) are the top-level executable thing you can tell an Executor to Execute. You can compose multiple Commands in your Jobs. We're going to define two Jobs for your Pelican site: build and deploy.
+[CircleCI Jobs](https://circleci.com/docs/2.0/configuration-reference/#executors-requires-version-21) are the top-level executable thing you can tell an Executor to Execute. You can compose multiple Commands in your Jobs. We define two Jobs for your Pelican site: build and deploy.
 
 ## 5.a Build Job
 Our "build" job will install Pelican and its dependencies, run Pelican to generate your site, and store the generated site for you to look over.
@@ -129,7 +216,7 @@ The above configuration defines a job named "build". "build" will run in our Exe
 3. Store the contents of the `output/` directory as a build artifact, which you can view in the CircleCI webapp later if you wish.
 
 ## 5.b Deploy Job
-Now let's make another job for deploying our static site to our webserver. We'll add a second job named "deploy" to the "jobs" map.
+Our second job, "deploy", deploys our static site to our webserver.
 
 ```yaml
 jobs:
@@ -173,10 +260,10 @@ The above configuration defines a very similar job named "deploy". "deploy" will
 
 
 # 6. Configure CircleCI Workflows
-[CircleCI Workflows](https://circleci.com/docs/2.0/configuration-reference/#workflows) are definitions of *when* to execute *which* Jobs. Now that we've defined our Jobs, let's tell CircleCI when they should fire.
+[CircleCI Workflows](https://circleci.com/docs/2.0/configuration-reference/#workflows) are definitions of *when* to execute *which* Jobs. Now that we've defined our Jobs, our next section tells CircleCI when they should fire.
 
 ## 6.a Build on Commit
-To define our "commit" workflow, create a map named "workflows" at the top level and add a map named "commit" to your "workflows" map.
+Our first Workflow is named "commit". It tells CircleCI to run our "build" job whenever it detects a new commit to our Github repository.
 
 ```yaml
 workflows:
@@ -188,7 +275,7 @@ workflows:
 The "commit" Workflow simply has a "jobs" map, which lists just one Job to run on commit - our "build" job.
 
 ## 6.b Deploy Weekly
-To configure CircleCI to publish our built site to our production server on a weekly basis, define a Workflow "weekly" in the "workflows" map.
+Next we define our "weekly" Workflow. It tells CircleCI to run our "deploy" job on a chronological schedule every Monday at 10am GMT.
 
 ```yaml
 workflows:
@@ -208,7 +295,7 @@ workflows:
       - deploy
 ```
 
-The "weekly" workflow has been given a "triggers" map, where we have defined a single [schedule-based trigger](https://circleci.com/docs/2.0/configuration-reference/#schedule). The "cron" property of our first schedule is a cron-like string which says to fire on the 0th minute of the 10th hour of any day or month on Mondays. Keep in mind that times are in GMT.
+The "weekly" workflow has a "triggers" map, where we have defined a single [schedule-based trigger](https://circleci.com/docs/2.0/configuration-reference/#schedule). The "cron" property of our first schedule is a cron-like string which says to fire on the 0th minute of the 10th hour of any day or month on Mondays. Keep in mind that times are in GMT.
 
 
 # 7. Configure SSH Keys and Hosts
