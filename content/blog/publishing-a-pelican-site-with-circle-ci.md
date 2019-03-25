@@ -18,11 +18,9 @@ Before we get started you'll need to get yourself:
 You can do it. I believe in you.
 
 # 1. Define Project Dependencies
-CircleCI is gonna try to build your site inside of a [virtualenv](https://packaging.python.org/guides/installing-using-pip-and-virtualenv/) in a [Docker](https://www.docker.com/) container, so the first thing we need to do is ensure that your Pelican environment can be installed in a brand new environment. Explicitly define all of the Python packages you depend on in `requirements.txt`. This should include the `Pelican` package as well as any packages upon which your plugins will depend. I've also thrown in `pip` and `wheel` to avoid some weird issues. For example:
+CircleCI is gonna try to build your site inside of a [virtualenv](https://packaging.python.org/guides/installing-using-pip-and-virtualenv/) in a [Docker](https://www.docker.com/) container, so the first thing we need to do is ensure that your Pelican environment can be installed in a brand new environment. Explicitly define all of the Python packages you depend on in `requirements.txt`. This should include the `Pelican` package as well as any packages upon which your plugins will depend. For example:
 
 ```
-pip
-wheel
 Pelican
 Markdown
 HTMLParser
