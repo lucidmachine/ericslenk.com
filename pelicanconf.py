@@ -57,7 +57,7 @@ THEME = 'themes/Flex'
 ARTICLE_PATHS = ['blog']
 PATH = 'content'
 RELATIVE_URLS = True
-SITEURL = 'http://www.ericslenk.com'
+SITEURL = 'https://www.ericslenk.com'
 STATIC_PATHS = ['images', '.htaccess']
 
 # Feeds
