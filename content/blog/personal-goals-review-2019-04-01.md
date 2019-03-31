@@ -41,7 +41,7 @@ This past review was fairly successful as well. Much less stressful now.
 
 # Projects
 ## Easier Blog Publication
-I accomplished this! See: [Publishing a Pelican Site With CircleCI]({filename}/blog/publishing-a-pelican-site-with-circleci.md). I now have the ability to build and preview my blog in The Cloud (Other People's Computers)! And there's a weekly publication job. I may add more capabilities over time but I'm pretty happy with this, and I've built some skills using CircleCI.
+I accomplished this! See: [Publishing a Pelican Site With CircleCI]({filename}/blog/publishing-a-pelican-site-with-circleci.md). I now have the ability to build and preview my blog in The Cloud (Other People's Computers)! And there's a weekly publication job. I may add more capabilities over time like checking spelling and links or publishing the post on Twitter but I'm pretty happy with this, and I've built some skills using CircleCI.
 
 ## Behavior Driven Development on the JVM + Java/Scala Bitclock
 The JVM User Group sorely needs some content and I've been looking for a better testing framework at work, so I'm going to try out a few Behavior Driven Development test frameworks on the JVM and write an article and a talk about it. Of course, I'll need something to test for demonstration purposes, so of course, I'm gonna write *another* Bitclock implementation.
