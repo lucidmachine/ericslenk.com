@@ -8,7 +8,7 @@ Status: published
 
 # Goals
 * **Relationships:** I spent 80% of my nights socializing with people. I caught up with a lot of friends from college and had several nice dates.
-* **Career:** The Lansing JVM User Group's back on! We had a low key meeting at Reno's East which I consider a pretty great success. And I've finally written a post on BDD with ScalaTest, which I'll develop into a slide deck soon.
+* **Career:** The Lansing JVM User Group's back on! We had a low key meeting at Reno's East which I consider a pretty great success. And I've finally written [a post on BDD with ScalaTest]({filename}/blog/behavior-driven-development-on-the-jvm-with-scalatest.md), which I'll develop into a slide deck soon.
 * **Health and Longevity:** I've finally gotten around to fixing up bikes for the riding season.
 * **Financial Independence:** We finally moved our emergency fund to a bank with higher interest.
 
