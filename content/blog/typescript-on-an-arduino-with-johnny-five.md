@@ -2,7 +2,7 @@ Title: TypeScript on an Arduino with Johnny-Five
 Date: 2019-04-22
 Category:
 Tags: johnny-five, arduino, typescript
-Summary: 
+Summary: Get some TypeScript running on your Arduino with Johnny-Five!
 Status: published
 
 Are you proficient in [TypeScript](http://typescriptlang.org/) and want to dip your toes in microcontrollers? Missing your favorite IDE? Want a REPL for your robot? Let's get some TypeScript running on your [Arduino](https://www.arduino.cc/) with [Johnny-Five](http://johnny-five.io/)!
