@@ -12,7 +12,6 @@ First thing's first, let's set up our TypeScript toolchain.
 
 ```javascript
 // package.json
-
 {
   .
   .
@@ -54,7 +53,7 @@ In `package.json` we'll require the TypeScript compiler and a couple scripting u
 }
 ```
 
-In `tsconfig.json` we'll tell the TS compiler that our source code is in the `src/` directory and that it should be transpiled to ES2017 and output in the directory `build/main`.
+In `tsconfig.json` we'll tell the TypeScript compiler that our source code is in the `src/` directory and that it should be transpiled to ES2017 and output in the directory `build/main`.
 
 Now let's get that all installed.
 
