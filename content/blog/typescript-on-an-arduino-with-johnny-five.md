@@ -1,7 +1,7 @@
 Title: TypeScript on an Arduino with Johnny-Five
 Date: 2019-04-22
 Category:
-Tags: johnny-five, arduino, typescript, bitclock
+Tags: johnny-five, arduino, typescript
 Summary: 
 Status: published
 
