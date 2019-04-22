@@ -71,7 +71,7 @@ Now we need to install the Johnny Five package and its TypeScript types.
 Pretty easy.
 
 # Hello, World!
-Now let's set up a simple test. We're going to translate [the Johnny Five Hellow World example](http://johnny-five.io/examples/#hello-world-see-more-) to TypeScript. First, let's set up the hardware. Plug a single LED into your board with the anode (long end, positive) in I/O pin 13 and the cathode (short end, negative) in the GROUND pin. Now open up the file `src/index.ts` and write the following:
+Now let's set up a simple test. We're going to translate [the Johnny Five Hello World example](http://johnny-five.io/examples/#hello-world-see-more-) to TypeScript. First, let's set up the hardware. Plug a single LED into your board with the anode (long end, positive) in I/O pin 13 and the cathode (short end, negative) in the GROUND pin. Now open up the file `src/index.ts` and write the following:
 
 ```typescript
 // src/index.ts
