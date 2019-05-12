@@ -69,8 +69,8 @@ I didn't do nearly as well collecting this data, and it's less instructive. I'll
 ## Financial Reviews
 We missed last week's financial review. We were still at a friend's house during our regularly scheduled thing and didn't think of it when we got home. I'm going to try incorporating this review into my personal goals review, as it's a better established, more ingrained, more rewarding habit at this point.
 
-**Trigger(s): Personal Goals Review.**
-Action(s): Update transaction log in Mint. Obtain high-level overview.
+* **Trigger(s): Personal Goals Review.**
+* Action(s): Update transaction log in Mint. Obtain high-level overview.
 
 # Projects
 ## Hardware BitClock
