@@ -52,14 +52,14 @@ To get around this limitation we'll need to rotate through each row, turn that r
 # Progress
 Thus far I've set up a workbench...
 
-![Workbench]({filename}/images/workbench.jpg)
+![Workbench]({static}/images/workbench.jpg)
 
 And soldered the LEDs on to the breadboard.
 
-![Front of the LED Matrix]({filename}/images/led-matrix-front.jpg)
+![Front of the LED Matrix]({static}/images/led-matrix-front.jpg)
 
 In the back you can see that I soldered the rows together into rails, separated rows and column rails with a layer of electrical tape, and soldered the columns into rails.
 
-![Back of the LED Matrix]({filename}/images/led-matrix-back.jpg)
+![Back of the LED Matrix]({static}/images/led-matrix-back.jpg)
 
 **DONE.**
