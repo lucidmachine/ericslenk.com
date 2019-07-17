@@ -43,7 +43,7 @@ Title: Resume
 ## Personal Experience
 
 * Co-organize the [Lansing JVM User Group](https://www.eventbrite.com/e/jvm-user-group-meeting-tickets-48812265801).
-* Contibuted to the [Lansing Codes API](https://github.com/lansingcodes/api).
+* Contributed to the [Lansing Codes API](https://github.com/lansingcodes/api).
 * Write software development tutorials at [ericslenk.com](http://ericslenk.com/).
 * Maintain several [personal software projects]({filename}/pages/projects.md).
 
