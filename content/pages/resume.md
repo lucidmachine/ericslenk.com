@@ -5,9 +5,10 @@ Title: Resume
 ### Software Engineer
 #### Vertafore Sircon | November 2017 - Present
 
-* Delivered an interactive reporting management system using [Spring Boot](https://spring.io/projects/spring-boot) microservices and an [AngularJS](https://angularjs.org/) SPA backed by [Apache Cassandra](https://cassandra.apache.org/).
-* Provided reporting capabilities to multiple core applications by extending and integrating the [Pentaho BI platform](https://www.hitachivantara.com/go/pentaho.html).
-* Implemented cross-application authentication by provisioning and relating corresponding users using [Kafka Connect](https://docs.confluent.io/current/connect/index.html).
+* Delivered an interactive reporting management system using [Spring Boot](https://spring.io/projects/spring-boot) microservices and an [Angular](https://angular.io/) SPA backed by [Apache Cassandra](https://cassandra.apache.org/).
+* Provided standard, interactive, and dashboard reporting capabilities to multiple core applications by extending and integrating the [Pentaho BI platform](https://www.hitachivantara.com/go/pentaho.html).
+* Warehoused cross-application event sourced data using [Kafka](https://kafka.apache.org/), [Kafka Connect](https://docs.confluent.io/current/connect/index.html), [Spring Data](https://spring.io/projects/spring-data), and [Liquibase](https://www.liquibase.org/).
+* Implemented cross-application authentication by provisioning and relating corresponding users using Kafka and Kafka Connect.
 * Researched and tuned system performance by developing [Selenium](https://www.seleniumhq.org/)-based load and breakpoint tests.
 
 ### Content Management Systems Programmer
@@ -18,7 +19,7 @@ Title: Resume
 * Designed and developed custom tools, services and servlets, workflow actions, class overrides, testing and debugging utilities, etc.
     * Structural Integrity [service](https://gitlab.msu.edu/canr/edu.msu.anr.osgi.structuralintegrity.service), [servlet](https://gitlab.msu.edu/canr/edu.msu.anr.osgi.structuralintegrity.servlet), scheduled Quartz job, and diff portlet.
     * [Tuckey redirects API and GUI](https://gitlab.msu.edu/canr/edu.msu.anr.osgi.tuckey) and [redirtest](https://gitlab.msu.edu/canr/redirtest) tool.
-* Interfaced with vendor support and infrastructure and department infrastructure teams.
+* Coordinated with vendor support and infrastructure and department infrastructure teams in order to ensure service availability.
 * Managed developer tools and infrastructure including [Docker](https://www.docker.com/) containers, [Vagrant](https://www.vagrantup.com/) boxes, and VCS repositories.
 * Contributed to vendor’s open-source CMS, dotCMS.
 
@@ -53,12 +54,12 @@ Title: Resume
 #### Michigan State University | 2009 - 2018
 
 ## Familiar Technologies
-* **Languages:** Java, JavaScript, TypeScript, Bash, Python, PHP, Scala, HMTL 5, CSS 3, LESS, C/C++
-* **Frameworks:** Spring + Spring Boot, AngularJS, Angular, OSGi, CodeIgniter
+* **Languages:** Java, JavaScript, TypeScript, Bash, Python, Scala, Clojure, PHP, HMTL 5, CSS 3, LESS, C/C++
+* **Frameworks:** Spring + Spring Boot, Angular, OSGi, CodeIgniter
 * **Data Stores:** Cassandra, Kafka, PostgreSQL
-* **Infrastructure:** Chef, Vagrant, Kubernetes, Docker
+* **Infrastructure:** Chef, Kubernetes, Docker, Liquibase, Vagrant
 * **Servers:** Apache Tomcat, Apache httpd
-* **Testing:** JUnit, Mockito, Jasmine, Selenium, Mocha, ScalaTest
+* **Testing:** JUnit, Mockito, Jasmine, Selenium, ScalaTest, Jest
 * **Version Control:** Git, Subversion, Mercurial
-* **Build Tools:** Maven, Webpack, Grunt, SBT
+* **Build Tools:** Maven, Webpack, Grunt, Angular CLI, SBT, Leiningen
 * **Content Management Systems:** dotCMS, ExpressionEngine, Wordpress
