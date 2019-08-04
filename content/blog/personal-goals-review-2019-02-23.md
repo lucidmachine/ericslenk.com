@@ -30,7 +30,7 @@ This post is a day late for a couple reasons. For one, I didn't have the right t
 The second reason was that my work day was especially mentally exhausting and especially long, so by the time I left the office I was a wreck. I got home late and passed out on the couch and by the time I felt remotely okay it was like 8pm. I pushed this post off until today to just take care of myself for the rest of the night. I've increased the priority of Leave Work on Time to address this, as it's really a problem of violating that boundary.
 
 ## Bedtime Routine
-At least *this* habit's still on track! I've been digging mint tea and re-reading William Gibson's Bridge trilogy. I finished the first book in the trilogy, [Virtual Light](https://amzn.to/2MXEv0I), and am well into the second, [Idoru](https://amzn.to/2Xk7NLV).
+At least *this* habit's still on track! I've been digging mint tea and re-reading William Gibson's Bridge trilogy. I finished the first book in the trilogy, [Virtual Light](https://en.wikipedia.org/wiki/Virtual_Light), and am well into the second, [Idoru](https://en.wikipedia.org/wiki/Idoru).
 
 ## Financial Reviews
 Our family's finances have slipped, and I've been asked to take back some of the active management responsibilities. To get started I'll take a couple hours every other week to just categorize some transactions and get a high-level overview of our finances. I'm going to let the trigger be a calendar reminder and see if involving my wife adds enough social pressure to make it effective.

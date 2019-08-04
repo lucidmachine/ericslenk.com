@@ -17,7 +17,7 @@ Status: published
 I opened this review at the start of the fortnight and occasionally updated it with notable events throughout the fortnight. This experiment had two goals: 1) determine whether I can reduce the amount of time writing these reviews and 2) get a more accurate, holistic snapshot of the whole fortnight rather than a Friday-centric, fuzzy memory. Naturally, I totally forgot to open it for the rest of the fortnight. At least the reminder worked.
 
 ## Bedtime Routine
-I've reliably performed the whole ritual each night this fortnight. I'm still enjoying the tea and [The Design of Everyday Things by Donald A. Norman](https://amzn.to/2FPfi86). I've also begun to reread [Virtual Light by William Gibson](https://amzn.to/2MXEv0I). It turns out that The Design of Everyday Things is the sort of book about which I'm inclined to take notes, and taking notes is not at all conducive to going to sleep. I think using "after dinner" was an effective trigger, though I note that I haven't eaten dinner at a consistent time this week.
+I've reliably performed the whole ritual each night this fortnight. I'm still enjoying the tea and [The Design of Everyday Things by Donald A. Norman](https://en.wikipedia.org/wiki/The_Design_of_Everyday_Things). I've also begun to reread [Virtual Light by William Gibson](https://en.wikipedia.org/wiki/Virtual_Light). It turns out that The Design of Everyday Things is the sort of book about which I'm inclined to take notes, and taking notes is not at all conducive to going to sleep. I think using "after dinner" was an effective trigger, though I note that I haven't eaten dinner at a consistent time this week.
 
 ## Leave Work on Time
 Barring a few work emergencies I've continued to enjoy leaving work at reasonable times.

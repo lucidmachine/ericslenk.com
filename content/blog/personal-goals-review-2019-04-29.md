@@ -8,7 +8,7 @@ Status: published
 
 # Goals
 * **Relationships:** I didn't spend much time with people this fortnight.
-* **Career:** I'm slowly and steadily working my way through [Functional Programming in Scala by Paul Chiusano](https://amzn.to/2DCGd4v). It's been quite informative thus far, and the exercises are pretty fun puzzles.
+* **Career:** I'm slowly and steadily working my way through [Functional Programming in Scala by Paul Chiusano](https://www.manning.com/books/functional-programming-in-scala). It's been quite informative thus far, and the exercises are pretty fun puzzles.
 * **Health and Longevity:** Not much to speak of here.
 * **Financial Independence:** We finally moved our emergency fund to a higher-interest account!
 
@@ -21,7 +21,7 @@ This is going okay, but I stayed late a couple nights this past fortnight becaus
 * Action(s): Stop current task. Close email and chat applications. Work on an easy task.
 
 ## Bedtime Routine
-I'm going to try recording my bedtimes for this fortnight. I'm still working through [The Design of Everyday Things by Donald A. Norman](https://amzn.to/2FPfi86).
+I'm going to try recording my bedtimes for this fortnight. I'm still working through [The Design of Everyday Things by Donald A. Norman](https://en.wikipedia.org/wiki/The_Design_of_Everyday_Things).
 
 ### Habit
 * Trigger(s): Dinner.

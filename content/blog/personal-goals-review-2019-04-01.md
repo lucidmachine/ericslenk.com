@@ -33,7 +33,7 @@ Yeah, this is *much* nicer than publishing on Friday evening.
 Yeah, that was *much* nicer than publishing every weekend. I wrote [Publishing a Pelican Site With CircleCI]({filename}/blog/publishing-a-pelican-site-with-circle-ci.md).
 
 ## Bedtime Routine
-I'm back on my mint tea bullshit and finishing up [Idoru](https://amzn.to/2HNBe4x). I love Gibson's treatment of the virtual Walled City and nodal points.
+I'm back on my mint tea bullshit and finishing up [Idoru](https://en.wikipedia.org/wiki/Idoru). I love Gibson's treatment of the virtual Walled City and nodal points.
 
 ## Financial Reviews
 This past review was fairly successful as well. Much less stressful now.

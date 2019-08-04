@@ -27,7 +27,7 @@ Still going strong. I'm gonna remove this habit from future posts, as it's prett
 This has been going well as well. I wrote [Behavior Driven Development on the JVM with ScalaTest]({filename}/blog/behavior-driven-development-on-the-jvm-with-scalatest.md) last week. I'm going to stop mentioning this in the future as well, as it's well established.
 
 ## Bedtime Routine
-I finished [Idoru](https://amzn.to/2HNBe4x) and picked [The Design of Everyday Things by Donald A. Norman](https://amzn.to/2FPfi86) back up. This habit is becoming a bit hit or miss though. I'll keep an eye on it.
+I finished [Idoru](https://en.wikipedia.org/wiki/Idoru) and picked [The Design of Everyday Things by Donald A. Norman](https://en.wikipedia.org/wiki/The_Design_of_Everyday_Things) back up. This habit is becoming a bit hit or miss though. I'll keep an eye on it.
 
 ## Financial Reviews
 We missed this fortnight's financial review. :/

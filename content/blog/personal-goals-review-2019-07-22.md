@@ -9,12 +9,12 @@ Status: published
 # Goals
 * **Relationships:** I got to catch up with a lot of people at Blissfest, but otherwise have not been very sociable.
 * **Career:** I worked through another chapter of [Clojure for the Brave and True](https://www.braveclojure.com/clojure-for-the-brave-and-true/).
-* **Health and Longevity:** I've run into some obstacles selecting a primary care physician. Turns out there is a lot of paperwork I don't want to do, and also once I file all that stuff I'll probably be on a waiting list for 6 weeks. I began reading [Back Care Basics by Mary Pullig Schatz](https://amzn.to/2XTXbaI) to work on my weak back and see if that helps with the discomfort in my shoulder, but progress has been slow. I also finished my second split ergonomic mechanical keyboard - just after accidentally ripping the microUSB port off one of the first keyboard's microcontrollers!
+* **Health and Longevity:** I've run into some obstacles selecting a primary care physician. Turns out there is a lot of paperwork I don't want to do, and also once I file all that stuff I'll probably be on a waiting list for 6 weeks. I began reading [Back Care Basics by Mary Pullig Schatz](https://www.penguinrandomhouse.com/books/551660/back-care-basics-by-mary-pullig-schatz-foreword-by-william-connor-preface-by-b-k-s-iyengar/9780962713828/) to work on my weak back and see if that helps with the discomfort in my shoulder, but progress has been slow. I also finished my second split ergonomic mechanical keyboard - just after accidentally ripping the microUSB port off one of the first keyboard's microcontrollers!
 * **Financial Independence:** Well Astral and I got approved for a car loan with fairly generous terms but I've no idea where the extra money for a car payment and mandatory full-coverage auto insurance is supposed to come from so I'm kind of freaking out a bit and also fuck cars I don't even want a car? We want to buy a house soon, too, but I *super* don't want to take on two loans at once.
 
 
 # Habits
-I've been reading through [Atomic Habits by James Clear](https://amzn.to/2XTJbO5) and I've redone the structure of these habits to align with Clear's cue, craving, response, reward pattern.
+I've been reading through [Atomic Habits by James Clear](https://jamesclear.com/atomic-habits) and I've redone the structure of these habits to align with Clear's cue, craving, response, reward pattern.
 
 ## Leave Work on Time
 I've decided to stop tracking my leave times as it's annoying and doesn't really provide much value. I'm also going to try cutting back to just 1 cue here - the rest are unnecessary complications.

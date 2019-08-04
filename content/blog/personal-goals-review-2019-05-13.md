@@ -8,7 +8,7 @@ Status: published
 
 # Goals
 * **Relationships:** This fortnight I got to know some new friends quite a bit better and reconnected with some old friends as well. I'm quite pleased.
-* **Career:** I'm still working through [Functional Programming in Scala by Paul Chiusano](https://amzn.to/2DCGd4v), and I hosted another JVM User Group. That's two months in a row now.
+* **Career:** I'm still working through [Functional Programming in Scala by Paul Chiusano](https://www.manning.com/books/functional-programming-in-scala), and I hosted another JVM User Group. That's two months in a row now.
 * **Health and Longevity:** Still not much progress. At least I've picked up work on my bikes again.
 * **Financial Independence:** Not much to report here.
 

@@ -35,7 +35,7 @@ I've been writing a technical blog post on a weekly basis since the start of the
 * **Actions: Open my project management software. Work on an interesting personal tech project. Blag about it.**
 
 ## Bedtime Routine
-I've been enjoying [a chamomile, vanilla, and honey tea](https://amzn.to/2TdQYyS) and slowly working through [Structure and Interpretation of Computer Programs](https://amzn.to/2FhixDJ). The wizard book isn't exactly light reading, but I find it fairly well written and very engaging. I'm especially intrigued because it is written around a Lisp dialect called [Scheme](http://www.scheme-reports.org/), and I am concurrently learning a Lisp dialect called [Clojure](https://clojure.org/) and it's pretty neat to see all the parallels and to work through the examples in Clojure.
+I've been enjoying a chamomile, vanilla, and honey tea and slowly working through [Structure and Interpretation of Computer Programs](https://en.wikipedia.org/wiki/Structure_and_Interpretation_of_Computer_Programs). The wizard book isn't exactly light reading, but I find it fairly well written and very engaging. I'm especially intrigued because it is written around a Lisp dialect called [Scheme](http://www.scheme-reports.org/), and I am concurrently learning a Lisp dialect called [Clojure](https://clojure.org/) and it's pretty neat to see all the parallels and to work through the examples in Clojure.
 
 ## Financial Reviews
 This has gone well so far. We've done a couple reviews now and I feel I have a better sense of our financial outlook. We've gotten our debt back under control and have started working on our spending habits again.
