@@ -30,6 +30,13 @@ Oh hey. I'm actually still crushing this. I've been cooking most nights of the w
 * Response: Scour the Internet for a new recipe. Write up its salient details. Print it out.
 * Reward: Eat a small dark chocolate bar.
 
+## Bedtime Routine
+This old trope. It was one of my more beneficial habits while I was at it, so I'm gonna rebuild it. I'm reading [Flow: The Psychology of Optimal Experience](https://openlibrary.org/books/OL7284452M/Flow) and drinking chai tea.
+### Habit
+* Cue: Dinner's finished.
+* Response: Pack for the next day. Brush my teeth. Grab a tasty beverage. Read in bed. Go to sleep.
+* Reward: Read a fun book and drink a tasty beverage.
+
 # Projects
 
 ## Car Shopping
