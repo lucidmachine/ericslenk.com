@@ -17,6 +17,7 @@ Title: Wishlist
 * [AmazonBasics 5-Shelf Shelving Unit - Black](https://www.amazon.com/AmazonBasics-5-Shelf-Shelving-Unit-Black/dp/B018YLFJX4)
 * Whetstones
 * Toolbox
+* [Akro-Mils small parts cabinet](https://akro-mils.com/Products/Types/Portable-Small-Parts-Storage/Plastic-Cabinets)
 * [Darn Tough "The Standard" socks, Large, crew, light cushion, black](https://darntough.com/products/the-real-standard-issue-crew-light?variant=45552844051)
 * [Darn Tough "Hojo" socks, Large, over the calf, cushion, "Hornet"](https://darntough.com/products/hojo-over-the-calf-cushion?variant=30180624711)
 * Bike tights, 33W 30L or Large
@@ -24,6 +25,5 @@ Title: Wishlist
 * Coffee sampler pack
 * [XBox 360 Wireless Controller](https://www.newegg.com/p/0V7-0003-00025?Description=xbox%20360%20controller&cm_re=xbox_360_controller-_-0V7-0003-00025-_-Product)
 * [CO-Z 858D Solder Rework Station](https://www.amazon.com/Tek-Motion-Display-Soldering-Station/dp/B01MR2IWBN)
-* [Akro-Mils small parts cabinet](https://akro-mils.com/Products/Types/Portable-Small-Parts-Storage/Plastic-Cabinets)
 * [Kobo Aura H2O e-book reader](https://us.kobobooks.com/collections/ereaders/products/kobo-aura-h2o-edition-2)
 
