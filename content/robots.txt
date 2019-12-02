@@ -1,2 +1,2 @@
 User-agent: *
-Disallow: /wishlist.html
+Disallow: /pages/wishlist.html
