@@ -58,7 +58,7 @@ ARTICLE_PATHS = ['blog']
 PATH = 'content'
 RELATIVE_URLS = True
 SITEURL = 'https://www.ericslenk.com'
-STATIC_PATHS = ['images', '.htaccess']
+STATIC_PATHS = ['images', '.htaccess', 'robots.txt']
 
 # Feeds
 AUTHOR_FEED_ATOM = 'feeds/{slug}.atom.xml'
