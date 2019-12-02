@@ -1,16 +1,16 @@
 Title: Wishlist
 
 # Books
-* [Reaper Man - Terry Pratchett](https://isbnsearch.org/isbn/9780062237354)
-* [Soul Music - Terry Pratchett](https://isbnsearch.org/isbn/9780062237415)
-* [Peopleware: Productive Projects and Teams (3rd Edition) - Tom DeMarco and Tim Lister](https://isbnsearch.org/isbn/9780321934116)
-* [The Culture Code: The Secrets of Highly Successful Groups - Daniel Coyle](https://isbnsearch.org/isbn/9780804176989)
-* [User Story Mapping: Discover the Whole Story, Build the Right Product - Jeff Patton](https://isbnsearch.org/isbn/9781491904909)
-* [Clean Architecture - Robert C. Martin](https://isbnsearch.org/isbn/9780134494166)
-* [Building Evolutionary Architectures: Support Constant Change - Neal Ford, Rebecca Parsons, and Patrick Kua](https://isbnsearch.org/isbn/9781491986363)
-* [Refactoring: Improving the Design of Existing Code (2nd Edition) - Martin Fowler](https://isbnsearch.org/isbn/9780134757599)
-* [Refactoring Databases: Evolutionary Database Design - Scott W. Ambler and Pramod J. Sadalage](https://isbnsearch.org/isbn/9780321774514)
-* [The Pragmatic Programmer: From Journeyman to Master - Andrew Hunt and David Thomas](https://isbnsearch.org/isbn/9780201616224)
+* [Reaper Man - Terry Pratchett - 9780062237354](https://isbnsearch.org/isbn/9780062237354)
+* [Soul Music - Terry Pratchett - 9780062237415](https://isbnsearch.org/isbn/9780062237415)
+* [Peopleware: Productive Projects and Teams (3rd Edition) - Tom DeMarco and Tim Lister - 9780321934116](https://isbnsearch.org/isbn/9780321934116)
+* [The Culture Code: The Secrets of Highly Successful Groups - Daniel Coyle - 9780804176989](https://isbnsearch.org/isbn/9780804176989)
+* [User Story Mapping: Discover the Whole Story, Build the Right Product - Jeff Patton - 9781491904909](https://isbnsearch.org/isbn/9781491904909)
+* [Clean Architecture - Robert C. Martin - 9780134494166](https://isbnsearch.org/isbn/9780134494166)
+* [Building Evolutionary Architectures: Support Constant Change - Neal Ford, Rebecca Parsons, and Patrick Kua - 9781491986363](https://isbnsearch.org/isbn/9781491986363)
+* [Refactoring: Improving the Design of Existing Code (2nd Edition) - Martin Fowler - 9780134757599](https://isbnsearch.org/isbn/9780134757599)
+* [Refactoring Databases: Evolutionary Database Design - Scott W. Ambler and Pramod J. Sadalage - 9780321774514](https://isbnsearch.org/isbn/9780321774514)
+* [The Pragmatic Programmer: From Journeyman to Master - Andrew Hunt and David Thomas - 9780201616224](https://isbnsearch.org/isbn/9780201616224)
 
 # Not Books
 * [Moleskine classic notebooks, soft cover, pocket size, grid](https://us.moleskine.com/classic-notebook-black/p0460)
