@@ -7,7 +7,7 @@ Status: draft
 
 
 # Current Process
-Presently, I think I learn like this.
+Presently, I think I learn like this:
 
 1. Topics come randomly from media streams.
     * RSS
@@ -26,9 +26,25 @@ This workflow has several negative consequences:
 * I don't build deeper knowledge on the knowledge I have gained.
 
 # Preferred Process
+I think I'd be better served by a workflow like this:
+
 1. Topics come from:
     1. Periodic introspection: What do I need to learn to do or do better?
     1. Curated media streams.
 1. Topics are catalogued and prioritized somewhere.
 1. Periodically search the catalogue for a topic to reinforce, expand, or learn anew.
 1. Periodically maintain the catalogue. Prioritize and trim topics.
+
+My hypothesis is that:
+
+* Reinforcing and building my knowledge would improve depth of subjects.
+* Prioritizing and curating the topic catalogue would provide an opportunity to strategically select topics.
+* Periodic, habitual learning would allow me to consistently acquire, retain, and build knowledge.
+
+This workflow requires the following habits:
+
+* **When** I recognize that I'm spending more than a minute or so learning about a topic, **then** I should quickly add it to the catalogue and move on.
+* **When** a day or more has elapsed, **then** I should spend at least 15 minutes learning about my current topic.
+* **When** I complete a topic, **then** I should mark it as complete in the catalog and de-prioritize it.
+* **When** a week or more has elapsed, **then** I should prioritize the catalog.
+* **When** I am just sick of my current topic, **then** I should cycle it back into the catalog and de-prioritize it heavily.
