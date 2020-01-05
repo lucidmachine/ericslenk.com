@@ -2,46 +2,41 @@ Title: Learning Workflow
 Date: 2019-12-29
 Category: 
 Tags: learning, workflow, continuous-improvement
-Summary: TODO
-Status: draft
+Summary: How I learn, and how I think I should learn instead.
+Status: published
 
 
 # Current Process
-Presently, I think I learn like this:
+Currently, I think I learn like this:
 
-1. Topics come randomly from media streams.
-    * RSS
-        * Blogs
-        * Hacker News
-    * Reddit
-1. Topics percolate in my head for a while.
-1. When I have an abundance of free time, then I'll seek some learning material like a book or a tutorial on whatever's at the forefront of my mind.
+1. Topics show up randomly randomly from various media. These include blogs I follow, social media sites like Reddit, wherever.
+1. Those topics just sort of float around in my head for a while.
+1. When I have too much free time, then I might go find a tutorial on whatever's at the forefront of my mind.
 
-This workflow has several negative consequences:
+This sucks because:
 
-* My knowledge is broad, but hardly any of that knowledge is deep. 
+* I have a breadth of useless knowledge with little depth.
 * There is no strategy to *what* I learn, so that knowledge is of dubious value.
-* I don't consistently learn new things.
-* I don't reinforce the knowledge I have gained.
-* I don't build deeper knowledge on the knowledge I have gained.
+* I don't consistently learn.
+* I don't reinforce knowledge I have gained.
 
-# Preferred Process
-I think I'd be better served by a workflow like this:
+# Desired Process
+I think a workflow like this would be better:
 
 1. Topics come from:
     1. Periodic introspection: What do I need to learn to do or do better?
     1. Curated media streams.
 1. Topics are catalogued and prioritized somewhere.
-1. Periodically search the catalogue for a topic to reinforce, expand, or learn anew.
-1. Periodically maintain the catalogue. Prioritize and trim topics.
+1. Periodically search the catalogue for a topic to reinforce, expand, or learn.
+1. Periodically prioritize and prune the catalogue.
 
 My hypothesis is that:
 
-* Reinforcing and building my knowledge would improve depth of subjects.
-* Prioritizing and curating the topic catalogue would provide an opportunity to strategically select topics.
-* Periodic, habitual learning would allow me to consistently acquire, retain, and build knowledge.
+* The knowledge I acquire would more practically suit me.
+* My knowledge retention would improve.
+* I might develop advantageous expertise.
 
-This workflow requires the following habits:
+This workflow would require the following habits:
 
 * **When** I recognize that I'm spending more than a minute or so learning about a topic, **then** I should quickly add it to the catalogue and move on.
 * **When** a day or more has elapsed, **then** I should spend at least 15 minutes learning about my current topic.
