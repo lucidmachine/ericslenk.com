@@ -1,7 +1,7 @@
 Title: Making Software: What Really Works, and Why We Believe It
 Date: 2017-03-25
 Category: Book Reviews
-Tags: book, programming, software engineering, science
+Tags: book, software engineering, science
 Summary: A review of Making Software: What Really Works, and Why We Believe It by Andy Oram and Greg Wilson
 Status: published
 
