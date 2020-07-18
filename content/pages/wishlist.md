@@ -1,8 +1,6 @@
 Title: Wishlist
 
 # Books
-* [Reaper Man - Terry Pratchett - 9780062237354](https://isbnsearch.org/isbn/9780062237354)
-* [Soul Music - Terry Pratchett - 9780062237415](https://isbnsearch.org/isbn/9780062237415)
 * [Peopleware: Productive Projects and Teams (3rd Edition) - Tom DeMarco and Tim Lister - 9780321934116](https://isbnsearch.org/isbn/9780321934116)
 * [The Culture Code: The Secrets of Highly Successful Groups - Daniel Coyle - 9780804176989](https://isbnsearch.org/isbn/9780804176989)
 * [User Story Mapping: Discover the Whole Story, Build the Right Product - Jeff Patton - 9781491904909](https://isbnsearch.org/isbn/9781491904909)
@@ -13,17 +11,11 @@ Title: Wishlist
 * [The Pragmatic Programmer: From Journeyman to Master - Andrew Hunt and David Thomas - 9780201616224](https://isbnsearch.org/isbn/9780201616224)
 
 # Not Books
-* [Moleskine classic notebooks, soft cover, pocket size, grid](https://us.moleskine.com/classic-notebook-black/p0460)
-* [AmazonBasics 5-Shelf Shelving Unit - Black](https://www.amazon.com/AmazonBasics-5-Shelf-Shelving-Unit-Black/dp/B018YLFJX4)
-* Whetstones
-* Toolbox
-* [Akro-Mils small parts cabinet](https://akro-mils.com/Products/Types/Portable-Small-Parts-Storage/Plastic-Cabinets)
-* [Darn Tough "The Standard" socks, Large, crew, light cushion, black](https://darntough.com/products/the-real-standard-issue-crew-light?variant=45552844051)
-* [Darn Tough "Hojo" socks, Large, over the calf, cushion, "Hornet"](https://darntough.com/products/hojo-over-the-calf-cushion?variant=30180624711)
-* Bike tights, 33W 30L or Large
-* Tea sampler pack
-* Coffee sampler pack
-* [XBox 360 Wireless Controller](https://www.newegg.com/p/0V7-0003-00025?Description=xbox%20360%20controller&cm_re=xbox_360_controller-_-0V7-0003-00025-_-Product)
-* [CO-Z 858D Solder Rework Station](https://www.amazon.com/Tek-Motion-Display-Soldering-Station/dp/B01MR2IWBN)
+* Tea sampler
+* Coffee sampler
+* Bourbon
+* Stickers
 * [Kobo Aura H2O e-book reader](https://us.kobobooks.com/collections/ereaders/products/kobo-aura-h2o-edition-2)
+* [AmazonBasics 5-Shelf Shelving Unit - Black](https://www.amazon.com/AmazonBasics-5-Shelf-Shelving-Unit-Black/dp/B018YLFJX4)
+* [Darn Tough "The Standard" socks, Large, crew, light cushion, black](https://darntough.com/products/the-real-standard-issue-crew-light?variant=45552844051)
 
