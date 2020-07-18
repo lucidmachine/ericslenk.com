@@ -1,7 +1,7 @@
 Title: Installing Bar-End Shifters
 Date: 2020-05-30
 Category: Bicycles
-Tags: bicycles, shifters, bar-end shifters, barcons
+Tags: shifters, bar-end shifters, barcons
 Summary: A quick guide to installing bar-end shifters on your bicycle.
 Status: published
 
