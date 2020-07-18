@@ -1,8 +1,19 @@
 # Setup
-In order to set up the Pelican environment, use pip to install the Pelican package and optional dependency packages Markdown, py_w3c, and yuicompressor.
+## Submodules
+In order to retrieve all Git submodule dependencies, run the following.
 
+```bash
+git submodule init
+git submodule update --remote
 ```
-sudo pip3 install Pelican Markdown HTMLParser markup
+
+## venv and Packages
+In order to create a Python virtual environment, run the following.
+
+```bash
+python -m venv venv
+. venv/bin/activate
+pip install -r requirements.txt
 ```
 
 # Composition
