@@ -15,6 +15,7 @@ Title: Wishlist
 * Coffee sampler
 * Bourbon
 * Stickers
+* [Samsung 860 EVO Series 2.5" 1TB SATA III Internal Solid State Drive (SSD)"](https://www.newegg.com/samsung-860-evo-series-1tb/p/N82E16820147673?Item=N82E16820147673&quicklink=true)
 * [Kobo Aura H2O e-book reader](https://us.kobobooks.com/collections/ereaders/products/kobo-aura-h2o-edition-2)
 * [AmazonBasics 5-Shelf Shelving Unit - Black](https://www.amazon.com/AmazonBasics-5-Shelf-Shelving-Unit-Black/dp/B018YLFJX4)
 * [Darn Tough "The Standard" socks, Large, crew, light cushion, black](https://darntough.com/products/the-real-standard-issue-crew-light?variant=45552844051)
