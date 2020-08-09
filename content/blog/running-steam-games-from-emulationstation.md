@@ -17,7 +17,11 @@ Step number one is to grab some games to surface. Go [download the Steam client]
 # 2. Create Game Shortcuts
 Now we need to make something that EmulationStation can open for us. We'll be building desktop shortcut files - specifically [XDG Desktop Entries](https://standards.freedesktop.org/desktop-entry-spec/latest/). Now, you can ask the Steam client to build these for you, but that method has a couple down sides. For starters, you must ask this per game at install time. Second, it will only place them on your user's desktop, and if you have a habit of collecting hundreds more games than you could ever possibly play this can wreak havoc on your otherwise pristine desktop.
 
-Instead, we're going to do things the hard way and build them all at once with a shell script! You can [download the whole Steam games import script from my Github repo](https://raw.githubusercontent.com/lucidmachine/bin/master/importsteamgames.sh). If you want to learn how this script works, read the next section. If you don't, skip ahead to [the usage section](#usage).
+Instead, we're going to do things the hard way and build them all at once with a shell script! You can [download the whole Steam games import script from my Github repo](https://raw.githubusercontent.com/lucidmachine/bin/master/import-steam-games.sh). If you want to learn how this script works, read the next section. If you don't, skip ahead to [the usage section](#usage).
+can [download the whole Steam games import script from my Github
+repo](https://raw.githubusercontent.com/lucidmachine/bin/master/import-steam-games.sh). If you want
+to learn how this script works, read the next section. If you don't, skip ahead to [the usage
+section](#usage).
 
 ## 2.a importsteamgames.sh - The Long Way
 To begin, we point the script to a few important directories.
