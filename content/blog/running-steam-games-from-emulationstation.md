@@ -6,18 +6,37 @@ Summary: Configure EmulationStation to browse your Steam collection alongside yo
 Status: published
 
 
-[EmulationStation](https://emulationstation.org/) is a controller-friendly, graphical, themeable, flexible, open-source application for browsing and launching your games. If you want one unified place to look through your game library and figure out what the heck to play this evening, then this is your app! Its bread and butter is launching ROMs on emulators, but with a bit of configuration it will handle your Steam collection alongside your very legally emulated console classics. This walkthrough will get your Steam games into your EmulationStation collection. It's written to use Linux scripts and commands, but should translate to macOS or even Windows with a bit of careful thought.
+[EmulationStation](https://emulationstation.org/) is a controller-friendly, graphical, themeable,
+flexible, open-source application for browsing and launching your games. If you want one unified
+place to look through your game library and figure out what the heck to play this evening, then this
+is your app! Its bread and butter is launching ROMs on emulators, but with a bit of configuration it
+will handle your Steam collection alongside your very legally emulated console classics. This
+walkthrough will get your Steam games into your EmulationStation collection. It's written to use
+Linux scripts and commands, but should translate to macOS or even Windows with a bit of careful
+thought.
 
 # 0. Get EmulationStation
-If you don't have EmulationStation yet I highly recommend using the [RetroPie](https://retropie.org.uk/) fork of EmulationStation and the whole RetroPie ecosystem. It's a wonderful project. Get started with the [RetroPie setup tool](https://github.com/RetroPie/RetroPie-Setup).
+If you don't have EmulationStation yet I highly recommend using the
+[RetroPie](https://retropie.org.uk/) fork of EmulationStation and the whole RetroPie ecosystem. It's
+a wonderful project. Get started with the [RetroPie setup
+tool](https://github.com/RetroPie/RetroPie-Setup).
 
 # 1. Install Steam Games
-Step number one is to grab some games to surface. Go [download the Steam client](https://store.steampowered.com/about/) if you don't already have it. Then use Steam to install a game or two. Launch one of those games to make sure everything's working fine before you move on.
+Step number one is to grab some games to surface. Go [download the Steam
+client](https://store.steampowered.com/about/) if you don't already have it. Then use Steam to
+install a game or two. Launch one of those games to make sure everything's working fine before you
+move on.
 
 # 2. Create Game Shortcuts
-Now we need to make something that EmulationStation can open for us. We'll be building desktop shortcut files - specifically [XDG Desktop Entries](https://standards.freedesktop.org/desktop-entry-spec/latest/). Now, you can ask the Steam client to build these for you, but that method has a couple down sides. For starters, you must ask this per game at install time. Second, it will only place them on your user's desktop, and if you have a habit of collecting hundreds more games than you could ever possibly play this can wreak havoc on your otherwise pristine desktop.
+Now we need to make something that EmulationStation can open for us. We'll be building desktop
+shortcut files - specifically [XDG Desktop
+Entries](https://standards.freedesktop.org/desktop-entry-spec/latest/). Now, you can ask the Steam
+client to build these for you, but that method has a couple down sides. For starters, you must ask
+this per game at install time. Second, it will only place them on your user's desktop, and if you
+have a habit of collecting hundreds more games than you could ever possibly play this can wreak
+havoc on your otherwise pristine desktop.
 
-Instead, we're going to do things the hard way and build them all at once with a shell script! You can [download the whole Steam games import script from my Github repo](https://raw.githubusercontent.com/lucidmachine/bin/master/import-steam-games.sh). If you want to learn how this script works, read the next section. If you don't, skip ahead to [the usage section](#usage).
+Instead, we're going to do things the hard way and build them all at once with a shell script! You
 can [download the whole Steam games import script from my Github
 repo](https://raw.githubusercontent.com/lucidmachine/bin/master/import-steam-games.sh). If you want
 to learn how this script works, read the next section. If you don't, skip ahead to [the usage
