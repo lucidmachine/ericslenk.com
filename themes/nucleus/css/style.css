@@ -161,6 +161,10 @@ img.imgfull {
     text-transform: uppercase;
 }
 
+#left p#logo a span.text.description {
+    font-size: 15px;
+}
+
 #left #socialmedia ul {
     position: absolute;
     bottom: 30px;
