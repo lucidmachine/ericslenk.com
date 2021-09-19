@@ -47,14 +47,14 @@ RewriteEngine On
 # Redirect feeds/rss.xml to feed.xml
 #   Req: https://ericslenk.com/feeds/rss.xml
 #   Res: https://ericslenk.com/feed.xml
-RewriteRule feeds/rss.xml$ feed.xml [R]
+RewriteRule feeds/rss\.xml$ feed.xml [R]
 
 # Redirect to prepend posts/ to blog posts (HTML pages without posts/ or pages/ at the start)
 #   Req: https://ericslenk.com/installing-bar-end-shifters.html
 #   Res: https://ericslenk.com/posts/installing-bar-end-shifters.html
-RewriteRule ^(?!posts/?|pages/?)(.*.html)$ posts/$1 [R]
+RewriteRule ^(?!posts/?|pages/?)(.*\.html)$ posts/$1 [R]
 
 # Redirect to remove the .html extension
 #   Req: https://ericslenk.com/pages/projects.html
 #   Res: https://ericslenk.com/pages/projects
-RewriteRule (.*).html$ $1 [R]
+RewriteRule (.*)\.html$ $1 [R]
