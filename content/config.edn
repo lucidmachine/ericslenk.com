@@ -39,7 +39,7 @@
  :blocks-per-preview           2                              ; How many HTML blocks per preview
  :description-include-elements #{:p :h1 :h2 :h3 :h4 :h5 :h6}  ; What kinds of HTML blocks in preview
 
- :clean-urls                   :trailing-slash
+ :clean-urls                   :no-trailing-slash
  :collapse-subdirs?            false
  :hide-future-posts?           true
 
