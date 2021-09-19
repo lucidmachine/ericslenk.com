@@ -44,24 +44,17 @@ Header set Cache-Control "max-age=600"
 # Enable rewrite rules
 RewriteEngine On
 
-# Redirect feeds/rss.xml to blog/feed.xml
+# Redirect feeds/rss.xml to feed.xml
 #   Req: https://ericslenk.com/feeds/rss.xml
-#   Res: https://ericslenk.com/blog/feed.xml
-RewriteRule feeds/rss.xml$ blog/feed.xml [R]
-
-# Redirect to prepend blog/ to all URIs
-#   Req: https://ericslenk.com/installing-bar-end-shifters.html
-#   Res: https://ericslenk.com/blog/installing-bar-end-shifters.html
-#   Req: https://ericslenk.com/blog
-#   Res: https://ericslenk.com/blog
-RewriteRule ^(?!blog/?)(.*)$ blog/$1 [R]
+#   Res: https://ericslenk.com/feed.xml
+RewriteRule feeds/rss.xml$ feed.xml [R]
 
 # Redirect to prepend posts/ to blog posts (HTML pages without posts/ or pages/ at the start)
-#   Req: https://ericslenk.com/blog/installing-bar-end-shifters.html
-#   Res: https://ericslenk.com/blog/posts/installing-bar-end-shifters.html
-RewriteRule ^blog/(?!posts/?|pages/?)(.*.html)$ blog/posts/$1 [R]
+#   Req: https://ericslenk.com/installing-bar-end-shifters.html
+#   Res: https://ericslenk.com/posts/installing-bar-end-shifters.html
+RewriteRule ^(?!posts/?|pages/?)(.*.html)$ posts/$1 [R]
 
 # Redirect to remove the .html extension
-#   Req: https://ericslenk.com/blog/pages/projects.html
-#   Res: https://ericslenk.com/blog/pages/projects
+#   Req: https://ericslenk.com/pages/projects.html
+#   Res: https://ericslenk.com/pages/projects
 RewriteRule (.*).html$ $1 [R]
