@@ -25,7 +25,7 @@
  :compass-path                 nil
  :theme                        "nucleus"
 
- :resources                    ["img" "static"]
+ :resources                    ["img" "static/.htaccess" "static/robots.txt"]
  :keep-files                   [".git"]                       ; Keep files when clearing public
 
  :disqus?                      false
