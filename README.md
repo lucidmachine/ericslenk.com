@@ -29,3 +29,29 @@ subdirectory run the following command:
 ```
 clojure -M:build
 ```
+
+
+# Publication
+
+In order to publish the compiled site contents from the `public` subdirectory to a remote host via
+rsync run the following commands:
+
+```bash
+LOCAL_SRC_DIR=public/
+REMOTE_HOST=ssh.phx.nearlyfreespeech.net
+REMOTE_PORT=22
+REMOTE_USER=lucidmachine_ericslenk
+REMOTE_TARGET_DIR=/home/public
+rsync \
+  --checksum \
+  --compress \
+  --cvs-exclude \
+  --delete \
+  --partial \
+  --progress \
+  --recursive \
+  --rsh="ssh -p ${REMOTE_PORT}" \
+  --verbose \
+  "${LOCAL_SRC_DIR}" \
+  "${REMOTE_USER}@${REMOTE_HOST}:${REMOTE_TARGET_DIR}"
+```
