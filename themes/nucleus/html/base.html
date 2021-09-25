@@ -24,7 +24,6 @@
     {% style "css/reset.css" %}
     {% style "css/style.css" %}
     {% style "css/typography.css" %}
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/tomorrow-night-eighties.min.css">
     <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 </head>
@@ -34,7 +33,6 @@
 
     <p id="logo">
         <a title="{{title}}" href="{{index-uri}}">
-            <span class="fa fa-cogs"></span>
             <span class="text">{{title}}</span>
             <span class="text description">{{description}}</span>
         </a>
@@ -42,7 +40,7 @@
 
     <div id="menucont" class="bodycontainer clearfix">
         <div class="menutitle">
-            <p><span class="fa fa-reorder"></span><strong>Menu</strong></p>
+            <div id="menu-button-container"><span id="menu-button">Menu</span></div>
         </div>
         <ul class="menu">
             <li {% if home %} class="active" {% endif %}><a title="Home" href="{{index-uri}}">Home</a></li>
