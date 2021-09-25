@@ -16,14 +16,6 @@
     letter-spacing: 2px;
 }
 
-.button.fullbutton {
-    width: 100%;
-}
-
-.button.fullbutton span {
-    float: right;
-}
-
 .button:after {
     content: '';
     position: absolute;
@@ -46,5 +38,4 @@
 .button:active {
     top: 2px;
 }
-
 

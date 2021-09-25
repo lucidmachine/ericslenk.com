@@ -16,7 +16,7 @@
     box-sizing: border-box;
 }
 
-pre code{
+pre code {
     display: block;
     overflow-x: auto;
     background: #2d2d2d;
@@ -45,11 +45,7 @@ body {
     vertical-align: baseline;
 }
 
-::selection {
-    background: #A71E2E;
-    color: #FFF;
-}
-
+::selection,
 ::-moz-selection {
     background: #A71E2E;
     color: #FFF;
@@ -74,28 +70,11 @@ img {
     -ms-backface-visibility: hidden;
 }
 
-img.imgfull {
-    float: left;
-    width: 100%;
-    max-width: 1000px;
-    margin: 0 0 20px 0;
-    border-top: 5px solid #A71E2E;
-}
-
 /* ==================================================
    Layout Styles
 ================================================== */
 
-.container {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    padding: 0 30px;
-    min-width: 280px;
-    line-height: 26px;
-}
-
-.container .bodycontainer {
+.bodycontainer {
     margin: 0 auto;
     width: 100%;
     max-width: 1000px;
@@ -160,30 +139,6 @@ img.imgfull {
     font-size: 15px;
 }
 
-#left #socialmedia ul {
-    position: absolute;
-    bottom: 30px;
-    left: 30px;
-    margin: 0;
-}
-
-#left #socialmedia ul li {
-    display: inline-block;
-    list-style-type: none;
-    margin: 0 12px 0 0;
-    padding: 0;
-}
-
-#left #socialmedia ul li a {
-    font-size: 23px;
-    color: #FFF;
-    opacity: 0.4;
-}
-
-#left #socialmedia ul li a:hover {
-    opacity: 1;
-}
-
 #right {
     position: absolute;
     top: 0;
@@ -224,19 +179,6 @@ img.imgfull {
         max-width: 200px;
     }
 
-    #left #socialmedia ul {
-        bottom: 20px;
-        left: 20px;
-    }
-
-    #left #socialmedia ul li {
-        margin: 0 8px 0 0;
-    }
-
-    #left #socialmedia ul li a {
-        font-size: 21px;
-    }
-
     #right {
         padding: 20px 20px 20px 230px;
     }
@@ -260,17 +202,6 @@ img.imgfull {
 
     #left p#logo a {
         padding: 0;
-    }
-
-    #left #socialmedia ul {
-        position: relative;
-        bottom: auto;
-        left: auto;
-        margin: 5px 0 0 0;
-    }
-
-    #left #socialmedia ul li a {
-        font-size: 25px;
     }
 
     #right {
