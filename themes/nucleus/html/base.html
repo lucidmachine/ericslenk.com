@@ -22,6 +22,8 @@
     {% style "css/styles.css" %}
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/tomorrow-night-eighties.min.css">
     <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <script src="/js/highlight.pack.js" type="application/javascript" defer></script>
+    <script src="/js/scripts.js" type="application/javascript" defer></script>
 </head>
 <body>
 
@@ -64,9 +66,6 @@
 
 </div>
 </div>
-{% script "js/highlight.pack.js" %}
-<script>hljs.initHighlightingOnLoad();</script>
-<script>{% include "js/scripts.js" %}</script>
 {% if post.klipse %} {{post.klipse|safe}} {% endif %}
 {% if page.klipse %} {{page.klipse|safe}} {% endif %}
 </body>
