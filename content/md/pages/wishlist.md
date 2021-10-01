@@ -12,7 +12,5 @@
 * Coffee
 * Bourbon
 * Stickers
-* [Bondhus Colorguard Ball End Metric Hex Wrench Set](https://www.nashbar.com/bondhus-colorguard-ball-end-metric-hex-wrench-set-bon69699/p-rqqrq2waxqqeyaa2)
-* [Whetstones](https://www.homedepot.com/p/Razorri-Solido-Angle-Guide-2-Double-Sided-400-1000-and-3000-8000-Grit-Whetstones-Knife-Sharpening-Stone-Kit-with-Leather-Strop-S2/317003895)
 * [Samsung 860 EVO Series 2.5" 1TB SATA III Internal Solid State Drive (SSD)](https://www.newegg.com/samsung-860-evo-series-1tb/p/N82E16820147673?Item=N82E16820147673&quicklink=true)
 * [Matias Click Switches](https://matias.store/products/matias-click-switch-box-of-200)
