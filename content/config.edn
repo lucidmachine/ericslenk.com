@@ -21,7 +21,8 @@
  :archive-group-format         "yyyy MMMM"
 
  :sass-src                     []
- :sass-path                    ""
+ :sass-path                    "sass"
+ :sass-opts                    ["--style=compressed"]
  :compass-path                 nil
  :theme                        "nucleus"
 

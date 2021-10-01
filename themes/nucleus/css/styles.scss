@@ -1,10 +1,7 @@
-/* ==================================================
-   CSS Imports
-================================================== */
-@import url("reset.css");
-@import url("typography.css");
-@import url("menu.css");
-@import url("buttons.css");
+@use 'reset';
+@use 'typography';
+@use 'menu';
+@use 'buttons';
 
 /* ==================================================
    Global Styles
