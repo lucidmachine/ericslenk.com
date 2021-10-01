@@ -1,43 +1,56 @@
-# Setup
-## Submodules
-In order to retrieve all Git submodule dependencies, run the following.
-
-```bash
-git submodule init
-git submodule update --remote
-```
-
-## venv and Packages
-In order to create a Python virtual environment, run the following.
-
-```bash
-python -m venv venv
-. venv/bin/activate
-pip install -r requirements.txt
-```
-
 # Composition
-Site content is stored in the ```content/``` directory. The directory ```content/blog/``` contains blog articles in Markdown. The directory ```content/pages/``` contains static pages in Markdown. The directory ```content/images/``` contains static images.
 
-# Development
-## Development Server
-While developing the site's templates and assets it is useful to run a development server which re-compiles the site as files are modified. The development server can be started with the following command.
+Site content is laid out like so in the `content` subdirectory:
+
 ```
-make devserver
+content
+|-- config.edn    Cryogen configuration
+|-- css           Custom CSS
+|-- img           Images
+|-- md
+|   |-- pages     Pages defined in Markdown
+|   `-- posts     Posts defined in Markdown
+`-- static        Other static assets to be copied directly to the public directory
 ```
-When you are finished developing, stop the server with the following command.
+
+While developing the site's content it is useful to run a development server which re-compiles the
+site as files are modified. The development server can be started with the following command:
+
 ```
-make stopserver
+clojure -X:serve
 ```
+
 
 # Compilation
-In order to generate the site contents based on your composed content and developed files and templates run the following command.
+
+In order to compile the site contents from the `contents` and `themes` subdirectories to the `public`
+subdirectory run the following command:
+
 ```
-make html
+clojure -M:build
 ```
 
+
 # Publication
-In order to generate and rsync the site to your website run the following command.
-```
-make rsync_upload
+
+In order to publish the compiled site contents from the `public` subdirectory to a remote host via
+rsync run the following commands:
+
+```bash
+LOCAL_SRC_DIR=public/
+REMOTE_HOST=ssh.phx.nearlyfreespeech.net
+REMOTE_PORT=22
+REMOTE_USER=lucidmachine_ericslenk
+REMOTE_TARGET_DIR=/home/public
+rsync \
+  --checksum \
+  --compress \
+  --delete \
+  --partial \
+  --progress \
+  --recursive \
+  --rsh="ssh -p ${REMOTE_PORT}" \
+  --verbose \
+  "${LOCAL_SRC_DIR}" \
+  "${REMOTE_USER}@${REMOTE_HOST}:${REMOTE_TARGET_DIR}"
 ```

@@ -1,0 +1,76 @@
+#
+# General Configuration
+#
+
+ServerSignature Off
+AddDefaultCharset UTF-8
+DefaultLanguage en-US
+
+# gzip
+<ifModule mod_gzip.c>
+mod_gzip_on Yes
+mod_gzip_dechunk Yes
+mod_gzip_item_include file .(html?|txt|css|js|php|pl)$
+mod_gzip_item_include handler ^cgi-script$
+mod_gzip_item_include mime ^text/.*
+mod_gzip_item_include mime ^application/x-javascript.*
+mod_gzip_item_exclude mime ^image/.*
+mod_gzip_item_exclude rspheader ^Content-Encoding:.*gzip.*
+</ifModule>
+
+# Cache images and other media for 1 month and let intermediate servers cache
+<FilesMatch "\.(gif|jpg|jpeg|png|ico|swf)$">
+Header set Cache-Control "max-age=2592000, public"
+</FilesMatch>
+
+# Cache CSS and JS for 1 week
+<FilesMatch "\.(css|js)$">
+Header set Cache-Control "max-age=604800"
+</FilesMatch>
+
+# Cache page content for 1 day
+<FilesMatch "\.(html|htm|txt)">
+Header set Cache-Control "max-age=600"
+</FilesMatch>
+
+
+#
+# Security Headers
+#
+Header set Content-Security-Policy "default-src 'none'; script-src 'self'; connect-src 'self'; img-src 'self'; style-src 'self' cdnjs.cloudflare.com; base-uri 'self'; form-action 'self'"
+Header set X-Frame-Options "DENY"
+Header set X-XSS-Protection "1; mode=block"
+Header set X-Content-Type-Options "nosniff"
+Header unset Server
+
+
+#
+# Rewrite Rules
+#
+
+# Docs:   http://httpd.apache.org/docs/current/mod/mod_rewrite.html#rewriterule
+# Tester: https://htaccess.madewithlove.be/
+
+# Enable rewrite rules
+RewriteEngine On
+
+# Redirect feeds/rss.xml to feed.xml
+#   Req: https://ericslenk.com/feeds/rss.xml
+#   Res: https://ericslenk.com/feed.xml
+RewriteRule feeds/rss\.xml$ feed.xml [R]
+
+# Redirect to prepend posts/ to blog posts (HTML pages without posts/ or pages/ at the start)
+#   Req: https://ericslenk.com/installing-bar-end-shifters.html
+#   Res: https://ericslenk.com/posts/installing-bar-end-shifters.html
+RewriteRule ^(?!posts/?|pages/?|tags/?|authors/?|p/?|archives/?)(.*\.html)$ posts/$1 [R]
+
+# Rewrite to hide the .html extension
+#   Req: https://ericslenk.com/pages/projects.html
+#   Res: https://ericslenk.com/pages/projects
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule !.*\.html$ %{REQUEST_FILENAME}.html [L]
+
+# Rewrite to use the tags index
+#   Req: https://ericslenk.com/tags
+#   Res: https://ericslenk.com/tags.html
+RewriteRule ^tags/?$ tags.html [L]
