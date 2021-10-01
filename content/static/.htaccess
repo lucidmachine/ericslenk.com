@@ -59,3 +59,8 @@ RewriteRule ^(?!posts/?|pages/?|tags/?|authors/?|p/?|archives/?)(.*\.html)$ post
 #   Res: https://ericslenk.com/pages/projects
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule !.*\.html$ %{REQUEST_FILENAME}.html [L]
+
+# Rewrite to use the tags index
+#   Req: https://ericslenk.com/tags
+#   Res: https://ericslenk.com/tags.html
+RewriteRule ^tags/?$ tags.html [L]
