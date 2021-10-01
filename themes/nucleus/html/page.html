@@ -3,7 +3,6 @@
 {% block meta %}
 {% if page.description %}
 <meta name="description" content="{{page.description}}">
-{% comment %} OpenGraph tags {% endcomment %}
 <meta property="og:description" content="{{page.description}}">
 {% endif %}
 <meta property="og:url" content="{{site-url}}{{uri}}" />
@@ -17,14 +16,5 @@
     </div>
     {% if page.toc %}{{page.toc|safe}}{% endif %}
     {{page.content|safe}}
-
-    <div id="prev-next">
-        {% if page.prev %}
-        <a class="button" href="{{page.prev.uri}}">&laquo; {{page.prev.title}}</a>
-        {% endif %}
-        {% if page.next %}
-        <a class="right button" href="{{page.next.uri}}">{{page.next.title}} &raquo;</a>
-        {% endif %}
-    </div>
 </div>
 {% endblock %}
