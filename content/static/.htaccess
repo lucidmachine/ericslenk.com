@@ -35,6 +35,16 @@ Header set Cache-Control "max-age=600"
 
 
 #
+# Security Headers
+#
+Header set Content-Security-Policy "default-src 'none'; script-src 'self'; connect-src 'self'; img-src 'self'; style-src 'self' cdnjs.cloudflare.com; base-uri 'self'; form-action 'self'"
+Header set X-Frame-Options "DENY"
+Header set X-XSS-Protection "1; mode=block"
+Header set X-Content-Type-Options "nosniff"
+Header unset Server
+
+
+#
 # Rewrite Rules
 #
 
