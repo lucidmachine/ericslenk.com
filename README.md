@@ -45,7 +45,6 @@ REMOTE_TARGET_DIR=/home/public
 rsync \
   --checksum \
   --compress \
-  --cvs-exclude \
   --delete \
   --partial \
   --progress \
