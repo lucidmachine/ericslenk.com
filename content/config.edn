@@ -22,10 +22,9 @@
 
  :sass-src                     []
  :sass-path                    "sass"
- ; :sass-opts                    ["--style=compressed"]
- :sass-opts                    ["--style=expanded"]
+ :sass-opts                    ["--style=compressed"]
  :compass-path                 nil
- :theme                        "nucleus"
+ :theme                        "lucidmachinery"
 
  :resources                    ["img" "static/.htaccess" "static/robots.txt"]
  :keep-files                   [".git"]                       ; Keep files when clearing public
