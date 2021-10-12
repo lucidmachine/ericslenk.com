@@ -22,7 +22,8 @@
 
  :sass-src                     []
  :sass-path                    "sass"
- :sass-opts                    ["--style=compressed"]
+ ; :sass-opts                    ["--style=compressed"]
+ :sass-opts                    ["--style=expanded"]
  :compass-path                 nil
  :theme                        "nucleus"
 

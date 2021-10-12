@@ -1,3 +1,5 @@
+@use 'colors' as colors;
+
 .button {
     position: relative;
     display: inline-block;
@@ -26,13 +28,13 @@
 
 .button {
     background: none;
-    border: 2px solid #A71E2E;
-    color: #A71E2E !important;
+    border: 2px solid colors.$button-border;
+    color: colors.$button-color !important;
 }
 
 .button:hover {
-    background: #A71E2E;
-    color: #FFF !important;
+    background: colors.$button-hover-background;
+    color: colors.$button-hover-color !important;
 }
 
 .button:active {

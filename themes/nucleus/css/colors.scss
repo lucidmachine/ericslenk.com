@@ -1,0 +1,64 @@
+// Colors
+$gray-34:                             #222222;
+$gray-45:                             #2d2d2d;
+$gray-60:                             #999999;
+$gray-80:                             #cccccc;
+$gray-85:                             #555555;
+$gray-90:                             #e5e5e5;
+$red:                                 #a71e2e;
+$white:                               #ffffff;
+$darker-60:                           rgba(255, 255, 255, 0.6);
+$lighter-20:                          rgba(0, 0, 0, 0.2);
+$lighter-40:                          rgba(0, 0, 0, 0.4);
+
+
+// Palette
+$background-1:                        $white;
+$foreground-1:                        $gray-85;
+$background-2:                        $red;
+$foreground-2:                        $white;
+$background-3:                        $gray-45;
+$foreground-3:                        $gray-80;
+
+
+// Styles
+$h-color:                             $foreground-1;
+$hr:                                  $background-2;
+$blockquote-background:               $gray-90;
+$blockquote-border:                   $background-2;
+$blockquote-color:                    $foreground-3;
+$blockquote-author-color:             $gray-60;
+
+$button-border:                       $background-2;
+$button-color:                        $background-2;
+$button-hover-background:             $background-2;
+$button-hover-color:                  $foreground-2;
+
+$menu-color:                          $foreground-2;
+$menu-hover-background:               $lighter-20;
+$menu-hover-color:                    $foreground-2;
+$menu-button-border:                  $foreground-2;
+$menu-button-color:                   $foreground-2;
+$menu-button-hover-background:        $background-2;
+$menu-button-hover-color:             $background-2;
+$menu-item-mobile-color:              $darker-60;
+$menu-item-mobile-hover-color:        $foreground-2;
+$menu-button-mobile-hover-background: $background-2;
+$menu-button-mobile-hover-color:      $foreground-2;
+
+$code-background:                     $background-3;
+$code-color:                          $foreground-3;
+
+$body-background:                     $background-1;
+$body-color:                          $foreground-1;
+
+$selection-background:                $background-2;
+$selection-color:                     $foreground-2;
+
+$link-color:                          $background-2;
+$link-hover-color:                    $gray-34;
+
+$left-background:                     $background-2;
+$left-color:                          $foreground-2;
+
+$footer-color:                        $lighter-40;
