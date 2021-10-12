@@ -6,9 +6,9 @@ $gray-85:                             #555555;
 $gray-90:                             #e5e5e5;
 $red:                                 #a71e2e;
 $white:                               #ffffff;
-$darker-60:                           rgba(255, 255, 255, 0.6);
-$lighter-20:                          rgba(0, 0, 0, 0.2);
-$lighter-40:                          rgba(0, 0, 0, 0.4);
+$lighter-60:                          rgba(255, 255, 255, 0.6);
+$darker-20:                           rgba(0, 0, 0, 0.2);
+$darker-40:                           rgba(0, 0, 0, 0.4);
 
 
 // Palette
@@ -34,13 +34,13 @@ $button-hover-background:             $background-2;
 $button-hover-color:                  $foreground-2;
 
 $menu-color:                          $foreground-2;
-$menu-hover-background:               $lighter-20;
+$menu-hover-background:               $darker-20;
 $menu-hover-color:                    $foreground-2;
 $menu-button-border:                  $foreground-2;
 $menu-button-color:                   $foreground-2;
 $menu-button-hover-background:        $background-2;
 $menu-button-hover-color:             $background-2;
-$menu-item-mobile-color:              $darker-60;
+$menu-item-mobile-color:              $lighter-60;
 $menu-item-mobile-hover-color:        $foreground-2;
 $menu-button-mobile-hover-background: $background-2;
 $menu-button-mobile-hover-color:      $foreground-2;
@@ -60,4 +60,4 @@ $link-hover-color:                    $background-3;
 $left-background:                     $background-2;
 $left-color:                          $foreground-2;
 
-$footer-color:                        $lighter-40;
+$footer-color:                        $darker-40;
