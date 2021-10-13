@@ -50,13 +50,19 @@ body {
 }
 
 a {
+    background: colors.$link-background;
     color: colors.$link-color;
-    text-decoration: none;
+}
+
+a:visited {
+    color: colors.$link-visited-color;
 }
 
 a:hover {
+    background: colors.$link-hover-background;
     color: colors.$link-hover-color;
 }
+
 
 /* ==================================================
    Images
@@ -140,18 +146,6 @@ img {
 
 #right p:last-child {
     margin: 0;
-}
-
-#footercont {
-    color: colors.$footer-color;
-    text-transform: uppercase;
-    font-size: 14px;
-}
-
-#footercont p {
-    margin: 0;
-    text-align: left;
-    letter-spacing: 1.4px;
 }
 
 /* ==================================================

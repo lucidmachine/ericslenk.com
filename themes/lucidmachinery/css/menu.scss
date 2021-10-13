@@ -28,11 +28,13 @@
 
 #menucont ul.menu li a:hover {
     background: colors.$menu-hover-background;
+    color: colors.$menu-hover-color;
 }
 
 #menucont ul.menu li.active a,
 #menucont ul.menu li.active a:hover {
     background: colors.$menu-hover-background;
+    color: colors.$menu-hover-color;
     font-weight: 600;
 }
 
@@ -68,7 +70,7 @@
         text-indent: 0;
         line-height: 23px;
         color: colors.$menu-item-mobile-color;
-        background: none;
+        background: colors.$menu-item-mobile-background;
         font-weight: 300;
         text-transform: uppercase;
     }
@@ -77,12 +79,12 @@
     #menucont ul.menu li.active a:hover {
         font-weight: 600;
         color: colors.$menu-item-mobile-hover-color;
-        background: none;
+        background: colors.$menu-item-mobile-hover-background;
     }
 
     #menucont ul.menu li a:hover {
         color: colors.$menu-item-mobile-hover-color;
-        background: none;
+        background: colors.$menu-item-mobile-hover-background;
     }
 
     #menucont ul.menu > li:last-child a {
@@ -116,6 +118,7 @@
 
     #menucont .menutitle #menu-button:hover {
         background: colors.$menu-button-mobile-hover-background;
+        border-color: colors.$menu-button-mobile-hover-border;
         color: colors.$menu-button-mobile-hover-color;
     }
 

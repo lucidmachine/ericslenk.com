@@ -1,23 +1,39 @@
-// Colors
+@use 'sass:color';
+
+
+// Colors and tints
 $gray-45:                             #2d2d2d;
 $gray-60:                             #999999;
-$gray-80:                             #cccccc;
-$gray-85:                             #555555;
 $gray-90:                             #e5e5e5;
-$red:                                 #a71e2e;
 $white:                               #ffffff;
-$lighter-60:                          rgba(255, 255, 255, 0.6);
-$darker-20:                           rgba(0, 0, 0, 0.2);
-$darker-40:                           rgba(0, 0, 0, 0.4);
+
+$nord-0:                              #2e3440; // Polar Night
+$nord-1:                              #3b4252;
+$nord-2:                              #434c5e;
+$nord-3:                              #4c566a;
+$nord-4:                              #d8dee9; // Snow Storm
+$nord-5:                              #e5e9f0;
+$nord-6:                              #eceff4;
+$nord-7:                              #8fbcbb; // Frost
+$nord-8:                              #88c0d0;
+$nord-9:                              #81a1c1;
+$nord-10:                             #5e81ac;
+$nord-11:                             #bf616a; // Aurora
+$nord-12:                             #d08770;
+$nord-13:                             #ebcb8b;
+$nord-14:                             #a3be8c;
+$nord-15:                             #b48ead;
 
 
 // Palette
 $background-1:                        $white;
-$foreground-1:                        $gray-85;
-$background-2:                        $red;
+$foreground-1:                        $nord-0;
+$background-2:                        $nord-0;
 $foreground-2:                        $white;
-$background-3:                        $gray-45;
-$foreground-3:                        $gray-80;
+$background-3:                        $nord-7;
+$foreground-3:                        $nord-0;
+$background-4:                        $gray-45;
+$foreground-4:                        $gray-60;
 
 
 // Styles
@@ -30,23 +46,28 @@ $blockquote-author-color:             $gray-60;
 
 $button-border:                       $background-2;
 $button-color:                        $background-2;
-$button-hover-background:             $background-2;
-$button-hover-color:                  $foreground-2;
+$button-hover-background:             $background-3;
+$button-hover-border:                 $background-3;
+$button-hover-color:                  $foreground-3;
 
 $menu-color:                          $foreground-2;
-$menu-hover-background:               $darker-20;
-$menu-hover-color:                    $foreground-2;
+$menu-background:                     $background-2;
+$menu-hover-background:               $background-3;
+$menu-hover-color:                    $foreground-3;
 $menu-button-border:                  $foreground-2;
 $menu-button-color:                   $foreground-2;
-$menu-button-hover-background:        $background-2;
-$menu-button-hover-color:             $background-2;
-$menu-item-mobile-color:              $lighter-60;
-$menu-item-mobile-hover-color:        $foreground-2;
-$menu-button-mobile-hover-background: $background-2;
-$menu-button-mobile-hover-color:      $foreground-2;
+$menu-button-hover-background:        $background-3;
+$menu-button-hover-color:             $background-3;
+$menu-item-mobile-background:         $background-2;
+$menu-item-mobile-color:              $foreground-2;
+$menu-item-mobile-hover-background:   $background-3;
+$menu-item-mobile-hover-color:        $foreground-3;
+$menu-button-mobile-hover-background: $background-3;
+$menu-button-mobile-hover-border:     $background-3;
+$menu-button-mobile-hover-color:      $foreground-3;
 
-$code-background:                     $background-3;
-$code-color:                          $foreground-3;
+$code-background:                     $background-4;
+$code-color:                          $foreground-4;
 
 $body-background:                     $background-1;
 $body-color:                          $foreground-1;
@@ -54,10 +75,11 @@ $body-color:                          $foreground-1;
 $selection-background:                $background-2;
 $selection-color:                     $foreground-2;
 
+$link-background:                     none;
 $link-color:                          $background-2;
-$link-hover-color:                    $background-3;
+$link-visited-color:                  color.scale($link-color, $lightness: 60%);
+$link-hover-background:               $background-3;
+$link-hover-color:                    $foreground-3;
 
 $left-background:                     $background-2;
 $left-color:                          $foreground-2;
-
-$footer-color:                        $darker-40;
