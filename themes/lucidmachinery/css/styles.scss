@@ -116,6 +116,11 @@ img {
     margin: 0 0 20px 0;
 }
 
+#left p#logo a:hover {
+    background: colors.$menu-hover-background;
+    color: colors.$menu-hover-color;
+}
+
 #left p#logo a span.text {
     float: left;
     width: 100%;
