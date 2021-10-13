@@ -1,44 +1,38 @@
 @use 'colors' as colors;
 
-.button {
-    position: relative;
-    display: inline-block;
-    padding: 7px 12px;
-    margin: 0;
-    width: auto;
-    font-family: "Arial";
-    font-size: 16px;
-    text-transform: uppercase;
-    font-weight: 400;
-    cursor: pointer;
-    background: none;
-    border: none;
-    outline: none;
-    text-align: left;
-    letter-spacing: 2px;
-}
 
-.button:after {
+.button {
+  background: none;
+  border: 2px solid colors.$button-border;
+  border: none;
+  color: colors.$button-color !important;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Arial";
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  margin: 0;
+  outline: none;
+  padding: 7px 12px;
+  position: relative;
+  text-align: left;
+  text-transform: uppercase;
+  width: auto;
+
+  &:after {
     content: '';
     position: absolute;
     z-index: -1;
-}
+  }
 
-/** Colours **/
-
-.button {
-    background: none;
-    border: 2px solid colors.$button-border;
-    color: colors.$button-color !important;
-}
-
-.button:hover {
+  &:hover {
     background: colors.$button-hover-background;
     border-color: colors.$button-hover-border;
     color: colors.$button-hover-color !important;
-}
+  }
 
-.button:active {
+  &:active {
     top: 2px;
+  }
 }
-

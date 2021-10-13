@@ -1,112 +1,113 @@
 @use 'colors' as colors;
 
 
-#menucont ul.menu {
+#menucont {
+  .menu {
     margin: 0;
-}
 
-#menucont ul.menu li {
-    position: relative;
-    float: left;
-    width: 100%;
-    list-style-type: none;
-    padding: 0;
-}
+    li {
+      float: left;
+      list-style-type: none;
+      padding: 0;
+      position: relative;
+      width: 100%;
 
-#menucont ul.menu li a {
-    float: left;
-    color: colors.$menu-color;
-    width: 100%;
-    padding: 10px 20px;
-    margin: 0;
-    font-weight: 300;
-    text-transform: uppercase;
-    line-height: 22px;
-    text-decoration: none;
-    letter-spacing: 2px;
-}
+      a {
+        color: colors.$menu-color;
+        float: left;
+        font-weight: 300;
+        letter-spacing: 2px;
+        line-height: 22px;
+        margin: 0;
+        padding: 10px 20px;
+        text-decoration: none;
+        text-transform: uppercase;
+        width: 100%;
 
-#menucont ul.menu li a:hover {
-    background: colors.$menu-hover-background;
-    color: colors.$menu-hover-color;
-}
+        &:hover {
+          background: colors.$menu-hover-background;
+          color: colors.$menu-hover-color;
+        }
+      }
+    }
+    
+    li.active a,
+    li.active a:hover {
+      background: colors.$menu-hover-background;
+      color: colors.$menu-hover-color;
+      font-weight: 600;
+    }
+  }
 
-#menucont ul.menu li.active a,
-#menucont ul.menu li.active a:hover {
-    background: colors.$menu-hover-background;
-    color: colors.$menu-hover-color;
-    font-weight: 600;
-}
-
-#menucont .menutitle {
+  .menutitle {
     display: none;
+  }
 }
 
 @media screen and (max-width: 480px) {
+  #menucont {
+    .menu {
+      display: none;
+      margin: 0;
 
-    #menucont .menu {
-        display: none;
-        margin: 0;
-    }
-
-    #menucont .menu.open {
+      &.open {
         display: block;
-    }
+      }
 
-    #menucont ul.menu li {
-        position: relative;
+      li {
         float: none;
-    }
+        position: relative;
 
-    #menucont ul.menu li, #menucont ul.menu ul li {
+        a {
+          background: colors.$menu-item-mobile-background;
+          color: colors.$menu-item-mobile-color;
+          display: inline-block;
+          font-weight: 300;
+          line-height: 23px;
+          margin: 0;
+          padding: 5px 0;
+          text-indent: 0;
+          text-transform: uppercase;
+          width: 100%;
+        }
+      }
+
+      li,
+      ul li {
         display: block;
-    }
+      }
 
-    #menucont ul.menu li a {
-        width: 100%;
-        display: inline-block;
-        margin: 0;
-        padding: 5px 0;
-        text-indent: 0;
-        line-height: 23px;
-        color: colors.$menu-item-mobile-color;
-        background: colors.$menu-item-mobile-background;
-        font-weight: 300;
-        text-transform: uppercase;
-    }
+      a,
+      a:hover {
+        background: colors.$menu-item-mobile-hover-background;
+        color: colors.$menu-item-mobile-hover-color;
+      }
 
-    #menucont ul.menu li.active a,
-    #menucont ul.menu li.active a:hover {
+      &.active a,
+      &.active a:hover {
         font-weight: 600;
-        color: colors.$menu-item-mobile-hover-color;
-        background: colors.$menu-item-mobile-hover-background;
-    }
+      }
 
-    #menucont ul.menu li a:hover {
-        color: colors.$menu-item-mobile-hover-color;
-        background: colors.$menu-item-mobile-hover-background;
-    }
-
-    #menucont ul.menu > li:last-child a {
+      li:last-child a {
         margin: 0 0 20px 0;
+      }
     }
 
-    #menucont .menutitle {
-        display: block;
-        width: 100%;
-        padding: 12px 42px 12px 0;
-        display: block;
-        cursor: pointer;
-        text-align: left;
-        color: colors.$menu-color;
-        text-transform: uppercase;
-    }
+    .menutitle {
+      color: colors.$menu-color;
+      cursor: pointer;
+      display: block;
+      display: block;
+      padding: 12px 42px 12px 0;
+      text-align: left;
+      text-transform: uppercase;
+      width: 100%;
 
-    #menucont .menutitle p {
+      p {
         margin-bottom: 0;
-    }
+      }
 
-    #menucont .menutitle #menu-button {
+      #menu-button {
         border: 2px solid colors.$menu-button-border;
         color: colors.$menu-button-color;
         cursor: pointer;
@@ -114,18 +115,18 @@
         font-weight: 300;
         letter-spacing: 2px;
         padding: 7px 12px;
-    }
 
-    #menucont .menutitle #menu-button:hover {
-        background: colors.$menu-button-mobile-hover-background;
-        border-color: colors.$menu-button-mobile-hover-border;
-        color: colors.$menu-button-mobile-hover-color;
-    }
+        &:hover {
+          background: colors.$menu-button-mobile-hover-background;
+          border-color: colors.$menu-button-mobile-hover-border;
+          color: colors.$menu-button-mobile-hover-color;
+        }
+      }
 
-    #menucont .menutitle span {
-        margin: 0;
+      span {
         font-size: 20px;
+        margin: 0;
+      }
     }
-
+  }
 }
-

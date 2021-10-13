@@ -4,198 +4,173 @@
 @use 'menu';
 @use 'buttons';
 
-/* ==================================================
-   Global Styles
-================================================== */
 
+//
+// Global
+//
 * {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 pre code {
-    display: block;
-    overflow-x: auto;
-    background: colors.$code-background;
-    color: colors.$code-color;
-    padding: 0.5em;
+  background: colors.$code-background;
+  color: colors.$code-color;
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
 }
 
 html {
-    height: 100%;
-    overflow: auto;
-
-    -webkit-font-smoothing: antialiased;
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  height: 100%;
+  overflow: auto;
 }
 
 body {
-    font-family: Arial, Verdana, Helvetica, sans-serif;
-    font-size: 15px;
-    color: colors.$body-color;
-    font-weight: 400;
-    line-height: 28px;
-    background: colors.$body-background;
-
-    text-rendering: optimizeLegibility;
-    vertical-align: baseline;
+  background: colors.$body-background;
+  color: colors.$body-color;
+  font-family: Arial, Verdana, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 28px;
+  text-rendering: optimizeLegibility;
+  vertical-align: baseline;
 }
 
 ::selection,
 ::-moz-selection {
-    background: colors.$selection-background;
-    color: colors.$selection-color;
+  background: colors.$selection-background;
+  color: colors.$selection-color;
 }
 
 a {
-    background: colors.$link-background;
-    color: colors.$link-color;
+  background: colors.$link-background;
+  color: colors.$link-color;
 }
 
 a:visited {
-    color: colors.$link-visited-color;
+  color: colors.$link-visited-color;
 }
 
 a:hover {
-    background: colors.$link-hover-background;
-    color: colors.$link-hover-color;
+  background: colors.$link-hover-background;
+  color: colors.$link-hover-color;
 }
-
-
-/* ==================================================
-   Images
-================================================== */
 
 img {
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-    -ms-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
-/* ==================================================
-   Layout Styles
-================================================== */
 
+//
+// Layout
+//
 .bodycontainer {
-    margin: 0 auto;
-    width: 100%;
-    max-width: 1000px;
+  margin: 0 auto;
+  max-width: 1000px;
+  width: 100%;
 }
-
-/* ==================================================
-   Sections
-================================================== */
 
 #left {
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    max-width: 280px;
-    background: colors.$left-background;
-    color: colors.$left-color;
-    z-index: 3;
-    overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  background: colors.$left-background;
+  bottom: 0;
+  color: colors.$left-color;
+  left: 0;
+  max-width: 280px;
+  overflow-y: auto;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 3;
 
-    -webkit-overflow-scrolling: touch;
-}
-
-#left p#logo {
+  p#logo {
     margin: 0 0 20px 0;
-}
 
-#left p#logo a {
-    float: left;
-    display: block;
-    padding: 30px 20px;
-    width: 100%;
-    color: colors.$left-color;
-    margin: 0 0 20px 0;
-}
+    a {
+      color: colors.$left-color;
+      display: block;
+      float: left;
+      margin: 0 0 20px 0;
+      padding: 30px 20px;
+      width: 100%;
 
-#left p#logo a:hover {
-    background: colors.$menu-hover-background;
-    color: colors.$menu-hover-color;
-}
+      &:hover {
+        background: colors.$menu-hover-background;
+        color: colors.$menu-hover-color;
+      }
 
-#left p#logo a span.text {
-    float: left;
-    width: 100%;
-    font-size: 30px;
-    line-height: 30px;
-    font-weight: 700;
-    font-family: "Arial";
-    text-transform: uppercase;
-}
+      span.text {
+        float: left;
+        font-family: "Arial";
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 30px;
+        text-transform: uppercase;
+        width: 100%;
+      }
 
-#left p#logo a span.text.description {
-    font-size: 15px;
+      span.text.description {
+        font-size: 15px;
+      }
+    }
+  }
 }
 
 #right {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    max-width: 1240px;
-    z-index: 2;
-    padding: 40px 50px 40px 320px;
-}
+  left: 0;
+  max-width: 1240px;
+  padding: 40px 50px 40px 320px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 2;
 
-#right p {
+  p {
     margin: 0 0 20px 0;
-}
 
-#right p:last-child {
-    margin: 0;
+    &:last-child {
+      margin: 0;
+    }
+  }
 }
-
-/* ==================================================
-   Responsive Media Queries - Tablets
-================================================== */
 
 @media screen and (max-width: 768px) {
+  #left {
+    max-width: 200px;
+  }
 
-    #left {
-        max-width: 200px;
-    }
-
-    #right {
-        padding: 20px 20px 20px 230px;
-    }
-
+  #right {
+    padding: 20px 20px 20px 230px;
+  }
 }
-
-/* ==================================================
-   Responsive Media Queries - Mobiles
-================================================== */
 
 @media screen and (max-width: 480px) {
+  #left {
+    left: 0;
+    max-width: 100%;
+    padding: 20px;
+    position: relative;
+    top: 0;
+    width: 100%;
 
-    #left {
-        position: relative;
-        top: 0;
-        left: 0;
-        width: 100%;
-        max-width: 100%;
-        padding: 20px;
+    #logo a {
+      padding: 0;
     }
+  }
 
-    #left p#logo a {
-        padding: 0;
-    }
-
-    #right {
-        position: relative;
-        top: 0;
-        left: 0;
-        width: 100%;
-        max-width: 100%;
-        padding: 30px 20px;
-    }
-
+  #right {
+    left: 0;
+    max-width: 100%;
+    padding: 30px 20px;
+    position: relative;
+    top: 0;
+    width: 100%;
+  }
 }
-
