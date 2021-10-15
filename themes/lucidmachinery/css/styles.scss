@@ -51,15 +51,15 @@ body {
 a {
   background: none;
   color: colors.$text-fg;
-}
 
-a:visited {
-  color: color.scale(colors.$text-fg, $lightness: 60%);
-}
+  &:visited {
+    color: color.scale(colors.$text-fg, $lightness: 60%);
+  }
 
-a:hover {
-  background: colors.$hl-bg;
-  color: colors.$hl-fg;
+  &:hover {
+    background: colors.$hl-bg;
+    color: colors.$hl-fg;
+  }
 }
 
 img {
