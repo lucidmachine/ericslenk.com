@@ -1,132 +1,128 @@
 @use 'colors' as colors;
 
 
-#menucont {
-  .menu {
-    margin: 0;
+.menu {
+  margin: 0;
 
-    li {
+  li {
+    float: left;
+    list-style-type: none;
+    padding: 0;
+    position: relative;
+    width: 100%;
+
+    a {
+      color: colors.$menu-fg;
       float: left;
-      list-style-type: none;
-      padding: 0;
-      position: relative;
+      font-weight: 300;
+      letter-spacing: 2px;
+      line-height: 22px;
+      margin: 0;
+      padding: 10px 20px;
+      text-decoration: none;
+      text-transform: uppercase;
       width: 100%;
 
-      a {
-        color: colors.$menu-fg;
-        float: left;
-        font-weight: 300;
-        letter-spacing: 2px;
-        line-height: 22px;
-        margin: 0;
-        padding: 10px 20px;
-        text-decoration: none;
-        text-transform: uppercase;
-        width: 100%;
-
-        &:hover {
-          background: colors.$hl-bg;
-          color: colors.$hl-fg;
-        }
+      &:hover {
+        background: colors.$hl-bg;
+        color: colors.$hl-fg;
       }
     }
-    
-    li.active a,
-    li.active a:hover {
+  }
+  
+  li.active a,
+  li.active a:hover {
+    background: colors.$hl-bg;
+    color: colors.$hl-fg;
+    font-weight: 600;
+  }
+}
+
+.menutitle {
+  display: none;
+}
+
+@media screen and (max-width: 480px) {
+  .menu {
+    display: none;
+    margin: 0;
+
+    &.open {
+      display: block;
+    }
+
+    li {
+      float: none;
+      position: relative;
+
+      a {
+        background: colors.$menu-bg;
+        color: colors.$menu-fg;
+        display: inline-block;
+        font-weight: 300;
+        line-height: 23px;
+        margin: 0;
+        padding: 5px 0;
+        text-indent: 0;
+        text-transform: uppercase;
+        width: 100%;
+      }
+    }
+
+    li,
+    ul li {
+      display: block;
+    }
+
+    a,
+    a:hover {
       background: colors.$hl-bg;
       color: colors.$hl-fg;
+    }
+
+    &.active a,
+    &.active a:hover {
       font-weight: 600;
+    }
+
+    li:last-child a {
+      margin: 0 0 20px 0;
     }
   }
 
   .menutitle {
-    display: none;
-  }
-}
+    color: colors.$menu-fg;
+    cursor: pointer;
+    display: block;
+    display: block;
+    padding: 12px 42px 12px 0;
+    text-align: left;
+    text-transform: uppercase;
+    width: 100%;
 
-@media screen and (max-width: 480px) {
-  #menucont {
-    .menu {
-      display: none;
-      margin: 0;
+    p {
+      margin-bottom: 0;
+    }
 
-      &.open {
-        display: block;
-      }
+    #menu-button {
+      border: 2px solid colors.$menu-fg;
+      color: colors.$menu-fg;
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: 300;
+      letter-spacing: 2px;
+      padding: 7px 12px;
 
-      li {
-        float: none;
-        position: relative;
-
-        a {
-          background: colors.$menu-bg;
-          color: colors.$menu-fg;
-          display: inline-block;
-          font-weight: 300;
-          line-height: 23px;
-          margin: 0;
-          padding: 5px 0;
-          text-indent: 0;
-          text-transform: uppercase;
-          width: 100%;
-        }
-      }
-
-      li,
-      ul li {
-        display: block;
-      }
-
-      a,
-      a:hover {
+      &:hover {
         background: colors.$hl-bg;
+        border-color: colors.$hl-bg;
         color: colors.$hl-fg;
-      }
-
-      &.active a,
-      &.active a:hover {
-        font-weight: 600;
-      }
-
-      li:last-child a {
-        margin: 0 0 20px 0;
       }
     }
 
-    .menutitle {
-      color: colors.$menu-fg;
-      cursor: pointer;
-      display: block;
-      display: block;
-      padding: 12px 42px 12px 0;
-      text-align: left;
-      text-transform: uppercase;
-      width: 100%;
-
-      p {
-        margin-bottom: 0;
-      }
-
-      #menu-button {
-        border: 2px solid colors.$menu-fg;
-        color: colors.$menu-fg;
-        cursor: pointer;
-        font-size: 18px;
-        font-weight: 300;
-        letter-spacing: 2px;
-        padding: 7px 12px;
-
-        &:hover {
-          background: colors.$hl-bg;
-          border-color: colors.$hl-bg;
-          color: colors.$hl-fg;
-        }
-      }
-
-      span {
-        font-size: 20px;
-        margin: 0;
-      }
+    span {
+      font-size: 20px;
+      margin: 0;
     }
   }
 }
