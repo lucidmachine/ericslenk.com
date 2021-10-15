@@ -3,8 +3,8 @@
 
 .button {
   background: none;
-  border: 2px solid colors.$button-border;
-  color: colors.$button-color !important;
+  border: 2px solid colors.$primary;
+  color: colors.$primary !important;
   cursor: pointer;
   display: inline-block;
   font-family: "Arial";
@@ -26,9 +26,9 @@
   }
 
   &:hover {
-    background: colors.$button-hover-background;
-    border-color: colors.$button-hover-border;
-    color: colors.$button-hover-color !important;
+    background: colors.$hl-bg;
+    border-color: colors.$hl-bg;
+    color: colors.$hl-fg !important;
   }
 
   &:active {

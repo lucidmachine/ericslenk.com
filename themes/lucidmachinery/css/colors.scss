@@ -1,6 +1,3 @@
-@use 'sass:color';
-
-
 // Colors and tints
 $gray-45:                             #2d2d2d;
 $gray-60:                             #999999;
@@ -34,51 +31,3 @@ $menu-fg:                             $white;
 $menu-bg:                             $primary;
 $hl-fg:                               $primary;
 $hl-bg:                               $secondary;
-
-
-// Styles
-$hr:                                  $primary;
-$blockquote-background:               $gray-90;
-$blockquote-border:                   $text-fg;
-$blockquote-color:                    $hl-fg;
-$blockquote-author-color:             $gray-60;
-
-$button-border:                       $text-fg;
-$button-color:                        $text-fg;
-$button-hover-background:             $hl-bg;
-$button-hover-border:                 $hl-bg;
-$button-hover-color:                  $hl-fg;
-
-$menu-color:                          $menu-fg;
-$menu-background:                     $menu-bg;
-$menu-hover-background:               $hl-bg;
-$menu-hover-color:                    $hl-fg;
-$menu-button-border:                  $menu-fg;
-$menu-button-color:                   $menu-fg;
-$menu-button-hover-background:        $hl-bg;
-$menu-button-hover-color:             $hl-bg;
-$menu-item-mobile-background:         $menu-bg;
-$menu-item-mobile-color:              $menu-fg;
-$menu-item-mobile-hover-background:   $hl-bg;
-$menu-item-mobile-hover-color:        $hl-fg;
-$menu-button-mobile-hover-background: $hl-bg;
-$menu-button-mobile-hover-border:     $hl-bg;
-$menu-button-mobile-hover-color:      $hl-fg;
-
-$code-background:                     $gray-45;
-$code-color:                          $gray-60;
-
-$body-background:                     $text-bg;
-$body-color:                          $text-fg;
-
-$selection-background:                $hl-bg;
-$selection-color:                     $hl-fg;
-
-$link-background:                     none;
-$link-color:                          $text-fg;
-$link-visited-color:                  color.scale($link-color, $lightness: 60%);
-$link-hover-background:               $hl-bg;
-$link-hover-color:                    $hl-fg;
-
-$left-background:                     $menu-bg;
-$left-color:                          $menu-fg;

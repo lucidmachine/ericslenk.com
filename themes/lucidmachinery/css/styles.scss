@@ -1,4 +1,5 @@
 @use 'colors' as colors;
+@use 'sass:color';
 @use 'reset';
 @use 'typography';
 @use 'menu';
@@ -15,8 +16,8 @@
 }
 
 pre code {
-  background: colors.$code-background;
-  color: colors.$code-color;
+  background: colors.$gray-45;
+  color: colors.$gray-60;
   display: block;
   overflow-x: auto;
   padding: 0.5em;
@@ -31,8 +32,8 @@ html {
 }
 
 body {
-  background: colors.$body-background;
-  color: colors.$body-color;
+  background: colors.$text-bg;
+  color: colors.$text-fg;
   font-family: Arial, Verdana, Helvetica, sans-serif;
   font-size: 15px;
   font-weight: 400;
@@ -43,22 +44,22 @@ body {
 
 ::selection,
 ::-moz-selection {
-  background: colors.$selection-background;
-  color: colors.$selection-color;
+  background: colors.$hl-bg;
+  color: colors.$hl-fg;
 }
 
 a {
-  background: colors.$link-background;
-  color: colors.$link-color;
+  background: none;
+  color: colors.$text-fg;
 }
 
 a:visited {
-  color: colors.$link-visited-color;
+  color: color.scale(colors.$text-fg, $lightness: 60%);
 }
 
 a:hover {
-  background: colors.$link-hover-background;
-  color: colors.$link-hover-color;
+  background: colors.$hl-bg;
+  color: colors.$hl-fg;
 }
 
 img {
@@ -79,9 +80,9 @@ img {
 
 #left {
   -webkit-overflow-scrolling: touch;
-  background: colors.$left-background;
+  background: colors.$menu-bg;
   bottom: 0;
-  color: colors.$left-color;
+  color: colors.$menu-fg;
   left: 0;
   max-width: 280px;
   overflow-y: auto;
@@ -94,7 +95,7 @@ img {
     margin: 0 0 20px 0;
 
     a {
-      color: colors.$left-color;
+      color: colors.$menu-fg;
       display: block;
       float: left;
       margin: 0 0 20px 0;
@@ -102,8 +103,8 @@ img {
       width: 100%;
 
       &:hover {
-        background: colors.$menu-hover-background;
-        color: colors.$menu-hover-color;
+        background: colors.$hl-bg;
+        color: colors.$hl-fg;
       }
 
       span.text {

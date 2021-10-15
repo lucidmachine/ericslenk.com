@@ -83,7 +83,7 @@ ol ol {
 }
 
 hr {
-  border-top: 4px solid colors.$hr;
+  border-top: 4px solid colors.$primary;
   clear: both;
   float: left;
   margin: 30px 0 40px 0;
@@ -93,9 +93,9 @@ hr {
 }
 
 blockquote {
-  background: colors.$blockquote-background;
-  border-left: 5px solid colors.$blockquote-border;
-  color: colors.$blockquote-color;
+  background: colors.$gray-90;
+  border-left: 5px solid colors.$text-fg;
+  color: colors.$text-fg;
   font-style: italic;
   margin: 0 0 5px 0 !important;
   padding: 15px;
@@ -106,7 +106,7 @@ blockquote p {
 }
 
 blockquote p.author {
-  color: colors.$blockquote-author-color;
+  color: colors.$gray-60;
   font-size: 14px;
   letter-spacing: 2px;
   text-align: right;

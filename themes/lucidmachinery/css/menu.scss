@@ -13,7 +13,7 @@
       width: 100%;
 
       a {
-        color: colors.$menu-color;
+        color: colors.$menu-fg;
         float: left;
         font-weight: 300;
         letter-spacing: 2px;
@@ -25,16 +25,16 @@
         width: 100%;
 
         &:hover {
-          background: colors.$menu-hover-background;
-          color: colors.$menu-hover-color;
+          background: colors.$hl-bg;
+          color: colors.$hl-fg;
         }
       }
     }
     
     li.active a,
     li.active a:hover {
-      background: colors.$menu-hover-background;
-      color: colors.$menu-hover-color;
+      background: colors.$hl-bg;
+      color: colors.$hl-fg;
       font-weight: 600;
     }
   }
@@ -59,8 +59,8 @@
         position: relative;
 
         a {
-          background: colors.$menu-item-mobile-background;
-          color: colors.$menu-item-mobile-color;
+          background: colors.$menu-bg;
+          color: colors.$menu-fg;
           display: inline-block;
           font-weight: 300;
           line-height: 23px;
@@ -79,8 +79,8 @@
 
       a,
       a:hover {
-        background: colors.$menu-item-mobile-hover-background;
-        color: colors.$menu-item-mobile-hover-color;
+        background: colors.$hl-bg;
+        color: colors.$hl-fg;
       }
 
       &.active a,
@@ -94,7 +94,7 @@
     }
 
     .menutitle {
-      color: colors.$menu-color;
+      color: colors.$menu-fg;
       cursor: pointer;
       display: block;
       display: block;
@@ -108,8 +108,8 @@
       }
 
       #menu-button {
-        border: 2px solid colors.$menu-button-border;
-        color: colors.$menu-button-color;
+        border: 2px solid colors.$menu-fg;
+        color: colors.$menu-fg;
         cursor: pointer;
         font-size: 18px;
         font-weight: 300;
@@ -117,9 +117,9 @@
         padding: 7px 12px;
 
         &:hover {
-          background: colors.$menu-button-mobile-hover-background;
-          border-color: colors.$menu-button-mobile-hover-border;
-          color: colors.$menu-button-mobile-hover-color;
+          background: colors.$hl-bg;
+          border-color: colors.$hl-bg;
+          color: colors.$hl-fg;
         }
       }
 
