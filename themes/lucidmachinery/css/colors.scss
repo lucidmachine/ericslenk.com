@@ -26,60 +26,59 @@ $nord-15:                             #b48ead;
 
 
 // Palette
-$background-1:                        $white;
-$foreground-1:                        $nord-0;
-$background-2:                        $nord-0;
-$foreground-2:                        $white;
-$background-3:                        $nord-7;
-$foreground-3:                        $nord-0;
-$background-4:                        $gray-45;
-$foreground-4:                        $gray-60;
+$primary:                             $nord-0;
+$secondary:                           $nord-7;
+$text-fg:                             $nord-0;
+$text-bg:                             $white;
+$menu-fg:                             $white;
+$menu-bg:                             $primary;
+$hl-fg:                               $primary;
+$hl-bg:                               $secondary;
 
 
 // Styles
-$h-color:                             $foreground-1;
-$hr:                                  $background-2;
+$hr:                                  $primary;
 $blockquote-background:               $gray-90;
-$blockquote-border:                   $background-2;
-$blockquote-color:                    $foreground-3;
+$blockquote-border:                   $text-fg;
+$blockquote-color:                    $hl-fg;
 $blockquote-author-color:             $gray-60;
 
-$button-border:                       $background-2;
-$button-color:                        $background-2;
-$button-hover-background:             $background-3;
-$button-hover-border:                 $background-3;
-$button-hover-color:                  $foreground-3;
+$button-border:                       $text-fg;
+$button-color:                        $text-fg;
+$button-hover-background:             $hl-bg;
+$button-hover-border:                 $hl-bg;
+$button-hover-color:                  $hl-fg;
 
-$menu-color:                          $foreground-2;
-$menu-background:                     $background-2;
-$menu-hover-background:               $background-3;
-$menu-hover-color:                    $foreground-3;
-$menu-button-border:                  $foreground-2;
-$menu-button-color:                   $foreground-2;
-$menu-button-hover-background:        $background-3;
-$menu-button-hover-color:             $background-3;
-$menu-item-mobile-background:         $background-2;
-$menu-item-mobile-color:              $foreground-2;
-$menu-item-mobile-hover-background:   $background-3;
-$menu-item-mobile-hover-color:        $foreground-3;
-$menu-button-mobile-hover-background: $background-3;
-$menu-button-mobile-hover-border:     $background-3;
-$menu-button-mobile-hover-color:      $foreground-3;
+$menu-color:                          $menu-fg;
+$menu-background:                     $menu-bg;
+$menu-hover-background:               $hl-bg;
+$menu-hover-color:                    $hl-fg;
+$menu-button-border:                  $menu-fg;
+$menu-button-color:                   $menu-fg;
+$menu-button-hover-background:        $hl-bg;
+$menu-button-hover-color:             $hl-bg;
+$menu-item-mobile-background:         $menu-bg;
+$menu-item-mobile-color:              $menu-fg;
+$menu-item-mobile-hover-background:   $hl-bg;
+$menu-item-mobile-hover-color:        $hl-fg;
+$menu-button-mobile-hover-background: $hl-bg;
+$menu-button-mobile-hover-border:     $hl-bg;
+$menu-button-mobile-hover-color:      $hl-fg;
 
-$code-background:                     $background-4;
-$code-color:                          $foreground-4;
+$code-background:                     $gray-45;
+$code-color:                          $gray-60;
 
-$body-background:                     $background-1;
-$body-color:                          $foreground-1;
+$body-background:                     $text-bg;
+$body-color:                          $text-fg;
 
-$selection-background:                $background-3;
-$selection-color:                     $foreground-3;
+$selection-background:                $hl-bg;
+$selection-color:                     $hl-fg;
 
 $link-background:                     none;
-$link-color:                          $background-2;
+$link-color:                          $text-fg;
 $link-visited-color:                  color.scale($link-color, $lightness: 60%);
-$link-hover-background:               $background-3;
-$link-hover-color:                    $foreground-3;
+$link-hover-background:               $hl-bg;
+$link-hover-color:                    $hl-fg;
 
-$left-background:                     $background-2;
-$left-color:                          $foreground-2;
+$left-background:                     $menu-bg;
+$left-color:                          $menu-fg;
