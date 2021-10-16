@@ -2,7 +2,7 @@
 {% block content %}
 <div id="post">
   {% for post in posts %}
-  <article>
+  <article class="clearfix">
     <div class="post-header">
       <h1>{{post.title}}</h1>
       <div class="post-meta">
@@ -10,20 +10,21 @@
         <strong>{{post.date|date:longDate}}</strong>
       </div>
     </div>
+    <div class="post-description">
     {{post.description|safe}}
-    <br/>
-    <a class="button" href="{{post.uri}}">Continue reading &#8594;</a>
+    </div>
+    <a class="block-link" href="{{post.uri}}">Continue reading...</a>
+    <hr />
   </article>
-  <hr />
   {% endfor %}
-
-  <div id="prev-next">
-    {% if prev-uri %}
-    <a class="button left" href="{{prev-uri}}">&laquo; Prev</a>
-    {% endif %}
-    {% if next-uri %}
-    <a class="button right" href="{{next-uri}}">Next &raquo;</a>
-    {% endif %}
-  </div>
 </div>
+
+<nav class="pagination clearfix" aria-label="pagination">
+  {% if prev-uri %}
+  <a class="left block-link" href="{{prev-uri}}">&laquo; Prev</a>
+  {% endif %}
+  {% if next-uri %}
+  <a class="right block-link" href="{{next-uri}}">Next &raquo;</a>
+  {% endif %}
+</nav>
 {% endblock %}
