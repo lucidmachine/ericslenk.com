@@ -13,7 +13,9 @@
 {% endblock %}
 {% block content %}
 <div id="post">
+
     {% include "/html/post-content.html" %}
+
     <div id="prev-next">
         {% if post.prev %}
         <a class="button" href="{{post.prev.uri}}">&laquo; {{post.prev.title}}</a>
@@ -37,7 +39,6 @@
         })();
     </script>
     {% endif %}
-
 
 </div>
 {% endblock %}

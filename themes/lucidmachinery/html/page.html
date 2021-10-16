@@ -1,5 +1,7 @@
 {% extends "/html/base.html" %}
-{%block subtitle %}: {{page.title}}{% endblock %}
+
+{% block subtitle %}: {{page.title}}{% endblock %}
+
 {% block meta %}
 {% if page.description %}
 <meta name="description" content="{{page.description}}">
@@ -9,12 +11,17 @@
 <meta property="og:title" content="{{page.title}}" />
 <meta property="og:type" content="article" />
 {% endblock %}
+
 {% block content %}
-<div id="custom-page">
+<article id="custom-page">
+
     <div id="page-header">
         <h1>{{page.title}}</h1>
     </div>
+
     {% if page.toc %}{{page.toc|safe}}{% endif %}
+
     {{page.content|safe}}
-</div>
+
+</article>
 {% endblock %}

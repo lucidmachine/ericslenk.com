@@ -42,7 +42,7 @@
         </a>
     </p>
 
-    <div id="menucont" class="bodycontainer clearfix">
+    <nav id="menucont" class="bodycontainer clearfix">
         <div class="menutitle">
             <div id="menu-button-container"><span id="menu-button">Menu</span></div>
         </div>
@@ -59,19 +59,20 @@
             {% endfor %}
             <li><a title="RSS" href="{{rss-uri}}">RSS</a></li>
         </ul>
-    </div>
+    </nav>
 
 </div>
 
 <div id="right" class="clearfix">
     {% block content %}
     {% endblock %}
-<hr/>
-<div id="footercont" class="clearfix">Copyright &copy; {{today|date:yyyy}} {{author}}
-    <p>Powered by <a href="http://cryogenweb.org">Cryogen</a></p>
+    <hr/>
+    <footer id="footercont" class="clearfix">
+        Copyright &copy; {{today|date:yyyy}} {{author}}
+        <p>Powered by <a href="http://cryogenweb.org">Cryogen</a></p>
+    </footer>
+</div>
 
-</div>
-</div>
 {% if post.klipse %} {{post.klipse|safe}} {% endif %}
 {% if page.klipse %} {{page.klipse|safe}} {% endif %}
 </body>

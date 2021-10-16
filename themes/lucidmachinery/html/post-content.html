@@ -7,10 +7,12 @@
     </div>
     <h1>{{post.title}}</h1>
 </div>
-<div>
+
+<article>
     {% if post.toc %}{{post.toc|safe}}{% endif %}
     {{post.content|safe}}
-</div>
+</article>
+
 {% if post.tags|not-empty %}
 <div id="post-tags">
     <br/> 
