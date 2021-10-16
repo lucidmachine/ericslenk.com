@@ -1,31 +1,29 @@
 {% extends "/html/base.html" %}
 {% block content %}
 <div id="post">
-    {% for post in posts %}
-    <article>
+  {% for post in posts %}
+  <article>
     <div class="post-header">
-        <h1>{{post.title}}</h1>
-        <div class="post-meta">
-            {% if post.author %}
-            <div class="author">{{post.author}}</div>
-            {% endif %}
-            <strong>{{post.date|date:longDate}}</strong>
-        </div>
+      <h1>{{post.title}}</h1>
+      <div class="post-meta">
+        {% if post.author %}<div class="author">{{post.author}}</div>{% endif %}
+        <strong>{{post.date|date:longDate}}</strong>
+      </div>
     </div>
     {{post.description|safe}}
     <br/>
     <a class="button" href="{{post.uri}}">Continue reading &#8594;</a>
-    </article>
-    <hr />
-    {% endfor %}
+  </article>
+  <hr />
+  {% endfor %}
 
-    <div id="prev-next">
-        {% if prev-uri %}
-        <a class="button left" href="{{prev-uri}}">&laquo; Prev</a>
-        {% endif %}
-        {% if next-uri %}
-        <a class="button right" href="{{next-uri}}">Next &raquo;</a>
-        {% endif %}
-    </div>
+  <div id="prev-next">
+    {% if prev-uri %}
+    <a class="button left" href="{{prev-uri}}">&laquo; Prev</a>
+    {% endif %}
+    {% if next-uri %}
+    <a class="button right" href="{{next-uri}}">Next &raquo;</a>
+    {% endif %}
+  </div>
 </div>
 {% endblock %}

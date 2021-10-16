@@ -3,21 +3,17 @@
 {% block content %}
 <div id="post">
 
-    {% include "/html/post-content.html" %}
+  {% include "/html/post-content.html" %}
 
-    {% if disqus? %}
-    <div id="comments">
-        <a href="{{post.uri}}#disqus_thread">View Comments</a>
-    </div>
-    {% endif %}
+  {% if disqus? %}
+  <div id="comments">
+    <a href="{{post.uri}}#disqus_thread">View Comments</a>
+  </div>
+  {% endif %}
 
-    <div id="prev-next">
-        {% if post.prev %}
-        <a class="button" href="{{post.prev.uri}}">&laquo; {{post.prev.title}}</a>
-        {% endif %}
-        {% if post.next %}
-        <a class="button right" href="{{post.next.uri}}">{{post.next.title}} &raquo;</a>
-        {% endif %}
-    </div>
+  <div id="prev-next">
+    {% if post.prev %}<a class="button" href="{{post.prev.uri}}">&laquo; {{post.prev.title}}</a>{% endif %}
+    {% if post.next %}<a class="button right" href="{{post.next.uri}}">{{post.next.title}} &raquo;</a>{% endif %}
+  </div>
 </div>
 {% endblock %}
