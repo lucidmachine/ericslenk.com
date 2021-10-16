@@ -1,6 +1,6 @@
 {:title "Converting to TypeScript: Toolchain"
  :date "2019-02-04"
- :tags ["typescript" "ts" "toolchain" "webpack" "javascript" "js" "bitclock"]
+ :tags ["typescript" "toolchain" "webpack" "javascript" "bitclock"]
  :description "Upgrade your project's toolchain to build TypeScript alongside JavaScript."}
 
 This article assumes that your project is already built using Webpack and structured in a standard

@@ -1,6 +1,6 @@
 {:title "Converting to TypeScript: Declaring Interfaces"
  :date "2019-02-18"
- :tags ["typescript" "ts" "definitions" "interfaces" "types" "javascript" "js" "bitclock"]
+ :tags ["typescript" "definitions" "interfaces" "types" "javascript" "bitclock"]
  :description "Now that you're set up
  start *using* TypeScript. With types and stuff!"}
 

@@ -1,4 +1,7 @@
-{:title "Modularize Your JavaScript with ES6 Modules and Webpack", :date "2019-01-28", :tags ["es6" "modules" "webpack" "bitclock" "javascript" "js"], :description "Do you have a bunch of old JavaScript code that's harder to look at than Ted Cruz's face? Try ES6 Modules today!"}
+{:title "Modularize Your JavaScript with ES6 Modules and Webpack",
+ :date "2019-01-28",
+ :tags ["es6" "modules" "webpack" "bitclock" "javascript"],
+ :description "Do you have a bunch of old JavaScript code that's harder to look at than Ted Cruz's face? Try ES6 Modules today!"}
 
 Do you have a bunch of old JavaScript code that's [harder to look at than Ted Cruz's face](https://www.psychologytoday.com/us/blog/the-fallible-mind/201601/why-ted-cruz-s-facial-expression-makes-me-uneasy)? Or maybe you're looking for some way to keep your shiny new project from devolving into the utter chaos to which your last project succumbed? Friend, have I got a miracle cure for you! Try ES6 Modules today! 
 
