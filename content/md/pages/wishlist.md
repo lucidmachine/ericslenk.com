@@ -1,4 +1,5 @@
 {:title "Wishlist"
+ :description "Wishlist"
  :page-index 2
  :navbar? true}
 
