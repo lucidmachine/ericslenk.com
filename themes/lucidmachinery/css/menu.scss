@@ -1,5 +1,4 @@
-@use 'colors' as colors;
-
+@use "colors" as colors;
 
 .menu {
   margin: 0;
@@ -29,7 +28,7 @@
       }
     }
   }
-  
+
   li.active a,
   li.active a:hover {
     background: colors.$hl-bg;
@@ -51,22 +50,32 @@
       display: block;
     }
 
+    a {
+      background: colors.$hl-bg;
+      color: colors.$hl-fg;
+    }
+
+    li a {
+      background: colors.$menu-bg;
+      color: colors.$menu-fg;
+      display: inline-block;
+      font-weight: 300;
+      line-height: 23px;
+      margin: 0;
+      padding: 5px 0 5px 15px;
+      text-indent: 0;
+      text-transform: uppercase;
+      width: 100%;
+    }
+
+    a:hover {
+      background: colors.$hl-bg;
+      color: colors.$hl-fg;
+    }
+
     li {
       float: none;
       position: relative;
-
-      a {
-        background: colors.$menu-bg;
-        color: colors.$menu-fg;
-        display: inline-block;
-        font-weight: 300;
-        line-height: 23px;
-        margin: 0;
-        padding: 5px 0 5px 15px;
-        text-indent: 0;
-        text-transform: uppercase;
-        width: 100%;
-      }
     }
 
     li,
@@ -74,26 +83,22 @@
       display: block;
     }
 
-    a,
-    a:hover {
-      background: colors.$hl-bg;
-      color: colors.$hl-fg;
-    }
-
-    &.active a,
-    &.active a:hover {
+    &.active a {
       font-weight: 600;
     }
 
     li:last-child a {
-      margin: 0 0 20px 0;
+      margin: 0 0 20px;
+    }
+
+    &.active a:hover {
+      font-weight: 600;
     }
   }
 
   .menutitle {
     color: colors.$menu-fg;
     cursor: pointer;
-    display: block;
     display: block;
     padding: 12px 42px 12px 0;
     text-align: left;
