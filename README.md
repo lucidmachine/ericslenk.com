@@ -17,7 +17,7 @@ While developing the site's content it is useful to run a development server whi
 site as files are modified. The development server can be started with the following command:
 
 ```
-clojure -X:serve
+make serve
 ```
 
 
@@ -27,7 +27,7 @@ In order to compile the site contents from the `contents` and `themes` subdirect
 subdirectory run the following command:
 
 ```
-clojure -M:build
+make build
 ```
 
 
