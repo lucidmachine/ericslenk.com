@@ -1,3 +1,6 @@
+# Clojure tools
+.clj-kondo/
+
 # Cryogen
 .lein-deps-sum
 .lein-failures
@@ -15,3 +18,6 @@ pom.xml.asc
 /target/
 **/css/*.css
 themes/**/css/*.css.map
+
+# Vim
+.lsp
