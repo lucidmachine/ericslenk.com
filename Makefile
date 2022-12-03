@@ -2,6 +2,9 @@
 
 all: build
 
+clean:
+	rm -rf public
+
 serve:
 	clojure -X:serve
 
@@ -18,3 +21,16 @@ lint: lint-clj lint-scss
 
 build:
 	clojure -M:build
+
+publish:
+	rsync \
+		--checksum \
+		--compress \
+		--delete \
+		--partial \
+		--progress \
+		--recursive \
+		--rsh='ssh -p 22' \
+		--verbose \
+		'public' \
+		'lucidmachine_ericslenk@ssh.phx.nearlyfreespeech.net:/home/public'
