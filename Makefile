@@ -1,4 +1,4 @@
-.PHONY: all serve serve-fast lint-clj lint-scss build
+.PHONY: all clean serve serve-fast lint-clj lint-scss lint build publish
 
 all: build
 
@@ -32,5 +32,5 @@ publish:
 		--recursive \
 		--rsh='ssh -p 22' \
 		--verbose \
-		'public' \
+		'public/' \
 		'lucidmachine_ericslenk@ssh.phx.nearlyfreespeech.net:/home/public'
