@@ -38,7 +38,7 @@ rsync run the following commands:
 
 ```bash
 LOCAL_SRC_DIR=public/
-REMOTE_HOST=ssh.phx.nearlyfreespeech.net
+REMOTE_HOST=ssh.nyc1.nearlyfreespeech.net
 REMOTE_PORT=22
 REMOTE_USER=lucidmachine_ericslenk
 REMOTE_TARGET_DIR=/home/public
