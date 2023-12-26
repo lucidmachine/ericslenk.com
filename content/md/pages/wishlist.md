@@ -4,6 +4,11 @@
  :navbar? true}
 
 
+## Computers and Accessories
+
+- [Orange Pi 3 LTS 2GB](https://www.amazon.com/Orange-Pi-Allwinner-Computer-Support/dp/B09TQZH4GJ/ref=sr_1_1)
+
+
 ## Games
 
 - [GROK?! (PDF + Softcover)](https://preview.drivethrurpg.com/en/product/395261/GROK)
