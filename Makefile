@@ -33,4 +33,4 @@ publish:
 		--rsh='ssh -p 22' \
 		--verbose \
 		'public/' \
-		'lucidmachine_ericslenk@ssh.phx.nearlyfreespeech.net:/home/public'
+		'lucidmachine_ericslenk@ssh.nyc1.nearlyfreespeech.net:/home/public'
