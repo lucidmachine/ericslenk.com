@@ -71,7 +71,7 @@
 ## Education
 
 ### Michigan State University
-#### B.S. in Computer Science
+#### B.S. in Computer Science | August 2018
 
 ## Skills
 * **Languages:** [Java](https://www.java.com/en/), [JavaScript](https://262.ecma-international.org/11.0/), [TypeScript](https://www.typescriptlang.org/), [Bash](https://www.gnu.org/software/bash/), [Clojure](https://clojure.org/), [SQL](https://blog.ansi.org/2018/10/sql-standard-iso-iec-9075-2016-ansi-x3-135/), [CQL](https://cassandra.apache.org/doc/latest/cassandra/cql/), [HMTL](https://html.spec.whatwg.org/multipage/), [CSS](https://www.w3.org/Style/CSS/specs.en.html), [LESS](https://lesscss.org/)
