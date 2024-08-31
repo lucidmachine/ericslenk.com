@@ -21,7 +21,7 @@
  :archive-group-format         "yyyy MMMM"
 
  :sass-src                     []
- :sass-path                    "sass"
+ :sass-path                    "sassc"
  :sass-opts                    ["--style=compressed"]
  :compass-path                 nil
  :theme                        "lucidmachinery"
