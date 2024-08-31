@@ -6,7 +6,6 @@
 
 ## Electronics
 
-- [Sony WF1000XM5 Wireless Earbuds ($250)](https://electronics.sony.com/audio/headphones/truly-wireless-earbuds/p/wf1000xm5-b)
 - [Sony WH1000XM5 Wireless Headphones ($400)](https://electronics.sony.com/audio/headphones/headband/p/wh1000xm5-b)
 - [Bambu Lab A1 Combo 3D printer ($480)](https://us.store.bambulab.com/products/a1)
 - [CyberPower CP900AVR AVR Uninterruptible Power Supply System ($150)](https://www.cyberpowersystems.com/product/ups/avr/cp900avr/)
